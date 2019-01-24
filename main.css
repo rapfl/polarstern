@@ -1,0 +1,25 @@
+body {
+  color: white;
+  background-color: #153542;
+  font-family: sans-serif;
+}
+
+html {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  text-align: center;
+}
+
+img {
+  height: 48px;
+  padding: 16px 8px;
+}
