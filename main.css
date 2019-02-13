@@ -15,6 +15,22 @@ img {
   max-width: 100%;
 }
 
+input[type="email"],
+input[type="text"],
+input[type="tel"] {
+  border: none;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 7px;
+  padding: 0.8em 1.6em;
+  box-shadow: rgba(0, 0, 0, 0.2) inset 0 1px 2px 0, rgba(0, 0, 0, 0.1) inset 0 0 4px 0;
+}
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="tel"]:focus {
+  background-color: white;
+}
+
 .section {
   margin-top: 5em;
   margin-bottom: 5em;
@@ -54,16 +70,19 @@ img {
 }
 
 .tagline h1 {
-  margin-bottom: 0;
+  margin: 0.8rem 0 0;
+  font-size: 1.5rem;
 }
 
 .tagline p {
+  font-size: 1.2rem;
   margin-top: 0;
+  line-height: 1;
 }
 
 .tagline img, .badge img {
   height: 56px;
-  padding: 16px 8px;
+  padding: 1em 2em;
 }
 
 .landing-view .tagline img {
@@ -86,16 +105,26 @@ img {
 }
 
 .tagline-secondary .screen {
-  width: 60%;
+  position: relative;
   align-self: flex-end;
 }
 
 .tagline-secondary .screenshot .screen img {
-  width: 100%;
+  max-height: 65vh;
   display: block;
   border-radius: 4px;
-  transform: rotate(3deg);
-  box-shadow: rgba(0, 0, 0, 0.1) 0 0 3px 0, rgba(0, 0, 0, 0.1) 0 2px 25px 0;
+  position: relative;
+}
+.tagline-secondary .screenshot .screen img:last-child {
+  box-shadow: rgba(255, 255, 255, 0.7) 0 0 2px 0, rgba(0, 0, 0, 0.1) 0 0 5px 0, rgba(0, 0, 0, 0.4) 0 5px 25px 0;
+}
+.tagline-secondary .screenshot .screen img:first-child {
+  transform: rotate(-3deg) translateX(-60px) translateY(20px);
+  position: absolute;
+}
+.tagline-secondary .screenshot .screen img:nth-child(2) {
+  transform: rotate(3deg) translateX(40px) translateY(15px);
+  position: absolute;
 }
 
 .tagline-secondary .newsletter {
