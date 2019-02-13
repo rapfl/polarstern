@@ -1,14 +1,45 @@
+/* --- GENERAL STYLING --- */
 body {
   color: white;
-  background-color: #153542;
+  background-color: #0e4054;
   font-family: sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
-html {
-  height: 100%;
+main {
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
+
+.section {
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+.three-columns {
   display: flex;
   justify-content: center;
-  align-items: center;
+}
+
+.three-columns .item {
+  flex-basis: 33%;
+  max-width: 24em;
+}
+
+.two-columns {
+  display: flex;
+  justify-content: center;
+}
+
+.two-columns .item {
+  flex-basis: 50%;
+  max-width: 30em;
+  padding: 1em;
+}
 }
 
 header {
