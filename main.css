@@ -135,3 +135,32 @@ img {
 .emoji-story .emoji {
   max-width: 3em;
 }
+
+/* --- SCREENSHOTS SECTION --- */
+.screens-story .screen {
+  border-radius: 4px;
+  transform: rotate(-3deg);
+  box-shadow: rgba(255, 255, 255, 0.5) 0 0 2px 0, rgba(0, 0, 0, 0.1) 0 0 3px 0, rgba(0, 0, 0, 0.15) 0 15px 40px 0;
+  max-height: 70vh;
+}
+
+.screens-story .two-columns:nth-child(even) .screen {
+  transform: rotate(3deg);
+}
+
+.screens-story .two-columns:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.screens-story .text {
+  align-self: center;
+  max-width: 20em;
+}
+
+.screens-story .text p:first-child {
+  font-weight: bold;
+}
+
+.screens-story .two-columns {
+  margin: 7em 1em;
+}
