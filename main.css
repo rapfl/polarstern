@@ -40,17 +40,65 @@ img {
   max-width: 30em;
   padding: 1em;
 }
+
+/* LANDING SECTION --- */
+.landing-view {
+  background-image: linear-gradient(rgba(255, 200, 100, 0.5), #0e4054);
+  min-height: 90vh;
+  margin-bottom: 10em;
 }
 
-header {
-  text-align: center;
+.landing-view .tagline {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-main {
-  text-align: center;
+.tagline h1 {
+  margin-bottom: 0;
 }
 
-img {
-  height: 48px;
+.tagline p {
+  margin-top: 0;
+}
+
+.tagline img, .badge img {
+  height: 56px;
   padding: 16px 8px;
+}
+
+.landing-view .tagline img {
+  filter: drop-shadow(0 1px 5px rgba(0, 0, 0, 0.1));
+}
+
+.tagline-secondary {
+  height: 100%;
+  display: flex;
+}
+
+.tagline-secondary>* {
+  flex-basis: 50%;
+}
+
+.tagline-secondary .screenshot {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.tagline-secondary .screen {
+  width: 60%;
+  align-self: flex-end;
+}
+
+.tagline-secondary .screenshot .screen img {
+  width: 100%;
+  display: block;
+  border-radius: 4px;
+  transform: rotate(3deg);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 0 3px 0, rgba(0, 0, 0, 0.1) 0 2px 25px 0;
+}
+
+.tagline-secondary .newsletter {
+  align-self: flex-end;
+  padding: 1em;
 }
