@@ -23,3 +23,29 @@ img {
   height: 48px;
   padding: 16px 8px;
 }
+
+.impressum {
+    text-align: justify;
+    list-style: none;
+    font-weight: 300;
+    margin: auto;
+    max-width: 515px;
+    padding: 2em;
+}
+
+a { 
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #f6a122;
+}
+
+.logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 20px 20px 20px;
+}
