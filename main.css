@@ -19,16 +19,27 @@ input[type="email"],
 input[type="text"],
 input[type="tel"] {
   border: none;
+  width: 100%;
+  max-width: 20em;
   background-color: white;
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 7px;
   padding: 0.8em 1.6em;
   box-shadow: rgba(0, 0, 0, 0.2) inset 0 1px 2px 0, rgba(0, 0, 0, 0.1) inset 0 0 4px 0;
+  margin: 0.5em 0;
+  display: block;
 }
 input[type="email"]:focus,
 input[type="text"]:focus,
 input[type="tel"]:focus {
   background-color: white;
+}
+button {
+  border: none;
+  background-color: #2295e8;
+  border-radius: 7px;
+  color: white;
+  padding: 0.8em 1.6em;
 }
 
 .section {
