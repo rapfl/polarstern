@@ -67,6 +67,18 @@ footer a {
 .italic {
   font-style: italic;
 }
+
+blockquote {
+  font-size: 1.6em;
+  max-width: 30em;
+  margin: 0 auto;
+}
+blockquote::before {
+  content: '\201C';
+}
+
+blockquote::after {
+  content: '\201D';
 }
 
 .section {
