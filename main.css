@@ -83,16 +83,23 @@ footer a {
   flex-basis: 33%;
   max-width: 24em;
 }
+@media (max-width: 900px) {
+  .three-columns {
+    flex-direction: column;
+    align-items: center;
+}
+}
 
 .two-columns {
   display: flex;
   justify-content: center;
+  margin: -0.5em;
+  flex-wrap: wrap;
 }
 
 .two-columns .item {
-  flex-basis: 50%;
+  margin: 0.5em;
   max-width: 30em;
-  padding: 1em;
 }
 
 /* LANDING SECTION --- */
@@ -176,7 +183,6 @@ form > * {
 
 .tagline-secondary .newsletter {
   align-self: flex-end;
-  padding: 1em;
 }
 
 /* --- EMOJI SECTION --- */
@@ -201,6 +207,14 @@ form > * {
   content: "";
   top: 50%;
   right: -2em;
+}
+@media (max-width: 900px) {
+  .emoji-story .item:not(:last-child)::after {
+    top: 100%;
+    left: 50%;
+    height: 2em;
+    width: 2px;
+  }
 }
 
 .emoji-story .number {
