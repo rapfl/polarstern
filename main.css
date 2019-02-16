@@ -318,3 +318,12 @@ form > * {
 .screens-story .two-columns {
   margin: 7em 1em;
 }
+
+/* OTHER PAGES */
+.only-text {
+  max-width: 32em;
+  margin: 0 auto;
+}
+.only-text a {
+  color: #fbc0b0;
+}
