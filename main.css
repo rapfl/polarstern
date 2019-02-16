@@ -2,9 +2,14 @@
 body {
   color: white;
   background-color: #0e4054;
+  background-color: #fa8f72;
+  background-color: #fbc0b0;
+  background-color: #153542;
+  background-color: #28a28f;
   font-family: sans-serif;
-  padding: 0;
+  padding: 1em;
   margin: 0;
+  overflow-x: hidden;
 }
 
 main {
@@ -20,25 +25,47 @@ input[type="text"],
 input[type="tel"] {
   border: none;
   width: 100%;
-  max-width: 20em;
+  max-width: 16em;
   background-color: white;
   background-color: rgba(255, 255, 255, 0.85);
   border-radius: 7px;
-  padding: 0.8em 1.6em;
-  box-shadow: rgba(0, 0, 0, 0.2) inset 0 1px 2px 0, rgba(0, 0, 0, 0.1) inset 0 0 4px 0;
-  margin: 0.5em 0;
-  display: block;
+  font-size: 1em;
+  padding: 0.7em 1.2em;
+  box-shadow: rgba(0, 0, 0, 0.1) inset 0 0 2px 0, rgba(0, 0, 0, 0.05) 0 1px 7px 0;
+  transition: box-shadow 100ms, background-color 50ms;
+  min-width: 0;
 }
+
 input[type="email"]:focus,
 input[type="text"]:focus,
 input[type="tel"]:focus {
   background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.2) inset 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 3px 15px 0;
 }
+
 button {
   border: none;
   background-color: #2295e8;
   border-radius: 7px;
   color: white;
+  padding: 0.7em 1.2em;
+  font-size: 1em;
+  box-shadow: rgba(0, 0, 0, 0.08) inset 0 0 2px 0, rgba(0, 0, 0, 0.05) 0 1px 7px 0;
+  outline: none;
+  white-space: nowrap;
+}
+button:active {
+  transform: scale(0.98);
+  box-shadow: rgba(0, 0, 0, 0.1) inset 0 0 2px 0;
+}
+button:focus {
+  outline: none;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
 footer {
   padding: 1em;
 }
@@ -232,6 +259,7 @@ form > * {
 .emoji-story .number {
   font-weight: bold;
   color: white;
+  font-size: 1.4em;
 }
 
 .emoji-story .emoji {
@@ -239,6 +267,30 @@ form > * {
 }
 
 /* --- SCREENSHOTS SECTION --- */
+.screens-story {
+  /* background: linear-gradient(transparent, white 33%); */
+  background:  linear-gradient(
+    to top,
+    hsl(0, 0%, 100%) 0%,
+    hsla(0, 0%, 100%, 0.738) 19%,
+    hsla(0, 0%, 100%, 0.541) 34%,
+    hsla(0, 0%, 100%, 0.382) 47%,
+    hsla(0, 0%, 100%, 0.278) 56.5%,
+    hsla(0, 0%, 100%, 0.194) 65%,
+    hsla(0, 0%, 100%, 0.126) 73%,
+    hsla(0, 0%, 100%, 0.075) 80.2%,
+    hsla(0, 0%, 100%, 0.042) 86.1%,
+    hsla(0, 0%, 100%, 0.021) 91%,
+    hsla(0, 0%, 100%, 0.008) 95.2%,
+    hsla(0, 0%, 100%, 0.002) 97%,
+    hsla(0, 0%, 100%, 0) 100%
+  );
+ 
+  color: black;
+  margin-left: -1em;
+  margin-right: -1em;
+  padding: 2em 0;
+}
 .screens-story .screen {
   border-radius: 4px;
   transform: rotate(-3deg);
