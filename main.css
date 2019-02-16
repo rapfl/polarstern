@@ -39,7 +39,34 @@ button {
   background-color: #2295e8;
   border-radius: 7px;
   color: white;
-  padding: 0.8em 1.6em;
+footer {
+  padding: 1em;
+}
+footer > div {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+footer > div img {
+  height: 100%;
+}
+footer img {
+  max-width: 10em;
+}
+footer a {
+  padding: 0.5em;
+  display: inline-block;
+  color: white;
+}
+.sos-kinderdorf-logo {
+  border-radius: 7px;
+}
+.italic {
+  font-style: italic;
+}
 }
 
 .section {
