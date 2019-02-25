@@ -32,10 +32,15 @@
           Trage deine Handynummer ein, damit du sofort mitbekommst, wenn die App veröffentlicht wird.
         </p>
         <form id="newsletter-form">
-          <input name="phone" placeholder="Deine Handynummer..." type="tel" />
-          <button type="submit">Submit</button>
+          
+          <input required name="phone" placeholder="Deine Handynummer..." type="tel" />
+          <button type="submit">Submit</button><br />
         </form>
-      </div>
+        <div class="datenschutz-checkbox">
+            <input form="newsletter-form" required type="checkbox" /> Ich habe die <a href="/datenschutz.html" target="_blank">Datenschutzbestimmungen</a> gelesen und akzeptiert
+
+        </div>
+        </div>
       <div class="screenshot item">
         <div class="screen">
           <img src="assets/STÄRKEN.png" />
@@ -66,7 +71,7 @@
       <!-- <hr> -->
     </div>
     <div class="section">
-      <h2 style='margin-bottom: -1rem;'><img style="max-width: 2.5rem; vertical-align: text-bottom;"
+      <h2 style="margin-bottom: -1rem;"><img style="max-width: 2.5rem; vertical-align: text-bottom;"
           src="assets/emoji1.png" /> Das ist Franz.</h2>
       <p>Franz ist sich unsicher, was er mit seinem Leben anfangen soll.</p>
       <div class="three-columns emoji-story">
@@ -99,7 +104,8 @@
     <img class="chevron-down" src="assets/chevron-down.svg" />
 
     <div class="section screens-story">
-      <div class="two-columns">
+      <h2>Wie es funktioniert</h2>
+      <div class="two-columns" style="color: white;">
         <div class="item">
           <img class="screen" src="assets/Empfangene Stärken Übersicht.png" />
         </div>
@@ -151,12 +157,19 @@
         <img src="assets/Polarstern Logo Signatur Orange.svg" />
         <br />
         <br />
-        <div class="italic">
-          Tochtergesellschaft von
-        </div>
-        <img class="sos-kinderdorf-logo" src="assets/SOS Logo Nur auf weißem Hintergrund!.png" />
+        <address>
+          Vivenotgasse 3<br />
+          1120 Wien<br /><br />
+          <a href="mailto:info@polarstern.me">info@polarstern.me</a>
+        </address>
       </div>
       <div>
+        <div class="italic">
+          Das Social-Startup von
+        </div>
+        <img class="sos-kinderdorf-logo" src="assets/SOS Logo .png" />
+      </div>
+      <div class="footer-links">
         <a href="impressum">Impressum</a>
         &middot;
         <a href="datenschutz">Datenschutz</a>

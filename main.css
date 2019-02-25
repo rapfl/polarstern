@@ -19,6 +19,9 @@ main {
 img {
   max-width: 100%;
 }
+h2 {
+  font-size: 2em;
+}
 
 input[type="email"],
 input[type="text"],
@@ -68,6 +71,9 @@ button::-moz-focus-inner {
 
 footer {
   padding: 1em;
+  background-color: white;
+  color: black;
+  margin: 0 -1em -1em;
 }
 footer > div {
   max-width: 900px;
@@ -84,15 +90,21 @@ footer img {
   max-width: 10em;
 }
 footer a {
-  padding: 0.5em;
   display: inline-block;
-  color: white;
+  color: black;
 }
-.sos-kinderdorf-logo {
-  border-radius: 7px;
-}
+
 .italic {
   font-style: italic;
+}
+.footer-links {
+  padding: 0.5em;
+}
+.datenschutz-checkbox {
+  margin-top: 0.5em;
+}
+.datenschutz-checkbox a {
+  color: white;
 }
 
 blockquote {
@@ -108,7 +120,7 @@ blockquote::after {
   content: '\201D';
 }
 
-.section {
+.section:not(:last-child) {
   margin-top: 5em;
   margin-bottom: 5em;
 }
@@ -290,6 +302,9 @@ form > * {
   margin-left: -1em;
   margin-right: -1em;
   padding: 2em 0;
+}
+.screens-story h2 {
+  color: white;
 }
 .screens-story .screen {
   border-radius: 4px;
