@@ -32,15 +32,17 @@
           Trage deine Handynummer ein, damit du sofort mitbekommst, wenn die App veröffentlicht wird.
         </p>
         <form id="newsletter-form">
-          
-          <input required name="phone" placeholder="Deine Handynummer..." type="tel" />
-          <button type="submit">Submit</button><br />
+
+          <input required name="phone" type="tel" placeholder="Deine Handynummer..." pattern="^[0-9-+s() ]*$"
+            autocomplete="" type="tel" />
+          <button type="submit">Submit</button>
         </form>
         <div class="datenschutz-checkbox">
-            <input form="newsletter-form" required type="checkbox" /> Ich habe die <a href="/datenschutz.html" target="_blank">Datenschutzbestimmungen</a> gelesen und akzeptiert
+          <input form="newsletter-form" required type="checkbox" /> Ich habe die <a href="/datenschutz.html"
+            target="_blank">Datenschutzbestimmungen</a> gelesen und akzeptiert
 
         </div>
-        </div>
+      </div>
       <div class="screenshot item">
         <div class="screen">
           <img src="assets/STÄRKEN.png" />
@@ -71,47 +73,61 @@
       <!-- <hr> -->
     </div>
     <div class="section">
-      <h2 style="margin-bottom: -1rem;"><img style="max-width: 2.5rem; vertical-align: text-bottom;"
+      <!-- <h2 style="margin-bottom: -1rem;"><img style="max-width: 2.5rem; vertical-align: text-bottom;"
           src="assets/emoji1.png" /> Das ist Franz.</h2>
-      <p>Franz ist sich unsicher, was er mit seinem Leben anfangen soll.</p>
+      <p>Franz ist sich unsicher, was er mit seinem Leben anfangen soll.</p> -->
       <div class="three-columns emoji-story">
-        <div class="item">
-          <img class="emoji" src="assets/Für den _Entdeckt_-Schritt.png" />
-          <br />
-          <p>
-            <span class="number">1. </span>Er entdeckt die Polarstern-App. Damit kann er ganz einfach Freunde und
-            Bekannte zu seinen Stärken fragen.
-          </p>
+        <div style="display: flex; justify-content: center;">
+
+          <div class="item">
+            <img class="emoji" src="assets/Für den _Entdeckt_-Schritt.png" />
+            <br />
+            <h3>Heading</h3>
+            <p>
+              Er entdeckt die Polarstern-App. Damit kann er ganz einfach Freunde und
+              Bekannte zu seinen Stärken fragen.
+            </p>
+          </div>
+          <div class="item">
+            <img class="emoji" src="assets/emoji2.png" />
+            <br />
+            <h3>Heading</h3>
+            <p>
+              So findet er heraus, dass auch viele andere finden er sei kreativ, empathisch
+              und gut im Anführen.
+            </p>
+          </div>
+          <div class="item">
+            <img class="emoji" src="assets/emoji3.png" />
+            <br />
+            <h3>Heading</h3>
+            <p>
+              Er kann nun auf seinen Stärken aufbauen um sein Potenzial voll zu entfalten.
+            </p>
+          </div>
         </div>
-        <div class="item">
-          <img class="emoji" src="assets/emoji2.png" />
-          <br />
-          <p>
-            <span class="number">2. </span>So findet er heraus, dass auch viele andere finden er sei kreativ, empathisch
-            und gut im Anführen.
-          </p>
-        </div>
-        <div class="item">
-          <img class="emoji" src="assets/emoji3.png" />
-          <br />
-          <p>
-            <span class="number">3. </span>Er kann nun auf seinen Stärken aufbauen um sein Potenzial voll zu entfalten.
-          </p>
-        </div>
+
+        <img class="chevron-down" src="assets/chevron-down.svg" />
+
       </div>
+
+
     </div>
 
-    <img class="chevron-down" src="assets/chevron-down.svg" />
 
     <div class="section screens-story">
       <h2>Wie es funktioniert</h2>
-      <div class="two-columns" style="color: white;">
+      <div class="two-columns">
         <div class="item">
           <img class="screen" src="assets/Empfangene Stärken Übersicht.png" />
         </div>
         <div class="item text">
-          <p>
+          <h3>
             Um dein Potential nutzen zu können, musst du deine Stärken kennen.
+          </h3>
+          <p>
+            Stupse Freunde und Verwandte an und sammle dein Feedback.
+            Interpretiere deine erhaltenen Stärken und halte sie fest.
           </p>
           <p>
             Polarstern hilft dir dabei, deine Stärken zu entdecken.
@@ -124,8 +140,12 @@
 
         </div>
         <div class="item text">
-          <p>
+          <h3>
             Bekomme ehrliches Feedback von Menschen, denen du vertaust.
+          </h3>
+          <p>
+            Stupse Freunde und Verwandte an und sammle dein Feedback.
+            Interpretiere deine erhaltenen Stärken und halte sie fest.
           </p>
           <p>
             Stupse Freunde und Verwandte an und sammle dein Feedback.
@@ -139,8 +159,12 @@
 
         </div>
         <div class="item text">
-          <p>
+          <h3>
             Bekomme eine Übersicht von deinen Stärken und positiven Eigenschaften.
+          </h3>
+          <p>
+            Stupse Freunde und Verwandte an und sammle dein Feedback.
+            Interpretiere deine erhaltenen Stärken und halte sie fest.
           </p>
           <p>
             Niemand ist perfekt. Zu wissen worin du strahlst hilft dir, dich im Leben zurecht zu finden.
