@@ -1,3 +1,4 @@
+// ===== Form Submit =====
 let formUrl = 'https://script.google.com/macros/s/AKfycbx0cQXSH_DMs1yP-h6DGaE4Utba5qZiowqSGcNgzGt5yyDPxhM/exec'
 let form = document.getElementById('newsletter-form')
 
@@ -15,3 +16,39 @@ function handleFormSubmit (event) {
 }
 
 form.addEventListener('submit', handleFormSubmit)
+
+// ===== PARALLAX =====
+let screens = document.querySelectorAll('.item.parallax')
+let screenPositions = []
+let viewportMiddle = window.innerHeight / 2
+let scheduledAnimationFrame = false
+
+new Promise((resolve) => {
+  setTimeout(() => { resolve() }, 250) // Wait a bit until the correct height is available
+}).then(() => {
+  screens.forEach((element, index) => {
+    let screenHeight = 400 // Pauschalwert
+    screenPositions[index] = element.offsetTop + screenHeight
+  })
+})
+
+window.addEventListener('scroll', debounce(udpateParallaxPositions), { passive: true })
+
+function udpateParallaxPositions () {
+  screens.forEach((element, index) => {
+    scheduledAnimationFrame = false
+    let scrollOffset = window.pageYOffset + viewportMiddle
+    let elementOffset = screenPositions[index] - scrollOffset
+
+    element.style.transform = `translateY(${elementOffset / 9}px)`
+  })
+}
+
+function debounce (fn) {
+  return function () {
+    if (scheduledAnimationFrame) return
+
+    scheduledAnimationFrame = true
+    requestAnimationFrame(fn)
+  }
+}
