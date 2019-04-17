@@ -151,8 +151,27 @@ form > * {
   margin: 0.25em;
 }
 .landing-view {
+  position: relative;
   min-height: 90vh;
   padding-top: 3em;
+  background-image: url('assets/hero_bg.jpg');
+  background-size: cover;
+}
+
+.landing-view::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: #20b1d8;
+  background-color: #1694c5;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
+.chevron-down {
+  z-index: 2;
+  position: relative;
 }
 
 .landing-view .tagline {
@@ -193,6 +212,8 @@ form > * {
 .tagline-secondary {
   height: 100%;
   display: flex;
+  position: relative;
+  z-index: 1;
 }
 
 .tagline-secondary .screenshot {
@@ -333,6 +354,14 @@ h3 {
   }
   .two-columns {
     margin-bottom: -2em !important;
+  }
+  .landing-view {
+    padding: 1rem;
+    margin: -1rem;
+  }
+  .landing-view::after {
+    margin-left: -1rem;
+    opacity: 0.75;
   }
   .landing-view .screenshot {
     display: none;
