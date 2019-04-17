@@ -75,18 +75,19 @@ footer {
   background-color: white;
   color: black;
   margin: 0 -1em -1em;
+  text-align: center;
 }
 footer > div {
   max-width: 900px;
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 footer img {
-  max-width: 10em;
+  max-width: 17em;
 }
 footer a {
   display: inline-block;
@@ -98,6 +99,9 @@ footer a {
 }
 .footer-links {
   padding: 0.5em;
+}
+.footer-links > * {
+  padding: 0.5em 1em;
 }
 .datenschutz-checkbox {
   margin-top: 0.5em;
