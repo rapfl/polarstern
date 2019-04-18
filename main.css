@@ -10,6 +10,7 @@ body {
   padding: 1em;
   margin: 0;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 main {
@@ -156,7 +157,7 @@ form > * {
 }
 .landing-view {
   position: relative;
-  min-height: 90vh;
+  min-height: calc(100vh - 5.1em);
   padding-top: 3em;
   background-image: url('assets/hero_bg.jpg');
   background-size: cover;
@@ -268,7 +269,7 @@ form > * {
 
 /* --- EMOJI SECTION --- */
 .emoji-story {
-  margin: 3em -1em 0;
+  margin: 1.1em -1em 0;
   background-color: #fa8f72;
   display: block;
   padding: 3em;
@@ -369,5 +370,8 @@ h3 {
   }
   .landing-view .screenshot {
     display: none;
+  }
+  .emoji-story {
+    margin-top: 0;
   }
 }
