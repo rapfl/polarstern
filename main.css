@@ -250,21 +250,25 @@ form > * {
   align-self: center;
 }
 
-#newsletter-form {
+.newsletter-form {
   flex-wrap: wrap;
   margin: -1em -0.5em -0.5em;
 }
 
-#newsletter-form > * {
+.newsletter-form > * {
   margin: 0.5em;
 }
-#newsletter-form button {
+.newsletter-form button {
   flex-grow: 1;
 }
-#newsletter-form input {
+.newsletter-form input {
   flex-grow: 666;
   flex-basis: 20em;
   max-width: unset;
+}
+.call-to-action {
+  max-width: 32rem;
+  margin: 4rem auto;
 }
 
 /* --- EMOJI SECTION --- */

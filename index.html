@@ -32,16 +32,15 @@
         <p>
           Trage deine Handynummer ein, damit du sofort mitbekommst, wenn die App veröffentlicht wird.
         </p>
-        <form id="newsletter-form">
+        <form class="newsletter-form" id="newsletter-form1">
 
           <input required name="phone" type="tel" placeholder="Deine Handynummer..." pattern="^[0-9-+s() ]*$"
-            autocomplete="" type="tel" />
+            autocomplete="" />
           <button type="submit">Submit</button>
         </form>
         <div class="datenschutz-checkbox">
-          <input form="newsletter-form" required type="checkbox" /> Ich habe die <a href="/datenschutz.html"
+          <input form="newsletter-form1" required type="checkbox" /> Ich habe die <a href="/datenschutz.html"
             target="_blank">Datenschutzbestimmungen</a> gelesen und akzeptiert
-
         </div>
       </div>
       <div class="screenshot item">
@@ -173,6 +172,21 @@
       </div>
     </div>
   </main>
+
+  <div class="call-to-action">
+    <h2>
+      Erfahre als erstes,<br />wenn die App launcht.
+    </h2>
+    <form class="newsletter-form" id="newsletter-form2">
+      <input required name="phone" type="tel" placeholder="Deine Handynummer..." pattern="^[0-9-+s() ]*$"
+        autocomplete="" />
+      <button type="submit">Submit</button>
+    </form>
+    <div class="datenschutz-checkbox">
+      <input form="newsletter-form2" required type="checkbox" /> Ich habe die <a href="/datenschutz.html"
+        target="_blank">Datenschutzbestimmungen</a> gelesen und akzeptiert
+    </div>
+  </div>
 
   <footer>
     <!-- <div> -->

@@ -1,9 +1,14 @@
 // ===== Form Submit =====
 let formUrl = 'https://script.google.com/macros/s/AKfycbx0cQXSH_DMs1yP-h6DGaE4Utba5qZiowqSGcNgzGt5yyDPxhM/exec'
-let form = document.getElementById('newsletter-form')
+let forms = [
+  document.getElementById('newsletter-form1'),
+  document.getElementById('newsletter-form2')
+]
 
-function handleFormSubmit (event) {
+function handleFormSubmit (event, formIndex) {
   event.preventDefault()
+  console.log(formIndex)
+  let form = forms[formIndex]
   let formData = new FormData(form)
   let phoneNumber = formData.get('phone') || ''
   let email = formData.get('email') || ''
@@ -15,7 +20,8 @@ function handleFormSubmit (event) {
     .catch(console.error)
 }
 
-form.addEventListener('submit', handleFormSubmit)
+forms[0].addEventListener('submit', (event) => handleFormSubmit(event, 0))
+forms[1].addEventListener('submit', (event) => handleFormSubmit(event, 1))
 
 // ===== PARALLAX =====
 let screens = document.querySelectorAll('.item.parallax')
