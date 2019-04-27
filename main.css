@@ -356,7 +356,40 @@ h3 {
   color: #fbc0b0;
 }
 
+.about-wrapper {
+  margin: 1.5rem;
+}
+.about {
+  text-align: left;
+  columns: 2;
+  column-gap: 1.5em;
+  max-width: 42rem;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+.about h2 {
+  margin: 0.2rem 0 0.1em;
+}
+
+@supports (hyphens: auto) {
+  .about {
+    hyphens: auto;
+    text-align: justify;
+  }
+}
+.about p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.about-heading {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
 @media (max-width: 900px) {
+  .about {
+    columns: 1;
+  }
   .three-columns > div{
     flex-direction: column;
     align-items: center;
