@@ -46,7 +46,7 @@ function udpateParallaxPositions () {
     let scrollOffset = window.pageYOffset + viewportMiddle
     let elementOffset = screenPositions[index] - scrollOffset
 
-    element.style.transform = `translateY(${elementOffset / 9}px)`
+    element.style.transform = `translateY(-${elementOffset / 9}px)`
   })
 }
 
