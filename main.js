@@ -26,17 +26,12 @@ forms[1].addEventListener('submit', (event) => handleFormSubmit(event, 1))
 // ===== PARALLAX =====
 let screens = document.querySelectorAll('.item.parallax')
 let screenPositions = []
-let viewportMiddle = window.innerHeight / 2
+let windowHeight = window.innerHeight
+let viewportMiddle = windowHeight / 2
 let scheduledAnimationFrame = false
+let isCheckingAfterResize = false
 
-new Promise((resolve) => {
-  setTimeout(() => { resolve() }, 250) // Wait a bit until the correct height is available
-}).then(() => {
-  screens.forEach((element, index) => {
-    let screenHeight = 400 // Pauschalwert
-    screenPositions[index] = element.offsetTop + screenHeight
-  })
-})
+updateScreenPositions()
 
 window.addEventListener('scroll', debounce(udpateParallaxPositions), { passive: true })
 
@@ -58,11 +53,36 @@ function debounce (fn) {
   }
 }
 
+let maxPosOffset = windowHeight / 90
+maxPosOffset *= maxPosOffset
+
 function easingFn (yPos) {
+  if (yPos > windowHeight) return maxPosOffset
+
   let positive = yPos > 0
+  if (!positive) return 0
 
   yPos /= 90
   yPos *= yPos
+  return yPos
+}
 
-  return positive ? yPos : 0
+window.addEventListener('resize', updateScreenPositions)
+
+function updateScreenPositions () {
+  windowHeight = window.innerHeight
+  viewportMiddle = windowHeight / 2
+
+  new Promise((resolve) => {
+    if (isCheckingAfterResize) return
+    isCheckingAfterResize = true
+    setTimeout(() => { resolve() }, 250) // Wait a bit until the correct height is available
+  })
+    .then(() => {
+      screens.forEach((element, index) => {
+        screenPositions[index] = element.offsetTop + windowHeight
+      })
+
+      isCheckingAfterResize = false
+    })
 }
