@@ -161,6 +161,9 @@ form {
 form > * {
   margin: 0.25em;
 }
+.little-arrow {
+  text-align: center;
+}
 .landing-view {
   position: relative;
   min-height: calc(100vh - 5.1em);
@@ -375,6 +378,11 @@ h3 {
 .about-wrapper {
   margin: 1rem;
 }
+
+.about-heading img {
+  max-width: 8rem;
+  margin: 2rem 0 4rem;
+}
 .about {
   text-align: left;
   columns: 2;
@@ -382,12 +390,13 @@ h3 {
   max-width: 42rem;
   margin: 0 auto;
   margin-top: 1em;
+  line-height: 1.35;
 }
 .about br {
   display: none;
 }
 .about h2 {
-  margin: 0.2rem 0 0.1em;
+  margin: -.8rem 0 0.1em;
 }
 
 @supports (hyphens: auto) {
@@ -412,6 +421,9 @@ h3 {
   }
   .about br {
     display: block;
+  }
+  .little-arrow br {
+    display: none;
   }
   .three-columns > div{
     flex-direction: column;
