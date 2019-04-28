@@ -39,9 +39,10 @@ updateScreenPositions()
 window.addEventListener('scroll', debounce(udpateParallaxPositions), { passive: true })
 
 function udpateParallaxPositions () {
+  let screenPosCorrection = window.pageYOffset + (windowHeight / 2)
   screens.forEach((element, index) => {
     scheduledAnimationFrame = false
-    let elementOffset = screenPositions[index] - (window.pageYOffset + (windowHeight / 2))
+    let elementOffset = screenPositions[index] - screenPosCorrection
 
     element.style.transform = `translateY(${-easingFn(elementOffset)}px)`
   })
