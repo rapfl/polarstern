@@ -43,10 +43,9 @@ window.addEventListener('scroll', debounce(udpateParallaxPositions), { passive: 
 function udpateParallaxPositions () {
   screens.forEach((element, index) => {
     scheduledAnimationFrame = false
-    let scrollOffset = window.pageYOffset + viewportMiddle
-    let elementOffset = screenPositions[index] - scrollOffset
+    let elementOffset = screenPositions[index] - (window.pageYOffset + viewportMiddle)
 
-    element.style.transform = `translateY(-${elementOffset / 9}px)`
+    element.style.transform = `translateY(${-easingFn(elementOffset)}px)`
   })
 }
 
@@ -57,4 +56,13 @@ function debounce (fn) {
     scheduledAnimationFrame = true
     requestAnimationFrame(fn)
   }
+}
+
+function easingFn (yPos) {
+  let positive = yPos > 0
+
+  yPos /= 90
+  yPos *= yPos
+
+  return positive ? yPos : 0
 }
