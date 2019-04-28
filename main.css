@@ -1,4 +1,7 @@
 /* --- GENERAL STYLING --- */
+* {
+  box-sizing: border-box;
+}
 body {
   color: white;
   background-color: #fa8f72;
@@ -6,6 +9,8 @@ body {
   background-color: #153542;
   background-color: #28a28f;
   background-color: #1694c5;
+  background-color: white;
+  color: black;
   font-family: sans-serif;
   padding: 1em;
   margin: 0;
@@ -159,20 +164,24 @@ form > * {
 .landing-view {
   position: relative;
   min-height: calc(100vh - 5.1em);
-  padding-top: 3em;
+  padding: 1.2rem;
+  margin: -1rem;
   background-image: url('assets/hero_bg.jpg');
   background-size: cover;
+  background-color: #1694c5;
+  color: white;
 }
 
 .landing-view::after {
   content: "";
   height: 100%;
-  width: 100%;
   background-color: #20b1d8;
   background-color: #1694c5;
   opacity: 0.6;
   position: absolute;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 0;
 }
 .chevron-down {
@@ -268,16 +277,23 @@ form > * {
   max-width: unset;
 }
 .call-to-action {
+  margin: -1rem;
+  background-color: #1694c5;
+  color: white;
+  padding: 2rem 1rem 3rem;
+}
+.call-to-action-wrapper {
   max-width: 32rem;
   margin: 4rem auto;
 }
 
 /* --- EMOJI SECTION --- */
 .emoji-story {
-  margin: 1.1em -1em 0;
+  margin: 1rem -1rem 0;
   background-color: #fa8f72;
   display: block;
   padding: 3em 1em;
+  color: white;
 }
 .emoji-story .item {
   position: relative;
@@ -330,10 +346,12 @@ form > * {
   margin-left: 1.5em;
   margin-right: 1.5em;
   color: #122F3A;
+  margin-bottom: 1.5rem;
 }
 
 h3 {
   font-size: 1.5rem;
+  margin-bottom: 1rem;
   line-height: 1.2;
 }
 .screens-story .text p:first-child {
@@ -355,7 +373,7 @@ h3 {
 }
 
 .about-wrapper {
-  margin: 1.5rem;
+  margin: 1rem;
 }
 .about {
   text-align: left;
@@ -391,6 +409,9 @@ h3 {
   .three-columns > div{
     flex-direction: column;
     align-items: center;
+  }
+  .screens-story .text {
+    text-align: center;
   }
   .landing-view {
     padding: 1rem;
