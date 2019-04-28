@@ -383,6 +383,9 @@ h3 {
   margin: 0 auto;
   margin-top: 1em;
 }
+.about br {
+  display: none;
+}
 .about h2 {
   margin: 0.2rem 0 0.1em;
 }
@@ -405,6 +408,10 @@ h3 {
 @media (max-width: 900px) {
   .about {
     columns: 1;
+    text-align: left;
+  }
+  .about br {
+    display: block;
   }
   .three-columns > div{
     flex-direction: column;
