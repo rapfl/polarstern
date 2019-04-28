@@ -59,7 +59,8 @@ button {
   background-color: #20b1d8;
   border-radius: 7px;
   color: white;
-  padding: 0.7em 1.2em;
+  padding: 0.7em 0;
+  min-width: 5.6rem;
   font-size: 1em;
   box-shadow: rgba(0, 0, 0, 0.08) inset 0 0 2px 0, rgba(0, 0, 0, 0.05) 0 1px 7px 0;
   outline: none;
@@ -112,6 +113,11 @@ footer a {
 }
 .datenschutz-checkbox {
   margin-top: 0.5em;
+}
+.datenschutz-checkbox label {
+  padding: .5rem;
+  margin-left: -.5rem;
+  margin-right: -.5rem;
 }
 .datenschutz-checkbox a {
   color: white;
