@@ -7,11 +7,13 @@ let forms = [
 
 function handleFormSubmit (event, formIndex) {
   event.preventDefault()
-  console.log(formIndex)
   let form = forms[formIndex]
   let formData = new FormData(form)
   let phoneNumber = formData.get('phone') || ''
   let email = formData.get('email') || ''
+
+  let button = form.getElementsByTagName('button')[0]
+  button.textContent = 'Lade...'
 
   window.fetch(`${formUrl}?phone=${encodeURIComponent(phoneNumber)}&mail=${encodeURIComponent(email)}`)
     .then((response) => {
