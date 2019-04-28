@@ -27,9 +27,10 @@ forms[1].addEventListener('submit', (event) => handleFormSubmit(event, 1))
 let screens = document.querySelectorAll('.item.parallax')
 let screenPositions = []
 let windowHeight = window.innerHeight
-let viewportMiddle = windowHeight / 2
 let scheduledAnimationFrame = false
 let isCheckingAfterResize = false
+let maxPosOffset = windowHeight / 90
+maxPosOffset *= maxPosOffset
 
 updateScreenPositions()
 
@@ -38,7 +39,7 @@ window.addEventListener('scroll', debounce(udpateParallaxPositions), { passive: 
 function udpateParallaxPositions () {
   screens.forEach((element, index) => {
     scheduledAnimationFrame = false
-    let elementOffset = screenPositions[index] - (window.pageYOffset + viewportMiddle)
+    let elementOffset = screenPositions[index] - (window.pageYOffset + (windowHeight / 2))
 
     element.style.transform = `translateY(${-easingFn(elementOffset)}px)`
   })
@@ -52,9 +53,6 @@ function debounce (fn) {
     requestAnimationFrame(fn)
   }
 }
-
-let maxPosOffset = windowHeight / 90
-maxPosOffset *= maxPosOffset
 
 function easingFn (yPos) {
   if (yPos > windowHeight) return maxPosOffset
@@ -71,7 +69,6 @@ window.addEventListener('resize', updateScreenPositions)
 
 function updateScreenPositions () {
   windowHeight = window.innerHeight
-  viewportMiddle = windowHeight / 2
 
   new Promise((resolve) => {
     if (isCheckingAfterResize) return
