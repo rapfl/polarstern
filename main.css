@@ -405,7 +405,7 @@ h3 {
   display: none;
 }
 .about h2 {
-  margin: -.8rem 0 0.1em;
+  margin: 0 0 0.1em;
 }
 
 @supports (hyphens: auto) {
