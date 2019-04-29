@@ -31,15 +31,19 @@ let screenPositions = []
 let windowHeight = window.innerHeight
 let scheduledAnimationFrame = false
 let isCheckingAfterResize = false
-let maxPosOffset = windowHeight / 90
-maxPosOffset *= maxPosOffset
+let maxPosOffset = calcDistance(windowHeight)
 
-updateScreenPositions()
+window.addEventListener('load', onLoad)
+document.addEventListener('DOMContentLoaded', onLoad)
 
+function onLoad () {
+  maxPosOffset = calcDistance(windowHeight)
+  updateScreenPositions()
+}
 window.addEventListener('scroll', debounce(udpateParallaxPositions), { passive: true })
 
 function udpateParallaxPositions () {
-  let screenPosCorrection = window.pageYOffset + (windowHeight / 2)
+  let screenPosCorrection = window.pageYOffset + windowHeight + maxPosOffset
   screens.forEach((element, index) => {
     scheduledAnimationFrame = false
     let elementOffset = screenPositions[index] - screenPosCorrection
@@ -58,20 +62,25 @@ function debounce (fn) {
 }
 
 function easingFn (yPos) {
-  if (yPos > windowHeight) return maxPosOffset
+  if (yPos >= windowHeight) return calcDistance(windowHeight)
 
   let positive = yPos > 0
   if (!positive) return 0
 
-  yPos /= 90
-  yPos *= yPos
-  return yPos
+  return calcDistance(yPos)
+}
+
+function calcDistance (distance) {
+  distance /= 70
+  distance *= distance
+  return distance
 }
 
 window.addEventListener('resize', updateScreenPositions)
 
 function updateScreenPositions () {
   windowHeight = window.innerHeight
+  maxPosOffset = calcDistance(windowHeight)
 
   new Promise((resolve) => {
     if (isCheckingAfterResize) return
