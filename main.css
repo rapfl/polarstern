@@ -98,9 +98,11 @@ footer img {
   max-width: 17em;
   max-height: 5rem;
 }
+
 footer a {
   display: inline-block;
   color: black;
+  display: inline;
 }
 
 .italic {
