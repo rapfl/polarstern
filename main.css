@@ -206,6 +206,10 @@ form > * {
   max-width: 8rem;
   margin-top: 4em;
 }
+.landing-view .play-store-badge {
+  max-width: 10rem;
+  margin-top: 0em;
+}
 .landing-view h1 {
   font-size: 3em;
   line-height: 1.1;
