@@ -377,6 +377,11 @@ h3 {
   max-width: 32em;
   margin: 0 auto;
 }
+.only-text-privacy {
+  max-width: 34em;
+  margin: 0 auto;
+    text-align: justify;
+}
 .only-text a {
   color: #fbc0b0;
 }
