@@ -1,0 +1,112 @@
+// Typography
+.title,
+button.btn.rounded-pill,
+a button.btn.rounded-pill {
+  font-family: 'Chau Philomene One', sans-serif;
+  text-transform: uppercase;
+}
+.subtitle {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+.text {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 200;
+}
+.card h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  @media screen and (max-width: 767px) {
+    font-size: 22px;
+  }
+}
+h1 {
+  margin-bottom: 2rem;
+}
+@import url('https://fonts.googleapis.com/css?family=Chau+Philomene+One&display=swap');
+
+.markdown-body {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: 'Chau Philomene One', sans-serif;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 200;
+    text-align: justify;
+  }
+
+  blockquote {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 40px;
+    margin-inline-end: 40px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+p a {
+  color: var(--red);
+}
+p a:hover {
+  text-decoration: underline;
+  color: var(--red);
+}
+
+.header.logo {
+  text-align: center;
+}
+body {
+  background-color: #fff;
+}
+.main-wrapper.post {
+  background: var(--white);
+  position: relative;
+  min-height: 100vh;
+  svg.dots {
+    position: absolute;
+    transform: translate(-189px, -141px);
+
+    @media screen and (max-width: 767px) {
+      transform: translate(-189px, -182px);
+    }
+  }
+}
+.header-padding {
+  padding-top: 108px;
+}
+.footer-padding {
+  padding-bottom: 82px;
+}
+.main-wrapper.post .header-padding.footer-padding {
+  min-height: 80vh;
+  .row {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+
+@media screen and (max-width: 575px) {
+  .footer-padding {
+    padding-bottom: 131px;
+  }
+}
+
+// Animations
+.small-delay {
+  animation-delay: .5s;
+}
+.medium-delay {
+  animation-delay: .8s;
+}

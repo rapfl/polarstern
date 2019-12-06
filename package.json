@@ -1,0 +1,29 @@
+{
+  "name": "polarstern-local",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "@gridsome/source-filesystem": "^0.6.0",
+    "@gridsome/transformer-remark": "^0.3.4",
+    "animate.css": "^3.7.2",
+    "babel-runtime": "^6.26.0",
+    "bootstrap": "^4.3.1",
+    "bootstrap-vue": "^2.0.3",
+    "gridsome": "^0.7.0",
+    "gridsome-plugin-netlify-cms": "^1.0.9",
+    "netlify-cms": "^2.9.7",
+    "vue": "^2.6.10",
+    "vue-check-view": "^0.3.0",
+    "vue-markdown": "^2.2.4",
+    "vue-tasty-burgers": "^1.1.4"
+  },
+  "devDependencies": {
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
+    "vue-svg-loader": "^0.15.0"
+  }
+}

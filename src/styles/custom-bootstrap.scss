@@ -1,0 +1,75 @@
+/**
+*   Custom Bootstrap
+*/
+
+// Variables
+$enabled-rounded: false;
+$body-bg: rgb(46, 70, 179);
+// $border-width: 14px;
+
+// Polar Stern Brand colors
+$blue: #29d4c7;
+$blue_light: #b9e6e6;
+$blue_dark: #007770;
+$blue_mono: rgb(171, 156, 143);
+
+$red: #e22e77;
+$red_light: #f2d5db;
+$red_dark: #8b2346;
+$red_mono: #ece1d9;
+
+$yellow: #ffe100;
+$yellow_light: #fdee87;
+$yellow_dark: #897a1a;
+$yellow_mono: #5f574f;
+
+// Include Bootstrap and BootstrapVue SCSS files
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~bootstrap-vue/src/index.scss';
+
+/** Own Variables **/
+$very-short: .1s;
+
+/** Elements **/
+a, a:hover {
+  color: $black;
+}
+.btn {
+  color: $white;
+  text-transform: uppercase;
+  line-height: 1.2rem;
+  padding: 0.1rem 2rem;
+  border: 9px solid;
+}
+.btn-primary {
+  border-color: $blue;
+}
+.btn-secondary {
+  border-color: $red;
+  background-color: $red;
+}
+.btn-primary:hover {
+  background-color: $blue_dark;
+  border-color: $blue_dark;
+}
+.btn-secondary:hover {
+  background-color: $red_dark;
+  border-color: $red_dark;
+}
+
+/** Classes **/
+.card-body {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+  transition: $very-short;
+}
+
+.blogpost-wrapper img {
+  width: 400px
+}
+.border.user-box,
+.border.start-button-box {
+  border-width: 14px !important;
+}

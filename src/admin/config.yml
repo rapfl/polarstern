@@ -1,0 +1,177 @@
+backend:
+  name: github
+  repo: MCLWallet/polarstern-local
+  use_graphql: true
+
+site_url: https://silly-jepsen-3284b0.netlify.com
+display_url: https://silly-jepsen-3284b0.netlify.com
+logo_url: https://silly-jepsen-3284b0.netlify.com/uploads/polarstern_logo.png
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "posts"
+    label: "Post"
+    folder: "posts"
+    create: true
+    slug: "{{slug}}"
+    preview_path: /posts/{{slug}}
+    fields:
+      - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Vorschau Bild", name: "featured_image", widget: "image", allow_multiple: false}
+      - {label: "Vorschau Text", name: "excerpt", widget: "string"}
+      - {label: "Button Text", name: "button_text", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown"}
+  - name: "workshops"
+    label: "Workshop"
+    folder: "workshops"
+    create: true
+    fields:
+      - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown"}
+  - name: "company_offers"
+    label: "Unternehmensangebot"
+    folder: "company-offers"
+    create: true
+    fields:
+      - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown"}
+  - name: "landingpage"
+    label: "Landing Page"
+    files:
+      - name: "startscreen"
+        label: "Start Screen (Schüler oder Lehrer)"
+        file: "src/data/Start.yml"
+        fields:
+          - { label: "Hintergrundbild Default", name: "background_default", widget: "image", allow_multiple: false}
+          - { label: "Titel Schüler", name: "title_student", widget: "text"}
+          - { label: "Hintergrundbild Schüler", name: "background_student", widget: "image", allow_multiple: false}
+          - { label: "Titel Lehrer", name: "title_teacher", widget: "text"}
+          - { label: "Hintergrundbild  Lehrer", name: "background_teacher", widget: "image", allow_multiple: false}
+      - name: "studentscreen"
+        label: "Schüler"
+        file: "src/data/Student.yml"
+        fields:
+          - label: "Header Fotos"
+            name: "header_images"
+            widget: "list"
+            field: {label: "Foto", name: "header_image", widget: "image"}
+          - {label: "Video Text", name: "video_text", widget: "markdown"}
+          - {label: "YouTube Video ID", name: "youtube_video_ID", widget: "string"}
+          - label: "Blog Posts"
+            name: "blogposts"
+            widget: "relation"
+            collection: "posts"
+            searchFields: ["title", "body", "excerpt"]
+            valueField: "title"
+            displayFields: ["title"]
+            multiple: true
+      - name: "teacherscreen"
+        label: "Lehrer"
+        file: "src/data/Teacher.yml"
+        preview_path: /lehrer
+        fields:
+          - { label: "Header Hintergrundbild", name: "header_background_image", widget: "image", allow_multiple: false}
+          - { label: "Content 1", name: "content_1", widget: "markdown"}
+          - { label: "Content 2", name: "content_2", widget: "markdown"}
+          - { label: "Content 3", name: "content_3", widget: "markdown"}
+          - label: "Blog Posts"
+            name: "blogposts"
+            widget: "relation"
+            collection: "posts"
+            searchFields: ["title", "body", "excerpt"]
+            valueField: "title"
+            displayFields: ["title"]
+            multiple: true
+          - { label: "Content 4", name: "content_4", widget: "markdown"}
+          - label: "Supporter Logos"
+            name: "logos"
+            widget: "list"
+            fields: 
+              - {label: "Name der Organistation", name: "company_name", widget: "string"}
+              - {label: "Website Link", name: "company_url", widget: "string"}
+              - {label: "Logo", name: "logo", widget: "image"}
+  - name: "footerpages"
+    label: "Seiten"
+    files:
+      - name: "impress"
+        label: "Impressum"
+        file: "src/data/footer/Impress.yml"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+      - name: "privacy"
+        label: "Datenschutz"
+        file: "src/data/footer/Privacy.yml"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+      - name: "contact"
+        label: "Schreib eine E-Mail"
+        file: "src/data/footer/Contact.yml"
+        fields:
+          - {label: "Body", name: "body", widget: "markdown"}
+      - name: "about"
+        label: "Über uns"
+        file: "src/data/footer/About.yml"
+        fields:
+          - {label: "Gruppenfoto ernst", name: "team_serious", widget: "image", allow_multiple: false}
+          - {label: "Gruppenfoto lustig", name: "team_funny", widget: "image", allow_multiple: false}
+          - {label: "Body", name: "body", widget: "markdown"}
+          - label: "Teammitglieder"
+            name: "team_members"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Beschreibung", name: "description", widget: "text"}
+      - name: "workshops"
+        label: "Workshops"
+        file: "src/data/footer/Workshops.yml"
+        fields:
+          - {label: "Vorschau Bild", name: "featured_image", widget: "image", allow_multiple: false}
+          - {label: "Vorschau Text 1", name: "preview_text_1", widget: "string"}
+          - {label: "Vorschau Text 2", name: "preview_text_2", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+          - label: "Workshops"
+            name: "workshops"
+            widget: "relation"
+            collection: "workshops"
+            searchFields: ["title", "body"]
+            valueField: "title"
+            displayFields: ["title"]
+            multiple: true
+      - name: "company_offers"
+        label: "Unternehmensangebote"
+        file: "src/data/footer/Unternehmen.yml"
+        fields:
+          - {label: "Vorschau Bild", name: "featured_image", widget: "image", allow_multiple: false}
+          - {label: "Vorschau Text 1", name: "preview_text_1", widget: "string"}
+          - {label: "Vorschau Text 2", name: "preview_text_2", widget: "string"}
+          - {label: "Body", name: "body", widget: "markdown"}
+          - label: "Unternehmensangebote"
+            name: "company_offers"
+            widget: "relation"
+            collection: "company_offers"
+            searchFields: ["title", "body"]
+            valueField: "title"
+            displayFields: ["title"]
+            multiple: true
+  - name: "settings"
+    label: "Einstellungen"
+    files:
+      - name: "menu"
+        label: "Menü"
+        file: "src/data/settings/Menu.yml"
+        fields: 
+          - {label: "Workshop Titel", name: "workshop_label", widget: "string"}
+          - {label: "Unternehmensangebot Titel", name: "company_label", widget: "string"}
+          - {label: "Über Uns Titel", name: "about_label", widget: "string"}
+          - {label: "Junge Menschen Titel", name: "student_label", widget: "string"}
+          - {label: "Unterstützer Titel", name: "teacher_label", widget: "string"}
+          - {label: "Kontakt Titel", name: "contact_label", widget: "string"}
+      - name: "sos_kinderdorf_footer"
+        label: "SOS Kinderdorf Footer"
+        file: "src/data/settings/SOS-Kinderdorf-Footer.yml"
+        fields:
+          - {label: "Logo", name: "sos_kinderdorf_logo", widget: "image", allow_multiple: false}
+          - {label: "Zusatztext", name: "sos_kinderdorf_text", widget: "string"}
+          - {label: "Website Link", name: "sos_kinderdorf_link", widget: "string"}
