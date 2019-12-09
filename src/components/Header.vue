@@ -17,7 +17,7 @@
         <li><g-link to="/unternehmensangebote">{{Menu.company_label}}</g-link></li>
         <li><g-link to="/about">{{Menu.about_label}}</g-link></li>
         <li><g-link to="/junge-menschen">{{Menu.student_label}}</g-link></li>
-        <li><g-link to="/lehrer">{{Menu.teacher_label}}</g-link></li>
+        <li><g-link to="/paedagoginnen-unterstuetzerinnen-unternehmen">{{Menu.teacher_label}}</g-link></li>
         <li><g-link to="/contact">{{Menu.contact_label}}</g-link></li>
       </ul>
     </div>

@@ -25,7 +25,7 @@
         </b-card>
       </g-link>
       <g-link class="start-button-box border border-warning" 
-              to="/lehrer"> 
+              to="/paedagoginnen-unterstuetzerinnen-unternehmen"> 
         <b-card
           :title="Start.title_teacher"
           title-tag="h2"

@@ -1,6 +1,5 @@
 <template>
   <Layout>
-    <!-- TODO: Ask client how the slug should be named -->
     <div class="header-image">
       <g-image :src="$page.meta.siteUrl + Teacher.header_background_image" width="512"></g-image>
       <div class="triangle-bottomright">
