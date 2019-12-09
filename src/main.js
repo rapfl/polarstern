@@ -11,7 +11,6 @@ import checkView from 'vue-check-view'
 
 // Import custom styles
 import '~/styles/styles.scss'
-// TODO: Look for hardcoded shizzle
 
 export default function (Vue, { router, head, isClient }) {
   // Libraries
