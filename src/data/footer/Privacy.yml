@@ -115,7 +115,8 @@ body: >-
 
 
   Um die Polarstern-App laufend zu verbessern integrieren wir die Services von
-  Google Analytics und Crashlytics. 
+  Google Analytics und Crashlytics. Ein
+  [Opt-Out](https://www.polarstern.me/#app-opt-out) ist jederzeit möglich.
 
 
   ### 2. Rechte der betroffenen Personen
