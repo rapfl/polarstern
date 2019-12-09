@@ -87,7 +87,10 @@ export default {
   @media screen and (max-width: 575px) {
     .heading {
       flex-wrap: wrap;
-      h2, h3 {
+      h2 {
+        margin: 1rem 2rem 1rem 0 !important
+      }
+      h3 {
         margin: 1rem 0 !important;
       }
     }

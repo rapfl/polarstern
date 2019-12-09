@@ -1,47 +1,42 @@
 team_serious: /uploads/_b290575.jpg
 team_funny: /uploads/_b290608.jpg
-body: |-
-  # Über Uns
-
-  Wir sind Polarstern!
+body: '# Über Uns'
 team_members:
   - description: >
-      Größten Stärken: Ehrlichkeit, Fairness, Begeisterungsfähigkeit,
-      Selbstregulation
-
-
-      Surfen, Weihnachtskekse, Schildkröten - Dinge die ich mag! 
-
-      Verpetzen, Oliven, Pünktlichkeit - Dinge die ich nicht mag!
+      Selbstregulation, Ehrlichkeit, Fairness und Begeisterungsfähigkeit sind
+      Marlenes größte Stärken. Surfen, Schildkröten und Weihnachtskekse taugen
+      ihr! Und was sie nicht leiden kann sind verpetzen, Oliven und
+      Pünktlichkeit - außer natürlich in den Polarstern-Workshops, die sie
+      zusammen mit Rosa und Michi hält. Außerdem hat sie Polarstern mitgegründet
+      und bringt jeden Tag mindestens eine neue Idee ein.
     name: Marlene
-  - description: >-
-      Meine größten Stärken sind Neugier und Liebe zum Lernen. Ich selbst gehöre
-      noch zur Generation Z, liebe das Klettern und Bergsteigen und bin
-      wahnsinnig davon begeistert, mit Polarstern junge Menschen zu inspirieren.
+  - description: >
+      Raphaels größte Stärken sind Neugier und Liebe zum Lernen. Das Meiste, was
+      er kann, hat er sich selbst beigebracht. Selbst gehört er noch zur
+      Generation Z. Er liebt das Klettern und Bergsteigen und ist wahnsinnig
+      davon begeistert, mit Polarstern junge Menschen zu inspirieren. Sein Part
+      bei Polarstern ist die Geschäftsführung.
     name: Raphael
   - description: >-
-      Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-      eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-      voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-      clita kasd gubergren, no sea takimata sanctus est
+      Michi liebt es zu lernen und hat eine der schwierigsten Stärken:
+      Selbstregulation. Was genau das heißt erklärt er leidenschaftlich in den
+      Polarstern-Workshops, die er seit dem Sommer hält. Das ihm das taugt,
+      merkt man auch in unseren Workshops. Am besten gleich einen buchen und
+      nach ihm als Trainer verlangen!
     name: Michi
   - description: >-
-      - macht Workshops bei PS 
-
-      - hat 1 Master in Gender Studies 
-
-      - Feminismus oder Schlägerei 
-
-      - mag Flamingos, Star Wars und Pflanzen
-
-
-      Stärken: Mut, Umsicht, Humor, Soziale Intelligenz, Fairness
-
-      vl könntest bei mir auch noch erwähnen dass ich nebenher bei Prosa 
-      Jugendliche mit Fluchthintergrund unterrichte. wenn's passt
+      Rosas größte Stärken sind Mut, Humor und Fairness. Mögen tut sie Flamingos
+      (rosa, haha), Star Wars und Pflanzen. Nicht nur bei Polarstern leistet sie
+      in den Workshops einen Riesen-Impact, sondern auch bei Prosa. Dort
+      unterrichtet sie einen Tag pro Woche Jugendliche mit Fluchthintergrund.
+      Getreu ihres Mottos "Feminismus oder Schlägerei" hat sie einen Master in
+      Gender Studies vom UCL. 
     name: Rosa
-  - description: >
-      Mein Name ist Anca,ich arbeite als Key Account Manager bei Polarstern,ich
-      bin  gut organisiert und mache gerne Listen. Einer meiner Hobbys ist
-      lesen, ich habe immer ein Buch mit und immer eine gute Buchempfehlung!
+  - description: >-
+      Anca ist immer gut organisiert - sie liebt Listen und sie liebt es, die
+      Listen mit den anderen Polarsternen zu teilen. Außerdem liebt sie Bücher
+      und man trifft sie selten ohne eines an. Wirklich, jede Woche liegt ein
+      neues auf ihrem Schreibtisch. Bei Polarstern kümmert sie sich um
+      Unternehmenskooperationen und ist immer auf der Suche nach der passenden
+      Ansprechperson.
     name: Anca

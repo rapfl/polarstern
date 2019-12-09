@@ -72,6 +72,10 @@ export default {
       border-top-left-radius: unset;
       border-top-right-radius: unset;
       transition: .2s ease-out;
+      @media screen and (max-width: 575px) {
+        padding: 0.3rem 0.2rem;
+        font-size: 14px;
+      }
     }
     .nav-link.active, 
     .nav-item.show .nav-link {

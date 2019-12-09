@@ -149,7 +149,7 @@
     }
   }
   .card:hover {
-    background-color: var(--yellow);
+    background-color: #fdee87;
   }
 }
 .main-wrapper {
@@ -162,7 +162,7 @@
 .main-wrapper.start {
   display: grid;
   text-align: center;
-  background-color: var(--blue);
+  background-color: #010a24;
   .background-image {
     position: absolute;
     width: 100vw;
