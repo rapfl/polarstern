@@ -3,9 +3,9 @@ backend:
   repo: MCLWallet/polarstern-local
   use_graphql: true
 
-site_url: https://silly-jepsen-3284b0.netlify.com
-display_url: https://silly-jepsen-3284b0.netlify.com
-logo_url: https://silly-jepsen-3284b0.netlify.com/uploads/polarstern_logo.png
+site_url: https://www.polarstern.me
+display_url: https://www.polarstern.me
+logo_url: https://www.polarstern.me/uploads/polarstern_logo.png
 
 media_folder: "static/uploads"
 public_folder: "/uploads"

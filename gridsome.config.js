@@ -7,7 +7,7 @@
 module.exports = {
   siteName: 'Polarstern',
   titleTemplate: '%s - Polarstern',
-  siteUrl: 'https://silly-jepsen-3284b0.netlify.com',
+  siteUrl: 'https://www.polarstern.me',
   icon: './src/assets/img/Polarstern_Logo.png',
   transformers: {
     remark: {
