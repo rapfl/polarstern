@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: MCLWallet/polarstern-local
+  repo: rapfl/polarstern
   use_graphql: true
 
 site_url: https://www.polarstern.me
