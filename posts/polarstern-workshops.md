@@ -1,5 +1,5 @@
 ---
-title: Polarstern-Workshops
+title: Stories aus den Workshops
 featured_image: /uploads/2beaa7a3-b989-467d-885e-70fdfab56514.jpg
 excerpt: Was ein Polarstern-Workshop bringt
 button_text: 'Lesen :) '
