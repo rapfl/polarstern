@@ -31,9 +31,12 @@ content_4: >-
   **BESONDERS STARK IST MAN IM TEAM.**
 
 
-  Diese Unternehmen unterstützen uns bereits. Sie setzen sich für eine Jugend
-  ein, die ihre Stärken kennt. Was ist mir dir?
+  Diese Organisationen unterstützen uns bereits. Sie setzen sich für eine
+  Jugend ein, die ihre Stärken kennt. Was ist mir dir?
 logos:
   - company_name: WKO
     company_url: www.bic.at
     logo: /uploads/wko_logo_aus_eps_.png
+  - company_name: Sustainable Development Goals
+    company_url: 'https://sustainabledevelopment.un.org/partnership/?p=33245'
+    logo: /uploads/e_logo_no-un-emblem-02.png
