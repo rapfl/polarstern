@@ -1,5 +1,5 @@
 ---
-title: Zukunftswerkstatt
+title: Ideenwerkstatt
 ---
 Im Rahmen der Ideenwerkstatt (Modul 2) haben die Teilnehmenden die Möglichkeit in Kleingruppen kreative Ideen für ihre berufliche Zukunft zu entwickeln. Der Workshop dauert zwei Schulstunden.
 
