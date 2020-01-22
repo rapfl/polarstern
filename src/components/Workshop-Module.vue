@@ -1,9 +1,9 @@
 <template>
-  <b-tab :title="'Modul ' + (index+1)">
+  <b-tab :title="'Workshop ' + (index+1)">
     <div class="workshop-box">
       <div class="heading">
         <h2>{{getCurrentPost($page.workshops.edges, Workshops.workshops[index]).title}}</h2>
-        <h3>Modul {{(index+1)}}</h3>
+        <h3>Workshop {{(index+1)}}</h3>
       </div>
       <div class="content">
         <vue-markdown class="markdown-body">{{getCurrentPost($page.workshops.edges, Workshops.workshops[index]).content}}</vue-markdown>
