@@ -11,3 +11,5 @@ button_text: Zur Kampagne
 **Gemeinsam sind wir noch stärker.** 
 
 Mit nur einem Euro gibst du einem jungen Menschen Orientierungshilfe mit dem Polarstern Stärkenheft. Mit 150€ holst du das Polarstern-Team für einen individuellen Stärken-Workshop in eine Schulklasse. Und mit 1000 € kann Polarstern eine ganze Schulstufe ein Semester lang beim Entdecken der eigenen Stärken begleiten.
+
+**Unterstütze uns über unsere Crowdfunding-Kampagne unter** [**www.gofundme.com/f/polarstern**](www.gofundme.com/f/polarstern)**!**
