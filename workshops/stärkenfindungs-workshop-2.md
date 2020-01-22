@@ -1,7 +1,7 @@
 ---
 title: Ideenwerkstatt
 ---
-In der kostenlosen "Ideenwerkstatt" entwickeln junge Menschen Lösungsideen für selbst gewählte Problemstellungen rund um das Thema Ausbildung/Beruf.
+In der kostenlosen **"Ideenwerkstatt"** entwickeln junge Menschen **Lösungsideen** für selbst gewählte Problemstellungen rund um das Thema **Ausbildung/Beruf**.
 
 Workshop II baut auf Workshop I auf und kann **nur in Kombination** gebucht werden. 
 
