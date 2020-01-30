@@ -114,9 +114,10 @@
         :id="'message-' + module_id"
         name="message"
         v-model="formData.message"
-        placeholder="Anregungen, Wünsche, etc."
+        placeholder="Terminvorschläge, Anregungen, Wünsche, etc."
         rows="6"
-        max-rows="6">
+        max-rows="6"
+        required>
       </b-form-textarea>
     </b-form-group>
     <!-- Submit Button -->

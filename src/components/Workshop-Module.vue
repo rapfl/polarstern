@@ -1,9 +1,9 @@
 <template>
-  <b-tab :title="'Workshop ' + (index+1)">
+  <b-tab :title="'Workshop ' + romanize((index+1))">
     <div class="workshop-box">
       <div class="heading">
         <h2>{{getCurrentPost($page.workshops.edges, Workshops.workshops[index]).title}}</h2>
-        <h3>Workshop {{(index+1)}}</h3>
+        <h3>Workshop {{romanize((index+1))}}</h3>
       </div>
       <div class="content">
         <vue-markdown class="markdown-body">{{getCurrentPost($page.workshops.edges, Workshops.workshops[index]).content}}</vue-markdown>
@@ -55,6 +55,19 @@ export default {
       }
       return list[0].node;
     },
+    romanize(num) {
+      if (isNaN(num))
+        return NaN;
+      var digits = String(+num).split(""),
+          key = ["","C","CC","CCC","CD","D","DC","DCC","DCCC","CM",
+                "","X","XX","XXX","XL","L","LX","LXX","LXXX","XC",
+                "","I","II","III","IV","V","VI","VII","VIII","IX"],
+          roman = "",
+          i = 3;
+      while (i--)
+          roman = (key[+digits.pop() + (i * 10)] || "") + roman;
+      return Array(+digits.join("") + 1).join("M") + roman;
+    }
   },
   props: {
     index: Number
