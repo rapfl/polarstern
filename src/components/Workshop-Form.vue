@@ -13,6 +13,37 @@
       </label>
     </p>
     <div class="organization-info">
+    <!-- Name -->
+      <b-form-group
+        label="Vor- & Nachname:"
+        :label-for="'name-' + module_id">
+        <b-form-input :id="'name-' + module_id"
+                        type="text" 
+                        name="name"
+                        v-model="formData.name"
+                        required/>
+      </b-form-group>
+      <!-- E-Mail Address -->
+      <b-form-group
+        label="E-Mail Adresse:"
+        :label-for="'email-' + module_id">
+        <b-form-input :id="'email-' + module_id"
+                        type="email" 
+                        name="email"
+                        v-model="formData.email"
+                        required/>
+      </b-form-group>
+      <!-- Position -->
+      <b-form-group
+        label="Position:"
+        :label-for="'position-' + module_id">
+        <b-form-input :id="'position-' + module_id"
+                        type="text" 
+                        name="position"
+                        v-model="formData.position"
+                        placeholder="Lehrkraft, Direktion, etc."
+                        required/>
+      </b-form-group>
       <!-- Organization Type -->
       <b-form-group
         label="Art der Organisation:"
@@ -36,17 +67,6 @@
           :options="schoolType"
           :required="formData.organization == 'Schule' ? true : false"></b-form-select>
       </b-form-group>
-      <!-- Class -->
-      <b-form-group
-        label="Klasse:"
-        :label-for="'school-class-' + module_id"
-        v-show="formData.organization == 'Schule'">
-        <b-form-input :id="'school-class-' + module_id"
-                        type="text" 
-                        name="schoolclass"
-                        v-model="formData.schoolclass"
-                        :required="formData.organization == 'Schule' ? true : false"/>
-      </b-form-group>
       <!-- Name of Organization -->
       <b-form-group
         :label="'Name der ' + (formData.organization == 'Schule' ? 'Schule' : 'Organisation')"
@@ -59,7 +79,7 @@
       </b-form-group>
       <!-- Address -->
       <b-form-group
-        :label="'Straße der ' + (formData.organization == 'Schule' ? 'Schule' : 'Organisation')"
+        :label="'Adresse der ' + (formData.organization == 'Schule' ? 'Schule' : 'Organisation')"
         :label-for="'address-' + module_id">
         <b-form-textarea
           :id="'address-' + module_id"
@@ -72,27 +92,6 @@
       </b-form-group>
     </div>
     <div class="sender-info">
-      <!-- Name -->
-      <b-form-group
-        label="Vor- & Nachname der Ansprechperson:"
-        :label-for="'name-' + module_id">
-        <b-form-input :id="'name-' + module_id"
-                        type="text" 
-                        name="name"
-                        v-model="formData.name"
-                        required/>
-      </b-form-group>
-      <!-- E-Mail Address -->
-      <b-form-group
-        label="E-Mail Adresse:"
-        :label-for="'email-' + module_id">
-        <b-form-input :id="'email-' + module_id"
-                        type="email" 
-                        name="email"
-                        v-model="formData.email"
-                        required/>
-
-      </b-form-group>
       <!-- Phone number -->
       <b-form-group
         label="Telefonnummer:"
@@ -101,11 +100,67 @@
                         type="tel" 
                         name="phonenumber"
                         v-model="formData.phonenumber"
+                        placeholder="Für Rückfragen am Workshop-Tag"
                         required/>
       </b-form-group>
-      
-    </div>
 
+    </div>
+   
+   <div class="workshop-info">
+    <!-- Workshop selection -->
+    <b-form-group
+      label="Welche Workshops möchten Sie buchen?" :label-for="'workshops-' + module_id">
+      <input type="checkbox" id="WS1" name="workshops" value="Stärken entdecken" v-model="formData.workshops1">
+      <label for="WS1"> Stärken entdecken</label><br>
+      <input type="checkbox" id="WS2" name="workshops" value="Zukunftsperspektiven" v-model="formData.workshops2">
+      <label for="WS2"> Zukunftsperspektiven</label><br>
+      <input type="checkbox" id="WS3" name="workshops" value="Achtsamkeit" v-model="formData.workshops3">
+      <label for="WS3"> Achtsamkeit</label>
+    </b-form-group>
+    <!-- Booking selection -->
+    <b-form-group
+      label="Wählen Sie eine Buchungsoption:" :label-for="'booking-' + module_id">
+      <input type="radio" id="klasse-" name="klasse" value="klasse" v-model="formData.booking1">
+      <label for="klasse">In der Klasse</label><br>
+      <input type="radio" id="draußen-" name="draußen" value="draußen" v-model="formData.booking2">
+      <label for="draußen"> Draußen/im Turnsaal</label><br>
+    </b-form-group>
+    <!-- Date suggestions -->
+    <b-form-group 
+      label="Wunschtermine:"
+      :label-for="'dates-' + module_id">
+      <b-form-textarea
+        :id="'dates-' + module_id"
+        name="dates"
+        v-model="formData.dates"
+        placeholder="Bitte geben Sie pro Workshop die Klasse und zwei Wunschtermine an, damit wir schnell ein passendes Datum finden. Z.B. Stärken Entdecken 5C 27.09. 08:00-08:50, 28.09. 08:00-08:50. Geben Sie uns mindestens eine Woche Vorlaufzeit um uns gut vorzubereiten."
+        rows="4"
+        max-rows="20"
+        required>
+      </b-form-textarea>
+    </b-form-group>
+     <!-- Herzkiste selection -->
+    <b-form-group
+      label="Haben Sie einen Herzkiste-Gutschein?" :label-for="'herzkiste-' + module_id">
+      <input type="radio" id="Ja" name="Ja" value="Ja">
+      <label for="Ja">Ja</label><br>
+      <input type="radio" id="Nein" name="Nein" value="Nein">
+      <label for="Nein"> Nein</label><br>
+    </b-form-group>
+        <!-- Price suggestion -->
+    <b-form-group 
+      label="Wunschpreis:"
+      :label-for="'price-' + module_id">
+      <b-form-textarea
+        :id="'price-' + module_id"
+        name="price"
+        v-model="formData.price"
+        placeholder="Sie bestimmen den Preis. Alle Beträge über dem regulären Preis werden für Schulen gespendet, die nicht mehr zahlen können. Regulärer Preis: 5€ p.P.p.h. inklusive Workshop-Materialien"
+        rows="1"
+        max-rows="1"
+        required>
+      </b-form-textarea>
+    </b-form-group>
     <!-- Message -->
     <b-form-group 
       label="Nachricht (optional):"
@@ -114,19 +169,20 @@
         :id="'message-' + module_id"
         name="message"
         v-model="formData.message"
-        placeholder="Terminvorschläge, Anregungen, Wünsche, etc."
-        rows="6"
+        placeholder="Anregungen, Wünsche, etc."
+        rows="1"
         max-rows="6"
         required>
       </b-form-textarea>
     </b-form-group>
     <!-- Submit Button -->
     <b-button type="submit" pill variant="secondary">
-      Senden
+      Buchungsanfrage senden
     </b-button>
+    </div>
   </form>
 </template>
-
+<script type="text/javascript" src="https://form.jotform.com/jsform/202526486749062"></script>
 
 <script>
 export default {
@@ -141,6 +197,7 @@ export default {
         organizationName: '',
         school: '',
         schoolclass: '',
+        dates: '',
         message: '',
       },
       organizationType: [
@@ -151,7 +208,7 @@ export default {
       schoolType: [
         { value: '', text: 'Bitte auswählen ...'},
         { value: 'AHS', text: 'AHS'},
-        { value: 'NMS', text: 'NMS'},
+        { value: 'NMS', text: 'Mittelschule'},
         { value: 'FMS', text: 'FMS'},
         { value: 'PTS', text: 'PTS'},
         { value: 'Sonstiges', text: 'Sonstiges'}
