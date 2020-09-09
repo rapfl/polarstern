@@ -1,6 +1,4 @@
 ---
-title: Stärken finden
+title: Stärken entdecken
 ---
-Im kostenlosen **"Stärken finden"** Workshop entdecken junge Menschen ihre **persönlichen Stärken** und erkennen Möglichkeiten, diese für ein selbstbewusstes und erfolgreiches Leben einzusetzen. 
-
-[Download](https://drive.google.com/a/polarstern.me/file/d/1ikGH10Rn-KydWCvgX69N0lTh-BU4uA7o/view?usp=sharing) der genauen Beschreibung
+Im Stärken entdecken Workshop entdecken junge Menschen ihre **persönlichen Stärken** und erkennen Möglichkeiten, diese selbstbewusst in Schule, Freizeit und Beruf einzusetzen.[](https://drive.google.com/a/polarstern.me/file/d/1ikGH10Rn-KydWCvgX69N0lTh-BU4uA7o/view?usp=sharing)
