@@ -107,15 +107,15 @@
    
    <div class="workshop-info">
     <!-- Workshop selection -->
-    <b-form-group label="Welche Workshops möchten Sie buchen?" :label-for="'workshops' + module_id">
-      <b-form-checkbox-group :id="'workshops' + module_id" v-model="formData.workshops" name="workshops">
+    <b-form-group label="Welche Workshops möchten Sie buchen?">
+      <b-form-checkbox-group :id="'workshops-' + module_id" v-model="formData.workshops" name="workshops">
         <b-form-checkbox value="Stärken entdecken">Stärken entdecken</b-form-checkbox> <br>
         <b-form-checkbox value="Zukunftsperspektiven">Zukunftsperspektiven</b-form-checkbox> <br>
         <b-form-checkbox value="Achtsamkeit">Achtsamkeit</b-form-checkbox>
       </b-form-checkbox-group>
     </b-form-group>
 
-    <b-form-group label="Wählen Sie eine Buchungsoption:" label-for="booking">
+    <b-form-group label="Wählen Sie eine Buchungsoption:">
       <b-form-radio v-model="formData.booking" name="booking" value="In der Klasse">In der Klasse</b-form-radio>
       <b-form-radio v-model="formData.booking" name="booking" value="Draußen/im Turnsaal">Draußen/im Turnsaal</b-form-radio>
     </b-form-group>
@@ -134,7 +134,7 @@
       </b-form-textarea>
     </b-form-group>
      <!-- Herzkiste selection -->
-     <b-form-group label="Haben Sie einen Herzkiste-Gutschein?" label-for="herzkiste">
+     <b-form-group label="Haben Sie einen Herzkiste-Gutschein?">
       <b-form-radio v-model="formData.herzkiste" name="herzkiste" value="Ja">Ja</b-form-radio>
       <b-form-radio v-model="formData.herzkiste" name="herzkiste" value="Nein">Nein</b-form-radio>
     </b-form-group>
