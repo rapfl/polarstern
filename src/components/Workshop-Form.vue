@@ -103,7 +103,6 @@
                         placeholder="Für Rückfragen am Workshop-Tag"
                         required/>
       </b-form-group>
-
     </div>
    
    <div class="workshop-info">
@@ -133,7 +132,7 @@
         :id="'dates-' + module_id"
         name="dates"
         v-model="formData.dates"
-        placeholder="Bitte geben Sie pro Workshop die Klasse und zwei Wunschtermine an, damit wir schnell ein passendes Datum finden. Z.B. Stärken Entdecken 5C 27.09. 08:00-08:50, 28.09. 08:00-08:50. Geben Sie uns mindestens eine Woche Vorlaufzeit um uns gut vorzubereiten."
+        placeholder="Bitte geben Sie pro Workshop die Klasse und zwei Wunschtermine an von Mo.-Do. 07:30-14:00 Uhr an. Geben Sie uns mindestens eine Woche Vorlaufzeit um uns gut vorzubereiten."
         rows="4"
         max-rows="20"
         required>
