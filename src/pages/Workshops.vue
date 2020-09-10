@@ -55,7 +55,7 @@ export default {
   data() {
     return {
       successTitle: 'Anfrage erfolgreich :)',
-      successMessage: 'Cool, dass du jungen Menschen ermöglichen möchtest, stark zu sein! Wir melden uns ganz bald mit Terminvorschlägen für den Workshop.',
+      successMessage: 'Cool, dass Sie jungen Menschen ermöglichen möchten, stark zu sein! Wir melden uns ganz bald mit der Terminbestätigung für die Workshops.',
       errorTitle: 'Etwas ist schief gelaufen :(',
       errorMessage: 'Die Internetverbindung bzw. unsere Website scheint technische Schwierigkeiten zu haben. Versuche es später noch einmal!'
     }
