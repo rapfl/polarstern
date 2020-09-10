@@ -110,19 +110,19 @@
     <!-- Workshop selection -->
     <b-form-group
       label="Welche Workshops möchten Sie buchen?" :label-for="'workshops-' + module_id">
-      <input type="checkbox" id="WS1" name="workshops" value="Stärken entdecken" v-model="formData.workshops">
+      <input type="checkbox" id="workshops-" name="workshops" value="Stärken entdecken" v-model="formData.workshops">
       <label for="WS1">Stärken entdecken</label><br>
-      <input type="checkbox" id="WS2" name="workshops" value="Zukunftsperspektiven" v-model="formData.workshops">
+      <input type="checkbox" id="workshops-" name="workshops" value="Zukunftsperspektiven" v-model="formData.workshops">
       <label for="WS2">Zukunftsperspektiven</label><br>
-      <input type="checkbox" id="WS3" name="workshops" value="Achtsamkeit" v-model="formData.workshops">
+      <input type="checkbox" id="workshops-" name="workshops" value="Achtsamkeit" v-model="formData.workshops">
       <label for="WS3">Achtsamkeit</label>
     </b-form-group>
     <!-- Booking selection -->
     <b-form-group
       label="Wählen Sie eine Buchungsoption:" :label-for="'booking-' + module_id">
-      <input type="radio" id="klasse-" name="buchoption" value="klasse" v-model="formData.booking">
+      <input type="radio" id="booking-" name="buchoption" value="klasse" v-model="formData.booking">
       <label for="klasse">In der Klasse</label><br>
-      <input type="radio" id="draußen-" name="buchoption" value="draußen" v-model="formData.booking">
+      <input type="radio" id="booking-" name="buchoption" value="draußen" v-model="formData.booking">
       <label for="draußen"> Draußen/im Turnsaal</label><br>
     </b-form-group>
     <!-- Date suggestions -->
@@ -144,14 +144,14 @@
       label="Haben Sie einen Herzkiste-Gutschein?" :label-for="'herzkiste-' + module_id">
       <input 
       type="radio" 
-      id="Ja" 
+      id="herzkiste-" 
       name="herzkiste" 
       value="Ja"
       v-model="formData.herzkiste">
       <label for="Ja">Ja</label><br>
       <input 
       type="radio" 
-      id="Nein" 
+      id="herzkiste-" 
       name="herzkiste" 
       value="Nein"
       v-model="formData.herzkiste">
@@ -159,13 +159,13 @@
     </b-form-group>
         <!-- Price suggestion -->
     <b-form-group 
-      label="Wunschpreis:"
+      label="Wunschpreis pro Teilnehmer*in und Stunde:"
       :label-for="'price-' + module_id">
       <b-form-textarea
         :id="'price-' + module_id"
         name="price"
         v-model="formData.price"
-        placeholder="Sie bestimmen den Preis. Alle Beträge über dem regulären Preis werden für Schulen gespendet, die nicht mehr zahlen können. Regulärer Preis: 5€ p.P.p.h. inklusive Workshop-Materialien"
+        placeholder="z.B. 5€"
         rows="1"
         max-rows="1"
         required>
