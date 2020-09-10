@@ -9,4 +9,4 @@ Mit diversen interaktiven Methoden wie
 * Phantasiereise
 * Selbst- und Fremdfeedback 
 
-sowie dazu passenden, altersadequaten Arbeitsmaterialien fördern wir Schlüsselkompetenzen wie **Selbsterfahrung, Empathie, Team- und Kommunikationsfähigkeit.**
+sowie dazu passenden, altersadequaten Arbeitsmaterialien fördern wir Schlüsselkompetenzen wie **Selbsterfahrung, Empathie, Team-** und **Kommunikationsfähigkeit.**
