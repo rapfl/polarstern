@@ -110,12 +110,12 @@
     <!-- Workshop selection -->
     <b-form-group
       label="Welche Workshops möchten Sie buchen?" :label-for="'workshops-' + module_id">
-      <input type="checkbox" id="workshops-" name="workshops" value="Stärken entdecken" v-model="formData.workshops">
-      <label for="WS1">Stärken entdecken</label><br>
-      <input type="checkbox" id="workshops-" name="workshops" value="Zukunftsperspektiven" v-model="formData.workshops">
-      <label for="WS2">Zukunftsperspektiven</label><br>
-      <input type="checkbox" id="workshops-" name="workshops" value="Achtsamkeit" v-model="formData.workshops">
-      <label for="WS3">Achtsamkeit</label>
+      <input type="checkbox" id="ws1" name="workshops-" value="Stärken entdecken" v-model="formData.workshops1">
+      <label for="ws1">Stärken entdecken</label><br>
+      <input type="checkbox" id="ws2" name="workshops-" value="Zukunftsperspektiven" v-model="formData.workshops2">
+      <label for="ws2">Zukunftsperspektiven</label><br>
+      <input type="checkbox" id="ws3" name="workshops-" value="Achtsamkeit" v-model="formData.workshops3">
+      <label for="ws3">Achtsamkeit</label>
     </b-form-group>
     <!-- Booking selection -->
     <b-form-group
@@ -211,7 +211,9 @@ export default {
         herzkiste: '',
         booking: '',
         price: '',
-        workshops: '',
+        workshops1: '',
+        workshops2: '',
+        workshops3: '',
       },
       organizationType: [
         { value: '', text: 'Bitte auswählen ...'},
