@@ -1,7 +1,7 @@
 ---
 title: Stärken entdecken
 ---
-![](/uploads/PS Newsletter Workshop 1 Headers.png)
+![Stärken entdecken Bild](/uploads/PS Newsletter Workshop 1 Headers.png "Stärken entdecken")
 
 Im Workshop Stärken entdecken ermöglichen wir jungen Menschen, die eigenen **Stärken zu entdecken** und so Vertrauen in sich selbst zu gewinnen. Denn das Bewusstsein über die eigenen Stärken hilft dabei, mutige und selbstbewusste Entscheidungen zu treffen. 
 
