@@ -18,10 +18,12 @@ body: >-
   sich und anderen zu finden!**
 
 
-  **Corona Hygienevorkehrungen:** Wir halten uns an alle von der Bundesregierung
-  vorgegeben Schutzmaßnahmen. Darüber hinaus messen unsere Mitarbeiter*innen vor
-  jedem Workshop Fieber und lassen sich in regelmäßigen Abständen auf Covid-19
-  testen.
+  ###### **Corona Hygienevorkehrungen:** 
+
+
+  Wir halten uns an alle von der Bundesregierung vorgegeben Schutzmaßnahmen.
+  Darüber hinaus messen unsere Mitarbeiter*innen vor jedem Workshop Fieber und
+  lassen sich in regelmäßigen Abständen auf Covid-19 testen.
 
 
   Die Workshops können **in der Klasse, im Freien oder Turnsaal** durchgeführt
@@ -29,9 +31,12 @@ body: >-
   TBA).
 
 
-  **Kosten:** Sie bestimmen den Preis! Alle Beträge über dem regulären Preis
-  werden für Schulen gespendet, die nicht mehr zahlen können. Referenzpreis: 5€
-  p.P.p.h. inklusive Workshop-Materialien
+  ###### **Kosten:** 
+
+
+  Sie bestimmen den Preis! Alle Beträge über dem regulären Preis werden für
+  Schulen gespendet, die nicht mehr zahlen können. Referenzpreis: 5€ p.P.p.h.
+  inklusive Workshop-Materialien
 workshops:
   - Stärken entdecken
   - Zukunftsperspektiven
