@@ -1,8 +1,6 @@
 ---
 title: Stärken entdecken
 ---
-![](/uploads/Bildschirmfoto 2020-09-09 um 19.57.30.png)
-
 Im Workshop Stärken entdecken ermöglichen wir jungen Menschen, die eigenen **Stärken zu entdecken** und so Vertrauen in sich selbst zu gewinnen. Denn das Bewusstsein über die eigenen Stärken hilft dabei, mutige und selbstbewusste Entscheidungen zu treffen. 
 
 Mit diversen interaktiven Methoden wie 
