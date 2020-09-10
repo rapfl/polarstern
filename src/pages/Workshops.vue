@@ -68,7 +68,7 @@ export default {
 
 <style lang="scss">
   .workshops .markdown-body {
-    margin-bottom: 5rem;
+    margin-bottom: 2rem;
   }
   .nav-tabs.workshops {
     border-bottom: none;

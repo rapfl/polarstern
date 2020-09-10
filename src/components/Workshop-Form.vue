@@ -107,22 +107,17 @@
    
    <div class="workshop-info">
     <!-- Workshop selection -->
-    <b-form-group
-      label="Welche Workshops möchten Sie buchen?" :label-for="'workshops-' + module_id">
-      <input type="checkbox" id="ws1" name="workshops1" value="Stärken entdecken" v-model="formData.workshops1">
-      <label for="ws1">&nbsp;Stärken entdecken</label><br>
-      <input type="checkbox" id="ws2" name="workshops2" value="Zukunftsperspektiven" v-model="formData.workshops2">
-      <label for="ws2">&nbsp;Zukunftsperspektiven</label><br>
-      <input type="checkbox" id="ws3" name="workshops3" value="Achtsamkeit" v-model="formData.workshops3">
-      <label for="ws3">&nbsp;Achtsamkeit</label>
+    <b-form-group label="Welche Workshops möchten Sie buchen?" :label-for="'workshops' + module_id">
+      <b-form-checkbox-group :id="'workshops' + module_id" v-model="formData.workshops" name="workshops">
+        <b-form-checkbox value="Stärken entdecken">Stärken entdecken</b-form-checkbox> <br>
+        <b-form-checkbox value="Zukunftsperspektiven">Zukunftsperspektiven</b-form-checkbox> <br>
+        <b-form-checkbox value="Achtsamkeit">Achtsamkeit</b-form-checkbox>
+      </b-form-checkbox-group>
     </b-form-group>
-    <!-- Booking selection -->
-    <b-form-group
-      label="Wählen Sie eine Buchungsoption:" :label-for="'booking-' + module_id">
-      <input type="radio" id="booking-class" name="booking" value="Klasse" v-model="formData.booking">
-      <label for="booking-class">&nbsp;In der Klasse</label><br>
-      <input type="radio" id="booking-outside" name="booking" value="Draußen" v-model="formData.booking">
-      <label for="booking-outside">&nbsp;Draußen/im Turnsaal</label><br>
+
+    <b-form-group label="Wählen Sie eine Buchungsoption:" label-for="booking">
+      <b-form-radio v-model="formData.booking" name="booking" value="In der Klasse">In der Klasse</b-form-radio>
+      <b-form-radio v-model="formData.booking" name="booking" value="Draußen/im Turnsaal">Draußen/im Turnsaal</b-form-radio>
     </b-form-group>
     <!-- Date suggestions -->
     <b-form-group 
@@ -139,24 +134,10 @@
       </b-form-textarea>
     </b-form-group>
      <!-- Herzkiste selection -->
-    <b-form-group
-      label="Haben Sie einen Herzkiste-Gutschein?" :label-for="'herzkiste-' + module_id">
-      <input 
-      type="radio" 
-      id="herzkiste-ja" 
-      name="herzkiste" 
-      value="Ja"
-      v-model="formData.herzkiste">
-      <label for="herzkiste-ja">&nbsp;Ja</label><br>
-      <input 
-      type="radio" 
-      id="herzkiste-nein" 
-      name="herzkiste" 
-      value="Nein"
-      v-model="formData.herzkiste">
-      <label for="herzkiste-nein">&nbsp;Nein</label><br>
+     <b-form-group label="Haben Sie einen Herzkiste-Gutschein?" label-for="herzkiste">
+      <b-form-radio v-model="formData.herzkiste" name="herzkiste" value="Ja">Ja</b-form-radio>
+      <b-form-radio v-model="formData.herzkiste" name="herzkiste" value="Nein">Nein</b-form-radio>
     </b-form-group>
-        <!-- Price suggestion -->
     <b-form-group 
       label="Wunschpreis pro Teilnehmer*in und Stunde:"
       :label-for="'price-' + module_id">
@@ -210,9 +191,7 @@ export default {
         herzkiste: '',
         booking: '',
         price: '',
-        workshops1: '',
-        workshops2: '',
-        workshops3: '',
+        workshops: []
       },
       organizationType: [
         { value: '', text: 'Bitte auswählen ...'},

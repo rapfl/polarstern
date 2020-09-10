@@ -8,12 +8,14 @@
       <div class="content">
         <vue-markdown class="markdown-body">{{getCurrentPost($page.workshops.edges, Workshops.workshops[index]).content}}</vue-markdown>
       </div>
-      <b-button pill v-b-toggle="'workshop-form-wrapper-' + (index+1)" variant="primary">
-        Jetzt Termine anfragen
-      </b-button>
-      <b-collapse :id="'workshop-form-wrapper-' + (index+1)" class="mt-3">
+      <div class="heading">
+        <h3>Hier Termin anfragen</h3>
+
+      </div>
+
+      <div :id="'workshop-form-wrapper-' + (index+1)" class="mt-1">
         <WorkshopForm :module_id="(index+1)" :name="getCurrentPost($page.workshops.edges, Workshops.workshops[index]).title + ' Anfragen'"/>
-      </b-collapse>
+      </div>
     </div>
   </b-tab>
 </template>
