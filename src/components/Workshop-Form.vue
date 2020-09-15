@@ -109,9 +109,10 @@
     <!-- Workshop selection -->
     <b-form-group label="Welche Workshops möchten Sie buchen?">
       <b-form-checkbox-group :id="'workshops-' + module_id" v-model="formData.workshops" name="workshops">
-        <b-form-checkbox value="Stärken entdecken">Stärken entdecken</b-form-checkbox> <br>
-        <b-form-checkbox value="Zukunftsperspektiven">Zukunftsperspektiven</b-form-checkbox> <br>
-        <b-form-checkbox value="Achtsamkeit">Achtsamkeit</b-form-checkbox>
+        <b-form-checkbox value="Stärken entdecken (1-stündig)">Stärken entdecken (1-stündig)</b-form-checkbox> <br>
+        <b-form-checkbox value="Stärken entdecken (2-stündig)">Stärken entdecken (2-stündig)</b-form-checkbox> <br>
+        <b-form-checkbox value="Zukunftsperspektiven (2-stündig)">Zukunftsperspektiven (2-stündig)</b-form-checkbox> <br>
+        <b-form-checkbox value="Achtsamkeit (1-stündig)">Achtsamkeit (1-stündig)</b-form-checkbox>
       </b-form-checkbox-group>
     </b-form-group>
 
