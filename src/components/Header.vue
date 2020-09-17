@@ -1,7 +1,7 @@
 <template>
   <header class="header-wrapper">
     <div class="header">
-      <g-link to="/"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link>
+      <g-link to="/"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link>Test
       <tasty-burger-button
           v-if="!isStartScreen" 
           :type="buttonType" 
