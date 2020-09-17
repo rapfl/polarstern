@@ -7,14 +7,17 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "@gridsome/plugin-google-analytics": "^0.1.1",
     "@gridsome/source-filesystem": "^0.6.0",
-    "@gridsome/transformer-remark": "^0.3.4",
+    "@gridsome/transformer-remark": "^0.6.2",
     "animate.css": "^3.7.2",
     "babel-runtime": "^6.26.0",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.3",
     "gridsome": "^0.7.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
+    "klaro": "^0.6.13",
+    "klaro-gridsome": "^1.0.3",
     "netlify-cms": "^2.9.7",
     "vue": "^2.6.10",
     "vue-check-view": "^0.3.0",
@@ -22,7 +25,7 @@
     "vue-tasty-burgers": "^1.1.4"
   },
   "devDependencies": {
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.14.1",
     "sass-loader": "^8.0.0",
     "vue-svg-loader": "^0.15.0"
   }
