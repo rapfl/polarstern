@@ -10,6 +10,7 @@
                             :index="index"/>
           </b-tabs>
         </b-col>
+        
       </b-row>
     </b-container>
     <ModalBox id="modal-success" :title="successTitle" :message="successMessage"/>
