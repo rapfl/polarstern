@@ -1,0 +1,159 @@
+<template>
+<b-row class="justify-content-center booking-form">
+  <b-col cols="6">
+    <Form-1-WorkShop 
+      v-if="currentStep === 1"
+      v-model="booking" />
+    <Form-2-Appointment 
+      v-if="currentStep === 2"
+      v-model="booking" />
+    <Form-3-Bookings 
+      v-if="currentStep === 3"
+      :formData="formData"
+      @savebooking="saveCurrentBooking"
+      @loadbooking="loadBookingFromIndex"
+      @clearbooking="clearBooking"
+      @correctbooking="correctBooking"/>
+    <Form-4-PersonalData 
+      v-if="currentStep === 4"
+      v-model="formData" />
+    <Form-5-Message 
+      v-if="currentStep === 5"
+      v-model="formData" />
+    <Form-6-Summary 
+      v-if="currentStep === 6"
+      :formData="formData" />
+    
+    <b-row>
+      <b-col>
+        <b-button
+          @click="prevStep"
+        >
+          Previous
+        </b-button>
+        <b-button
+          class="mx-4"
+          disabled
+        >
+          {{ currentStep }} / {{ maxSteps }}
+        </b-button>
+        <b-button
+          @click="nextStep"
+        >
+          Next
+        </b-button>
+      </b-col>
+    </b-row>
+
+  </b-col>
+</b-row>
+
+</template>
+
+<script>
+import Form1WorkShop from "@/components/booking/Form-1-Workshop.vue";
+import Form2Appointment from "@/components/booking/Form-2-Appointment.vue";
+import Form3Bookings from "@/components/booking/Form-3-Bookings.vue";
+import Form4PersonalData from "@/components/booking/Form-4-PersonalData.vue";
+import Form5Message from "@/components/booking/Form-5-Message.vue";
+import Form6Summary from "@/components/booking/Form-6-Summary.vue";
+
+export default {
+  components: {
+    'Form-1-WorkShop': Form1WorkShop,
+    'Form-2-Appointment' : Form2Appointment,
+    'Form-3-Bookings' : Form3Bookings,
+    'Form-4-PersonalData' : Form4PersonalData,
+    'Form-5-Message' : Form5Message,
+    'Form-6-Summary' : Form6Summary
+  },
+  data(){
+    return {
+      formData: {
+        bookings: [],
+        name: '',
+        email: '',
+        phonenumber: '',
+        organisationType: '',
+        organisationNameAndAddress: '',
+        schoolType: null,
+        message: ''
+      },
+
+      booking: {
+        index: null,
+        class: '',
+        date: '',
+        workshop: '',
+        bookingoption: '',
+        price: '',
+        herzkiste: ''
+      },
+      
+      currentStep: 1,
+      maxSteps: 6,
+      nrOfBookings: 0
+    }
+  },
+
+  computed: {
+    currentBookingHasIndex() {
+      if (this.booking.index) 
+        return true
+      else
+        return false
+    }
+  },
+
+  methods: {
+    nextStep() {
+      if (this.currentStep < 6)
+        this.currentStep++
+    },
+    prevStep() {
+      if (this.currentStep > 1)
+        this.currentStep--
+    },
+    correctBooking(){
+      if (this.currentStep === 3) 
+        this.currentStep = 1
+    },
+    correctData(){
+      if (this.currentStep === 6)
+        this.currentStep = 4
+    },
+    updateValue(){
+      this.$emit('input', this.currentStep)
+    },
+    saveCurrentBooking() {
+      if (this.booking.index !== null) 
+        this.formData.bookings[booking.index] = this.booking
+      else
+        this.booking.index = this.nrOfBookings
+        this.formData.bookings.push(this.booking)
+        this.nrOfBookings++
+    },
+    loadBookingFromIndex(payload) {
+      if (payload.index < this.nrOfBookings)
+        this.booking = this.formData.bookings[payload.index]
+    },
+    clearBooking() {
+      this.booking = {
+        index: null,
+        class: '',
+        date: '',
+        workshop: '',
+        bookingoption: '',
+        price: '',
+        herzkiste: ''
+      }
+    }
+  }
+}
+</script>
+
+<style lang="scss">
+.booking-form {
+  background-color: #44C7BF;
+}
+</style>
