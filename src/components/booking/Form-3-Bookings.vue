@@ -25,7 +25,7 @@
         class="yellow" 
         @click="correctData(booking.index)"
       > 
-        << Daten korrigieren 
+        {{correctData}}
       </a>
     </b-col>
     <b-col cols="12">
@@ -34,7 +34,7 @@
         class="yellow" 
         @click="addClass"
       > 
-        << Weitere Klasse hinzufügen 
+        {{addAnotherClassText}}
       </a>
     </b-col>
   </b-row> 
@@ -48,7 +48,10 @@ export default {
     },
   },
   data() {
-    return {}
+    return {
+      addAnotherClassText: "<< Weitere Klasse hinzufügen ",
+      correctData: "<< Daten korrigieren "
+    }
   },
   computed: {
     nrOfBookings() {
