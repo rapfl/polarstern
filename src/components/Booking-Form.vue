@@ -23,7 +23,6 @@
     <Form-6-Summary 
       v-if="currentStep === 6"
       :formData="formData" />
-    
     <b-row>
       <b-col>
         <b-button
@@ -38,10 +37,18 @@
           {{ currentStep }} / {{ maxSteps }}
         </b-button>
         <b-button
+          v-if="currentStep !== 6"
           @click="nextStep"
         >
           Next
         </b-button>
+        <b-button @click="postData">
+          Post
+        </b-button>
+        <b-button class="mx-2" @click="submitData">
+          Netlify Post
+        </b-button>
+        <b-button @click="getData">GET</b-button>
       </b-col>
     </b-row>
 
@@ -57,6 +64,8 @@ import Form3Bookings from "@/components/booking/Form-3-Bookings.vue";
 import Form4PersonalData from "@/components/booking/Form-4-PersonalData.vue";
 import Form5Message from "@/components/booking/Form-5-Message.vue";
 import Form6Summary from "@/components/booking/Form-6-Summary.vue";
+
+import axios from 'axios'
 
 export default {
   components: {
@@ -92,7 +101,8 @@ export default {
       
       currentStep: 1,
       maxSteps: 6,
-      nrOfBookings: 0
+      nrOfBookings: 0,
+      apiData: null
     }
   },
 
@@ -106,6 +116,77 @@ export default {
   },
 
   methods: {
+    async postData() {
+      const event = {
+        data: this.createBody(),
+        config: {
+          headers: {
+            "Authorization": "Bearer " + process.env.GRIDSOME_API_SECRET,
+            "Content-Type": "application/json"
+          }
+        }
+      }
+      const URL = process.env.GRIDSOME_API_URL + "?api_key=" + process.env.GRIDSOME_API_SECRET
+      await axios.post(URL, event.data, event.config)
+        .then((result) => {
+            this.apiData = result
+            console.log(result)
+         })
+    },
+    
+    async getData() {
+      const data = {
+        httpMethod: 'GET',
+      }
+      fetch('.netlify/functions/getAirtableBooking', data)
+      .then((result) => {
+        console.log(result)
+      })
+    },
+    
+    async submitData() {
+      const event = {
+        data: this.createBody(),
+        config: {
+          headers: {
+            "Authorization": "Bearer " + process.env.GRIDSOME_API_SECRET,
+            "Content-Type": "application/json"
+          }
+        }
+      }
+      fetch(".netlify/functions/airtableAPI", event)
+      .then((result) => {
+        console.log(result)
+        this.apiData = result
+      })
+    },
+
+    createBody() {
+      let records = []
+      this.formData.bookings.forEach(booking => {
+        let field = { "fields": {
+            "Workshop" : booking.workshop,
+            "Buchungsoption": booking.bookingoption,
+            "Wunschpreis": parseFloat(booking.price),
+            "Klassenname": booking.class,
+            "Herzkiste": (booking.herzkiste === 'Ja') ? true : null,
+            "Start": "2020-09-24T13:30:00.000Z", //booking.date,
+            "Status": "Ausstehend",
+            "Name der Organisation": this.formData.organisationNameAndAddress,
+            "Ansprechperson": this.formData.Ansprechperson,
+            "Adresse": this.formData.organisationNameAndAddress,
+            "E-Mail": this.formData.email,
+            "Telefonnummer": this.formData.phonenumber,
+            "Art der Organisation": this.formData.organisationType,
+            "Schultyp": (this.formData.organisationType === 'Organisation') ? 'Sonstige' : this.formData.schoolType
+        }}
+        records.push(field)
+      })
+      return {
+        "records": records
+      }
+    },
+
     nextStep() {
       if (this.currentStep < 6)
         this.currentStep++

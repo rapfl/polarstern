@@ -18,7 +18,7 @@
       Workshop: <strong>{{ booking.workshop }}</strong> <br>
       Buchungsoption: <strong>{{ booking.bookingoption }}</strong> <br>
       Wunschpreis pro Teilnehmer*in & Stunde: <strong>{{ booking.price }}</strong> <br>
-      Herzkisten-Gutschein: <strong>{{ booking.herzkiste }}</strong> <br> <br>
+      Herzkisten-Gutschein: <strong>{{ (booking.herzkiste === 'Ja') ? booking.herzkiste : 'Nein' }}</strong> <br> <br>
 
       <a 
         href="" 

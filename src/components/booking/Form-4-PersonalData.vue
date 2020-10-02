@@ -56,7 +56,7 @@ export default {
         { value: 'NMS', text: 'Mittelschule'},
         { value: 'FMS', text: 'FMS'},
         { value: 'PTS', text: 'PTS'},
-        { value: 'Sonstiges', text: 'Sonstiges'}
+        { value: 'Sonstige', text: 'Sonstige'}
       ]
     }
   }

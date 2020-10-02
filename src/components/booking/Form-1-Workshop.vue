@@ -1,6 +1,13 @@
 <template>
   <b-form-group label="Ihr Workshop">
     <b-form-group label="Welchen Workshop wollen Sie buchen?">
+      <b-form-radio
+        v-for="(workshop, ind) in workshops"
+        :key="ind"
+        :value="workshop"
+        v-model="booking.workshop">
+        {{ workshop}}
+      </b-form-radio>
     </b-form-group>
     <b-form-group label="Buchungsoption">
       <b-form-radio
@@ -14,14 +21,12 @@
       
     </b-form-group>
     <b-form-group label="Wunschpreis pro Teilnehmer*in und Stunde">
-      <b-form-textarea
+      <b-form-input
         name="price"
         v-model="booking.price"
         placeholder="z.B. 5€"
-        rows="1"
-        max-rows="1"
         required>
-      </b-form-textarea>
+      </b-form-input>
     </b-form-group>
   </b-form-group>
 </template>
@@ -36,6 +41,12 @@ export default {
       booking: this.value,
       bookingOptions: [
         'In der Klasse', 'Draußen/im Turnsaal'
+      ],
+      workshops: [
+        "Stärken Entdecken (1h)",
+        "Stärken Entdecken (2h)",
+        "Zukunftsperspektive",
+        "Achtsamkeit"
       ]
     }
   }
