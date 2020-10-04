@@ -146,7 +146,7 @@ export default {
         body: JSON.stringify(this.createBody())
       }
       console.log(event)
-      fetch(".netlify/functions/postAirtableBooking", event)
+      fetch("../.netlify/functions/postAirtableBooking", event)
       .then((result) => {
         console.log(result)
         this.apiData = result
