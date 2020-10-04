@@ -1,56 +1,41 @@
-const axios = require('axios')
-const qs = require('qs')
+const axios = require("axios");
+const qs = require("qs");
 
 exports.handler = async function(event, context) {
   // apply our function to the queryStringParameters and assign it to a variable
-  const API_PARAMS = qs.stringify(event.queryStringParameters)
-  console.log('API_PARAMS', API_PARAMS)
+  const API_PARAMS = qs.stringify(event.queryStringParameters);
+  console.log("API_PARAMS", API_PARAMS);
   // Get env var values defined in our Netlify site UI
-
   // TODO: customize your URL and API keys set in the Netlify Dashboard
   // this is secret too, your frontend won't see this
-  const { GRIDSOME_API_SECRET, GRIDSOME_API_URL } = process.env;
-  const URL  = `${GRIDSOME_API_URL}?api_key=${GRIDSOME_API_SECRET}`;
+  const { AIRTABLE_API_KEY, AIRTABLE_BOOKING_URL } = process.env;
+  const URL = `${AIRTABLE_BOOKING_URL}?api_key=${AIRTABLE_API_KEY}`;
 
+  const config = {
+    headers: {
+      Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+      "Content-Type": "application/json",
+    },
+  };
 
- /* const callObject = {
-   data: {
-     records: [
-       {
-         fields: {
-           "Art der Organisation": "Schule",
-           Klassenname: "1B",
-           Herzkiste: true,
-           Status: "Ausstehend",
-           Start: "2020-09-24T11:30:00.000Z",
-         },
-       },
-     ],
-   },
- }; */
- /*const URL =
-   process.env.GRIDSOME_API_URL +
-   "?api_key=" +
-   process.env.GRIDSOME_API_SECRET;
+  console.log('Url: ' + URL)
+  console.log(
+    'body: ' + event.body
+  )
 
-*/
-
-const config = {
-  headers: {
-    "Authorization": `Bearer ${GRIDSOME_API_KEY}`,
-    "Content-Type": "application/json"
+  try {
+    const response = await axios.post(URL, event.body, config);
+    console.log(response.data);
+    return {
+      statusCode: 200,
+      body: JSON.stringify(response.data),
+    };
+  } catch (error) {
+    console.log(error);
+    const { status, statusText, headers, data } = error.response;
+    return {
+      statusCode: error.response.status,
+      body: JSON.stringify({ status, statusText, headers, data }),
+    };
   }
-}
-   
-   await axios.post(URL, event.data, config)
-   .then((result) => {
-   return {
-     statusCode: 200,
-     body: JSON.stringify(result.data)
-   }
- });
-
-  console.log('Constructed URL is ...', URL)
-}
-
- 
+};

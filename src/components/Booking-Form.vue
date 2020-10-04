@@ -42,13 +42,9 @@
         >
           Next
         </b-button>
-        <b-button @click="postData">
-          Post
+        <b-button v-else class="mx-2" @click="submitData">
+          Submit
         </b-button>
-        <b-button class="mx-2" @click="submitData">
-          Netlify Post
-        </b-button>
-        <b-button @click="getData">GET</b-button>
       </b-col>
     </b-row>
 
@@ -146,15 +142,11 @@ export default {
     
     async submitData() {
       const event = {
-        data: this.createBody(),
-        config: {
-          headers: {
-            "Authorization": "Bearer " + process.env.GRIDSOME_API_SECRET,
-            "Content-Type": "application/json"
-          }
-        }
+        method: 'POST',
+        body: JSON.stringify(this.createBody())
       }
-      fetch(".netlify/functions/airtableAPI", event)
+      console.log(event)
+      fetch(".netlify/functions/postAirtableBooking", event)
       .then((result) => {
         console.log(result)
         this.apiData = result
@@ -173,7 +165,7 @@ export default {
             "Start": "2020-09-24T13:30:00.000Z", //booking.date,
             "Status": "Ausstehend",
             "Name der Organisation": this.formData.organisationNameAndAddress,
-            "Ansprechperson": this.formData.Ansprechperson,
+            "Ansprechperson": this.formData.name,
             "Adresse": this.formData.organisationNameAndAddress,
             "E-Mail": this.formData.email,
             "Telefonnummer": this.formData.phonenumber,
