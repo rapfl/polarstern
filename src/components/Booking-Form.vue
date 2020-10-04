@@ -134,7 +134,7 @@ export default {
       const data = {
         httpMethod: 'GET',
       }
-      fetch('.netlify/functions/getAirtableBooking', data)
+      fetch('../.netlify/functions/getAirtableBooking', data)
       .then((result) => {
         console.log(result)
       })
