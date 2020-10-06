@@ -110,6 +110,7 @@ export default {
       this.selectedTime = time.formatted
       this.dateTimeFormatted = `${this.dateFormatted}, ${this.selectedTime}`
       this.rawDate = `${this.selectedDate}T${this.selectedTime}:00Z`
+      this.booking.date = this.rawDate
     },
     popoverIsShown(date) {
       this.selectedDate = date
