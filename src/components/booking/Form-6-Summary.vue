@@ -11,7 +11,7 @@
       >
         <h4>Buchung {{ booking.index + 1}}</h4>
         Klasse: <strong>{{ booking.class }}</strong> <br>
-        Datum: <strong>{{ booking.date }}</strong> <br>
+        Datum: <strong>{{ booking.formattedDate }}</strong> <br>
         Workshop: <strong>{{ booking.workshop }}</strong> <br>
         Buchungsoption: <strong>{{ booking.bookingoption }}</strong> <br>
         Wunschpreis pro Teilnehmer*in & Stunde: <strong>{{ booking.price }}</strong> <br>

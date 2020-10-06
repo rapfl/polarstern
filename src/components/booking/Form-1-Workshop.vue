@@ -9,6 +9,16 @@
         {{ workshop}}
       </b-form-radio>
     </b-form-group>
+    <!-- Herzkiste -->
+    <!-- TODO: implement get URL with herzkiste as default -->
+    <b-form-group 
+      v-if="booking.workshop == 'Stärken Entdecken (2h)'" 
+      label="Haben Sie einen Herzkiste-Gutschein?">
+      <b-form-checkbox
+        v-model="booking.herzkiste">
+        Ja
+      </b-form-checkbox>
+    </b-form-group>
     <b-form-group label="Buchungsoption">
       <b-form-radio
         v-for="(option, ind)  in bookingOptions"

@@ -1,21 +1,12 @@
 <template>
   <b-form-group label="Klassen und Wunschtermin">
+    <!-- TODO: maybe put class in step before? -->
     <b-form-group label="Klassenname">
       <b-form-input
         type="text"
         placeholder="z.B. 1B"
         v-model="booking.class">
       </b-form-input>
-    </b-form-group>
-    <b-form-group label="Haben Sie einen Herzkiste-Gutschein?">
-      <!-- TODO: should be a checkbox -->
-      <b-form-radio
-        v-model="booking.herzkiste"
-        value="Ja"
-        >
-
-        Ja
-      </b-form-radio>
     </b-form-group>
     <!-- Calendar -->
     <div id="formattedDateContainer">
@@ -74,7 +65,6 @@ export default {
   },
   data() {
     return {
-      // TODO: get selected date into form model (ask Anton)
       booking: this.value,
       clickedDates: [],
       selectedTime: '12:00',
@@ -104,24 +94,18 @@ export default {
         dateStr: date,
         time: 'test'
       }
+      this.rawDate = ''
+      this.booking.date = ''
       this.clickedDates.push(dateObject)
     },
     updateSelectedTime(time) {
       this.selectedTime = time.formatted
-      this.dateTimeFormatted = `${this.dateFormatted}, ${this.selectedTime}`
-      this.rawDate = `${this.selectedDate}T${this.selectedTime}:00`
-      this.booking.date = this.rawDate
+      this.dateTimeFormatted = `${this.dateFormatted}, ${this.selectedTime} Uhr`
     },
     popoverIsShown(date) {
       this.selectedDate = date
-      // when a popover is not shown yet
-      if (!this.popoverOpen) {
+      if (!this.popoverOpen) {                // when a popover is not shown yet
         this.popoverOpen = !this.popoverOpen
-
-      }
-      // when a popover is already shown
-      else {
-        
       }
     },
     changeFormattedDate(date) {
@@ -133,9 +117,20 @@ export default {
       this.popoverOpen = !this.popoverOpen
     },
     submitTime() {
+      // update data
       this.popoverOpen = !this.popoverOpen
-      // TODO: turn on next button
-      // TODO: show maybe some notification that date & time are submited correctly
+      this.rawDate = `${this.selectedDate}T${this.selectedTime}:00`
+      this.booking.date = this.rawDate
+      this.booking.formattedDate = this.dateTimeFormatted
+      // make toast
+      /*
+      this.$bvToast.toast('Toast body content', {
+        title: 'Gratuliere!',
+        toaster: 'b-toaster-bottom-center',
+        variant: 'primary',
+        solid: true
+      })
+      */
     }
   }
 }

@@ -90,6 +90,7 @@ export default {
         index: null,
         class: '',
         date: '',
+        formattedDate: '',
         workshop: '',
         bookingoption: '',
         price: '',
@@ -121,8 +122,7 @@ export default {
       }
       else if (this.currentStep === 2) {
         if (this.booking.class === '' ||
-            this.booking.herzkiste === '' /* ||
-            this.booking.date === '' */)
+            this.booking.date === '' )
             return true
           else
             return false
@@ -182,7 +182,7 @@ export default {
         this.apiData = result
       })
     },
-
+    // TODO: Herzkiste Debug
     createBody() {
       let records = []
       this.formData.bookings.forEach(booking => {
@@ -200,7 +200,8 @@ export default {
             "E-Mail": this.formData.email,
             "Telefonnummer": this.formData.phonenumber,
             "Art der Organisation": this.formData.organisationType,
-            "Schultyp": (this.formData.organisationType === 'Organisation') ? 'Sonstige' : this.formData.schoolType
+            "Schultyp": (this.formData.organisationType === 'Organisation') ? 'Sonstige' : this.formData.schoolType,
+            "Nachricht": this.formData.message
         }}
         records.push(field)
       })
