@@ -39,6 +39,7 @@
         <b-button
           v-if="currentStep !== 6"
           @click="nextStep"
+          :disabled="disableNext"
         >
           Next
         </b-button>
@@ -108,6 +109,35 @@ export default {
         return true
       else
         return false
+    },
+    disableNext() {
+      if (this.currentStep === 1) {
+        if (this.booking.workshop === '' ||
+            this.booking.bookingoption === '' ||
+            this.booking.price === '')
+            return true
+          else
+            return false
+      }
+      else if (this.currentStep === 2) {
+        if (this.booking.class === '' ||
+            this.booking.herzkiste === '' /* ||
+            this.booking.date === '' */)
+            return true
+          else
+            return false
+      }
+      else if(this. currentStep === 4) {
+        if (this.formData.name === '' ||
+            this.formData.email === '' ||
+            this.formData.phonenumber === '' || 
+            this.formData.organisationNameAndAddress === '' ||
+            this.formData.organisationType === '' ||
+            this.formData.organisationType === 'Schule' && this.formData.schoolType === null)
+            return true
+          else 
+            return false
+      }
     }
   },
 
@@ -220,7 +250,7 @@ export default {
         price: '',
         herzkiste: ''
       }
-    }
+    },
   }
 }
 </script>

@@ -15,7 +15,7 @@
       <b-form-input
         type="text"
         placeholder="Telefonnummer"
-        v-model="formData.phonennumer">
+        v-model="formData.phonenumber">
       </b-form-input>
     </b-form-group>
     <b-form-group label="Art der Organisation">

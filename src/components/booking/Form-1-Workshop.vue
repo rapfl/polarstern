@@ -25,7 +25,8 @@
         name="price"
         v-model="booking.price"
         placeholder="z.B. 5€"
-        required>
+        required
+        :state="statePrice">
       </b-form-input>
     </b-form-group>
   </b-form-group>
@@ -47,7 +48,8 @@ export default {
         "Stärken Entdecken (2h)",
         "Zukunftsperspektive",
         "Achtsamkeit"
-      ]
+      ],
+      statePrice: null
     }
   }
 }
