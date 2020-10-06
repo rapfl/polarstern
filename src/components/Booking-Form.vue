@@ -162,7 +162,7 @@ export default {
             "Wunschpreis": parseFloat(booking.price),
             "Klassenname": booking.class,
             "Herzkiste": (booking.herzkiste === 'Ja') ? true : null,
-            "Start": "2020-09-24T13:30:00.000Z", //booking.date,
+            "Start": booking.date,
             "Status": "Ausstehend",
             "Name der Organisation": this.formData.organisationNameAndAddress,
             "Ansprechperson": this.formData.name,
