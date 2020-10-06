@@ -53,7 +53,7 @@ export default {
       schoolTypes: [
         { value: null, text: 'Schultyp auswählen'},
         { value: 'AHS', text: 'AHS'},
-        { value: 'NMS', text: 'Mittelschule'},
+        { value: 'Mittelschule', text: 'Mittelschule'},
         { value: 'FMS', text: 'FMS'},
         { value: 'PTS', text: 'PTS'},
         { value: 'Sonstige', text: 'Sonstige'}

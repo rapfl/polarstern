@@ -40,7 +40,7 @@ export default {
     return {
       booking: this.value,
       bookingOptions: [
-        'In der Klasse', 'Draußen/im Turnsaal'
+        'In der Klasse', 'Draußen/Im Turnsaal'
       ],
       workshops: [
         "Stärken Entdecken (1h)",
