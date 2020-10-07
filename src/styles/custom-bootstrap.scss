@@ -73,3 +73,22 @@ a, a:hover {
 .border.start-button-box {
   border-width: 14px !important;
 }
+
+// Colors
+.strength-heading-pill {
+  &.blue {
+    border-color: $blue_dark;
+  }
+  &.red {
+    border-color: $red_dark;
+  }
+  &.yellow-dark {
+    border-color: $yellow_dark;
+  }
+  &.yellow-mono {
+    border-color: $yellow_mono;
+  }
+}
+.book-workshop-banner {
+  background-color: $red_mono;
+}

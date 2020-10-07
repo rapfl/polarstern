@@ -1,18 +1,41 @@
 <template>
-  <Layout :blue="true">
+  <Layout>
     <b-container class="header-padding footer-padding workshops">
       <b-row>
         <b-col cols="12">
-          <vue-markdown class="markdown-body">{{Workshops.body}}</vue-markdown>
-          <b-tabs nav-class="workshops">
-            <WorkshopModule  v-for="(offer, index) in Workshops.workshops"
-                            :key="index"
-                            :index="index"/>
-          </b-tabs>
+          <h1>{{workshopPageTitle}}</h1>
+          <!-- Strengths -->
+          <b-row class="px-lg-5 px-xl-0">
+            <b-col v-for="(strength, index) in strengths" 
+              :key="index"
+              xl="3"
+              class="mb-4 px-sm-5 px-xl-3">
+              <StrengthHeadingPill 
+                :title="strength.title" 
+                :color="strength.color"
+                class="mb-3"/>
+              <p class="pl-lg-1 mb-4">
+                {{strength.content}}
+              </p>
+            </b-col>
+          </b-row>
         </b-col>
-        
+      </b-row>
+      <!-- TODO: Workshop Infos -->
+      
+      <!-- Corona Warning -->
+      <!-- TODO: change font-family -->
+      <b-row>
+        <b-col cols="12" sm="2" lg="1" class="mb-3 mb-sm-0 text-center text-sm-left">
+          <g-image src="~/assets/img/corona_virus.png"></g-image>
+        </b-col>
+        <b-col cols="12" sm="10" lg="11">  
+            <strong> Corona Hygienevorkehrungen:</strong> <br>
+            Wir halten uns an alle von der Bundesregierung vorgegeben Schutzmaßnahmen. Darüber hinaus messen unsere Mitarbeiter*innen vor jedem Workshop Fieber und lassen sich in regelmäßigen Abständen auf Covid-19 testen. Die Workshops können in der Klasse, im Freien oder Turnsaal durchgeführt werden. Ab dem 3.11.20 wird es zudem Online-Workhops geben (mehr Infos TBA).
+        </b-col>
       </b-row>
     </b-container>
+    <BookWorkshopBanner/>
     <ModalBox id="modal-success" :title="successTitle" :message="successMessage"/>
     <ModalBox id="modal-error" :title="errorTitle" :message="errorMessage"/>
   </Layout>
@@ -40,13 +63,17 @@ import Workshops from '~/data/footer/Workshops.yml'
 import WorkshopModule from '~/components/Workshop-Module.vue'
 import ModalBox from '~/components/Modal-Box.vue'
 import VueMarkdown from 'vue-markdown'
+import StrengthHeadingPill from '~/components/Strength-Heading-Pill.vue'
+import BookWorkshopBanner from '~/components/Book-Workshop-Banner.vue'
 
 export default {
   components: {
     Layout,
     WorkshopModule,
     ModalBox,
-    VueMarkdown
+    VueMarkdown,
+    StrengthHeadingPill,
+    BookWorkshopBanner
   },
   computed: {
     Workshops() {
@@ -58,7 +85,14 @@ export default {
       successTitle: 'Anfrage erfolgreich :)',
       successMessage: 'Cool, dass Sie jungen Menschen ermöglichen möchten, stark zu sein! Wir melden uns ganz bald mit der Terminbestätigung für die Workshops.',
       errorTitle: 'Etwas ist schief gelaufen :(',
-      errorMessage: 'Die Internetverbindung bzw. unsere Website scheint technische Schwierigkeiten zu haben. Versuche es später noch einmal!'
+      errorMessage: 'Die Internetverbindung bzw. unsere Website scheint technische Schwierigkeiten zu haben. Versuche es später noch einmal!',
+      workshopPageTitle: 'The most advanced Polarstern Workshops yet. In all the latest booking options.',
+      strengths: [
+        {title: 'Selbstkompetenzen', color: 'blue', content: 'Selbstwahrnehmung, Bewusstsein über eigene Interessen, Fähigkeiten, berufliche Möglichkeiten und Visionen, Teamfähigkeit.'},
+        {title: 'Sozialkompetenzen', color: 'red',content: 'Selbstwahrnehmung, Bewusstsein über eigene Interessen, Fähigkeiten, berufliche Möglichkeiten und Visionen, Teamfähigkeit.'},
+        {title: 'Berufsorientierung', color: 'yellow-dark',content: 'Selbstwahrnehmung, Bewusstsein über eigene Interessen, Fähigkeiten, berufliche Möglichkeiten und Visionen, Teamfähigkeit.'},
+        {title: 'Stark sein!', color: 'yellow-mono',content: 'Selbstwahrnehmung, Bewusstsein über eigene Interessen, Fähigkeiten, berufliche Möglichkeiten und Visionen, Teamfähigkeit.'},
+      ]
     }
   },
   metaInfo: {
