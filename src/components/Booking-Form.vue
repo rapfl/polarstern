@@ -1,6 +1,6 @@
 <template>
-<b-row class="justify-content-center booking-form">
-  <b-col cols="6">
+<b-row class="justify-content-center booking-form-page">
+  <b-col cols="10" class="booking-form">
     <Form-1-WorkShop 
       v-if="currentStep === 1"
       v-model="booking" />
@@ -24,27 +24,35 @@
       v-if="currentStep === 6"
       :formData="formData" />
     <b-row>
-      <b-col>
+      <b-col class="navigation-column d-flex justify-content-center">
         <b-button
+          v-if="currentStep !== 1"
+          class="prev-step"
           @click="prevStep"
         >
-          Previous
+          zurück
         </b-button>
-        <b-button
-          class="mx-4"
-          disabled
-        >
+        <g-image
+          src="~/assets/svg/greyCircle.svg"
+          class="counter-circle"
+        />
+        <g-image
+          src="~/assets/svg/greenLine.svg"
+          class="counter-line"
+           />
+        <span class="counter">
           {{ currentStep }} / {{ maxSteps }}
-        </b-button>
+        </span>
         <b-button
+          class="next-step"
           v-if="currentStep !== 6"
           @click="nextStep"
           :disabled="disableNext"
         >
-          Next
+          weiter
         </b-button>
-        <b-button v-else class="mx-2" @click="submitData">
-          Submit
+        <b-button v-else class="next-step" @click="submitData">
+          abschicken
         </b-button>
       </b-col>
     </b-row>
@@ -115,7 +123,7 @@ export default {
       if (this.currentStep === 1) {
         if (this.booking.workshop === '' ||
             this.booking.bookingoption === '' ||
-            this.booking.price === '')
+            this.booking.price === '') 
             return true
           else
             return false
@@ -257,7 +265,68 @@ export default {
 </script>
 
 <style lang="scss">
-.booking-form {
-  background-color: #44C7BF;
+
+
+.booking-form-page {
+  overflow: hidden;
+  .booking-form {
+    width: 1281px;
+    min-height: 1092px;
+
+    .navigation-column {
+      width: 100%;
+
+      .btn-secondary:focus, .btn-secondary.focus {
+        box-shadow: none;
+      }
+      
+      .prev-step {
+        position:absolute;
+        left: 1rem;
+        top:7rem;
+        font-family: 'Chau Philomene One';
+        font-size: 30px;
+        text-transform: uppercase;
+        color: #8B2346;
+        background-color: #29d4c7;
+        border: none;
+        :focus{
+          border: none;
+        }
+      }
+      .next-step {
+        position:absolute;
+        right: 1rem;
+        top: 7rem;
+        font-family: 'Chau Philomene One';
+        font-size: 30px;
+        text-transform: uppercase;
+        color: #8B2346;
+        background-color: #29d4c7;
+        border: none;
+        :focus{
+          border: none;
+        }
+      }
+      .counter {
+        position:absolute;
+        top: 48px;
+        font-family: 'Chau Philomene One';
+        font-size: 50px;
+        color: #007770;
+        z-index: 40;
+      }
+      .counter-circle{
+        z-index:30;
+      }
+      .counter-line {
+        position: absolute;
+        top: 77px;
+        z-index: 20;
+      }
+
+    }
+  }
 }
+
 </style>

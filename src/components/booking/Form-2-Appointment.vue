@@ -1,19 +1,32 @@
 <template>
-  <b-form-group label="Klassen und Wunschtermin">
-    <!-- TODO: maybe put class in step before? -->
-    <b-form-group label="Klassenname">
-      <b-form-input
+  <b-form-group 
+  label="Klassen und Wunschtermin"
+  label-class="label-group" 
+  class="form-group"
+  ><b-row>
+    <b-col cols="6">
+      <b-form-group 
+      label="Klassenname"
+      label-class="label-option" 
+      class="form-option "
+    ><b-form-input
         type="text"
+        class="input-element"
         placeholder="z.B. 1B"
         v-model="booking.class">
       </b-form-input>
     </b-form-group>
+    </b-col>
+ 
+  </b-row>
+    
     <!-- Calendar -->
     <div id="formattedDateContainer">
       {{dateTimeFormatted}}
     </div>
     <b-calendar 
       id="date"
+      class="calender"
       :start-weekday="1"
       :date-disabled-fn="datesDisabled"
       :min="minDate"
@@ -136,4 +149,8 @@ export default {
 }
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.calender {
+  
+}
+</style>

@@ -1,5 +1,5 @@
 <template>
-  <b-row>
+  <b-row class="overview">
     <b-col cols="12">
       <h2>Übersicht</h2>
     </b-col>
@@ -7,24 +7,25 @@
         v-for="(booking, ind) in formData.bookings"
         :key="ind"
         class="my-2"
-        cols="6"
+        cols="12"
+        md="6"
       >
-        <h4>Buchung {{ booking.index + 1}}</h4>
-        Klasse: <strong>{{ booking.class }}</strong> <br>
-        Datum: <strong>{{ booking.formattedDate }}</strong> <br>
-        Workshop: <strong>{{ booking.workshop }}</strong> <br>
-        Buchungsoption: <strong>{{ booking.bookingoption }}</strong> <br>
-        Wunschpreis pro Teilnehmer*in & Stunde: <strong>{{ booking.price }}</strong> <br>
-        Herzkisten-Gutschein: <strong>{{ booking.herzkiste }}</strong> <br> <br>
+        <h3>Buchung {{ booking.index + 1}}</h3>
+        Klasse: <span class="weight-bold">{{ booking.class }}</span> <br>
+        Datum: <span class="weight-bold">{{ booking.formattedDate }}</span> <br>
+        Workshop: <span class="weight-bold">{{ booking.workshop }}</span> <br>
+        Buchungsoption: <span class="weight-bold">{{ booking.bookingoption }}</span> <br>
+        Wunschpreis pro Teilnehmer*in und Stunde: <span class="weight-bold">{{ booking.price }}</span> <br>
+        Herzkisten-Gutschein: <span class="weight-bold">{{ booking.herzkiste }}</span> <br> <br>
     </b-col>
     <b-col cols="12" class="my-2">
-      <h4>Ihre Daten</h4>
-      Name: <strong>{{ formData.name }} </strong> <br>
-      Kontak: <strong>{{ formData.email }}, {{ formData.phonenumber }}</strong> <br>
-      Organisation: <strong>{{ formData.organisationType }} </strong> <br>
-      Name und Adresse: <strong>{{ formData.organisationNameAndAddress }} </strong> <br>
+      <h3>Ihre Daten</h3>
+      Name: <span class="weight-bold">{{ formData.name }} </span> <br>
+      Kontak: <span class="weight-bold">{{ formData.email }}, {{ formData.phonenumber }}</span> <br>
+      Organisation: <span class="weight-bold">{{ formData.organisationType }} </span> <br>
+      Name und Adresse: <span class="weight-bold">{{ formData.organisationNameAndAddress }} </span> <br>
       <div v-if="formData.organisationType === 'Schule'"> 
-        Schultyp: <strong>{{ formData.schoolType }} </strong><br>
+        Schultyp: <span class="weight-bold">{{ formData.schoolType }} </span><br>
       </div>
     </b-col>
     <b-col cols="12" class="my-2">
