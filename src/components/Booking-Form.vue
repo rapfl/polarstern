@@ -54,6 +54,7 @@
         <b-button v-else class="next-step" @click="submitData">
           abschicken
         </b-button>
+        <!-- TODO: Modal Popup for Success or Error (see Contact-Form.vue) -->
       </b-col>
     </b-row>
 
