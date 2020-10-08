@@ -25,7 +25,7 @@
         class="yellow" 
         @click="correctData(booking.index)"
       > 
-        {{correctData}}
+        {{correctDataString}}
       </a>
     </b-col>
     <b-col cols="12">
@@ -50,7 +50,7 @@ export default {
   data() {
     return {
       addAnotherClassText: "<< Weitere Klasse hinzufügen ",
-      correctData: "<< Daten korrigieren "
+      correctDataString: "<< Daten korrigieren "
     }
   },
   computed: {

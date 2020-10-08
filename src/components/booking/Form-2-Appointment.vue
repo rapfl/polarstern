@@ -17,16 +17,16 @@
       </b-form-input>
     </b-form-group>
     </b-col>
- 
   </b-row>
     
     <!-- Calendar -->
-    <div id="formattedDateContainer">
-      {{dateTimeFormatted}}
-    </div>
+    <div id="formattedDateContainer" >
+     <span class="title"> Ihr Wunschtermin: </span>
+     <span class="text"> {{dateTimeFormatted}} </span>    
+    </div> 
     <b-calendar 
       id="date"
-      class="calender"
+      class="calender pb-0 pt-0"
       :start-weekday="1"
       :date-disabled-fn="datesDisabled"
       :min="minDate"
@@ -40,13 +40,14 @@
       >
     </b-calendar>
     <b-popover 
+      class="popover"
       v-for="(date, index) in clickedDates"
       :key="index"
       :target="`date__cell-${date.dateStr}_`"
       :show="(date.dateStr == selectedDate) && popoverOpen"
       >
         <template v-slot:title>
-          Welche Zeit?
+          <span class="popover-title">{{ booking.workshop }}</span>  <br>
           <b-button @click="onClose" class="close" aria-label="Close">
             <span class="d-inline-block" aria-hidden="true">&times;</span>
           </b-button>
@@ -60,7 +61,8 @@
           :label-no-time-selected="''">
         </b-time>
         <!-- Submit Button -->
-        <b-button 
+        <b-button
+          class="mt-2"
           pill 
           variant="secondary"
           @click="submitTime">
@@ -84,7 +86,7 @@ export default {
       selectedDate: null,
       popoverOpen: false,
       dateFormatted: '',
-      dateTimeFormatted: 'Bitte Tag und Zeit auswählen',
+      dateTimeFormatted: '',
       rawDate: '',
       submitClicked: false
     }
@@ -151,6 +153,40 @@ export default {
 
 <style lang="scss">
 .calender {
-  
+  .bg-light {
+    background-color:#ECE1D9 !important ;
+  }
+
+  .row {
+    padding-top: .1rem !important;
+    padding-bottom: .1rem !important;
+  }
+  .small{
+    display: none;
+  }
+  .b-calendar-grid-caption {
+    background-color: var(--blue);
+    font-family: 'Chau Philomene One';
+    font-size: 30px;
+    color:white;
+    text-transform: uppercase;
+  }
+  .b-calendar-grid {
+    border: none;
+  }
+  .btn {
+    color: #000;
+  }
+}
+.popover {
+  min-width: 280px;
+  height: 220px;
+  width: 421px;
+  border: 3px solid #007770;
+  .popover-title {
+    color: #E22E77;
+    font-size: 20px;
+    font-family: 'Roboto';
+  }
 }
 </style>

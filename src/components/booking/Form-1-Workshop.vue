@@ -165,7 +165,8 @@ export default {
   }
   .workshop {
     margin-top: 1rem;
-    height: 280px;
+    height: 350;
+    min-width:243px;
     .workshop-box-2 {
       width:239px;
       height: 350.88px;
