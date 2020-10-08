@@ -68,7 +68,7 @@
                 class="form-element input-element">
               </b-form-input>
             </b-col>
-            <b-col cols="6" class="pt-2">
+            <b-col cols="6" class="pt-3">
               <b-form-select
                   v-if="formData.organisationType === 'Schule'"
                   v-model="formData.schoolType"

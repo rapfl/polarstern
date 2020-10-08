@@ -8,7 +8,7 @@
       label="Welchen Workshop wollen Sie buchen?"
       label-class="label-option" 
     >
-      <b-row class="pt-0">
+      <b-row class="p-0">
         <b-col cols="12" md="6" lg="3"
           v-for="(workshop, ind) in workshops"
           :key="ind"
@@ -41,7 +41,7 @@
     </b-form-group>
     <!-- Herzkiste -->
     <!-- TODO: implement get URL with herzkiste as default -->
-    <b-row>
+    <b-row class="p-0">
       <b-col cols="12" class="mt-3">
         <b-form-group 
           v-if="booking.workshop == 'Stärken Entdecken (2h)'" 

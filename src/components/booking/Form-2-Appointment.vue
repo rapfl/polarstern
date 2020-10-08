@@ -21,7 +21,7 @@
     
     <!-- Calendar -->
     <div id="formattedDateContainer" >
-     <span class="title"> Ihr Wunschtermin: </span>
+     <span class="label-option"> Ihr Wunschtermin: </span>
      <span class="text"> {{dateTimeFormatted}} </span>    
     </div> 
     <b-calendar 
@@ -156,7 +156,9 @@ export default {
   .bg-light {
     background-color:#ECE1D9 !important ;
   }
-
+  .title-big {
+    font-size: 30px;
+  }
   .row {
     padding-top: .1rem !important;
     padding-bottom: .1rem !important;

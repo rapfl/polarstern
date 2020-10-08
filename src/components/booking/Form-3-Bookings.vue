@@ -17,7 +17,7 @@
       Datum: <span class="weight-bold">{{ booking.formattedDate }}</span> <br>
       Workshop: <span class="weight-bold">{{ booking.workshop }}</span> <br>
       Buchungsoption: <span class="weight-bold">{{ booking.bookingoption }}</span> <br>
-      Wunschpreis pro Teilnehmer*in und Stunde: <span class="weight-bold">{{ booking.price }}</span> <br>
+      Wunschpreis pro Teilnehmer*in & Stunde: <span class="weight-bold">{{ booking.price }}</span> <br>
       Herzkisten-Gutschein: <span class="weight-bold">{{ (booking.herzkiste === 'Ja') ? booking.herzkiste : 'Nein' }}</span> <br> <br>
 
       <a 
@@ -79,15 +79,17 @@ export default {
   color: #FFE100;
 }
 .overview{
-  font-family: 'Chau Philomene One';
+  font-family: 'Roboto';
   color:white;
   font-weight: normal;
   font-size: 24px;
   h2 {
+    font-family: 'Chau Philomene One';
     font-size: 50px;
     text-transform: uppercase;
   }
   h3 {
+    font-family: 'Chau Philomene One';
     font-size: 30px;
     text-transform: uppercase;
   }

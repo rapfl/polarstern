@@ -23,7 +23,7 @@
     <Form-6-Summary 
       v-if="currentStep === 6"
       :formData="formData" />
-    <b-row>
+    <b-row class="pt-0">
       <b-col class="navigation-column d-flex justify-content-center">
         <b-button
           v-if="currentStep !== 1"
@@ -279,10 +279,9 @@ export default {
       .btn-secondary:focus, .btn-secondary.focus {
         box-shadow: none;
       }
-      
       .prev-step {
         position:absolute;
-        left: 1rem;
+        left: -4rem;
         top:7rem;
         font-family: 'Chau Philomene One';
         font-size: 30px;
@@ -296,7 +295,7 @@ export default {
       }
       .next-step {
         position:absolute;
-        right: 1rem;
+        right: -4rem;
         top: 7rem;
         font-family: 'Chau Philomene One';
         font-size: 30px;
@@ -308,6 +307,17 @@ export default {
           border: none;
         }
       }
+      @media screen and (min-width: 768px) {
+        .prev-step {
+          left: 1rem;
+          top:7rem;
+        }
+        .next-step {
+          right: 1rem;
+          top: 7rem;
+        }
+      }
+      
       .counter {
         position:absolute;
         top: 48px;
