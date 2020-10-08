@@ -2,7 +2,10 @@
 .title,
 button.btn.rounded-pill,
 a button.btn.rounded-pill,
-a.btn.rounded-pill {
+a.btn.rounded-pill,
+.cover-layer h2, 
+.cover-layer h3,
+.arrow-description {
   font-family: 'Chau Philomene One', sans-serif;
   text-transform: uppercase;
 }
@@ -24,6 +27,14 @@ a.btn.rounded-pill {
 }
 h1 {
   margin-bottom: 2rem;
+}
+.cover-layer {
+  h3 {
+    font-size: 40px;
+  }
+}
+.arrow-description {
+  font-size: 24px;
 }
 @import url('https://fonts.googleapis.com/css?family=Chau+Philomene+One&display=swap');
 
@@ -85,16 +96,17 @@ body {
 }
 .header-padding {
   padding-top: 108px;
+  .row {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
 .footer-padding {
   padding-bottom: 82px;
 }
 .main-wrapper.post .header-padding.footer-padding {
   min-height: 80vh;
-  .row {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
+  
 }
 
 

@@ -1,7 +1,7 @@
 <template>
   <Layout>
-    <b-container class="header-padding footer-padding workshops">
-      <b-row>
+    <b-container class="header-padding workshops">
+      <b-row class="pb-0">
         <b-col cols="12">
           <h1>{{workshopPageTitle}}</h1>
           <!-- Strengths -->
@@ -21,10 +21,19 @@
           </b-row>
         </b-col>
       </b-row>
-      <!-- TODO: Workshop Infos -->
-      
-      <!-- Corona Warning -->
-      <!-- TODO: change font-family -->
+    </b-container>
+    <!-- TODO: Workshop Infos -->
+    <div v-for="(workshop, index) in workshops" :key="index">
+      <WorkshopInfoBanner 
+        :color="workshop.color" 
+        :title="workshop.title" 
+        :icon="workshop.icon"/>
+
+    </div>
+
+    <!-- Corona Warning -->
+    <!-- TODO: change font-family -->
+    <b-container class="my-5">
       <b-row>
         <b-col cols="12" sm="2" lg="1" class="mb-3 mb-sm-0 text-center text-sm-left">
           <g-image src="~/assets/img/corona_virus.png"></g-image>
@@ -65,6 +74,7 @@ import ModalBox from '~/components/Modal-Box.vue'
 import VueMarkdown from 'vue-markdown'
 import StrengthHeadingPill from '~/components/Strength-Heading-Pill.vue'
 import BookWorkshopBanner from '~/components/Book-Workshop-Banner.vue'
+import WorkshopInfoBanner from '~/components/Workshop-Info-Banner.vue'
 
 export default {
   components: {
@@ -73,7 +83,8 @@ export default {
     ModalBox,
     VueMarkdown,
     StrengthHeadingPill,
-    BookWorkshopBanner
+    BookWorkshopBanner,
+    WorkshopInfoBanner
   },
   computed: {
     Workshops() {
@@ -92,6 +103,23 @@ export default {
         {title: 'Sozialkompetenzen', color: 'red',content: 'Selbstwahrnehmung, Bewusstsein über eigene Interessen, Fähigkeiten, berufliche Möglichkeiten und Visionen, Teamfähigkeit.'},
         {title: 'Berufsorientierung', color: 'yellow-dark',content: 'Selbstwahrnehmung, Bewusstsein über eigene Interessen, Fähigkeiten, berufliche Möglichkeiten und Visionen, Teamfähigkeit.'},
         {title: 'Stark sein!', color: 'yellow-mono',content: 'Selbstwahrnehmung, Bewusstsein über eigene Interessen, Fähigkeiten, berufliche Möglichkeiten und Visionen, Teamfähigkeit.'},
+      ],
+      workshops: [
+        {
+          title: 'Stärken Entdecken',
+          color: 'blue',
+          icon: '/uploads/weightlift_guy.png'
+        },
+        {
+          title: 'Zukunftsperspektiven',
+          color: 'red',
+          icon: '/uploads/footsteps.png'
+        },
+        {
+          title: 'Achtsamkeit',
+          color: 'yellow',
+          icon: '/uploads/happyfaces.png'
+        }
       ]
     }
   },
