@@ -282,8 +282,8 @@ export default {
       }
       .prev-step {
         position:absolute;
-        left: -4rem;
-        top:7rem;
+        left: -2rem;
+        top: 12.5rem;
         font-family: 'Chau Philomene One';
         font-size: 30px;
         text-transform: uppercase;
@@ -296,8 +296,8 @@ export default {
       }
       .next-step {
         position:absolute;
-        right: -4rem;
-        top: 7rem;
+        right: -2rem;
+        top: 12.5rem;
         font-family: 'Chau Philomene One';
         font-size: 30px;
         text-transform: uppercase;
@@ -306,6 +306,16 @@ export default {
         border: none;
         :focus{
           border: none;
+        }
+      }
+      @media screen and (min-width: 480px) {
+        .prev-step {
+          left: -2rem;
+          top:7rem;
+        }
+        .next-step {
+          right: -2rem;
+          top: 7rem;
         }
       }
       @media screen and (min-width: 768px) {
