@@ -23,7 +23,7 @@
           label-class="label-option" 
           class="form-option">
           <b-row class="p-0">
-            <b-col>
+            <b-col cols="12" md="6">
               <b-form-input
                 type="text"
                 placeholder="E-Mail Adresse"
@@ -31,7 +31,7 @@
                 class="form-element input-element">
               </b-form-input>
             </b-col>
-            <b-col>
+            <b-col cols="12" md="6" class="sm-mt-1">
               <b-form-input
                 type="text"
                 placeholder="Telefonnummer"
@@ -40,7 +40,7 @@
               </b-form-input>
             </b-col>
           </b-row>
-    </b-form-group>
+        </b-form-group>
       </b-col>
       <b-col cols="12">
         <b-form-group 
@@ -49,7 +49,7 @@
           class=" form-option">
           <b-row class="mt-0 p-0">
             <b-col 
-              cols="3" 
+              cols="12" sm="6" md="3"
               v-for="(organisation, ind)  in organisationTypes"
               :key="ind">
               <b-form-radio
@@ -68,9 +68,9 @@
                 class="form-element input-element">
               </b-form-input>
             </b-col>
-            <b-col cols="6" class="pt-3">
+            <b-col cols="12" sm="10" md="6" class="pt-3"
+            v-if="formData.organisationType === 'Schule'">
               <b-form-select
-                  v-if="formData.organisationType === 'Schule'"
                   v-model="formData.schoolType"
                   class="form-element input-element schooltype"
                   :options="schoolTypes">
@@ -111,7 +111,13 @@ export default {
   max-width: 470px;
 }
 
-.schooltype {
-  
+.sm-mt-1 {
+  margin-top: 4px;
+}
+
+@media screen and (min-width: 768px) {
+  .sm-mt-1 {
+    margin-top: 0px;
+  }
 }
 </style>

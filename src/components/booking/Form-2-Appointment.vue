@@ -4,7 +4,7 @@
   label-class="label-group" 
   class="form-group"
   ><b-row>
-    <b-col cols="6">
+    <b-col cols="12" md="6">
       <b-form-group 
       label="Klassenname"
       label-class="label-option" 
