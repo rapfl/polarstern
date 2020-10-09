@@ -51,8 +51,9 @@
         >
           weiter
         </b-button>
+
         <b-button v-else class="next-step" @click="submitData">
-          abschicken
+          <g-link to="/workshops">abschicken</g-link>
         </b-button>
         <!-- TODO: Modal Popup for Success or Error (see Contact-Form.vue) -->
       </b-col>
@@ -184,11 +185,16 @@ export default {
         method: 'POST',
         body: JSON.stringify(this.createBody())
       }
-      console.log(event)
       fetch("../.netlify/functions/postAirtableBooking", event)
       .then((result) => {
         console.log(result)
-        this.apiData = result
+        if (result.status === 200) {
+          this.$bvModal.show('modal-success')
+        }
+        else {
+          this.$bvModal.show('modal-error')
+          throw result
+        }
       })
     },
     // TODO: Herzkiste Debug
