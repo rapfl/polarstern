@@ -19,7 +19,6 @@ module.exports = {
       ]
     }
   },
-
   plugins: [
     {
       use: '@gridsome/source-filesystem',
@@ -64,7 +63,34 @@ module.exports = {
         modulePath: 'src/admin/index.js'
       }
     },
+    {
+      use: "@gridsome/source-airtable",
+      options: {
+        // Add these to a .env file
+        // Details on finding these values can be found at:
+        // https://gridsome.org/plugins/@gridsome/source-airtable
+        apiKey: process.env.AIRTABLE_API_KEY, //required
+        baseId: process.env.AIRTABLE_BASE_ID, //required
+        tables: [{
+            name: "Verfügbarkeiten",
+            typeName: "Availability", //required - needs to match template name
+            select: {}, //optional
+            links: [], //optional
+          },
+          // Comment in this section and the line in `templates` for multiple tables!
+          // {
+          //   name: "Parties",
+          //   typeName: "Parties", //required - needs to match template name
+          //   select: {}, //optional
+          //   links: [], //optional
+          // },
+        ],
+      },
+    },
   ],
+  templates: {
+    Availability: "/Verf%C3%BCgbarkeiten/:id", //optional
+  },
   chainWebpack: config => {
     const svgRule = config.module.rule('svg')
     svgRule.uses.clear()

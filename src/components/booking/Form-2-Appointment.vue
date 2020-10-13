@@ -72,6 +72,18 @@
   </b-form-group>
 </template>
 
+<static-query>
+query {
+  availabilities: allAvailability {
+    edges {
+      node {
+        tag
+      }
+    }
+  }
+}
+</static-query>
+
 <script>
 import { BIconSortNumericDownAlt } from 'bootstrap-vue'
 export default {
@@ -101,8 +113,18 @@ export default {
   },
   methods: {
     datesDisabled(ymd, date) {
-      const weekday = date.getDay()
-      return weekday === 0 || weekday === 6
+      // is date a weekday?
+      const day = date.getDay()
+      const isWeekday = (day === 0 || day === 6)
+      if (isWeekday) return true
+
+      // is date available?
+      const availabilities = this.$static.availabilities.edges
+      for (var i = 0; i < availabilities.length; i++) {
+        if (ymd == availabilities[i].node.tag) {
+          return true
+        }
+      }
     },
     dateClicked(date) {
       var dateObject = {
