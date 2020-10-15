@@ -1,5 +1,12 @@
 ---
 title: Achtsamkeit
+info: >-
+  #### Der Workshop, der dir deine Stärken zeigt.
+
+
+  Im Workshop Stärken entdecken finden junge Menschen ihre persönlichen Stärken
+  und erkennen Möglichkeiten, diese selbstbewusst in Schule, Freizeit und Beruf
+  einzusetzen.
 ---
 Im Workshop Achtsamkeit emutigen wir junge Menschen zu einem **achtsamen Umgang** mich sich und anderen. 
 
