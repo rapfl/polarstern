@@ -67,12 +67,9 @@
         </transition>
         
         <transition name="fade">
-          <div v-if="(windowWidth <= 991.98) || showAllDetails" class="markdown-body mt-3 px-4 align-self-start">
-            <p>Im Workshop Stärken entdecken ermöglichen wir jungen Menschen, die eigenen Stärken zu entdecken und so Vertrauen in sich selbst zu gewinnen. Denn das Bewusstsein über die eigenen Stärken hilft dabei, mutige und selbstbewusste Entscheidungen zu treffen.
-                Mit diversen interaktiven Methoden wie
-                - Stärken-Brainstorming | - Phantasiereise | - Selbst- und Fremdfeedback
-                sowie dazu passenden, altersadequaten Arbeitsmaterialien fördern wir Schlüsselkompetenzen wie Selbsterfahrung, Empathie, Team- und Kommunikationsfähigkeit.</p>
-          </div>
+          <vue-markdown v-if="(windowWidth <= 991.98) || showAllDetails" class="markdown-body mt-3 px-4 align-self-start" :source="getCurrentPost($page.workshops.edges, title).content">
+
+          </vue-markdown>
         </transition>
         <transition name="fade">
           <b-button-close 
@@ -88,7 +85,18 @@
 </template>
 
 <script>
+import Workshops from '~/data/footer/Workshops.yml'
+import VueMarkdown from 'vue-markdown'
+
 export default {
+  components: {
+    VueMarkdown,
+  },
+  computed: {
+    Workshops() {
+      return Workshops
+    }
+  },
   data() {
     return {
       showMoreInfo: false,
@@ -116,7 +124,15 @@ export default {
     },
     onResize() {
       this.windowHeight = window.innerWidth
-    }
+    },
+    getCurrentPost(list, item) {
+      for(let i = 0; i < list.length; i++) {
+        if (list[i].node.title == item) {
+          return list[i].node;
+        }
+      }
+      return list[0].node;
+    },
   },
   mounted() {
     this.$nextTick(() => {
@@ -262,8 +278,8 @@ export default {
   }
   .workshop-info-banner,
   .layer {
-    max-height: 300px;
-    min-height: 300px;
+    max-height: 480px;
+    min-height: 480px;
   }
   .arrow-right {
     width: 0;

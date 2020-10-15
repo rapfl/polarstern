@@ -69,7 +69,6 @@ query {
 
 <script>
 import Layout from '~/layouts/Page.vue'
-import Workshops from '~/data/footer/Workshops.yml'
 import WorkshopModule from '~/components/Workshop-Module.vue'
 import ModalBox from '~/components/Modal-Box.vue'
 import VueMarkdown from 'vue-markdown'
