@@ -22,7 +22,8 @@
         </b-col>
       </b-row>
     </b-container>
-    <!-- TODO: Workshop Infos -->
+    <BookWorkshopBanner/>
+    <!-- Workshop Infos -->
     <div v-for="(workshop, index) in workshops" :key="index">
       <WorkshopInfoBanner 
         :color="workshop.color" 

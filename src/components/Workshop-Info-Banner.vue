@@ -30,7 +30,8 @@
         </transition>
         
         <transition name="fade">
-          <div v-if="showMoreInfo" class="markdown-body mt-3 px-4 align-self-start">
+          <div v-if="(windowWidth <= 991.98) || showMoreInfo" 
+            class="markdown-body mt-3 px-4 align-self-start">
             <h4>
               Der Workshop, der dir deine Stärken zeigt.
             </h4>
@@ -66,7 +67,7 @@
         </transition>
         
         <transition name="fade">
-          <div v-if="showAllDetails" class="markdown-body mt-3 px-4 align-self-start">
+          <div v-if="(windowWidth <= 991.98) || showAllDetails" class="markdown-body mt-3 px-4 align-self-start">
             <p>Im Workshop Stärken entdecken ermöglichen wir jungen Menschen, die eigenen Stärken zu entdecken und so Vertrauen in sich selbst zu gewinnen. Denn das Bewusstsein über die eigenen Stärken hilft dabei, mutige und selbstbewusste Entscheidungen zu treffen.
                 Mit diversen interaktiven Methoden wie
                 - Stärken-Brainstorming | - Phantasiereise | - Selbst- und Fremdfeedback
@@ -91,7 +92,8 @@ export default {
   data() {
     return {
       showMoreInfo: false,
-      showAllDetails: false
+      showAllDetails: false,
+      windowWidth: window.innerWidth,
     }
   },
   props: {
@@ -112,7 +114,18 @@ export default {
       this.showAllDetails = !this.showAllDetails
       this.showMoreInfo = !this.showMoreInfo
     },
-  }
+    onResize() {
+      this.windowHeight = window.innerWidth
+    }
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize);
+    })
+  },
+  beforeDestroy() { 
+    window.removeEventListener('resize', this.onResize); 
+  },
 }
 </script>
 
@@ -260,5 +273,30 @@ export default {
     border-left: 40px solid;
     border-right: none;
   }
+  @media (max-width: 991.98px) { 
+    .workshop-info-banner {
+      overflow: unset;
+      display: block;
+      max-height: initial;
+      min-height: initial;
+      .layer {
+        width: 100%;
+        max-height: inherit;
+        min-height: inherit;
+      }
+      .cover-layer {
+        min-height: 270px;
+      }
+      .content {
+        position: relative;
+      }
+      .clicker,
+      .arrow-right,
+      .arrow-description {
+        display: none;
+      }
 
+      
+    }
+  }
 </style>
