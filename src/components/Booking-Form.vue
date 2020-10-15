@@ -3,10 +3,12 @@
   <b-col cols="10" class="booking-form">
     <Form-1-WorkShop 
       v-if="currentStep === 1"
-      v-model="booking" />
+      v-model="booking"
+      :validate="validate" />
     <Form-2-Appointment 
       v-if="currentStep === 2"
-      v-model="booking" />
+      v-model="booking"
+      :validate="validate" />
     <Form-3-Bookings 
       v-if="currentStep === 3"
       :formData="formData"
@@ -16,7 +18,8 @@
       @correctbooking="correctBooking"/>
     <Form-4-PersonalData 
       v-if="currentStep === 4"
-      v-model="formData" />
+      v-model="formData" 
+      :validate="validate"/>
     <Form-5-Message 
       v-if="currentStep === 5"
       v-model="formData" />
@@ -44,16 +47,25 @@
           {{ currentStep }} / {{ maxSteps }}
         </span>
         <b-button
+          class="next-step disabled"
+          v-if="currentStep !== 6 && disableNext"
+          @click="validateStep"
+        >
+          weiter
+        </b-button>
+        <b-button
           class="next-step"
-          v-if="currentStep !== 6"
+          v-else-if="currentStep !== 6"
           @click="nextStep"
-          :disabled="disableNext"
         >
           weiter
         </b-button>
 
+
         <b-button v-else class="next-step" @click="submitData">
-          <g-link to="/workshops">abschicken</g-link>
+          <!-- Add router.push functionality to Modal Box? 
+            <g-link to="/workshops">abschicken</g-link> -->
+            abschicken
         </b-button>
         <!-- TODO: Modal Popup for Success or Error (see Contact-Form.vue) -->
       </b-col>
@@ -110,7 +122,8 @@ export default {
       currentStep: 1,
       maxSteps: 6,
       nrOfBookings: 0,
-      apiData: null
+      apiData: null,
+      validate: false,
     }
   },
 
@@ -140,7 +153,9 @@ export default {
       else if(this. currentStep === 4) {
         if (this.formData.name === '' ||
             this.formData.email === '' ||
+            this.validateEmail(this.formData.email) ||
             this.formData.phonenumber === '' || 
+            this.validatePhonenumber(this.formData.phonenumber) ||
             this.formData.organisationNameAndAddress === '' ||
             this.formData.organisationType === '' ||
             this.formData.organisationType === 'Schule' && this.formData.schoolType === null)
@@ -233,6 +248,7 @@ export default {
           left: 0,
           behavior: 'smooth'
         });
+        this.validate = false
     },
     prevStep() {
       if (this.currentStep > 1)
@@ -242,6 +258,11 @@ export default {
           left: 0,
           behavior: 'smooth'
         });
+        this.validate = false
+    },
+    validateStep() {
+      if (this.validate === false)
+        this.validate = true
     },
     correctBooking(){
       if (this.currentStep === 3) 
@@ -250,9 +271,6 @@ export default {
     correctData(){
       if (this.currentStep === 6)
         this.currentStep = 4
-    },
-    updateValue(){
-      this.$emit('input', this.currentStep)
     },
     saveCurrentBooking() {
       if (this.booking.index !== null) 
@@ -277,6 +295,18 @@ export default {
         herzkiste: ''
       }
     },
+    validateEmail(email) {
+      if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))
+          return (false)
+      else
+          return (true)
+    },
+    validatePhonenumber(phonennumber) {
+      if (/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/.test(phonennumber))
+        return false
+      else
+        return true
+   }
   }
 }
 </script>

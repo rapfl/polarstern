@@ -66,6 +66,7 @@
             v-for="(option, ind)  in bookingOptions"
             :key="ind"
             class="form-element bookingoption"
+            :class="stateBookingoption"
             :value="option"
             v-model="booking.bookingoption"
           > 
@@ -84,9 +85,10 @@
             name="price"
             v-model="booking.price"
             class="form-element price input-element"
+            :class="statePrice"
             placeholder="z.B. 5€"
-            required
-            :state="statePrice">
+            
+            >
           </b-form-input>
         </b-form-group>
       </b-col>
@@ -97,7 +99,9 @@
 <script>
 export default {
   props: {
-    value: null
+    value: null,
+    clickedNext: false,
+    validate: false
   },
   data() {
     return {
@@ -110,10 +114,24 @@ export default {
         "Stärken Entdecken (2h)",
         "Zukunftsperspektive",
         "Achtsamkeit"
-      ],
-      statePrice: null
+      ]
     }
   },
+  computed: {
+    statePrice() {
+      if (this.validate)
+        return (this.booking.price === '') ? 'input-element-error' : ''
+      else
+        return ''
+    },
+    stateBookingoption() {
+      if (this.validate)
+        return (this.booking.bookingoption === '') ? 'radio-element-error' : ''
+      else
+        return ''
+    }
+  },
+  
   methods: {
     setWorkshop(index) {
       this.booking.workshop = this.workshops[index]
@@ -229,7 +247,6 @@ export default {
     }
   }
   .bookingoption{
-    
     margin-bottom: 1rem;
     .custom-control-label {
       padding-left: 38px;
@@ -246,8 +263,8 @@ export default {
     .custom-control-input:checked ~ .custom-control-label::after {
       background-image: none; 
     }
-
   }
+
   .input-element {
     height: 86px;
     border-radius: 43px;
@@ -255,6 +272,17 @@ export default {
     font-family: 'Roboto';
     font-size: 20px;
     padding-left: 2rem;
+  }
+  .input-element-error {
+    border: 4px solid #e22e77;
+    box-shadow: 0 0 0 0.2rem rgba(226, 46, 119, 0.25)
+  }
+  .radio-element-error {
+    color: #e22e77;
+    .custom-control-label::before{
+      border: 4px solid #e22e77 !important;
+      box-shadow: 0 0 0 0.2rem rgba(226, 46, 119, 0.25) !important;
+    }
   }
 }
 </style>

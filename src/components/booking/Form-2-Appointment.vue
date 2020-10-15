@@ -12,6 +12,7 @@
     ><b-form-input
         type="text"
         class="input-element"
+        :class="stateClass"
         placeholder="z.B. 1B"
         v-model="booking.class">
       </b-form-input>
@@ -88,7 +89,8 @@ query {
 import { BIconSortNumericDownAlt } from 'bootstrap-vue'
 export default {
   props: {
-    value: null
+    value: null,
+    validate: false
   },
   data() {
     return {
@@ -110,6 +112,12 @@ export default {
       const minDate = new Date(today)
       return minDate
     },
+    stateClass() {
+      if (this.validate) 
+        return (this.booking.class === '') ? 'input-element-error' : ''
+      else
+        return ''
+    }
   },
   methods: {
     datesDisabled(ymd, date) {

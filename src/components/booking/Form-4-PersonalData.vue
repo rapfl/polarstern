@@ -13,7 +13,8 @@
               type="text"
               v-model="formData.name"
               placeholder=""
-              class="form-element input-element name">
+              class="form-element input-element name"
+              :class="stateName">
             </b-form-input>
          </b-form-group>
       </b-col>
@@ -25,10 +26,11 @@
           <b-row class="p-0">
             <b-col cols="12" md="6">
               <b-form-input
-                type="text"
+                type="email"
                 placeholder="E-Mail Adresse"
                 v-model="formData.email"
-                class="form-element input-element">
+                class="form-element input-element"
+                :class="stateEmail">
               </b-form-input>
             </b-col>
             <b-col cols="12" md="6" class="sm-mt-1">
@@ -36,7 +38,8 @@
                 type="text"
                 placeholder="Telefonnummer"
                 v-model="formData.phonenumber"
-                class="form-element input-element">
+                class="form-element input-element"
+                :class="statePhonenumber">
               </b-form-input>
             </b-col>
           </b-row>
@@ -56,6 +59,7 @@
                 :value="organisation"
                 v-model="formData.organisationType"
                 class="form-element bookingoption"
+                :class="stateOrganisationType"
               > 
                 {{ organisation }}
               </b-form-radio>
@@ -65,7 +69,8 @@
                 type="text"
                 placeholder="Name und Adresse der Organisation"
                 v-model="formData.organisationNameAndAddress"
-                class="form-element input-element">
+                class="form-element input-element"
+                :class="stateOrganisationNameAndAddress">
               </b-form-input>
             </b-col>
             <b-col cols="12" sm="10" md="6" class="pt-3"
@@ -73,6 +78,7 @@
               <b-form-select
                   v-model="formData.schoolType"
                   class="form-element input-element schooltype"
+                  :class="stateSchoolType"
                   :options="schoolTypes">
               </b-form-select>
             </b-col>
@@ -86,7 +92,8 @@
 <script>
 export default {
   props: {
-    value: null
+    value: null,
+    validate: false
   },
   data() {
     return {
@@ -101,6 +108,59 @@ export default {
         { value: 'Sonstige', text: 'Sonstige'}
       ]
     }
+  },
+  computed: {
+    stateName() {
+      if (this.validate)
+        return (this.formData.name === '') ? 'input-element-error' : ''
+      else 
+        return ''
+    },
+    stateEmail() {
+      if (this.validate)
+        return (this.formData.email === '' ||
+                this.validateEmail(this.formData.email)) ? 'input-element-error' : ''
+      else 
+        return ''
+    },
+    statePhonenumber() {
+      if (this.validate)
+        return (this.formData.phonenumber === '') ? 'input-element-error' : ''
+      else 
+        return ''
+    },
+    stateOrganisationType() {
+      if (this.validate)
+        return (this.formData.organisationType === '') ? 'radio-element-error' : ''
+      else 
+        return ''
+    },
+    stateSchoolType() {
+      if (this.validate && this.formData.organisationType === 'Schule')
+        return (this.formData.schoolType === null) ? 'input-element-error' : ''
+      else 
+        return ''
+    },
+    stateOrganisationNameAndAddress() {
+      if (this.validate)
+        return (this.formData.organisationNameAndAddress === '') ? 'input-element-error' : ''
+      else 
+        return ''
+    }
+  },
+  methods: {
+     validateEmail(email) {
+      if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))
+          return (false)
+      else
+          return (true)
+      },
+      validatePhonenumber(phonennumber) {
+        if (/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/.test(phonennumber))
+          return false
+        else
+          return true
+      }
   }
 }
 </script>
