@@ -1,9 +1,7 @@
 <template>
   <div class="workshop-info-banner" 
     :class="color + (showMoreInfo ? ' show-more-info' : '') 
-            + (showAllDetails ? ' show-all-details' : '')
-            + (moreInfoTeaser ? ' more-info-teaser' : '')
-            + (allDetailsTeaser ? ' all-details-teaser' : '')">
+            + (showAllDetails ? ' show-all-details' : '')">
     
     <!-- Cover Layer -->
     <div class="layer cover-layer">
@@ -16,50 +14,74 @@
     
     <!-- More Info Layer -->
     <div class="layer more-info-layer"
-        :class="showMoreInfo ? ' show' : ''">
-        <div class="clicker" 
-        :class="showMoreInfo ? 'd-none' : ''"
+      :class="showMoreInfo ? 'show' : ''">
+      <div class="clicker" 
+        v-if="!showMoreInfo"
         @click="toggleMoreInfo">
 
+      </div>
+      <div class="content py-4 d-flex align-items-center">
+        <div class="arrow-right" >
         </div>
-        <div class="content">
-          <div class="arrow-right" >
+        <transition name="fade">
+          <div class="arrow-description ml-3" v-show="!showMoreInfo && !showAllDetails">
+            Mehr <br> Infos
           </div>
-          <div class="arrow-description ml-3" v-show="!showMoreInfo">
-              {{!showAllDetails ? 'Mehr Info' : 'Zurück'}}
-          </div>
-          
-          <div v-if="showMoreInfo" class="content markdown-body mt-3 pl-4 pr-1">
+        </transition>
+        
+        <transition name="fade">
+          <div v-if="showMoreInfo" class="markdown-body mt-3 px-4 align-self-start">
             <h4>
               Der Workshop, der dir deine Stärken zeigt.
             </h4>
             <p>Im Workshop Stärken entdecken finden junge Menschen ihre persönlichen Stärken und erkennen Möglichkeiten, diese selbstbewusst in Schule, Freizeit und Beruf einzusetzen.</p>
           </div>
-          <b-button-close class="ml-2 mr-4" @click="toggleMoreInfo">
-            x
-          </b-button-close>
-        </div>
+        </transition>
+        
+        <transition name="fade">
+        <b-button-close 
+          class="ml-auto mr-4"
+          v-if="showMoreInfo" 
+          @click="toggleMoreInfo">
+          x
+        </b-button-close>
+        </transition>
+      </div>
     </div>
     
     <!-- All Details Layer -->
-    <div class="layer all-details-layer py-4"
-      :class="showAllDetails ? ' show' : ''"
-      @click="toggleAllDetails">
-      <div class="arrow-right">
+    <div class="layer all-details-layer"
+      :class="showAllDetails ? 'show' : ''">
+      <div class="clicker" 
+        v-if="showMoreInfo"
+        @click="toggleAllDetails">
       </div>
-      <div class="arrow-description ml-3" v-show="!showAllDetails">
-          Mehr <br> Details
-      </div>
-        <div v-if="showAllDetails" class="content markdown-body mt-3 pl-4 pr-5">
-          <p>Im Workshop Stärken entdecken ermöglichen wir jungen Menschen, die eigenen Stärken zu entdecken und so Vertrauen in sich selbst zu gewinnen. Denn das Bewusstsein über die eigenen Stärken hilft dabei, mutige und selbstbewusste Entscheidungen zu treffen.
-
-  Mit diversen interaktiven Methoden wie
-  - Stärken-Brainstorming | - Phantasiereise | - Selbst- und Fremdfeedback
-  sowie dazu passenden, altersadequaten Arbeitsmaterialien fördern wir Schlüsselkompetenzen wie Selbsterfahrung, Empathie, Team- und Kommunikationsfähigkeit.</p>
+      <div class="content py-4 d-flex align-items-center">
+        <div class="arrow-right">
         </div>
-        <b-button-close class="ml-2 mr-4" @click="toggleAllDetails">
-        x
-      </b-button-close>
+        <transition name="fade">
+          <div class="arrow-description ml-3" v-show="!showAllDetails">
+            Mehr <br> Details
+          </div>
+        </transition>
+        
+        <transition name="fade">
+          <div v-if="showAllDetails" class="markdown-body mt-3 px-4 align-self-start">
+            <p>Im Workshop Stärken entdecken ermöglichen wir jungen Menschen, die eigenen Stärken zu entdecken und so Vertrauen in sich selbst zu gewinnen. Denn das Bewusstsein über die eigenen Stärken hilft dabei, mutige und selbstbewusste Entscheidungen zu treffen.
+                Mit diversen interaktiven Methoden wie
+                - Stärken-Brainstorming | - Phantasiereise | - Selbst- und Fremdfeedback
+                sowie dazu passenden, altersadequaten Arbeitsmaterialien fördern wir Schlüsselkompetenzen wie Selbsterfahrung, Empathie, Team- und Kommunikationsfähigkeit.</p>
+          </div>
+        </transition>
+        <transition name="fade">
+          <b-button-close 
+            class="ml-auto mr-4" 
+            v-if="showAllDetails"
+            @click="toggleAllDetails">
+            x
+          </b-button-close>
+        </transition>
+      </div>
     </div>
   </div>
 </template>
@@ -69,11 +91,7 @@ export default {
   data() {
     return {
       showMoreInfo: false,
-      showAllDetails: false,
-      moreInfoTeaser: false,
-      allDetailsTeaser: false,
-      transitioning: false,
-      coverOpen: true
+      showAllDetails: false
     }
   },
   props: {
@@ -91,27 +109,9 @@ export default {
       this.showMoreInfo = !this.showMoreInfo
     },
     toggleAllDetails() {
-      if (!this.showAllDetails) {
-        this.showAllDetails = !this.showAllDetails
-        this.showMoreInfo = !this.showMoreInfo
-      }
+      this.showAllDetails = !this.showAllDetails
+      this.showMoreInfo = !this.showMoreInfo
     },
-    turnOnMoreInfoTeaser() {
-      if (!this.showAllDetails && !this.showMoreInfo) {
-        this.moreInfoTeaser = true
-      }
-    },
-    turnOffMoreInfoTeaser() {
-      this.moreInfoTeaser = false
-    },
-    turnOnAllDetailsTeaser() {
-      if (this.showMoreInfo && !this.showAllDetails) {
-        this.allDetailsTeaser = true
-      }
-    },
-    turnOffAllDetailsTeaser() {
-      this.allDetailsTeaser = false
-    }
   }
 }
 </script>
@@ -125,10 +125,6 @@ export default {
   }
   .clicker {
     z-index: 100;
-  }
-  .content {
-
-
   }
   .workshop-info-banner {
     display: flex;
@@ -190,10 +186,10 @@ export default {
         width: 48%;
       }
       .more-info-layer {
-        width: 12%;
+        width: 4%;
       }
       .all-details-layer {
-        width: 40%;
+        width: 48%;
       }
     }
     .cover-layer {
@@ -238,6 +234,15 @@ export default {
       opacity: 1;
     }
     .show-content-leave-to {
+      opacity: 0;
+    }
+    .fade-enter-active {
+      transition: opacity .8s cubic-bezier(.79,.04,.51,.37);
+    }
+    .fade-leave-active {
+      transition: opacity .3s ease-out;
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
       opacity: 0;
     }
     // Hover Effects
