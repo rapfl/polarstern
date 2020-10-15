@@ -16,6 +16,7 @@
         placeholder="z.B. 1B"
         v-model="booking.class">
       </b-form-input>
+      <div v-if="errorClass" class="error-message ml-4">{{ errorMessage.class }} </div>
     </b-form-group>
     </b-col>
   </b-row>
@@ -102,7 +103,10 @@ export default {
       dateFormatted: '',
       dateTimeFormatted: '',
       rawDate: '',
-      submitClicked: false
+      submitClicked: false,
+      errorMessage: {
+        class: 'Bitte geben Sie einen Klassennamen an!'
+      }
     }
   },
   computed: {
@@ -112,11 +116,15 @@ export default {
       const minDate = new Date(today)
       return minDate
     },
+    errorClass() {
+      if (this.validate && this.booking.class === '')
+        return true
+      false
+    },
     stateClass() {
-      if (this.validate) 
-        return (this.booking.class === '') ? 'input-element-error' : ''
-      else
-        return ''
+      if (this.errorClass) 
+        return 'input-element-error' 
+      return ''
     }
   },
   methods: {

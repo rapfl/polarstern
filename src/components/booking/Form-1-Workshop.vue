@@ -16,28 +16,29 @@
           :class="filterGray(ind)"
           @click="setWorkshop(ind)"
         >   
-        <div class="workshop-box-2 bg-green border-yellow" v-if="ind === 0">
+        <div class="workshop-box-2 bg-green border-yellow" :class="stateWorkshop" v-if="ind === 0">
           <h2>STÄRKEN <br> ENTDECKEN</h2>  
           <g-image src='~/assets/svg/StaerkenEntdecken.svg' />
           <h3>1 Stunde</h3>
         </div>
-        <div class="workshop-box-2 bg-green border-yellow" v-if="ind === 1">
+        <div class="workshop-box-2 bg-green border-yellow" :class="stateWorkshop" v-if="ind === 1">
           <h2>STÄRKEN <br> ENTDECKEN</h2>  
           <g-image src='~/assets/svg/StaerkenEntdecken.svg' />
           <h3>2 Stunde</h3>
         </div>
-        <div class="workshop-box-2 bg-pink border-yellow" v-if="ind === 2">
+        <div class="workshop-box-2 bg-pink border-yellow" :class="stateWorkshop" v-if="ind === 2">
           <h2>Zukunfts- perspektive</h2>  
           <g-image class="pos-abs" src='~/assets/svg/Zukunftsperspektive.svg' />
           <h3>1 Stunde</h3>
         </div>
-        <div class="workshop-box-2 bg-yellow border-yellow" v-if="ind === 3">
+        <div class="workshop-box-2 bg-yellow border-yellow" :class="stateWorkshop" v-if="ind === 3">
           <h2>Achtsamkeit</h2>  
           <g-image src='~/assets/svg/Achtsamkeit.svg' />
           <h3>1 Stunde</h3>
         </div>
         </b-col>
       </b-row>
+      <div v-if="errorWorkshop" class="error-message mt-1"> {{errorMessage.workshop }}</div>
     </b-form-group>
     <!-- Herzkiste -->
     <!-- TODO: implement get URL with herzkiste as default -->
@@ -72,7 +73,7 @@
           > 
             {{ option }}
           </b-form-radio>
-          
+          <div v-if="errorBookingoption" class="error-message">{{ errorMessage.bookingoption }}</div>
         </b-form-group>
       </b-col>
       <b-col cols="12" md="6" class="mt-3">
@@ -90,6 +91,7 @@
             
             >
           </b-form-input>
+          <div v-if="errorPrice" class="error-message ml-4">{{ errorMessage.price }} </div>
         </b-form-group>
       </b-col>
     </b-row>
@@ -105,6 +107,11 @@ export default {
   },
   data() {
     return {
+      errorMessage: {
+        workshop: 'Bitte wählen Sie einen Workshop aus!',
+        bookingoption: 'Bitte wählen Sie eine Buchungsoption aus!',
+        price: 'Bitte geben Sie einen Wunschpreis an!'
+      },
       booking: this.value,
       bookingOptions: [
         'In der Klasse', 'Draußen','Im Turnsaal'
@@ -119,16 +126,34 @@ export default {
   },
   computed: {
     statePrice() {
-      if (this.validate)
-        return (this.booking.price === '') ? 'input-element-error' : ''
-      else
-        return ''
+      if (this.validate && this.booking.price === '') 
+        return 'input-element-error'
+      return ''
+    },
+    errorPrice(){
+      if (this.validate && this.booking.price === '') 
+        return true
+      return false
     },
     stateBookingoption() {
-      if (this.validate)
-        return (this.booking.bookingoption === '') ? 'radio-element-error' : ''
-      else
-        return ''
+      if (this.validate && this.booking.bookingoption === '')
+        return 'radio-element-error' 
+      return ''
+    },
+    errorBookingoption() {
+      if (this.validate && this.booking.bookingoption === '')
+        return true
+      return false
+    },
+    errorWorkshop() {
+      if (this.validate && this.booking.workshop === '')
+        return true
+      return false
+    },
+    stateWorkshop() {
+      if (this.errorWorkshop)
+        return 'workshop-element-error'
+      return ''
     }
   },
   
@@ -212,13 +237,14 @@ export default {
           top: 100px;
         }
     }
+    .workshop-element-error {
+      border: 6px solid #E22E77;
+      box-shadow: 0 0 0 0.2rem rgba(226, 46, 119, 0.25) !important;
+    }
     .bg-yellow {
         background-color: #FFE100;
         h2 {
           color:#E22E77 !important;
-        }
-        h3 {
-
         }
     }
     .bg-pink {
@@ -283,6 +309,10 @@ export default {
       border: 4px solid #e22e77 !important;
       box-shadow: 0 0 0 0.2rem rgba(226, 46, 119, 0.25) !important;
     }
+  }
+  .error-message {
+    color:#e22e77;
+    font-size: 16px;
   }
 }
 </style>

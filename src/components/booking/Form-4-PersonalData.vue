@@ -16,6 +16,7 @@
               class="form-element input-element name"
               :class="stateName">
             </b-form-input>
+            <div v-if="errorName" class="error-message ml-4">{{ errorMessage.name }}</div>
          </b-form-group>
       </b-col>
       <b-col cols="12">
@@ -32,6 +33,7 @@
                 class="form-element input-element"
                 :class="stateEmail">
               </b-form-input>
+              <div v-if="errorEmail" class="error-message ml-4">{{ errorMessage.email }}</div>
             </b-col>
             <b-col cols="12" md="6" class="sm-mt-1">
               <b-form-input
@@ -41,6 +43,7 @@
                 class="form-element input-element"
                 :class="statePhonenumber">
               </b-form-input>
+              <div v-if="errorPhonenumber" class="error-message ml-4">{{ errorMessage.phonenumber }}</div>
             </b-col>
           </b-row>
         </b-form-group>
@@ -54,7 +57,7 @@
             <b-col 
               cols="12" sm="6" md="3"
               v-for="(organisation, ind)  in organisationTypes"
-              :key="ind">
+              :key="ind" class="ml-4">
               <b-form-radio
                 :value="organisation"
                 v-model="formData.organisationType"
@@ -64,6 +67,7 @@
                 {{ organisation }}
               </b-form-radio>
             </b-col>
+            <b-col cols="12" v-if="errorOrganisationType" class="error-message mt-0 ml-4 mb-3">{{ errorMessage.organisationType }}</b-col>
             <b-col cols="12">
               <b-form-input
                 type="text"
@@ -72,6 +76,7 @@
                 class="form-element input-element"
                 :class="stateOrganisationNameAndAddress">
               </b-form-input>
+              <div v-if="errorOrganisationNameAndAddress" class="error-message ml-4">{{ errorMessage.organisationNameAndAddress }}</div>
             </b-col>
             <b-col cols="12" sm="10" md="6" class="pt-3"
             v-if="formData.organisationType === 'Schule'">
@@ -81,6 +86,7 @@
                   :class="stateSchoolType"
                   :options="schoolTypes">
               </b-form-select>
+              <div v-if="errorSchoolType" class="error-message ml-4">{{ errorMessage.schoolType }}</div>
             </b-col>
           </b-row>
         </b-form-group>
@@ -106,35 +112,67 @@ export default {
         { value: 'FMS', text: 'FMS'},
         { value: 'PTS', text: 'PTS'},
         { value: 'Sonstige', text: 'Sonstige'}
-      ]
+      ],
+      errorMessage: {
+        name: 'Bitte geben Sie einen Namen an!',
+        email: 'Bitte geben Sie eine gültige Emailaddresse an!',
+        phonenumber: 'Bitte geben Sie eine gültige Telefonnummer an!',
+        organisationType: 'Bitte wählen Sie die Art der Organisation aus!',
+        organisationNameAndAddress: 'Bitte geben Sie Name und Addresse der Organisation an!',
+        schoolType: 'Bitte wählen Sie einen Schultypen!'
+      }
     }
   },
   computed: {
+    errorName() {
+      if (this.validate && this.formData.name === '')
+        return true
+      return false
+    },
     stateName() {
-      if (this.validate)
-        return (this.formData.name === '') ? 'input-element-error' : ''
-      else 
-        return ''
+      if (this.errorName)
+        return 'input-element-error' 
+      return ''
+    },
+    errorEmail() {
+      if (this.validate && (this.formData.email === '' ||
+            this.validateEmail(this.formData.email))) {
+              return true
+            }
+      return false
     },
     stateEmail() {
-      if (this.validate)
-        return (this.formData.email === '' ||
-                this.validateEmail(this.formData.email)) ? 'input-element-error' : ''
-      else 
-        return ''
+      if (this.errorEmail)
+        return 'input-element-error' 
+      return ''
+    },
+    errorPhonenumber() {
+      if (this.validate && (this.formData.phonenumber === ''||
+          this.validatePhonenumber(this.formData.phonenumber))) {
+            return true
+          }
+      return false
     },
     statePhonenumber() {
-      if (this.validate)
-        return (this.formData.phonenumber === ''||
-                this.validatePhonenumber(this.formData.phonenumber)) ? 'input-element-error' : ''
-      else 
-        return ''
+      if (this.errorPhonenumber)
+        return 'input-element-error'
+      return ''
+    },
+    errorOrganisationType() {
+      if (this.validate && this.formData.organisationType === '')
+        return true
+      return false
     },
     stateOrganisationType() {
-      if (this.validate)
-        return (this.formData.organisationType === '' ) ? 'radio-element-error' : ''
-      else 
-        return ''
+      if (this.errorOrganisationType)
+        'radio-element-error mb-0' 
+      return ''
+    },
+    errorSchoolType() {
+      if (this.validate && this.formData.organisationType === 'Schule')
+        if (this.formData.schoolType === null)
+          return true
+      return false
     },
     stateSchoolType() {
       if (this.validate && this.formData.organisationType === 'Schule')
@@ -142,11 +180,15 @@ export default {
       else 
         return ''
     },
+    errorOrganisationNameAndAddress() {
+      if (this.validate && this.formData.organisationNameAndAddress === '')
+        return true
+      return false
+    },
     stateOrganisationNameAndAddress() {
-      if (this.validate)
-        return (this.formData.organisationNameAndAddress === '') ? 'input-element-error' : ''
-      else 
-        return ''
+      if (this.errorOrganisationNameAndAddress)
+        return 'input-element-error'
+      return ''
     }
   },
   methods: {
@@ -171,7 +213,9 @@ export default {
 .name{
   max-width: 470px;
 }
-
+.mb-0 {
+  margin-bottom: 0px;
+}
 .sm-mt-1 {
   margin-top: 4px;
 }
