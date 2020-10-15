@@ -3,8 +3,8 @@
     <b-container class="header-padding footer-padding">
       <BookingForm />
     </b-container>
-    <ModalBox id="modal-success" :title="successTitle" :message="successMessage"/>
-    <ModalBox id="modal-error" :title="errorTitle" :message="errorMessage"/>
+    <ModalBox id="modal-success" :title="successTitle" :message="successMessage" :redirect="redirectUrl"/>
+    <ModalBox id="modal-error" :title="errorTitle" :message="errorMessage" :redirect="redirectUrl"/>
   </Layout>
 </template>
 
@@ -25,6 +25,7 @@ export default {
       successMessage: 'Cool, dass Sie jungen Menschen ermöglichen möchten, stark zu sein! Wir melden uns ganz bald mit der Terminbestätigung für die Workshops.',
       errorTitle: 'Etwas ist schief gelaufen :(',
       errorMessage: 'Die Internetverbindung bzw. unsere Website scheint technische Schwierigkeiten zu haben. Versuche es später noch einmal!',
+      redirectUrl: '/workshops'
     }
   },
   props: {}

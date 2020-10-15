@@ -1,13 +1,18 @@
 <template>
   <b-modal  :id="id" 
-            ok-only 
-            ok-variant="primary rounded-pill" 
+            hide-footer
             centered
             header-class="custom-header" 
             body-class="custom-body" 
             footer-class="custom-footer" 
             :title="title">
     <p class="my-4">{{message}}</p>
+    <g-link :to="redirect">
+      <b-button 
+      class="primary rounded-pill mt-4"
+      @click="hideModal"
+    >OK</b-button></g-link>
+    
   </b-modal>
 </template>
 
@@ -16,7 +21,13 @@ export default {
   props: {
     id: String,
     title: String,
-    message: String
+    message: String,
+    redirect: String
+  },
+  methods: {
+    hideModal() {
+      this.$bvModal.hide(this.id)
+    }
   }
 }
 </script>

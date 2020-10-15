@@ -60,14 +60,7 @@
         >
           weiter
         </b-button>
-
-
-        <b-button v-else class="next-step" @click="submitData">
-          <!-- Add router.push functionality to Modal Box? 
-            <g-link to="/workshops">abschicken</g-link> -->
-            abschicken
-        </b-button>
-        <!-- TODO: Modal Popup for Success or Error (see Contact-Form.vue) -->
+        <b-button v-else class="next-step" @click="submitData"></b-button>
       </b-col>
     </b-row>
 
