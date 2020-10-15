@@ -228,10 +228,20 @@ export default {
     nextStep() {
       if (this.currentStep < 6)
         this.currentStep++
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
     },
     prevStep() {
       if (this.currentStep > 1)
         this.currentStep--
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
     },
     correctBooking(){
       if (this.currentStep === 3) 
