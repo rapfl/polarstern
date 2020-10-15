@@ -33,7 +33,6 @@
     </div>
 
     <!-- Corona Warning -->
-    <!-- TODO: change font-family -->
     <b-container class="my-5">
       <b-row>
         <b-col cols="12" sm="2" lg="1" class="mb-3 mb-sm-0 text-center text-sm-left">
@@ -57,6 +56,7 @@ query {
     edges {
       node {
         title
+        info
         content
       }
     }

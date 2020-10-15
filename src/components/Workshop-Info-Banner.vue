@@ -30,13 +30,11 @@
         </transition>
         
         <transition name="fade">
-          <div v-if="(windowWidth <= 991.98) || showMoreInfo" 
-            class="markdown-body mt-3 px-4 align-self-start">
-            <h4>
-              Der Workshop, der dir deine Stärken zeigt.
-            </h4>
-            <p>Im Workshop Stärken entdecken finden junge Menschen ihre persönlichen Stärken und erkennen Möglichkeiten, diese selbstbewusst in Schule, Freizeit und Beruf einzusetzen.</p>
-          </div>
+          <vue-markdown v-if="(windowWidth <= 991.98) || showMoreInfo" 
+            class="markdown-body mt-3 px-4 align-self-start"
+            :source="getCurrentPost($page.workshops.edges, title).info">
+
+          </vue-markdown>
         </transition>
         
         <transition name="fade">
