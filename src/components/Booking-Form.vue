@@ -60,7 +60,7 @@
         >
           weiter
         </b-button>
-        <b-button v-else class="next-step" @click="submitData"></b-button>
+        <b-button v-else class="next-step" @click="submitData">Abschicken</b-button>
       </b-col>
     </b-row>
 

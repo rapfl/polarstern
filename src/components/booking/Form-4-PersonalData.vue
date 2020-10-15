@@ -125,13 +125,14 @@ export default {
     },
     statePhonenumber() {
       if (this.validate)
-        return (this.formData.phonenumber === '') ? 'input-element-error' : ''
+        return (this.formData.phonenumber === ''||
+                this.validatePhonenumber(this.formData.phonenumber)) ? 'input-element-error' : ''
       else 
         return ''
     },
     stateOrganisationType() {
       if (this.validate)
-        return (this.formData.organisationType === '') ? 'radio-element-error' : ''
+        return (this.formData.organisationType === '' ) ? 'radio-element-error' : ''
       else 
         return ''
     },
@@ -155,8 +156,8 @@ export default {
       else
           return (true)
       },
-      validatePhonenumber(phonennumber) {
-        if (/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/.test(phonennumber))
+      validatePhonenumber(phonenumber) {
+        if (/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/.test(phonenumber))
           return false
         else
           return true
