@@ -73,25 +73,12 @@ module.exports = {
         base: process.env.AIRTABLE_BASE_ID, //required
         tables: [{
             name: "Verfuegbarkeiten",
-            typeName: "Availability", //required - needs to match template name
-            select: {}, //optional
-            links: [], //optional
+            typeName: "Availability" //required - needs to match template name
           },
-          // Comment in this section and the line in `templates` for multiple tables!
-          // {
-          //   name: "Parties",
-          //   typeName: "Parties", //required - needs to match template name
-          //   select: {}, //optional
-          //   links: [], //optional
-          // },
         ],
-        tableName: 'Availability', // required
       },
     },
   ],
-  templates: {
-    Availability: "/Verfuegbarkeiten/:id", //optional
-  },
   chainWebpack: config => {
     const svgRule = config.module.rule('svg')
     svgRule.uses.clear()
