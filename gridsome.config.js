@@ -70,9 +70,9 @@ module.exports = {
         // Details on finding these values can be found at:
         // https://gridsome.org/plugins/@gridsome/source-airtable
         apiKey: process.env.AIRTABLE_API_KEY, //required
-        baseId: process.env.AIRTABLE_BASE_ID, //required
+        base: process.env.AIRTABLE_BASE_ID, //required
         tables: [{
-            name: "Verf%C3%BCgbarkeiten",
+            name: "Verfuegbarkeiten",
             typeName: "Availability", //required - needs to match template name
             select: {}, //optional
             links: [], //optional
@@ -85,11 +85,12 @@ module.exports = {
           //   links: [], //optional
           // },
         ],
+        tableName: 'Availability', // required
       },
     },
   ],
   templates: {
-    Availability: "/Verf%C3%BCgbarkeiten/:id", //optional
+    Availability: "/Verfuegbarkeiten/:id", //optional
   },
   chainWebpack: config => {
     const svgRule = config.module.rule('svg')
