@@ -147,6 +147,7 @@ collections:
             valueField: "title"
             displayFields: ["title"]
             multiple: true
+        - {label: "Corona Warnung", name: "corona_warning", widget: "markdown"}
       - name: "company_offers"
         label: "Unternehmensangebote"
         file: "src/data/footer/Unternehmen.yml"
