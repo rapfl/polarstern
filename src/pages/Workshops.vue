@@ -38,9 +38,9 @@
         <b-col cols="12" sm="2" lg="1" class="mb-3 mb-sm-0 text-center text-sm-left">
           <g-image src="~/assets/img/corona_virus.png"></g-image>
         </b-col>
-        <b-col cols="12" sm="10" lg="11">  
-            <strong> Corona Hygienevorkehrungen:</strong> <br>
-            Wir halten uns an alle von der Bundesregierung vorgegeben Schutzmaßnahmen. Darüber hinaus messen unsere Mitarbeiter*innen vor jedem Workshop Fieber und lassen sich in regelmäßigen Abständen auf Covid-19 testen. Die Workshops können in der Klasse, im Freien oder Turnsaal durchgeführt werden. Ab dem 3.11.20 wird es zudem Online-Workhops geben (mehr Infos TBA).
+        <b-col cols="12" sm="10" lg="11">
+            <vue-markdown class="markdown-body" :source="Workshops.corona_warning">
+              </vue-markdown>  
         </b-col>
       </b-row>
     </b-container>
