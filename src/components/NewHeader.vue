@@ -10,8 +10,6 @@
       <div class="header-elements "><g-link to="/booking" class="yellow-box">Workshop Buchen</g-link></div>
     </div>
     <div class="header">
-      <div class="header-elements"><g-link to="/booking" class="yellow-box">Workshop Buchen</g-link></div>
-      <div class="header-elements"><g-link to="/"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link></div>
       <tasty-burger-button
           v-if="!isStartScreen" 
           :type="buttonType" 
@@ -20,7 +18,7 @@
           :color="color" 
           :active-color="activeColor"
           @toggle="toggleMenu"/>
-    </div>
+    
     <div v-if="!isStartScreen" class="header-menu " :class="{active: showMenu}">
       <ul>
         <li><g-link to="/junge-menschen">{{Menu.student_label}}</g-link></li>
@@ -28,6 +26,9 @@
         <li><g-link>Lehrmaterial</g-link></li>
         <li><g-link to="/workshops">{{Menu.workshop_label}}</g-link></li>
       </ul>
+    </div>
+      <div class="header-elements"><g-link to="/"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link></div>
+      <div class="header-elements"><g-link to="/booking" class="yellow-box">Workshop Buchen</g-link></div>
     </div>
   </header>
   
@@ -78,7 +79,6 @@ export default {
         z-index: 110;
         padding: 0.4em;
         a {
-          grid-column: 2 / 2;
           justify-self: center;
           img {
             width: 95px;
@@ -88,9 +88,8 @@ export default {
           }
         }
         button {
-          grid-column: 3 / 3;
-          justify-self: end;
-          margin-right: 10%;
+          justify-self: start;
+          margin-left: 20%;
           align-self: center;
           opacity: 1 !important;
         }
