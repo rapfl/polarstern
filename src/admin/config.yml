@@ -131,6 +131,13 @@ collections:
           - {label: "Vorschau Bild", name: "featured_image", widget: "image", allow_multiple: false}
           - {label: "Vorschau Text 1", name: "preview_text_1", widget: "string"}
           - {label: "Vorschau Text 2", name: "preview_text_2", widget: "string"}
+          - label: "Key Topics"
+            name: "key_topics"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - {label: Titel, name: title, widget: string}
+              - {label: Beschreibung, name: description, widget: text}
           - {label: "Body", name: "body", widget: "markdown"}
           - label: "Workshops"
             name: "workshops"
