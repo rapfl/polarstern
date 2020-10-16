@@ -6,16 +6,16 @@
           <h1>{{workshopPageTitle}}</h1>
           <!-- Strengths -->
           <b-row class="px-lg-5 px-xl-0">
-            <b-col v-for="(strength, index) in strengths" 
+            <b-col v-for="(keyTopic, index) in Workshops.key_topics" 
               :key="index"
               xl="3"
               class="mb-4 px-sm-5 px-xl-3">
               <StrengthHeadingPill 
-                :title="strength.title" 
-                :color="strength.color"
+                :title="keyTopic.title" 
+                :index="index"
                 class="mb-3"/>
               <p class="pl-lg-1 mb-4">
-                {{strength.content}}
+                {{keyTopic.description}}
               </p>
             </b-col>
           </b-row>
@@ -75,6 +75,7 @@ import VueMarkdown from 'vue-markdown'
 import StrengthHeadingPill from '~/components/Strength-Heading-Pill.vue'
 import BookWorkshopBanner from '~/components/Book-Workshop-Banner.vue'
 import WorkshopInfoBanner from '~/components/Workshop-Info-Banner.vue'
+import Workshops from '~/data/footer/Workshops.yml'
 
 export default {
   components: {
@@ -98,12 +99,6 @@ export default {
       errorTitle: 'Etwas ist schief gelaufen :(',
       errorMessage: 'Die Internetverbindung bzw. unsere Website scheint technische Schwierigkeiten zu haben. Versuche es später noch einmal!',
       workshopPageTitle: 'The most advanced Polarstern Workshops yet. In all the latest booking options.',
-      strengths: [
-        {title: 'Selbstkompetenzen', color: 'blue', content: 'Selbstwahrnehmung, Bewusstsein über eigene Interessen, Fähigkeiten, berufliche Möglichkeiten und Visionen, Teamfähigkeit.'},
-        {title: 'Sozialkompetenzen', color: 'red',content: 'Selbstwahrnehmung, Bewusstsein über eigene Interessen, Fähigkeiten, berufliche Möglichkeiten und Visionen, Teamfähigkeit.'},
-        {title: 'Berufsorientierung', color: 'yellow-dark',content: 'Selbstwahrnehmung, Bewusstsein über eigene Interessen, Fähigkeiten, berufliche Möglichkeiten und Visionen, Teamfähigkeit.'},
-        {title: 'Stark sein!', color: 'yellow-mono',content: 'Selbstwahrnehmung, Bewusstsein über eigene Interessen, Fähigkeiten, berufliche Möglichkeiten und Visionen, Teamfähigkeit.'},
-      ],
       workshops: [
         {
           title: 'Stärken Entdecken',

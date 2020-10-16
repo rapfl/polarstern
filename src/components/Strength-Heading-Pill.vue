@@ -10,9 +10,22 @@
 export default {
   props: {
     title: String,
-    color: {
-      type: String,
-      default: "blue"
+    index: Number
+  },
+  computed: {
+    color() {
+      switch(this.index) {
+        case 0:
+          return "blue"
+        case 1: 
+          return "red"  
+        case 2: 
+          return "yellow-dark"
+        case 3: 
+          return "yellow-mono"
+        default: 
+          return "blue"
+      }
     }
   }
 }
