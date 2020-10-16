@@ -72,7 +72,7 @@ module.exports = {
         apiKey: process.env.AIRTABLE_API_KEY, //required
         baseId: process.env.AIRTABLE_BASE_ID, //required
         tables: [{
-            name: "Verfügbarkeiten",
+            name: "Verf%C3%BCgbarkeiten",
             typeName: "Availability", //required - needs to match template name
             select: {}, //optional
             links: [], //optional
