@@ -99,7 +99,7 @@ export default {
     return {
       showMoreInfo: false,
       showAllDetails: false,
-      windowWidth: window.innerWidth,
+      windowWidth: 1000,
     }
   },
   props: {
