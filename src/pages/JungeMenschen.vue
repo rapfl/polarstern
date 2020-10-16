@@ -59,6 +59,7 @@
                             :index="index"/>
         </b-row>
       </b-container>
+      <BookWorkshopBanner/>
     </div>
   </Layout>
 </template>
@@ -87,6 +88,7 @@
 import Layout from '~/layouts/Landing.vue'
 import StudentBlogpost from '~/components/Student-Blogpost.vue'
 import SOSLogo from '~/components/SOS-Logo.vue'
+import BookWorkshopBanner from '~/components/Book-Workshop-Banner.vue'
 import Start from '~/data/Start.yml'
 import Student from '~/data/Student.yml'
 import VueMarkdown from 'vue-markdown'
@@ -99,7 +101,8 @@ export default {
     Layout,
     StudentBlogpost,
     SOSLogo,
-    VueMarkdown
+    VueMarkdown,
+    BookWorkshopBanner
   },
   computed: {
     Start() {

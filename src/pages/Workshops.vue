@@ -22,7 +22,8 @@
         </b-col>
       </b-row>
     </b-container>
-    <!-- TODO: Workshop Infos -->
+    <BookWorkshopBanner/>
+    <!-- Workshop Infos -->
     <div v-for="(workshop, index) in workshops" :key="index">
       <WorkshopInfoBanner 
         :color="workshop.color" 
@@ -32,7 +33,6 @@
     </div>
 
     <!-- Corona Warning -->
-    <!-- TODO: change font-family -->
     <b-container class="my-5">
       <b-row>
         <b-col cols="12" sm="2" lg="1" class="mb-3 mb-sm-0 text-center text-sm-left">
@@ -56,6 +56,7 @@ query {
     edges {
       node {
         title
+        info
         content
       }
     }
@@ -68,7 +69,6 @@ query {
 
 <script>
 import Layout from '~/layouts/Page.vue'
-import Workshops from '~/data/footer/Workshops.yml'
 import WorkshopModule from '~/components/Workshop-Module.vue'
 import ModalBox from '~/components/Modal-Box.vue'
 import VueMarkdown from 'vue-markdown'

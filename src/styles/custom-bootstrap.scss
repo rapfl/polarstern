@@ -114,6 +114,9 @@ a, a:hover {
         border-left-color: $blue_light;
         background-color: $blue_dark;
       }
+      a {
+        color: $yellow;
+      }
     }
   }
   &.red {
@@ -136,6 +139,9 @@ a, a:hover {
       .arrow-right {
         border-left-color: $red_light;
         background-color: $red_dark;
+      }
+      a {
+        color: $yellow;
       }
     }
   }
@@ -164,6 +170,12 @@ a, a:hover {
       .arrow-right {
         border-left-color: $yellow_light;
         background-color: $yellow_dark;
+      }
+      .markdown-body {
+        color: #fff;
+      }
+      a {
+        color: $red_light;
       }
     }
   }

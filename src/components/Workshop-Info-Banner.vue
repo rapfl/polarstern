@@ -30,12 +30,11 @@
         </transition>
         
         <transition name="fade">
-          <div v-if="showMoreInfo" class="markdown-body mt-3 px-4 align-self-start">
-            <h4>
-              Der Workshop, der dir deine Stärken zeigt.
-            </h4>
-            <p>Im Workshop Stärken entdecken finden junge Menschen ihre persönlichen Stärken und erkennen Möglichkeiten, diese selbstbewusst in Schule, Freizeit und Beruf einzusetzen.</p>
-          </div>
+          <vue-markdown v-if="(windowWidth <= 991.98) || showMoreInfo" 
+            class="markdown-body mt-3 px-4 align-self-start"
+            :source="getCurrentPost($page.workshops.edges, title).info">
+
+          </vue-markdown>
         </transition>
         
         <transition name="fade">
@@ -66,12 +65,9 @@
         </transition>
         
         <transition name="fade">
-          <div v-if="showAllDetails" class="markdown-body mt-3 px-4 align-self-start">
-            <p>Im Workshop Stärken entdecken ermöglichen wir jungen Menschen, die eigenen Stärken zu entdecken und so Vertrauen in sich selbst zu gewinnen. Denn das Bewusstsein über die eigenen Stärken hilft dabei, mutige und selbstbewusste Entscheidungen zu treffen.
-                Mit diversen interaktiven Methoden wie
-                - Stärken-Brainstorming | - Phantasiereise | - Selbst- und Fremdfeedback
-                sowie dazu passenden, altersadequaten Arbeitsmaterialien fördern wir Schlüsselkompetenzen wie Selbsterfahrung, Empathie, Team- und Kommunikationsfähigkeit.</p>
-          </div>
+          <vue-markdown v-if="(windowWidth <= 991.98) || showAllDetails" class="markdown-body mt-3 px-4 align-self-start" :source="getCurrentPost($page.workshops.edges, title).content">
+
+          </vue-markdown>
         </transition>
         <transition name="fade">
           <b-button-close 
@@ -87,11 +83,23 @@
 </template>
 
 <script>
+import Workshops from '~/data/footer/Workshops.yml'
+import VueMarkdown from 'vue-markdown'
+
 export default {
+  components: {
+    VueMarkdown,
+  },
+  computed: {
+    Workshops() {
+      return Workshops
+    }
+  },
   data() {
     return {
       showMoreInfo: false,
-      showAllDetails: false
+      showAllDetails: false,
+      windowWidth: window.innerWidth,
     }
   },
   props: {
@@ -112,7 +120,26 @@ export default {
       this.showAllDetails = !this.showAllDetails
       this.showMoreInfo = !this.showMoreInfo
     },
-  }
+    onResize() {
+      this.windowHeight = window.innerWidth
+    },
+    getCurrentPost(list, item) {
+      for(let i = 0; i < list.length; i++) {
+        if (list[i].node.title == item) {
+          return list[i].node;
+        }
+      }
+      return list[0].node;
+    },
+  },
+  mounted() {
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize);
+    })
+  },
+  beforeDestroy() { 
+    window.removeEventListener('resize', this.onResize); 
+  },
 }
 </script>
 
@@ -249,8 +276,8 @@ export default {
   }
   .workshop-info-banner,
   .layer {
-    max-height: 300px;
-    min-height: 300px;
+    max-height: 480px;
+    min-height: 480px;
   }
   .arrow-right {
     width: 0;
@@ -260,5 +287,30 @@ export default {
     border-left: 40px solid;
     border-right: none;
   }
+  @media (max-width: 991.98px) { 
+    .workshop-info-banner {
+      overflow: unset;
+      display: block;
+      max-height: initial;
+      min-height: initial;
+      .layer {
+        width: 100%;
+        max-height: inherit;
+        min-height: inherit;
+      }
+      .cover-layer {
+        min-height: 270px;
+      }
+      .content {
+        position: relative;
+      }
+      .clicker,
+      .arrow-right,
+      .arrow-description {
+        display: none;
+      }
 
+      
+    }
+  }
 </style>

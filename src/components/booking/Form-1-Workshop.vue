@@ -210,6 +210,7 @@ export default {
     margin-top: 1rem;
     height: 350;
     min-width:243px;
+    cursor: pointer;
     .workshop-box-2 {
       width:239px;
       height: 350.88px;
@@ -254,6 +255,11 @@ export default {
       background:#44C7BF;
     }
   }
+  .custom-control-label,
+  .custom-control-label::after {
+    cursor: pointer;
+  }
+
   .herzkiste {
     .custom-control-label {
       padding-left: 38px;
@@ -266,7 +272,10 @@ export default {
       height: 38px;
     }
     .custom-control-label::after {
-      content: none;
+      content: '';
+      width: 100%;
+      height: 100%;
+      opacity: 0;
     }
     .custom-control-input:checked ~ .custom-control-label::before {
       background-color:#E22E77;
@@ -308,6 +317,10 @@ export default {
     .custom-control-label::before{
       border: 4px solid #e22e77 !important;
       box-shadow: 0 0 0 0.2rem rgba(226, 46, 119, 0.25) !important;
+    }
+    .custom-control-label::after {
+      width: 100%;
+      height: 100%;
     }
   }
   .error-message {

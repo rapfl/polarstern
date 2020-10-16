@@ -49,7 +49,7 @@ export default {
   },
   data() {
     return {
-      addAnotherClassText: "<< Weitere Klasse hinzufügen ",
+      addAnotherClassText: "<< Weiteren Workshop hinzufügen ",
       correctDataString: "<< Daten korrigieren "
     }
   },
@@ -95,6 +95,9 @@ export default {
   }
   .weight-bold {
     font-weight: bold;
+  }
+  .b-calendar-grid-body .col {
+    height: 70px;
   }
 }
 </style>

@@ -29,6 +29,7 @@ collections:
     create: true
     fields:
       - {label: "Titel", name: "title", widget: "string"}
+      - {label: "Info", name: "info", widget: "markdown"}
       - {label: "Content", name: "body", widget: "markdown"}
   - name: "company_offers"
     label: "Unternehmensangebot"
