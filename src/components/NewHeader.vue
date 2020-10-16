@@ -7,7 +7,7 @@
       <div class="header-elements"><g-link to="/"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link></div>
       <div class="header-elements"><g-link>Lehrmaterial</g-link></div>
       <div class="header-elements"><g-link to="/workshops">{{Menu.workshop_label}}</g-link></div>
-      <div class="header-elements "><g-link to="/booking" class="yellow-box">Workshop Buchen</g-link></div>
+      <div class="header-elements "><g-link to="/workshops" class="yellow-box">Workshop Buchen</g-link></div>
     </div>
     <div class="header">
       <tasty-burger-button
@@ -28,7 +28,7 @@
       </ul>
     </div>
       <div class="header-elements"><g-link to="/"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link></div>
-      <div class="header-elements"><g-link to="/booking" class="yellow-box">Workshop Buchen</g-link></div>
+      <div class="header-elements"><g-link to="/workshops" class="yellow-box">Workshop Buchen</g-link></div>
     </div>
   </header>
   

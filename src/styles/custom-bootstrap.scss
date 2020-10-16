@@ -148,7 +148,7 @@ a, a:hover {
   &.yellow {
     .cover-layer {
       background-color: $yellow;
-
+      color: #000;
       h3 {
         color: $red;
       }
@@ -165,7 +165,7 @@ a, a:hover {
 
     .all-details-layer {
       background-color: $yellow_dark;
-      color: #000;
+      color: #fff;
 
       .arrow-right {
         border-left-color: $yellow_light;
