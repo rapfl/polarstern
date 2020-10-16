@@ -89,7 +89,7 @@ export default {
         }
         button {
           justify-self: start;
-          margin-left: 20%;
+          margin-left: 10%;
           align-self: center;
           opacity: 1 !important;
         }
@@ -127,7 +127,7 @@ export default {
     height: auto;
     width: 292px;
     position: fixed;
-    right: 3%;
+    left: 0%;
     z-index: 100;
     top: 99px;
     transform: translateY(-600px);
