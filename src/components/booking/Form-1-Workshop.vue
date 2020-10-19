@@ -258,6 +258,8 @@ export default {
   .custom-control-label,
   .custom-control-label::after {
     cursor: pointer;
+    width: 100%;
+    height: 100%;
   }
 
   .herzkiste {
@@ -300,7 +302,8 @@ export default {
     }
   }
 
-  .input-element {
+  .input-element,
+  .b-form-datepicker {
     height: 86px;
     border-radius: 43px;
     border: 3px solid #007770;

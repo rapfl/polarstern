@@ -96,8 +96,5 @@ export default {
   .weight-bold {
     font-weight: bold;
   }
-  .b-calendar-grid-body .col {
-    height: 70px;
-  }
 }
 </style>

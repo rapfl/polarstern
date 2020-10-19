@@ -121,7 +121,7 @@ export default {
       this.showMoreInfo = !this.showMoreInfo
     },
     onResize() {
-      this.windowHeight = window.innerWidth
+      this.windowWidth = window.innerWidth
     },
     getCurrentPost(list, item) {
       for(let i = 0; i < list.length; i++) {
@@ -136,6 +136,7 @@ export default {
     this.$nextTick(() => {
       window.addEventListener('resize', this.onResize);
     })
+    this.windowWidth = window.innerWidth
   },
   beforeDestroy() { 
     window.removeEventListener('resize', this.onResize); 
