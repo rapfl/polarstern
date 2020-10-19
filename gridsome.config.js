@@ -63,21 +63,6 @@ module.exports = {
         modulePath: 'src/admin/index.js'
       }
     },
-    {
-      use: "@gridsome/source-airtable",
-      options: {
-        // Add these to a .env file
-        // Details on finding these values can be found at:
-        // https://gridsome.org/plugins/@gridsome/source-airtable
-        apiKey: process.env.AIRTABLE_API_KEY, //required
-        base: process.env.AIRTABLE_BASE_ID, //required
-        tables: [{
-            name: "Verfuegbarkeiten",
-            typeName: "Availability" //required - needs to match template name
-          },
-        ],
-      },
-    },
   ],
   chainWebpack: config => {
     const svgRule = config.module.rule('svg')
