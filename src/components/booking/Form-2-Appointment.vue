@@ -58,7 +58,6 @@
       <b-button
         pill 
         variant="warning" 
-        :disabled="!clickedDates[numDates-1] || !timesFormatted[numDates-1]"
         class="mt-3 mr-3"
         @click="addAppointmentWrapper">
         <b-icon class="mr-2" icon="calendar2-plus"></b-icon> Neuen Termin hinzufügen
