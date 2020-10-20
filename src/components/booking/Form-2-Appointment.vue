@@ -214,8 +214,20 @@ export default {
   .b-calendar-grid {
     border: none;
   }
+  .b-calendar-grid-body .col {
+    height: 70px;
+  }
   .btn {
     color: #000;
+  }
+}
+.b-form-datepicker {
+  .btn {
+    color: #000;
+    padding-left: 0;
+    .bi-calendar {
+      color: #000;
+    }
   }
 }
 .popover {
