@@ -30,7 +30,7 @@
       :key="index" 
       class="appointment-wrapper mb-4">
 
-      <label>{{'Termin ' + index + ':'}}</label>
+      <label>{{'Termin ' + index + ': '}}</label>
 
       <b-form-datepicker
       class="py-3 mb-4"
@@ -53,26 +53,25 @@
         :placeholder="pickTimeMessage"
         @input="addTime($event, index-1)">
       </b-form-input> 
-      <b-button-group vertical v-if="numDates == index">
-        <b-button
-          pill 
-          variant="warning" 
-          :active="clickedDates[index-1] && timesFormatted[index-1]"
-          class="mt-3 mr-3"
-          @click="addAppointmentWrapper(index)">
-          <b-icon class="mr-2" icon="calendar2-plus"></b-icon> Neuen Termin hinzufügen
-        </b-button>
-        <b-button
-          pill 
-          variant="secondary" 
-          class="mt-3"
-          v-if="index > 1"
-          @click="removeLastAppointmentWrapper(index)">
-          <b-icon class="mr-2" icon="calendar2-minus"></b-icon>Letzten Termin entfernen
-        </b-button>
-      </b-button-group>
-     
     </div>
+    <b-button-group vertical>
+      <b-button
+        pill 
+        variant="warning" 
+        :disabled="!clickedDates[numDates-1] || !timesFormatted[numDates-1]"
+        class="mt-3 mr-3"
+        @click="addAppointmentWrapper">
+        <b-icon class="mr-2" icon="calendar2-plus"></b-icon> Neuen Termin hinzufügen
+      </b-button>
+      <b-button
+        pill 
+        variant="secondary" 
+        class="mt-3"
+        v-if="numDates > 1"
+        @click="removeLastAppointmentWrapper">
+        <b-icon class="mr-2" icon="calendar2-minus"></b-icon>Letzten Termin entfernen
+      </b-button>
+    </b-button-group>
   </b-form-group>
 </template>
 
@@ -176,15 +175,13 @@ export default {
       }
     },
     addTime(time, index) {
-      if (time) {
-        this.timesFormatted[index] = time
-        this.dateTimesFormatted[index] = `${this.datesFormatted[index]}, ${time} Uhr`
-      }
+      this.timesFormatted[index] = time
+      this.dateTimesFormatted[index] = `${this.datesFormatted[index]}, ${time} Uhr`
     },
-    addAppointmentWrapper(index) {
+    addAppointmentWrapper() {
       this.numDates++
     },
-    removeLastAppointmentWrapper(index) {
+    removeLastAppointmentWrapper() {
       this.numDates--
       this.clickedDates.pop()
       this.datesFormatted.pop()
