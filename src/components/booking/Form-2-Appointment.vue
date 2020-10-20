@@ -41,6 +41,7 @@
       block
       >
     </b-calendar>
+    
     <b-popover 
       class="popover"
       v-for="(date, index) in clickedDates"
