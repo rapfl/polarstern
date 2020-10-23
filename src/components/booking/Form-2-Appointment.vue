@@ -33,18 +33,18 @@
       <label>{{'Termin ' + index + ': '}}</label>
 
       <b-form-datepicker
-      class="py-3 mb-4"
-      @input="addClickedDate($event, index-1)"
-      @context="addFormatedDate($event, index-1)"
-      :start-weekday="1"
-      :date-disabled-fn="datesDisabled"
-      :min="minDate"
-      :show-decade-nav="false"
-      :hide-header="true"
-      :label-no-date-selected="pickDateMessage"
-      menu-class="w-100"
-      calendar-width="100%"
-      dropup>
+        @input="addClickedDate($event, index-1)"
+        @context="addFormatedDate($event, index-1)"
+        class="py-3 mb-4"
+        :start-weekday="1"
+        :date-disabled-fn="datesDisabled"
+        :min="minDate"
+        :show-decade-nav="false"
+        :hide-header="true"
+        :label-no-date-selected="pickDateMessage"
+        menu-class="w-100"
+        calendar-width="100%"
+        dropup>
       </b-form-datepicker>
 
       <b-form-input 
@@ -59,6 +59,7 @@
         pill 
         variant="warning" 
         class="mt-3 mr-3"
+        :class="addButtonDisabled ? 'disabled' : ''"
         @click="addAppointmentWrapper">
         <b-icon class="mr-2" icon="calendar2-plus"></b-icon> Neuen Termin hinzufügen
       </b-button>
@@ -96,15 +97,15 @@ export default {
   },
   data() {
     return {
+      addButtonDisabled: true,
       booking: this.value,
       selectedDate: null,
       numDates: 1,
+      numConfirmedDates: 0,
       clickedDates: [],
       datesFormatted: [],
       timesFormatted: [],
       dateTimesFormatted: [],
-      rawDate: '',
-      submitClicked: false,
       pickDateMessage: 'Wählen Sie hier ein Datum aus',
       pickTimeMessage: 'Wählen Sie hier eine Zeit aus',
       errorMessage: {
@@ -145,28 +146,21 @@ export default {
         }
       }
     },
-    // TODO: prevent multiple popover in one date
-    dateClicked(date) {
-      var dateObject = {
-        dateStr: date,
-        time: 'test'
-      }
-      this.rawDate = ''
-      this.booking.date = ''
-      this.clickedDates.push(dateObject)
-    },
     updateSelectedTime(time) {
       this.selectedTime = time.formatted
       this.dateTimeFormatted = `${this.dateFormatted}, ${this.selectedTime} Uhr`
     },
     addClickedDate(date, index) {
-      this.clickedDates[index] = date
+      if (date) {
+        this.clickedDates[index] = date
+      }
     },
     addFormatedDate(date, index) {
-      if (date.selectedFormatted) {
+      if (date.selectedDate) {
         this.datesFormatted[index] = date.selectedFormatted
         if (this.timesFormatted[index]) {
           this.dateTimesFormatted[index] = `${date.selectedFormatted}, ${this.timesFormatted[index]} Uhr`
+          this.addButtonDisabled = false
         }
         else {
           this.dateTimesFormatted[index] = `${date.selectedFormatted}`
@@ -174,18 +168,38 @@ export default {
       }
     },
     addTime(time, index) {
-      this.timesFormatted[index] = time
-      this.dateTimesFormatted[index] = `${this.datesFormatted[index]}, ${time} Uhr`
+      if (this.timesFormatted) {
+        this.timesFormatted[index] = time
+        this.dateTimesFormatted[index] = `${this.datesFormatted[index]}, ${time} Uhr`
+        if (this.clickedDates[index]) {
+          this.addButtonDisabled = false
+        }
+      }
+      if (this.timesFormatted == "") {
+        this.addButtonDisabled = true
+      }
     },
     addAppointmentWrapper() {
-      this.numDates++
+      if (!this.addButtonDisabled) {
+        this.numDates++
+        this.addButtonDisabled = true
+      }
     },
     removeLastAppointmentWrapper() {
+      this.addButtonDisabled = false
       this.numDates--
-      this.clickedDates.pop()
-      this.datesFormatted.pop()
-      this.timesFormatted.pop()
-      this.dateTimesFormatted.pop()
+      if (this.clickedDates[this.numDates-1]) {
+        this.clickedDates.pop()
+      }
+      if (this.timesFormatted[this.numDates]) {
+        this.timesFormatted.pop()
+      }
+      if (this.datesFormatted[this.numDates]) {
+        this.datesFormatted.pop()
+      }
+      if (this.dateTimesFormatted[this.numDates]) {
+        this.dateTimesFormatted.pop()
+      }
     },
     changeFormattedDate(date) {
       if (this.popoverOpen) {
