@@ -158,9 +158,12 @@ export default {
     addFormatedDate(date, index) {
       if (date.selectedDate) {
         this.datesFormatted[index] = date.selectedFormatted
+        // Time existing?
         if (this.timesFormatted[index]) {
           this.dateTimesFormatted[index] = `${date.selectedFormatted}, ${this.timesFormatted[index]} Uhr`
           this.addButtonDisabled = false
+          this.booking.datesConfirmed = true
+          this.booking.appointments[index] = this.dateTimesFormatted[index]
         }
         else {
           this.dateTimesFormatted[index] = `${date.selectedFormatted}`
@@ -168,25 +171,30 @@ export default {
       }
     },
     addTime(time, index) {
-      if (this.timesFormatted) {
+      if (time) {
         this.timesFormatted[index] = time
         this.dateTimesFormatted[index] = `${this.datesFormatted[index]}, ${time} Uhr`
         if (this.clickedDates[index]) {
           this.addButtonDisabled = false
+          this.booking.datesConfirmed = true
+          this.booking.appointments[index] = this.dateTimesFormatted[index]
         }
       }
-      if (this.timesFormatted == "") {
+      if (time == "") {
         this.addButtonDisabled = true
+        this.booking.datesConfirmed = false
       }
     },
     addAppointmentWrapper() {
       if (!this.addButtonDisabled) {
         this.numDates++
         this.addButtonDisabled = true
+        this.booking.datesConfirmed = false
       }
     },
     removeLastAppointmentWrapper() {
       this.addButtonDisabled = false
+      this.booking.datesConfirmed = true
       this.numDates--
       if (this.clickedDates[this.numDates-1]) {
         this.clickedDates.pop()
@@ -200,6 +208,7 @@ export default {
       if (this.dateTimesFormatted[this.numDates]) {
         this.dateTimesFormatted.pop()
       }
+      this.booking.appointments = this.dateTimesFormatted
     },
     changeFormattedDate(date) {
       if (this.popoverOpen) {
