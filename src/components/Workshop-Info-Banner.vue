@@ -277,8 +277,9 @@ export default {
   }
   .workshop-info-banner,
   .layer {
-    max-height: 480px;
-    min-height: 480px;
+    max-height: 350px;
+    min-height: 350px;
+    overflow-y: scroll;
   }
   .arrow-right {
     width: 0;
