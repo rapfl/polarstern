@@ -6,6 +6,7 @@
             header-class="custom-header" 
             body-class="custom-body" 
             footer-class="custom-footer" 
+            @hide="redirectRouter"
             :title="title">
     <p class="my-4">{{message}}</p>
   </b-modal>
@@ -16,7 +17,13 @@ export default {
   props: {
     id: String,
     title: String,
-    message: String
+    message: String,
+    redirect: String
+  },
+  methods: {
+    redirectRouter() {
+      this.$router.push(this.redirect)
+    }
   }
 }
 </script>

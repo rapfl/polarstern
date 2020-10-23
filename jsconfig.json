@@ -1,0 +1,13 @@
+{
+    "include": [
+        "./src/**/*", ".netlify/functions/*"
+    ],
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ]
+        }
+    }
+}

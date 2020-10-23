@@ -1,17 +1,50 @@
 <template>
-  <Layout :blue="true">
-    <b-container class="header-padding footer-padding workshops">
-      <b-row>
+  <Layout>
+    <b-container class="header-padding workshops">
+      <b-row class="pb-0">
         <b-col cols="12">
-          <vue-markdown class="markdown-body">{{Workshops.body}}</vue-markdown>
-          <b-tabs nav-class="workshops">
-            <WorkshopModule  v-for="(offer, index) in Workshops.workshops"
-                            :key="index"
-                            :index="index"/>
-          </b-tabs>
+          <h1>{{workshopPageTitle}}</h1>
+          <!-- Strengths -->
+          <b-row class="px-lg-5 px-xl-0">
+            <b-col v-for="(keyTopic, index) in Workshops.key_topics" 
+              :key="index"
+              xl="3"
+              class="mb-4 px-sm-5 px-xl-3">
+              <StrengthHeadingPill 
+                :title="keyTopic.title" 
+                :index="index"
+                class="mb-3"/>
+              <p class="pl-lg-1 mb-4">
+                {{keyTopic.description}}
+              </p>
+            </b-col>
+          </b-row>
         </b-col>
       </b-row>
     </b-container>
+    <BookWorkshopBanner/>
+    <!-- Workshop Infos -->
+    <div v-for="(workshop, index) in workshops" :key="index">
+      <WorkshopInfoBanner 
+        :color="workshop.color" 
+        :title="workshop.title" 
+        :icon="workshop.icon"/>
+
+    </div>
+
+    <!-- Corona Warning -->
+    <b-container class="my-5">
+      <b-row>
+        <b-col cols="12" sm="2" lg="1" class="mb-3 mb-sm-0 text-center text-sm-left">
+          <g-image src="~/assets/img/corona_virus.png"></g-image>
+        </b-col>
+        <b-col cols="12" sm="10" lg="11">
+            <vue-markdown class="markdown-body" :source="Workshops.corona_warning">
+              </vue-markdown>  
+        </b-col>
+      </b-row>
+    </b-container>
+    <BookWorkshopBanner/>
     <ModalBox id="modal-success" :title="successTitle" :message="successMessage"/>
     <ModalBox id="modal-error" :title="errorTitle" :message="errorMessage"/>
   </Layout>
@@ -23,6 +56,7 @@ query {
     edges {
       node {
         title
+        info
         content
       }
     }
@@ -35,17 +69,23 @@ query {
 
 <script>
 import Layout from '~/layouts/Page.vue'
-import Workshops from '~/data/footer/Workshops.yml'
 import WorkshopModule from '~/components/Workshop-Module.vue'
 import ModalBox from '~/components/Modal-Box.vue'
 import VueMarkdown from 'vue-markdown'
+import StrengthHeadingPill from '~/components/Strength-Heading-Pill.vue'
+import BookWorkshopBanner from '~/components/Book-Workshop-Banner.vue'
+import WorkshopInfoBanner from '~/components/Workshop-Info-Banner.vue'
+import Workshops from '~/data/footer/Workshops.yml'
 
 export default {
   components: {
     Layout,
     WorkshopModule,
     ModalBox,
-    VueMarkdown
+    VueMarkdown,
+    StrengthHeadingPill,
+    BookWorkshopBanner,
+    WorkshopInfoBanner
   },
   computed: {
     Workshops() {
@@ -57,7 +97,25 @@ export default {
       successTitle: 'Anfrage erfolgreich :)',
       successMessage: 'Cool, dass Sie jungen Menschen ermöglichen möchten, stark zu sein! Wir melden uns ganz bald mit der Terminbestätigung für die Workshops.',
       errorTitle: 'Etwas ist schief gelaufen :(',
-      errorMessage: 'Die Internetverbindung bzw. unsere Website scheint technische Schwierigkeiten zu haben. Versuche es später noch einmal!'
+      errorMessage: 'Die Internetverbindung bzw. unsere Website scheint technische Schwierigkeiten zu haben. Versuche es später noch einmal!',
+      workshopPageTitle: 'The most advanced Polarstern Workshops yet. In all the latest booking options.',
+      workshops: [
+        {
+          title: 'Stärken Entdecken',
+          color: 'blue',
+          icon: '/uploads/weightlift_guy.png'
+        },
+        {
+          title: 'Zukunftsperspektiven',
+          color: 'red',
+          icon: '/uploads/footsteps.png'
+        },
+        {
+          title: 'Achtsamkeit',
+          color: 'yellow',
+          icon: '/uploads/happyfaces.png'
+        }
+      ]
     }
   },
   metaInfo: {

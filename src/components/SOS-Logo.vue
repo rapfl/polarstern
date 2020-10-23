@@ -5,7 +5,7 @@
       <b-col cols="12" class="company-logo-wrapper">
         <p>{{SOSFooter.sos_kinderdorf_text}}</p>
         <a :href="SOSFooter.sos_kinderdorf_link">
-          <g-image :src="$page.meta.siteUrl + SOSFooter.sos_kinderdorf_logo" width="370" class="company-logo img-fluid"></g-image>
+          <g-image :src="$static.meta.siteUrl + SOSFooter.sos_kinderdorf_logo" width="370" class="company-logo img-fluid"></g-image>
         </a>
       </b-col>
     </b-row>  
@@ -13,13 +13,13 @@
 </div>
 </template>
 
-<page-query>
+<static-query>
   query Meta {
   	meta: metadata {
       siteUrl
     }
   }
-</page-query>
+</static-query>
 
 <script>
 import SOSFooter from '~/data/settings/SOS-Kinderdorf-Footer.yml'

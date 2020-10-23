@@ -7,6 +7,7 @@
         </b-col>
       </b-row>
     </b-container>
+    <BookWorkshopBanner/>
   </Layout>
 </template>
 
@@ -22,11 +23,13 @@
 import Layout from '~/layouts/Page.vue'
 import Kontakt from '~/data/footer/Contact.yml'
 import VueMarkdown from 'vue-markdown'
+import BookWorkshopBanner from '~/components/Book-Workshop-Banner.vue'
 
 export default {
   components: {
     Layout,
-    VueMarkdown
+    VueMarkdown,
+    BookWorkshopBanner
   },
   computed: {
     Kontakt() {

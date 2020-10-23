@@ -48,6 +48,10 @@ a, a:hover {
   border-color: $red;
   background-color: $red;
 }
+.btn-warning {
+  border-color: $yellow;
+  color: #000;
+}
 .btn-primary:hover {
   background-color: $blue_dark;
   border-color: $blue_dark;
@@ -55,6 +59,10 @@ a, a:hover {
 .btn-secondary:hover {
   background-color: $red_dark;
   border-color: $red_dark;
+}
+.btn-warning {
+  background-color: $yellow;
+  border-color: $yellow;
 }
 
 /** Classes **/
@@ -73,3 +81,111 @@ a, a:hover {
 .border.start-button-box {
   border-width: 14px !important;
 }
+
+// Colors
+.strength-heading-pill {
+  &.blue {
+    border-color: $blue_dark;
+  }
+  &.red {
+    border-color: $red_dark;
+  }
+  &.yellow-dark {
+    border-color: $yellow_dark;
+  }
+  &.yellow-mono {
+    border-color: $yellow_mono;
+  }
+}
+.book-workshop-banner {
+  background-color: $red_mono;
+}
+.workshop-info-banner {
+  &.blue {
+    .cover-layer {
+      background-color: $blue;
+      h3 {
+        color: $yellow;
+      }
+    }
+    .more-info-layer {
+      background-color: $blue_light;
+      .arrow-right {
+        border-left-color: $blue;
+        background-color: $blue_light;
+      }
+    }
+    .all-details-layer {
+      background-color: $blue_dark;
+      color: #fff;
+      .arrow-right {
+        border-left-color: $blue_light;
+        background-color: $blue_dark;
+      }
+      a {
+        color: $yellow;
+      }
+    }
+  }
+  &.red {
+    .cover-layer {
+      background-color: $red;
+      h3 {
+        color: $yellow;
+      }
+    }
+    .more-info-layer {
+      background-color: $red_light;
+      .arrow-right {
+        border-left-color: $red;
+        background-color: $red_light;
+      }
+    }
+    .all-details-layer {
+      background-color: $red_dark;
+      color: #fff;
+      .arrow-right {
+        border-left-color: $red_light;
+        background-color: $red_dark;
+      }
+      a {
+        color: $yellow;
+      }
+    }
+  }
+  &.yellow {
+    .cover-layer {
+      background-color: $yellow;
+      color: #000;
+      h3 {
+        color: $red;
+      }
+    }
+
+    .more-info-layer {
+      background-color: $yellow_light;
+      color: #000;
+      .arrow-right {
+        border-left-color: $yellow;
+        background-color: $yellow_light;
+      }
+    }
+
+    .all-details-layer {
+      background-color: $yellow_dark;
+      color: #fff;
+
+      .arrow-right {
+        border-left-color: $yellow_light;
+        background-color: $yellow_dark;
+      }
+      .markdown-body {
+        color: #fff;
+      }
+      a {
+        color: $red_light;
+      }
+    }
+  }
+}
+  

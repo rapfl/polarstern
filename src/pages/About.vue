@@ -27,6 +27,7 @@
         </b-col>
       </b-row>
     </b-container>
+    <BookWorkshopBanner/>
   </Layout>
 </template>
 
@@ -43,12 +44,14 @@ import Layout from '~/layouts/Page.vue'
 import About from '~/data/footer/About.yml'
 import VueMarkdown from 'vue-markdown'
 import MemberBox from '~/components/Member-Box.vue'
+import BookWorkshopBanner from '~/components/Book-Workshop-Banner.vue'
 
 export default {
   components: {
     Layout,
     VueMarkdown,
-    MemberBox
+    MemberBox,
+    BookWorkshopBanner
   },
   computed: {
     About() {

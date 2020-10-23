@@ -18,7 +18,7 @@
 </page-query>
 
 <script>
-import Header from '~/components/Header.vue'
+import Header from '~/components/NewHeader.vue'
 import SocialButtons from '~/components/Social-Buttons.vue'
 import SOSLogo from '~/components/SOS-Logo.vue'
 import Footer from '~/components/Footer.vue'
