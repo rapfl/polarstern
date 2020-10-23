@@ -106,6 +106,8 @@ export default {
         class: '',
         date: '',
         formattedDate: '',
+        appointments: [],
+        datesConfirmed: false,
         workshop: '',
         bookingoption: '',
         price: '',
@@ -138,7 +140,7 @@ export default {
       }
       else if (this.currentStep === 2) {
         if (this.booking.class === '' ||
-            this.booking.date === '' )
+            !this.booking.datesConfirmed)
             return true
           else
             return false
@@ -215,7 +217,7 @@ export default {
             "Wunschpreis": parseFloat(booking.price),
             "Klassenname": booking.class,
             "Herzkiste": (booking.herzkiste === 'Ja') ? true : null,
-            "Start": booking.date,
+            "Termine": this.printDates(booking.appointments),
             "Status": "Ausstehend",
             "Name der Organisation": this.formData.organisationNameAndAddress,
             "Ansprechperson": this.formData.name,
@@ -299,7 +301,16 @@ export default {
         return false
       else
         return true
-   }
+    },
+    printDates(appointments) {
+      var print = ''
+      for (var i = 0; i < appointments.length; i++) {
+        print += '(' + (i+1) + ') ' 
+        print += appointments[i]
+        print += "\n"
+      }
+      return print
+    }
   }
 }
 </script>
