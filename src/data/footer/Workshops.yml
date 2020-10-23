@@ -3,20 +3,18 @@ preview_text_1: Für Pädagog*innen
 preview_text_2: Workshops buchen!
 key_topics:
   - description: >-
-      Selbstwahrnehmung, Bewusstsein über eigene Interessen, Fähigkeiten,
-      berufliche Möglichkeiten und Visionen, Teamfähigkeit.
+      Selbstwahrnehmung, Bewusstsein über eigene Interessen und Fähigkeiten,
+      Visionen für die persönliche Zukunft
     title: Selbstkompetenzen
   - description: >-
-      Selbstwahrnehmung, Bewusstsein über eigene Interessen, Fähigkeiten,
-      berufliche Möglichkeiten und Visionen, Teamfähigkeit.
+      Kritikfähigkeit, achtsamer und wertschätzender Umgang mit anderen, Stärken
+      an anderen wahrnehmen, anerkennen und nutzen
     title: Sozialkompetenzen
   - description: >-
-      Selbstwahrnehmung, Bewusstsein über eigene Interessen, Fähigkeiten,
-      berufliche Möglichkeiten und Visionen, Teamfähigkeit.
+      Bewusstsein über eigene Kompetenzen, Entwicklungsmöglichkeiten und
+      Filtermethoden für passende Berufe
     title: Berufsorientierung
-  - description: >-
-      Selbstwahrnehmung, Bewusstsein über eigene Interessen, Fähigkeiten,
-      berufliche Möglichkeiten und Visionen, Teamfähigkeit.
+  - description: 'Selbstvertrauen, Selbstwirksamkeit und Widerstandsfähigkeit'
     title: Stark sein!
 body: >-
   # Stärken-Workshops
@@ -60,7 +58,12 @@ workshops:
   - Achtsamkeit
 corona_warning: >-
   **Corona Hygienevorkehrungen:**
+<<<<<<< HEAD
   
+=======
+
+
+>>>>>>> 4e84df95bf897cd930d353c1608ae1b5bb6ac8f7
   Wir halten uns an alle von der Bundesregierung vorgegeben Schutzmaßnahmen.
   Darüber hinaus messen unsere Mitarbeiter*innen vor jedem Workshop Fieber und
   lassen sich in regelmäßigen Abständen auf Covid-19 testen. Die Workshops

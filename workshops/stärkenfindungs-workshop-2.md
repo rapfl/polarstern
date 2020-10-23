@@ -1,12 +1,12 @@
 ---
 title: Zukunftsperspektiven
 info: >-
-  #### Der Workshop, der dir deine Stärken zeigt.
+  #### Erschaffe eine Vision für deine Zukunft mit diesem Workshop.
 
 
-  Im Workshop Stärken entdecken finden junge Menschen ihre persönlichen Stärken
-  und erkennen Möglichkeiten, diese selbstbewusst in Schule, Freizeit und Beruf
-  einzusetzen.
+  Im Workshop Zukunftsperspektiven ermutigen wir junge Menschen Visionen für die
+  eigene Zukunft zu entwickeln und so ihr Bewusstsein für persönliche Ressourcen
+  und Wünsche zu stärken.
 ---
 Im Workshop Zukunftsperspektiven ermutigen wir junge Menschen, sich mit den eigenen **Interessen**, **Stärken**, **Wunschtätigkeiten** und **Visionen** zu beschäftigen und so ihr **Bewusstsein für persönliche Ressourcen und Wünsche** zu stärken.
 
