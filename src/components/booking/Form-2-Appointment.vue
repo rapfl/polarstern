@@ -23,55 +23,55 @@
     
     <!-- Calendar -->
     <div id="formattedDateContainer" >
-     <span class="label-option"> Ihr Wunschtermin: </span>
-     <span class="text"> {{dateTimeFormatted}} </span>    
-    </div> 
-    <b-calendar 
-      id="date"
-      class="calender pb-0 pt-0"
-      :start-weekday="1"
-      :date-disabled-fn="datesDisabled"
-      :min="minDate"
-      :show-decade-nav="false"
-      :label-no-date-selected="dateTimeFormatted"
-      :hide-header="true"
-      @selected="dateClicked($event)"
-      @input="popoverIsShown($event)"
-      @context="changeFormattedDate($event)"
-      block
-      >
-    </b-calendar>
-    
-    <b-popover 
-      class="popover"
-      v-for="(date, index) in clickedDates"
-      :key="index"
-      :target="`date__cell-${date.dateStr}_`"
-      :show="(date.dateStr == selectedDate) && popoverOpen"
-      >
-        <template v-slot:title>
-          <span class="popover-title">{{ booking.workshop }}</span>  <br>
-          <b-button @click="onClose" class="close" aria-label="Close">
-            <span class="d-inline-block" aria-hidden="true">&times;</span>
-          </b-button>
-        </template>
-        
-        <!-- Time -->
-        <b-time
-          v-model="selectedTime"
-          locale="de"
-          @context="updateSelectedTime($event)"
-          :label-no-time-selected="''">
-        </b-time>
-        <!-- Submit Button -->
-        <b-button
-          class="mt-2"
-          pill 
-          variant="secondary"
-          @click="submitTime">
-          Bestätigen
-        </b-button>
-      </b-popover>
+     <span class="label-option"> Ihre Wunschtermine: </span>
+    </div>
+
+    <div v-for="index in numDates" 
+      :key="index" 
+      class="appointment-wrapper mb-4">
+
+      <label>{{'Termin ' + index + ': '}}</label>
+
+      <b-form-datepicker
+        @input="addClickedDate($event, index-1)"
+        @context="addFormatedDate($event, index-1)"
+        class="py-3 mb-4"
+        :start-weekday="1"
+        :date-disabled-fn="datesDisabled"
+        :min="minDate"
+        :show-decade-nav="false"
+        :hide-header="true"
+        :label-no-date-selected="pickDateMessage"
+        menu-class="w-100"
+        calendar-width="100%"
+        dropup>
+      </b-form-datepicker>
+
+      <b-form-input 
+        class="input-element" 
+        type="time"
+        :placeholder="pickTimeMessage"
+        @input="addTime($event, index-1)">
+      </b-form-input> 
+    </div>
+    <b-button-group vertical>
+      <b-button
+        pill 
+        variant="warning" 
+        class="mt-3 mr-3"
+        :class="addButtonDisabled ? 'disabled' : ''"
+        @click="addAppointmentWrapper">
+        <b-icon class="mr-2" icon="calendar2-plus"></b-icon> Neuen Termin hinzufügen
+      </b-button>
+      <b-button
+        pill 
+        variant="secondary" 
+        class="mt-3"
+        v-if="numDates > 1"
+        @click="removeLastAppointmentWrapper">
+        <b-icon class="mr-2" icon="calendar2-minus"></b-icon>Letzten Termin entfernen
+      </b-button>
+    </b-button-group>
   </b-form-group>
 </template>
 
@@ -88,23 +88,26 @@ query {
 </static-query>
 
 <script>
-import { BIconSortNumericDownAlt } from 'bootstrap-vue'
+
 export default {
   props: {
     value: null,
-    validate: false
+    validate: false,
+    firstDate: ''
   },
   data() {
     return {
+      addButtonDisabled: true,
       booking: this.value,
-      clickedDates: [],
-      selectedTime: '12:00',
       selectedDate: null,
-      popoverOpen: false,
-      dateFormatted: '',
-      dateTimeFormatted: '',
-      rawDate: '',
-      submitClicked: false,
+      numDates: 1,
+      numConfirmedDates: 0,
+      clickedDates: [],
+      datesFormatted: [],
+      timesFormatted: [],
+      dateTimesFormatted: [],
+      pickDateMessage: 'Wählen Sie hier ein Datum aus',
+      pickTimeMessage: 'Wählen Sie hier eine Zeit aus',
       errorMessage: {
         class: 'Bitte geben Sie einen Klassennamen an!'
       }
@@ -143,24 +146,69 @@ export default {
         }
       }
     },
-    dateClicked(date) {
-      var dateObject = {
-        dateStr: date,
-        time: 'test'
-      }
-      this.rawDate = ''
-      this.booking.date = ''
-      this.clickedDates.push(dateObject)
-    },
     updateSelectedTime(time) {
       this.selectedTime = time.formatted
       this.dateTimeFormatted = `${this.dateFormatted}, ${this.selectedTime} Uhr`
     },
-    popoverIsShown(date) {
-      this.selectedDate = date
-      if (!this.popoverOpen) {                // when a popover is not shown yet
-        this.popoverOpen = !this.popoverOpen
+    addClickedDate(date, index) {
+      if (date) {
+        this.clickedDates[index] = date
       }
+    },
+    addFormatedDate(date, index) {
+      if (date.selectedDate) {
+        this.datesFormatted[index] = date.selectedFormatted
+        // Time existing?
+        if (this.timesFormatted[index]) {
+          this.dateTimesFormatted[index] = `${date.selectedFormatted}, ${this.timesFormatted[index]} Uhr`
+          this.addButtonDisabled = false
+          this.booking.datesConfirmed = true
+          this.booking.appointments[index] = this.dateTimesFormatted[index]
+        }
+        else {
+          this.dateTimesFormatted[index] = `${date.selectedFormatted}`
+        }
+      }
+    },
+    addTime(time, index) {
+      if (time) {
+        this.timesFormatted[index] = time
+        this.dateTimesFormatted[index] = `${this.datesFormatted[index]}, ${time} Uhr`
+        if (this.clickedDates[index]) {
+          this.addButtonDisabled = false
+          this.booking.datesConfirmed = true
+          this.booking.appointments[index] = this.dateTimesFormatted[index]
+        }
+      }
+      if (time == "") {
+        this.addButtonDisabled = true
+        this.booking.datesConfirmed = false
+      }
+    },
+    addAppointmentWrapper() {
+      if (!this.addButtonDisabled) {
+        this.numDates++
+        this.addButtonDisabled = true
+        this.booking.datesConfirmed = false
+      }
+    },
+    removeLastAppointmentWrapper() {
+      this.addButtonDisabled = false
+      this.booking.datesConfirmed = true
+      this.numDates--
+      if (this.clickedDates[this.numDates-1]) {
+        this.clickedDates.pop()
+      }
+      if (this.timesFormatted[this.numDates]) {
+        this.timesFormatted.pop()
+      }
+      if (this.datesFormatted[this.numDates]) {
+        this.datesFormatted.pop()
+      }
+      if (this.dateTimesFormatted[this.numDates]) {
+        this.dateTimesFormatted.pop()
+      }
+      this.booking.appointments = this.dateTimesFormatted
     },
     changeFormattedDate(date) {
       if (this.popoverOpen) {
@@ -176,16 +224,9 @@ export default {
       this.rawDate = `${this.selectedDate}T${this.selectedTime}:00`
       this.booking.date = this.rawDate
       this.booking.formattedDate = this.dateTimeFormatted
-      // make toast
-      /*
-      this.$bvToast.toast('Toast body content', {
-        title: 'Gratuliere!',
-        toaster: 'b-toaster-bottom-center',
-        variant: 'primary',
-        solid: true
-      })
-      */
-    }
+    },
+    
+
   }
 }
 </script>

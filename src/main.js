@@ -8,6 +8,10 @@ import AnimateCSS from 'animate.css'
 import * as TastyBurgerButton from 'vue-tasty-burgers'
 import 'vue-tasty-burgers/dist/vue-tasty-burgers.css';
 import checkView from 'vue-check-view'
+import {
+  BootstrapVue,
+  IconsPlugin
+} from 'bootstrap-vue'
 
 // Import custom styles
 import '~/styles/styles.scss'
@@ -18,6 +22,8 @@ export default function (Vue, { router, head, isClient }) {
   Vue.use(AnimateCSS)
   Vue.use(TastyBurgerButton)
   Vue.use(checkView)
+  Vue.use(BootstrapVue)
+  Vue.use(IconsPlugin)
   
   // Google Fonts
   head.link.push(

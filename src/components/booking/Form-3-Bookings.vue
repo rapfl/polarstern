@@ -14,7 +14,12 @@
     >
       <h3>Buchung {{ booking.index + 1}}</h3>
       Klasse: <span class="weight-bold">{{ booking.class }}</span> <br>
-      Datum: <span class="weight-bold">{{ booking.formattedDate }}</span> <br>
+      Terminvorschläge: 
+      <span v-for="(date, index) in booking.appointments"
+            :key="index" 
+            class="weight-bold d-block">
+        {{ date }}
+        </span> 
       Workshop: <span class="weight-bold">{{ booking.workshop }}</span> <br>
       Buchungsoption: <span class="weight-bold">{{ booking.bookingoption }}</span> <br>
       Wunschpreis pro Teilnehmer*in & Stunde: <span class="weight-bold">{{ booking.price }}</span> <br>

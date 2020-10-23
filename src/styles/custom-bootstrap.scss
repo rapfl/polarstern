@@ -48,6 +48,10 @@ a, a:hover {
   border-color: $red;
   background-color: $red;
 }
+.btn-warning {
+  border-color: $yellow;
+  color: #000;
+}
 .btn-primary:hover {
   background-color: $blue_dark;
   border-color: $blue_dark;
@@ -55,6 +59,10 @@ a, a:hover {
 .btn-secondary:hover {
   background-color: $red_dark;
   border-color: $red_dark;
+}
+.btn-warning {
+  background-color: $yellow;
+  border-color: $yellow;
 }
 
 /** Classes **/

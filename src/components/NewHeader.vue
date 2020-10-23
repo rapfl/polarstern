@@ -111,6 +111,7 @@ export default {
     }
   }
   .yellow-box {
+    transition: .9s ease-in-out;
     background:#FFE100;
     max-width: 126px;
     max-height: 45px;
@@ -120,7 +121,10 @@ export default {
     font-family: 'Chau Philomene One';
     font-size: 16px;
     font-weight: bold;
-
+    &:hover {
+      text-decoration: none;
+      transform: scale(1.1);
+    }
   }
   .header-menu {
     background-color: var(--red);
