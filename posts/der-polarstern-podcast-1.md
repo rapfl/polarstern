@@ -1,6 +1,6 @@
 ---
 title: 'Der Polarstern Podcast #1'
-featured_image: '/uploads/Coverart Episode #1@300x.png'
+featured_image: /uploads/Coverart Episode 1.png
 excerpt: Gleich reinhören!
 button_text: Gleich reinhören!
 ---
