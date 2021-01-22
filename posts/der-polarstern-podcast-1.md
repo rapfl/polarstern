@@ -1,5 +1,5 @@
 ---
-title: 'Der Polarstern Podcast #1'
+title: Der Polarstern Podcast Folge 1
 featured_image: /uploads/Coverart Episode 1.png
 excerpt: Gleich reinhören!
 button_text: Gleich reinhören!
