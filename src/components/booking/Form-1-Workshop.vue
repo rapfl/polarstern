@@ -24,12 +24,12 @@
         <div class="workshop-box-2 bg-green border-yellow" :class="stateWorkshop" v-if="ind === 1">
           <h2>STÄRKEN <br> ENTDECKEN</h2>  
           <g-image src='~/assets/svg/StaerkenEntdecken.svg' />
-          <h3>2 Stunde</h3>
+          <h3>2 Stunden</h3>
         </div>
         <div class="workshop-box-2 bg-pink border-yellow" :class="stateWorkshop" v-if="ind === 2">
           <h2>Zukunfts- perspektive</h2>  
           <g-image class="pos-abs" src='~/assets/svg/Zukunftsperspektive.svg' />
-          <h3>1 Stunde</h3>
+          <h3>2 Stunden</h3>
         </div>
         <div class="workshop-box-2 bg-yellow border-yellow" :class="stateWorkshop" v-if="ind === 3">
           <h2>Achtsamkeit</h2>  
