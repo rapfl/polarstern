@@ -98,7 +98,7 @@ export default {
       successMessage: 'Cool, dass Sie jungen Menschen ermöglichen möchten, stark zu sein! Wir melden uns ganz bald mit der Terminbestätigung für die Workshops.',
       errorTitle: 'Etwas ist schief gelaufen :(',
       errorMessage: 'Die Internetverbindung bzw. unsere Website scheint technische Schwierigkeiten zu haben. Versuche es später noch einmal!',
-      workshopPageTitle: 'The most advanced Polarstern Workshops yet. In all the latest booking options.',
+      workshopPageTitle: 'Wir geben jungen Menschen das Handwerkszeug, um ihre Stärken zu finden und zu nutzen!',
       workshops: [
         {
           title: 'Stärken Entdecken',
