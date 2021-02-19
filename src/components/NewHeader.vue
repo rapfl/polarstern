@@ -3,7 +3,7 @@
     <div class="header-new">
       <div class="header-elements"></div>
       <div class="header-elements"><g-link to="/junge-menschen">{{Menu.student_label}}</g-link></div>
-      <div class="header-elements"><g-link>Blog</g-link></div>
+      <div class="header-elements"><g-link to="https://polarstern.thinkific.com/courses/starken-entdecken"</g-link></div>
       <div class="header-elements"><g-link to="/"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link></div>
       <div class="header-elements"><g-link>Lehrmaterial</g-link></div>
       <div class="header-elements"><g-link to="/workshops">{{Menu.workshop_label}}</g-link></div>
@@ -22,7 +22,7 @@
     <div v-if="!isStartScreen" class="header-menu " :class="{active: showMenu}">
       <ul>
         <li><g-link to="/junge-menschen">{{Menu.student_label}}</g-link></li>
-        <li><g-link>Blog</g-link></li>
+        <li><g-link>Online-Kurs</g-link></li>
         <li><g-link>Lehrmaterial</g-link></li>
         <li><g-link to="/workshops">{{Menu.workshop_label}}</g-link></li>
       </ul>
