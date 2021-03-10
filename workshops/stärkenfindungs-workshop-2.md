@@ -28,6 +28,6 @@ Wir geben interessante Hintergrundinfos zu dem japanischen Konzept "Ikigai" (Deu
 
 Daneben gibt es Entspannungsübungen und animierende Gruppenspiele.
 
-Kosten: Sie bestimmen den Preis!
+Kosten: Du bestimmst den Preis!
 
 [Download der Detailinformationen als druckbarer Flyer](https://mcusercontent.com/eae61d3506cce48f98ea3ffe3/files/fb3accca-aa86-4e5a-8ed0-ca94096a0b83/PS_Workshop_Flyer.pdf)
