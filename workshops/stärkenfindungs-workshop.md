@@ -4,18 +4,26 @@ info: >-
   #### Der Workshop, der dir deine Stärken zeigt.
 
 
-  Im Workshop Stärken entdecken finden junge Menschen ihre persönlichen Stärken
-  und erkennen Möglichkeiten, diese selbstbewusst in Schule, Freizeit und Beruf
-  einzusetzen.
+  Im Workshop Stärken entdecken ermutigen wir junge Menschen (10-18 Jahre), die
+  eigenen Stärken zu entdecken und in Schule, Alltag/Freizeit und Beruf zu
+  nutzen. 
+
+
+  Inhalte: 
+
+
+  * Erkundung von Stärken wie Mut, Engagement, Humor, Teamgeist
+
+  * Selbsteinschätzung und Visualisierung persönlicher Stärken
+
+  * Fremdfeedback durch Peers
+
+  * Enstpannungsübungen und Gruppenspiele
 ---
-Im Workshop Stärken entdecken ermöglichen wir jungen Menschen, die eigenen **Stärken zu entdecken** und so Vertrauen in sich selbst zu gewinnen. Denn das Bewusstsein über die eigenen Stärken hilft dabei, mutige und selbstbewusste Entscheidungen zu treffen. 
+Auf Augenhöhe und mit viel Humor gehen wir auf die Teilnehmenden ein und besprechen und visualisieren gemeinsam Charakterstärken und deren Bedeutung. Was ist mit Neugier, Mut, Teamgeist gemeint? Welche Stärken habe ich und wie nutze ich sie in meinem Alltag? Warum stecken in vermeintlichen Schwächen oft Stärken?
 
-Mit diversen interaktiven Methoden wie 
+Oft fällt es schwer, sich selbst offen einzuschätzen. Deswegen inkludieren wir eine wertschätzende Fremdfeedbackübung. Daneben gibt es Entspannungsübungen, Gruppenspiele und coole Stärken-Materialien zum Behalten und Weiterverwenden.
 
-* Stärken-Brainstorming
-* Phantasiereise
-* Selbst- und Fremdfeedback 
-
-sowie dazu passenden, altersadequaten Arbeitsmaterialien fördern wir Schlüsselkompetenzen wie **Selbsterfahrung, Empathie, Team-** und **Kommunikationsfähigkeit.**
+Geförderte Schlüsselkompetenzen: **Selbst- und Fremdwahrnehmung, Empathie, Team-** und **Kommunikationsfähigkeit.**
 
 [Download der Detailinformationen als druckbarer Flyer](https://mcusercontent.com/eae61d3506cce48f98ea3ffe3/files/fb3accca-aa86-4e5a-8ed0-ca94096a0b83/PS_Workshop_Flyer.pdf)
