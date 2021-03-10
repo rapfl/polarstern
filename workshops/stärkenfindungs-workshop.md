@@ -4,12 +4,12 @@ info: >-
   #### Der Workshop, der dir deine Stärken zeigt.
 
 
-  Im Workshop Stärken entdecken ermutigen wir junge Menschen (10-18 Jahre), die
-  eigenen Stärken zu entdecken und in Schule, Alltag/Freizeit und Beruf zu
+  Im Workshop Stärken entdecken ermutigen wir **junge Menschen (10-18 Jahre)**,
+  die eigenen Stärken zu entdecken und in Schule, Alltag/Freizeit und Beruf zu
   nutzen. 
 
 
-  Inhalte: 
+  **Inhalte:** 
 
 
   * Erkundung von Stärken wie Mut, Engagement, Humor, Teamgeist
@@ -21,7 +21,7 @@ info: >-
   * Enstpannungsübungen und Gruppenspiele 
 
 
-  Für Schulen, Jugendgruppen und Lehrbetriebe!
+  Für **Schulen, Jugendgruppen** und **Lehrbetriebe**!
 ---
 Auf Augenhöhe und mit viel Humor gehen wir auf die Teilnehmenden ein und besprechen und visualisieren gemeinsam Charakterstärken und deren Bedeutung. Was ist mit Neugier, Mut, Teamgeist gemeint? Welche Stärken habe ich und wie nutze ich sie in meinem Alltag? Warum stecken in vermeintlichen Schwächen oft Stärken?
 
