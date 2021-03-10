@@ -29,4 +29,6 @@ Oft fällt es schwer, sich selbst offen einzuschätzen. Deswegen inkludieren wir
 
 Geförderte Schlüsselkompetenzen: **Selbst- und Fremdwahrnehmung, Empathie, Team-** und **Kommunikationsfähigkeit.**
 
+Kosten: Sie bestimmen den Preis!
+
 [Download der Detailinformationen als druckbarer Flyer](https://mcusercontent.com/eae61d3506cce48f98ea3ffe3/files/fb3accca-aa86-4e5a-8ed0-ca94096a0b83/PS_Workshop_Flyer.pdf)
