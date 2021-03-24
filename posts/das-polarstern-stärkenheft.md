@@ -6,9 +6,9 @@ button_text: Kostenlos downloaden!
 ---
 ## Interaktiv und COVID-konform
 
-könnt ihr mit dem Polarstern Stärkenheft trotz Kontaktbeschränkungen eure Schüler*innen stärken. 
+könnt ihr mit dem Polarstern Stärkenheft trotz Kontaktbeschränkungen eure Schüler*innen stärken.
 
-_****_[_**VORSCHAU-DOWNLOAD**_](DOWNLOAD)
+[_**VORSCHAU-DOWNLOAD**_](DOWNLOAD)
 
 Das Stärkenheft ermutigt junge Menschen, die eigenen Stärken zu entdecken, zu vertiefen und einzusetzen. Junge Menschen stecken voller interessanter Perspektiven, Engagement, Kreativität, Initiative und Lebensenergie. All diese Fähigkeiten, Stärken und Ideen gilt es zu aktivieren und positiv zu entwickeln. Damit fällt es leichter, sich im Dschungel des Erwachsenwerdens zurecht zu finden.
 
@@ -24,4 +24,4 @@ Die Broschüre ist eine ideale Ergänzung zum Unterricht und kann in der Klasse 
 
 [VORSCHAU-DOWNLOAD](https://drive.google.com/file/d/1f86r08RY49qI1rYV4cxHsAPl7N5kJqtL/view?usp=sharing)
 
-![](/uploads/stärkenheft-lo-res-vorschau-.png)
+![Vorschau aus dem Stärkenheft](/uploads/stärkenheft-lo-res-vorschau-.png)
