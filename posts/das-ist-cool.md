@@ -1,7 +1,7 @@
 ---
 title: Stärken sind größer!
 featured_image: /uploads/symposium-foto-raphael-modell.jpg
-excerpt: Unser Vortrag beim Kindergesundheits-Symposium der Sozialversicherungen
+excerpt: BLOGPOST
 button_text: Lies doch mal!
 ---
 ## Stärken sind größer!
