@@ -14,13 +14,19 @@ Das Stärkenheft ermutigt junge Menschen, die eigenen Stärken zu entdecken, zu 
 
 In der 19-seitigen Broschüre (A5 Format) wird das Thema Stärken mit einem Mix aus Infos und kreativen Übungen aufgearbeitet:
 
-Stärkeninfo: Wissenswertes über Charakterstärken 
+_Stärkeninfo_: Wissenswertes über Charakterstärken 
 
-Stärken finden: durch Selbst- und Fremdfeedback die persönlichen Stärken entdecken 
+_Stärken finden_: durch Selbst- und Fremdfeedback die persönlichen Stärken entdecken 
 
-Stärken einsetzen: Stärken-Superheld*in, Tipps im Umgang mit Stärken, Zukunftsvisionen entwickeln, Stärken-Tracking für den Alltag 
+_Stärken einsetzen_: Stärken-Superheld*in, Tipps im Umgang mit Stärken, Zukunftsvisionen entwickeln, Stärken-Tracking für den Alltag 
 
 Die Broschüre ist eine ideale Ergänzung zum Unterricht und kann in der Klasse oder im Homeschooling (7. bis 9. Schulstufe) eingesetzt werden.
+
+**BESTELLUNG**
+
+Ihr könnte die Stärkenhefte ganz umkompliziert per Mail an info@polarstern.me bestellen. Einfach Stückzahl und Versand- und Rechnungsadresse schicken.
+
+_Kosten_: € 1,- pro Heft zzgl. Versand. Ab 100 Heften € 0.80,- pro Heft inkl. Versand. 
 
 [VORSCHAU-DOWNLOAD](https://drive.google.com/file/d/1f86r08RY49qI1rYV4cxHsAPl7N5kJqtL/view?usp=sharing)
 
