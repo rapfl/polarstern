@@ -1,5 +1,5 @@
 ---
-title: Junge Menschen zwischen Lehrplan und Leben
+title: Zwischen Lehrplan und Leben
 featured_image: /uploads/teacher-image.jpg
 excerpt: Blogpost
 button_text: Lesen
