@@ -1,7 +1,7 @@
 ---
 title: Woher kommt Polarstern?
 featured_image: /uploads/bildschirmfoto-2019-12-11-um-12.30.58.png
-excerpt: Polarstern zu Gast bei Tonspur N
+excerpt: Podcast
 button_text: 'Anhören :)'
 ---
 ## Woher kommen wir überhaupt?
