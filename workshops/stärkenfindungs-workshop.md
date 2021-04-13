@@ -23,7 +23,7 @@ info: >-
 
   Für **Schulen, Jugendgruppen** und **Lehrbetriebe**!
 ---
-Auf Augenhöhe und mit viel Humor gehen wir auf die Teilnehmenden ein und besprechen und visualisieren gemeinsam Charakterstärken und deren Bedeutung. Was ist mit Neugier, Mut, Teamgeist gemeint? Welche Stärken habe ich und wie nutze ich sie in meinem Alltag? Warum stecken in vermeintlichen Schwächen oft Stärken?
+Auf Augenhöhe und mit viel Humor gehen wir auf die Teilnehmenden ein und besprechen und visualisieren gemeinsam Charakterstärken und deren Bedeutung. Was ist mit Neugier, Mut, Teamgeist gemeint? Welche Stärken habe ich und wie nutze ich sie in meinem Alltag? Warum stecken in vermeintlichen Schwächen oft Stärken? 
 
 Oft fällt es schwer, sich selbst offen einzuschätzen. Deswegen inkludieren wir eine wertschätzende Fremdfeedbackübung. Daneben gibt es Entspannungsübungen, Gruppenspiele und coole Stärken-Materialien zum Behalten und Weiterverwenden.
 
