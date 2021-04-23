@@ -114,7 +114,7 @@ export default {
       },
       booking: this.value,
       bookingOptions: [
-        'In der Klasse', 'Draußen','Im Turnsaal'
+        'In der Klasse', 'Draußen','Online'
       ],
       workshops: [
         "Stärken Entdecken (1h)",
