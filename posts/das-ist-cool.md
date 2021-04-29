@@ -38,7 +38,7 @@ Und das beste daran? **Jeder hat diese Stärken**, man muss sie nur kennen.
 
 Um die Brücke zwischen Realität und Zielvorstellung zu schlagen, baut Polarstern auf die Erkenntnisse der Positive Psychology und entwickelt Workshops, Lehrmaterialien und auch eine Stärken-App. 
 
-Dadurch ermöglichen wir jungen Menschen stark zu sein - direkt in ihrer Lebenswelt und mit der Unterstützung von Multiplikator*innen. All unsere Angebote sind aus Prinzip kostenlos für junge Menschen.
+Dadurch ermöglichen wir jungen Menschen stark zu sein - direkt in ihrer Lebenswelt und mit der Unterstützung von Multiplikator*innen.
 
 Die Polarstern App ist ein Tool um die eigenen Stärken durch Feedback von Menschen, denen man vertraut, zu finden. Der erste Schritt ist Anfragen an Freunde, Familie und Lehrkräfte zu schicken. Die antworten dann mit meinen größten Stärken. Diese reflektiere ich dann und formuliere sie in meinen eigenen Worten. So mache ich die Stärke wirklich zu meiner eigenen. Mit einer Kategorie aus 24 Stärken versehen speichere ich sie in meinem Stärkenprofil und habe somit jederzeit einen Überblick. 
 
