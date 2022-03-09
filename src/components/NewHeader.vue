@@ -1,13 +1,15 @@
 <template>
   <header class="header-wrapper">
     <div class="header-new">
-      <div class="header-elements"></div>
-      <div class="header-elements"><g-link to="/junge-menschen">{{Menu.student_label}}</g-link></div>
-      <div class="header-elements"><g-link>Blog</g-link></div>
-      <div class="header-elements"><g-link to="/"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link></div>
-      <div class="header-elements"><g-link>Lehrmaterial</g-link></div>
-      <div class="header-elements"><g-link to="/workshops">{{Menu.workshop_label}}</g-link></div>
-      <div class="header-elements "><g-link to="/workshops" class="yellow-box">Workshop Buchen</g-link></div>
+      <div class="logo-wrapper">
+        <g-link to="/"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link>
+      </div>
+      <div class="menu-elements-wrapper">
+        <div class="header-elements menu-element"><g-link to="/junge-menschen">{{Menu.student_label}}</g-link></div>
+        <div class="header-elements menu-element"><g-link>Blog</g-link></div>
+        <div class="header-elements menu-element"><g-link>Lehrmaterial</g-link></div>
+        <div class="header-elements menu-element"><g-link to="/workshops">{{Menu.workshop_label}}</g-link></div>
+      </div>
     </div>
     <div class="header">
       <tasty-burger-button
@@ -42,8 +44,8 @@ export default {
       buttonType: 'elastic',
       isActive: false,
       size: 'xl',
-      color: '#ffffff',
-      activeColor: '#ffffff',
+      color: '#000000',
+      activeColor: '#000000',
       showMenu: false
     }
   },
@@ -71,7 +73,7 @@ export default {
       display: none;
     }
     .header {
-        background-color: var(--red);
+        background-color: white;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         position: fixed;
@@ -98,6 +100,9 @@ export default {
   .header img {
     transition: .2s;
   }
+  .logo-wrapper {
+    padding-left: 60px;
+  }
   .header-elements {
     display: flex;
     justify-content: center;
@@ -106,9 +111,19 @@ export default {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     font-weight: bold;
-    a {
-      color: white
+    &.menu-element {
+      display: block;
+      padding: 0 20px;
+      align-self: center;
     }
+    a {
+      color: black;
+    }
+  }
+  .menu-elements-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 40px;
   }
   .yellow-box {
     transition: .9s ease-in-out;
@@ -127,7 +142,7 @@ export default {
     }
   }
   .header-menu {
-    background-color: var(--red);
+    background-color: white;
     height: auto;
     width: 292px;
     position: fixed;
@@ -146,12 +161,12 @@ export default {
           font-family: 'Roboto', sans-serif;
           font-weight: 400;
           font-size: 20px;
-          color: var(--white);
+          color: #000000;
           text-decoration: none;
         }
         a:hover,
         a.active.active--exact {
-          color: var(--yellow);
+          color: var(--red);
         }
       }
     }
@@ -167,9 +182,9 @@ export default {
     .main-wrapper.post,
     .main-wrapper.start {
       .header-new {
-        background-color: var(--red);
+        background-color: white;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 30% 70%;
         position: fixed;
         width: 100%;
         z-index: 110;
@@ -178,7 +193,7 @@ export default {
           grid-column: 2 / 2;
           justify-self: center;
           img {
-            width: 95px;
+            width: 75px;
             @media screen and (max-width: 767px) {
               width: 60px;
             }
