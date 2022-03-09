@@ -1,6 +1,8 @@
 <template>
   <Layout>
-    
+    <Hero>
+      
+    </Hero>
   </Layout>
 </template>
 
@@ -13,8 +15,9 @@
 </page-query>
 
 <script>
-import Layout from '~/layouts/Start.vue'
+import Layout from '~/layouts/PageUpdated.vue'
 import Start from '~/data/Start.yml'
+import Hero from '~/components/Hero.vue'
 
 export default {
   metaInfo: {
@@ -22,7 +25,8 @@ export default {
     title: 'Finde deine Stärken'
   },
   components: {
-    Layout
+    Layout,
+    Hero
   },
   data() {
     return {

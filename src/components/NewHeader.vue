@@ -66,6 +66,9 @@ export default {
 </script>
 
 <style lang="scss">
+  .header-wrapper {
+    height: 88px; 
+  }
   .main-wrapper.landing,
   .main-wrapper.post,
   .main-wrapper.start {
