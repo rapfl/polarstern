@@ -3,19 +3,24 @@ preview_text_1: Für Pädagog*innen
 preview_text_2: Workshops buchen!
 key_topics:
   - description: >-
-      Selbstwahrnehmung, Bewusstsein über eigene Interessen und Fähigkeiten,
-      Visionen für die persönliche Zukunft
-    title: Selbstkompetenzen
+      Junge Menschen (10-18 Jahre), Sekundarstufe 1 & 2, Berufsschule,
+      außerschulische Jugendarbeit, Lehrlinge
+    title: 'Für wen? '
   - description: >-
-      Kritikfähigkeit, achtsamer und wertschätzender Umgang mit anderen, Stärken
-      an anderen wahrnehmen, anerkennen und nutzen
-    title: Sozialkompetenzen
+      In ein- bis zweistündigen, interaktiven Workshops werden junge Menschen
+      ermutigt, ihre persönlichen Stärken zu entdecken und zu nutzen, sich
+      selbst und anderen wertschätzend zu begegnen und selbstbestimmte
+      Perspektiven für die eigene Zukunft zu entwickeln. 
+    title: Was?
   - description: >-
-      Bewusstsein über eigene Kompetenzen, Entwicklungsmöglichkeiten und
-      Filtermethoden für passende Berufe
-    title: Berufsorientierung
-  - description: 'Selbstvertrauen, Selbstwirksamkeit und Widerstandsfähigkeit'
-    title: Stark sein!
+      Ressourcenorientierte Methoden, Übungen, Spiele, Tools und Materialien zum
+      Behalten und Weiterverwenden
+    title: Wie?
+  - description: |-
+      In der Klasse, Jugendgruppe oder im Lehrbetrieb. 
+      Drinnen oder draußen. 
+      Offline oder online. 
+    title: Wo?
 body: >-
   # Stärken-Workshops
 
@@ -41,7 +46,7 @@ body: >-
   lassen sich in regelmäßigen Abständen auf Covid-19 testen.
 
 
-  Die Workshops können **in der Klasse, im Freien oder Turnsaal** durchgeführt
+  Die Workshops können **in der Klasse, im Freien oder online** durchgeführt
   werden. Seit Dezember gibt es zusätzlich einen
   **[Online-Kurs](https://polarstern.thinkific.com/courses/starken-entdecken)**.
 
@@ -60,6 +65,6 @@ corona_warning: >-
   **Corona Hygienevorkehrungen:** Wir halten uns an alle von der Bundesregierung
   vorgegeben Schutzmaßnahmen. Darüber hinaus messen unsere Mitarbeiter*innen vor
   jedem Workshop Fieber und lassen sich in regelmäßigen Abständen auf Covid-19
-  testen. Die Workshops können in der Klasse, im Freien oder Turnsaal
+  testen. Die Workshops können in der Klasse, im Freien oder online
   durchgeführt werden. Seit Dezember gibt es zusätzlich einen
   **[Online-Kurs](https://polarstern.thinkific.com/courses/starken-entdecken)**.
