@@ -96,6 +96,11 @@ collections:
   - name: "footerpages"
     label: "Seiten"
     files:
+      - name: "home"
+        label: "Home"
+        file: "src/data/Home.yml"
+        fields:
+          - {label: "Hero Bild", name: "hero_image", widget: "image"}
       - name: "impress"
         label: "Impressum"
         file: "src/data/footer/Impress.yml"
