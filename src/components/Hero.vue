@@ -1,33 +1,57 @@
 <template>
-  <section class="hero-wrapper">
+  <section class="hero-section">
+    <div class="hero-wrapper">
       <h1><span>Eine Starke Jungend Für Eine Starke Zukunft</span></h1>
-      <!-- TODO: Background Image -->
-      <!-- TODO: Background Video -->
+    </div>
+    <g-image v-if="!isVideo" src="~/assets/img/coolkids.jpeg" class="hero-bg">
+    </g-image>
+    <video v-else autoplay muted loop playsinline class="hero-bg">
+      <source type="video/mp4" src="/uploads/lifestylevid.mp4" />
+    </video>
   </section>
 </template>
 
 <script>
 export default {
-
+  props: {
+    isVideo: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 </script>
 
 <style lang="scss">
-  .hero-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .hero-section {
+    position: relative;
     height: 70vh;
-    background-color: var(--red);
 
-    h1 {
-      color: white;
-      text-align: center;
-      span {
-        background-color: black;
-        -webkit-box-decoration-break: clone;
-	      box-decoration-break: clone;
+    .hero-wrapper {
+      display: flex;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      justify-content: center;
+      align-items: center;
+
+      h1 {
+        color: white;
+        text-align: center;
+        span {
+          background-color: black;
+          -webkit-box-decoration-break: clone;
+          box-decoration-break: clone;
+        }
       }
     }
+    .hero-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
+  
 </style>
