@@ -29,9 +29,11 @@
     background-color: var(--white);
     padding: 1rem;
     a {
-      font-family: 'Chau Philomene One', sans-serif;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      text-transform: uppercase;
       color: var(--black);
-      text-transform: unset;
     }
     .col-sm-3 {
       text-align: center;

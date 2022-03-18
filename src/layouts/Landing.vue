@@ -3,7 +3,7 @@
     <Header/>
     <SocialButtons/>
     <slot />
-    <SOSLogo/>
+    <SupporterFooter/>
     <Footer/>
   </div>
 </template>
@@ -21,14 +21,14 @@
   import Start from '~/data/Start.yml'
   import Header from '~/components/NewHeader.vue'
   import SocialButtons from '~/components/Social-Buttons.vue'
-  import SOSLogo from '~/components/SOS-Logo.vue'
+  import SupporterFooter from '~/components/Supporter-Footer.vue'
   import Footer from '~/components/Footer.vue'
 
   export default {
     components: {
       Header,
       SocialButtons,
-      SOSLogo,
+      SupporterFooter,
       Footer
     },
     computed: {

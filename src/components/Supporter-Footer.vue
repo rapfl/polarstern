@@ -2,8 +2,14 @@
 <div class="logo-section">
   <b-container>
     <b-row class="sos-logo">
-      <b-col cols="12" class="company-logo-wrapper">
-        <p>{{SOSFooter.sos_kinderdorf_text}}</p>
+      <b-col cols="6" class="company-logo-wrapper">
+        <h4>{{SOSFooter.sos_kinderdorf_text}}</h4>
+        <a :href="SOSFooter.sos_kinderdorf_link">
+          <g-image :src="$static.meta.siteUrl + SOSFooter.sos_kinderdorf_logo" width="370" class="company-logo img-fluid"></g-image>
+        </a>
+      </b-col>
+      <b-col cols="6" class="company-logo-wrapper">
+        <h4>{{SOSFooter.sos_kinderdorf_text}}</h4>
         <a :href="SOSFooter.sos_kinderdorf_link">
           <g-image :src="$static.meta.siteUrl + SOSFooter.sos_kinderdorf_logo" width="370" class="company-logo img-fluid"></g-image>
         </a>
@@ -38,17 +44,13 @@ export default {
 <style lang="scss">
   .logo-section {
     background-color: var(--white); 
-
+    padding: 1rem;
     .company-logo-wrapper {
-      display: grid;
-      text-align: center;
-      align-items: center;
-      grid-template-rows: auto auto;
-      grid-template-columns: auto;
+
       margin-top: 1.5rem;
 
-      p {
-        font-family: Roboto, sans-serif;
+      h4 {
+        font-family: 'Chau Philomene One', sans-serif;
         font-size: 20px;
         margin: 0;
         font-weight: 200;

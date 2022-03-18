@@ -4,7 +4,7 @@
     <SocialButtons/>
     <Dots/>
     <slot/>
-    <SOSLogo/>
+    <SupporterFooter/>
     <Footer/>
   </div>
 </template>
@@ -20,7 +20,7 @@
 <script>
 import Header from '~/components/NewHeader.vue'
 import SocialButtons from '~/components/Social-Buttons.vue'
-import SOSLogo from '~/components/SOS-Logo.vue'
+import SupporterFooter from '~/components/Supporter-Footer.vue'
 import Footer from '~/components/Footer.vue'
 import Dots from '~/assets/svg/dots.svg'
 
@@ -28,7 +28,7 @@ export default {
   components: {
     Header,
     SocialButtons,
-    SOSLogo,
+    SupporterFooter,
     Footer,
     Dots
   },

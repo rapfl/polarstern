@@ -146,7 +146,7 @@
 <script>
 import Layout from '~/layouts/Landing.vue'
 import TeacherBlogpost from '~/components/Teacher-Blogpost.vue'
-import SOSLogo from '~/components/SOS-Logo.vue'
+import SupporterFooter from '~/components/Supporter-Footer.vue'
 import Teacher from '~/data/Teacher.yml'
 import Workshops from '~/data/footer/Workshops.yml'
 import Unternehmen from '~/data/footer/Unternehmen.yml'
@@ -158,7 +158,7 @@ export default {
     Layout,
     VueMarkdown,
     TeacherBlogpost,
-    SOSLogo
+    SupporterFooter
   },
   computed: {
     Teacher() {

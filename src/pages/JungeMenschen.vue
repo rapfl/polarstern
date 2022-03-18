@@ -87,7 +87,7 @@
 <script>
 import Layout from '~/layouts/Landing.vue'
 import StudentBlogpost from '~/components/Student-Blogpost.vue'
-import SOSLogo from '~/components/SOS-Logo.vue'
+import SupporterFooter from '~/components/Supporter-Footer.vue'
 import BookWorkshopBanner from '~/components/Book-Workshop-Banner.vue'
 import Start from '~/data/Start.yml'
 import Student from '~/data/Student.yml'
@@ -100,7 +100,7 @@ export default {
   components: {
     Layout,
     StudentBlogpost,
-    SOSLogo,
+    SupporterFooter,
     VueMarkdown,
     BookWorkshopBanner
   },
