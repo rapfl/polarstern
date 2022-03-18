@@ -1,6 +1,10 @@
 <template>
   <Layout>
-    <Hero>
+    <Hero 
+      :showVideo="Home.show_video"
+      :heroImage="Home.hero_image"
+      :heroVideo="Home.hero_video"
+      :heroString="Home.hero_string">
       
     </Hero>
   </Layout>
@@ -17,6 +21,7 @@
 <script>
 import Layout from '~/layouts/PageUpdated.vue'
 import Start from '~/data/Start.yml'
+import Home from '~/data/Home.yml'
 import Hero from '~/components/Hero.vue'
 
 export default {
@@ -36,6 +41,9 @@ export default {
   computed: {
     Start() {
       return Start
+    },
+    Home() {
+      return Home
     }
   },
   methods: {
