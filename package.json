@@ -19,6 +19,7 @@
     "bootstrap-vue": "^2.17.3",
     "gridsome": "^0.7.0",
     "gridsome-plugin-netlify-cms": "^1.0.9",
+    "gridsome-source-storyblok": "^2.0.0",
     "klaro": "^0.6.13",
     "klaro-gridsome": "^1.0.3",
     "netlify-cms": "^2.9.7",
