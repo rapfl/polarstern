@@ -1,43 +1,39 @@
 header_background_image: /uploads/_b290440.jpg
 content_1: >-
-  ## Mache dein Klassenzimmer zu einem Stärkenraum
+  ## Eine starke Jugend für ein starkes Klassenzimmer
 
 
-  #### Junge Menschen sind stark - wenn sie es nur wüssten! Hilf ihnen auf die
+
+
+  ###### Junge Menschen sind stark - wenn sie es nur wüssten! Hilf ihnen auf die
   Sprünge mit [Polarstern-Workshops](http://www.polarstern.me/workshops), den
   [Stärkenheften
   ](https://docs.google.com/forms/d/e/1FAIpQLSetnvHiqK5w-BnGS-qpLj_ABmcKNffSIANxqO1YRrD7Xomxow/viewform?usp=sf_link)oder
   unserem
   [Online-Kurs](https://polarstern.thinkific.com/courses/starken-entdecken).
 content_2: >-
-  ##### Werde Teil einer wachsenden Community an Pädagog\*innen, die ihren
-  Schüler\*innen ermöglicht, nachhaltiges Selbstvertrauen aufzubauen. Selten war
+  Werde Teil einer wachsenden Community an Pädagog:innen, die ihren
+  Schüler*innen ermöglicht, nachhaltiges Selbstvertrauen aufzubauen. Selten war
   es so wichtig wie heute, die eigenen Stärken zu kennen, in persönliche
   Ressourcen zu vertrauen und auch andere Menschen durch die Stärken-Brille zu
-  sehen. Polarstern begleitet dich als stärkenbasierter Werkzeugkoffer mit
-  Workshops, Lernmaterial und Online-Kursen. Dazu gibt es nützliche Inhalte und
-  Inspiration auf unserem Blog und in unserem Podcast.
+  sehen. 
 
 
-  Bei unseren stärkenorientierten Angeboten stehen die jungen Menschen mit ihren
-  Ressourcen, ihren Interessen und ihren Herausforderungen im Mittelpunkt. So
-  arbeiten wir beispielsweise in den Workshops direkt im Klassenzimmer an
-  verschiedenen Themen wie Zukunftsperspektiven, Selbstbewusstsein, Umgang mit
-  “Schwächen” und wertschätzender Umgang. Unser Fokus liegt dabei auf dem
-  Individuum im sozialen Miteinander. So wirkt Polarstern direkt auf die fünf
-  Säulen positiver Jugendentwicklung ein: Kompetenzen, Selbstvertrauen,
-  Beziehungen, Charakter und Fürsorge. Und junge Menschen erlangen das Vermögen,
-  in ihre eigenen Ressourcen zu vertrauen, sich und ihre Umwelt besser
-  wahrzunehmen und wertschätzender mit ihrem sozialen Umfeld zu interagieren.
-  Jetzt gleich ein passendes Angebot buchen!
-content_3: >-
-  **Buchen Sie jetzt[ Stärken-Workshops](https://www.polarstern.me/workshops)
-  und ermöglichen Sie jungen Menschen, Vertrauen in Ihre persönlichen Stärken,
-  Fähigkeiten und Interessen zu gewinnen!**
+  Polarstern begleitet dich mit
+  [Workshops](https://www.polarstern.me/workshops),
+  [Lehrmaterial](https://www.polarstern.me/posts/das-polarstern-staerkenheft/)
+  und
+  [Online-Kursen](https://polarstern.thinkific.com/courses/starken-entdecken).
+  Dazu gibt es nützliche Inhalte und Inspiration auf unserem Blog und in unserem
+  Podcast.
+content_3: |-
+  **Nutze unsere stärkenorientierten Angebote:** 
+
+  ****
 blogposts:
   - Stärken sind größer!
-  - Woher kommt Polarstern?
-  - Was brauchen junge Menschen?
+  - Der Polarstern Podcast Folge 1
+  - Podcast Episode 2
 content_4: >-
   **BESONDERS STARK SIND WIR IM TEAM.**
 
@@ -46,8 +42,11 @@ content_4: >-
   Jugend ein, die ihre Stärken kennt. Was ist mir dir?
 logos:
   - company_name: WKO
-    company_url: www.bic.at
+    company_url: 'https://www.bic.at'
     logo: /uploads/wko_logo_aus_eps_.png
   - company_name: Sustainable Development Goals
     company_url: 'https://sustainabledevelopment.un.org/partnership/?p=33245'
     logo: /uploads/e_logo_no-un-emblem-02.png
+  - company_name: The Major Oak
+    company_url: 'https://themajoroak.com'
+    logo: /uploads/TMO gray scale-01-01.png

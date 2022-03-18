@@ -118,7 +118,7 @@
 
     <b-form-group label="Wählen Sie eine Buchungsoption:">
       <b-form-radio v-model="formData.booking" name="booking" value="In der Klasse">In der Klasse</b-form-radio>
-      <b-form-radio v-model="formData.booking" name="booking" value="Draußen/im Turnsaal">Draußen/im Turnsaal</b-form-radio>
+      <b-form-radio v-model="formData.booking" name="booking" value="Draußen/Online">Draußen/Online</b-form-radio>
     </b-form-group>
     <!-- Date suggestions -->
     <b-form-group 

@@ -24,8 +24,8 @@
     <div v-if="!isStartScreen" class="header-menu " :class="{active: showMenu}">
       <ul>
         <li><g-link to="/junge-menschen">{{Menu.student_label}}</g-link></li>
-        <li><g-link>Blog</g-link></li>
-        <li><g-link>Lehrmaterial</g-link></li>
+        <li><a href="https://polarstern.thinkific.com/courses/starken-entdecken">Online-Kurs</a></li>
+        <li><a href="https://eduki.com/de/autor/1208601/polarstern-1/materialien">Lehrmaterial</a></li>
         <li><g-link to="/workshops">{{Menu.workshop_label}}</g-link></li>
       </ul>
     </div>

@@ -1,7 +1,7 @@
 ---
 title: Stärken sind größer!
 featured_image: /uploads/symposium-foto-raphael-modell.jpg
-excerpt: Unser Vortrag beim Kindergesundheits-Symposium der Sozialversicherungen
+excerpt: BLOGPOST
 button_text: Lies doch mal!
 ---
 ## Stärken sind größer!
@@ -38,15 +38,13 @@ Und das beste daran? **Jeder hat diese Stärken**, man muss sie nur kennen.
 
 Um die Brücke zwischen Realität und Zielvorstellung zu schlagen, baut Polarstern auf die Erkenntnisse der Positive Psychology und entwickelt Workshops, Lehrmaterialien und auch eine Stärken-App. 
 
-Dadurch ermöglichen wir jungen Menschen stark zu sein - direkt in ihrer Lebenswelt und mit der Unterstützung von Multiplikator*innen. All unsere Angebote sind aus Prinzip kostenlos für junge Menschen.
+Dadurch ermöglichen wir jungen Menschen stark zu sein - direkt in ihrer Lebenswelt und mit der Unterstützung von Multiplikator*innen.
 
 Die Polarstern App ist ein Tool um die eigenen Stärken durch Feedback von Menschen, denen man vertraut, zu finden. Der erste Schritt ist Anfragen an Freunde, Familie und Lehrkräfte zu schicken. Die antworten dann mit meinen größten Stärken. Diese reflektiere ich dann und formuliere sie in meinen eigenen Worten. So mache ich die Stärke wirklich zu meiner eigenen. Mit einer Kategorie aus 24 Stärken versehen speichere ich sie in meinem Stärkenprofil und habe somit jederzeit einen Überblick. 
 
-Wenn ich dann mal eine Bewerbung schreibe, einen Durchhänger habe oder mich einfach so besser fühlen möchte, kann ich mir immer wieder meine Stärken in Erinnerung rufen. 
+\--- Die Polarstern App ist mit Stand April 2021 leider nicht mehr verfügbar! ---
 
-Jetzt runterladen!
-
-Mit unseren Programmen setzt Polarstern einen wichtigen Schritt dahin, das Thema Stärken in der Schule und damit in der Gesellschaft zu etablieren. Stärken sind toll. Sie helfen dabei, Selbstvertrauen aufzubauen und mutige Entscheidungen zu treffen. Ein Leben, das auf Stärken aufbaut, ist glücklicher und voll Leidenschaft. Deswegen ermöglicht Polarstern allen jungen Menschen, stark zu sein. 
+Wenn ich dann mal eine Bewerbung schreibe, einen Durchhänger habe oder mich einfach so besser fühlen möchte, kann ich mir immer wieder meine Stärken in Erinnerung rufen. Mit unseren Programmen setzt Polarstern einen wichtigen Schritt dahin, das Thema Stärken in der Schule und damit in der Gesellschaft zu etablieren. Stärken sind toll. Sie helfen dabei, Selbstvertrauen aufzubauen und mutige Entscheidungen zu treffen. Ein Leben, das auf Stärken aufbaut, ist glücklicher und voll Leidenschaft. Deswegen ermöglicht Polarstern allen jungen Menschen, stark zu sein. 
 
 Unsere Programme sollen weiterhin kostenlos bleiben, und dafür brauchen wir eure Unterstützung. Wir freuen uns auch riesig über Kontakte zu Unternehmen, die unser Anliegen unterstützenswert finden. Schreibt uns unter info@polarstern.me!
 

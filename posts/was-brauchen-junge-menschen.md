@@ -1,7 +1,7 @@
 ---
-title: Was brauchen junge Menschen?
+title: Zwischen Lehrplan und Leben
 featured_image: /uploads/teacher-image.jpg
-excerpt: Zwischen Lehrplan und Leben
+excerpt: Blogpost
 button_text: Lesen
 ---
 **Die zweigeteilte Realität junger Menschen**

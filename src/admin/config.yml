@@ -100,7 +100,10 @@ collections:
         label: "Home"
         file: "src/data/Home.yml"
         fields:
+          - {label: "Zeige Video?", name: "show_video", widget: "boolean", default: false}
           - {label: "Hero Bild", name: "hero_image", widget: "image"}
+          - {label: "Hero Video", name: "hero_video", widget: "file"}
+          - {label: "Hero Titel", name: "hero_string", widget: "string"}
       - name: "impress"
         label: "Impressum"
         file: "src/data/footer/Impress.yml"
