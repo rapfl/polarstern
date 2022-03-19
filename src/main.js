@@ -14,6 +14,7 @@ import {
 } from 'bootstrap-vue'
 
 // Import custom styles
+import '~/styles/utilities.scss'
 import '~/styles/styles.scss'
 
 // Import Storyblok components
@@ -22,6 +23,7 @@ import Page from '~/components/storyblok/Page.vue'
 import Teaser from '~/components/storyblok/Teaser.vue'
 import Feature from '~/components/storyblok/Feature.vue'
 import Grid from '~/components/storyblok/Grid.vue'
+import Container from '~/components/storyblok/Container.vue'
 import Hero from '~/components/storyblok/Hero.vue'
 import Heading from '~/components/storyblok/Heading.vue'
 
@@ -56,5 +58,6 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('Grid', Grid)
   Vue.component('Hero', Hero)
   Vue.component('Heading', Heading)
+  Vue.component('Container', Container)
 
 }
