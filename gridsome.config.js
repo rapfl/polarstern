@@ -63,6 +63,14 @@ module.exports = {
         modulePath: 'src/admin/index.js'
       }
     },
+    {
+      use: 'gridsome-source-storyblok',
+      options: {
+        client: {
+          accessToken: 'nPB3rpXgVEyAC3PjwvMzNwtt'
+        }
+      }
+    }
   ],
   chainWebpack: config => {
     const svgRule = config.module.rule('svg')

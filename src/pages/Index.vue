@@ -1,12 +1,12 @@
 <template>
   <Layout>
-    <Hero 
+    <!-- <Hero 
       :showVideo="Home.show_video"
       :heroImage="Home.hero_image"
       :heroVideo="Home.hero_video"
       :heroString="Home.hero_string">
       
-    </Hero>
+    </Hero> -->
   </Layout>
 </template>
 
@@ -22,7 +22,7 @@
 import Layout from '~/layouts/PageUpdated.vue'
 import Start from '~/data/Start.yml'
 import Home from '~/data/Home.yml'
-import Hero from '~/components/Hero.vue'
+// import Hero from '~/components/storyblok/Hero.vue'
 
 export default {
   metaInfo: {
@@ -31,7 +31,7 @@ export default {
   },
   components: {
     Layout,
-    Hero
+    // Hero
   },
   data() {
     return {

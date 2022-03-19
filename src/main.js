@@ -16,6 +16,14 @@ import {
 // Import custom styles
 import '~/styles/styles.scss'
 
+// Import Storyblok components
+import DefaultLayout from '~/layouts/Default.vue'
+import Page from '~/components/storyblok/Page.vue'
+import Teaser from '~/components/storyblok/Teaser.vue'
+import Feature from '~/components/storyblok/Feature.vue'
+import Grid from '~/components/storyblok/Grid.vue'
+import Hero from '~/components/storyblok/Hero.vue'
+
 export default function (Vue, { router, head, isClient }) {
   // Libraries
   Vue.use(BootsrapVue)
@@ -36,4 +44,15 @@ export default function (Vue, { router, head, isClient }) {
       href: 'https://fonts.googleapis.com/css?family=Chau+Philomene+One'
     }
   )
+
+  // Set default layout as a global component
+  Vue.component('Layout', DefaultLayout)
+
+  // register Storyblok components
+  Vue.component('Page', Page)
+  Vue.component('Teaser', Teaser)
+  Vue.component('Feature', Feature)
+  Vue.component('Grid', Grid)
+  Vue.component('Hero', Hero)
+
 }
