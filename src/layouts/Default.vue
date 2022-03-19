@@ -2,15 +2,21 @@
   <div class="main-wrapper post">
     <Header/>
     <slot/>
+    <SupporterFooter/>
+    <Footer/>
   </div>
 </template>
 
 <script>
 import Header from '~/components/NewHeader.vue'
+import SupporterFooter from '~/components/storyblok/SupporterFooter.vue'
+import Footer from '~/components/storyblok/Footer.vue'
 
 export default {
   components: {
-    Header
+    Header,
+    SupporterFooter,
+    Footer
   },
 }
 </script>
