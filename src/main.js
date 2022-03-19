@@ -26,6 +26,10 @@ import Grid from '~/components/storyblok/Grid.vue'
 import Container from '~/components/storyblok/Container.vue'
 import Hero from '~/components/storyblok/Hero.vue'
 import Heading from '~/components/storyblok/Heading.vue'
+import Richtext from '~/components/storyblok/Richtext.vue'
+import TextEditor from '~/components/storyblok/TextEditor.vue'
+import CodeSnippet from '~/components/storyblok/CodeSnippet.vue'
+import Image from '~/components/storyblok/Image.vue'
 
 export default function (Vue, { router, head, isClient }) {
   // Libraries
@@ -59,5 +63,9 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('Hero', Hero)
   Vue.component('Heading', Heading)
   Vue.component('Container', Container)
+  Vue.component('Richtext', Richtext)
+  Vue.component('TextEditor', TextEditor)
+  Vue.component('CodeSnippet', CodeSnippet)
+  Vue.component('Image', Image)
 
 }
