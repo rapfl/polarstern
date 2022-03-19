@@ -67,7 +67,7 @@ module.exports = {
       use: 'gridsome-source-storyblok',
       options: {
         client: {
-          accessToken: 'nPB3rpXgVEyAC3PjwvMzNwtt'
+          accessToken: process.env.STORYBLOK_API_KEY
         }
       }
     }
