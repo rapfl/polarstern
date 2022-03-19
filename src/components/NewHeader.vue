@@ -2,13 +2,14 @@
   <header class="header-wrapper">
     <div class="header-new">
       <div class="logo-wrapper">
-        <g-link to="/"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link>
+        <g-link to="/home"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link>
       </div>
       <div class="menu-elements-wrapper">
-        <div class="header-elements menu-element"><g-link to="/junge-menschen">{{Menu.student_label}}</g-link></div>
-        <div class="header-elements menu-element"><g-link>Blog</g-link></div>
-        <div class="header-elements menu-element"><g-link>Lehrmaterial</g-link></div>
-        <div class="header-elements menu-element"><g-link to="/workshops">{{Menu.workshop_label}}</g-link></div>
+
+          <div class="header-elements menu-element" v-for="(menu, key) in menuOptions" :key="key">
+            <g-link :to="menu.route">{{ menu.label }}</g-link>
+          </div>
+        
       </div>
     </div>
     <div class="header">
@@ -50,6 +51,20 @@ export default {
     }
   },
   computed: {
+    menuOptions () {
+      return [
+        ...this.edges.map(edge => {
+          return {
+            label: edge.node.name,
+            route: edge.node.full_slug
+          }
+        })
+      ]
+    },
+    edges () {
+      return this.$static.allStoryblokEntry.edges || []
+    },
+    // TODO: DEPRECATED
     Menu() {
       return Menu
     }
@@ -64,6 +79,24 @@ export default {
   }
 }
 </script>
+
+<static-query>
+query {
+  metadata {
+    siteName
+  }
+
+  allStoryblokEntry {
+    edges {
+      node {
+        id
+        full_slug
+        name
+      }
+    }
+  }
+}
+</static-query>
 
 <style lang="scss">
   .header-wrapper {

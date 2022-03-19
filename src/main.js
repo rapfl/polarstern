@@ -23,6 +23,7 @@ import Teaser from '~/components/storyblok/Teaser.vue'
 import Feature from '~/components/storyblok/Feature.vue'
 import Grid from '~/components/storyblok/Grid.vue'
 import Hero from '~/components/storyblok/Hero.vue'
+import Heading from '~/components/storyblok/Heading.vue'
 
 export default function (Vue, { router, head, isClient }) {
   // Libraries
@@ -54,5 +55,6 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('Feature', Feature)
   Vue.component('Grid', Grid)
   Vue.component('Hero', Hero)
+  Vue.component('Heading', Heading)
 
 }

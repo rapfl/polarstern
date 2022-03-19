@@ -33,6 +33,8 @@ export default {
 
       h1 {
         color: white;
+        font-family: 'Chau Philomene One', sans-serif;
+        text-transform: uppercase;
         text-align: center;
         span {
           background-color: black;

@@ -1,60 +1,19 @@
 <template>
-  <div class="layout">
-    <header class="header">
-      <strong>
-        <g-link to="/home">{{ $static.metadata.siteName }}</g-link>
-      </strong>
-      <nav class="nav">
-        <g-link
-          v-for="(menu, key) in menuOptions"
-          class="nav__link"
-          :key="key"
-          :to="menu.route">
-          {{ menu.label }}
-        </g-link>
-      </nav>
-    </header>
+  <div class="main-wrapper post">
+    <Header/>
     <slot/>
   </div>
 </template>
 
 <script>
+import Header from '~/components/NewHeader.vue'
+
 export default {
-  computed: {
-    menuOptions () {
-      return [
-        ...this.edges.map(edge => {
-          return {
-            label: edge.node.name,
-            route: edge.node.full_slug
-          }
-        })
-      ]
-    },
-    edges () {
-      return this.$static.allStoryblokEntry.edges || []
-    }
-  }
+  components: {
+    Header
+  },
 }
 </script>
-
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-
-  allStoryblokEntry {
-    edges {
-      node {
-        id
-        full_slug
-        name
-      }
-    }
-  }
-}
-</static-query>
 
 <style>
 body {
@@ -64,22 +23,4 @@ body {
   line-height: 1.5;
 }
 
-.layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
-}
-
-.nav__link {
-  margin-left: 20px;
-}
 </style>
