@@ -7,7 +7,7 @@
       </div>
       <div class="menu-elements-wrapper">
 
-          <div class="header-elements menu-element" v-for="(menu, key) in menuOptions" :key="key">
+          <div class="header-elements menu-element" v-for="(menu, key) in mainPages" :key="key">
             <g-link :to="menu.route">{{ menu.label }}</g-link>
           </div>
         
@@ -29,7 +29,7 @@
     </div>
     <div v-if="!isStartScreen" class="header-menu " :class="{active: showMenu}">
       <ul>
-        <li class="header-elements menu-element" v-for="(menu, key) in menuOptions" :key="key">
+        <li class="header-elements menu-element" v-for="(menu, key) in mainPages" :key="key">
           <g-link :to="menu.route">{{ menu.label }}</g-link>
         </li>
       </ul>
@@ -52,18 +52,23 @@ export default {
     }
   },
   computed: {
-    menuOptions () {
-      return [
-        ...this.edges.map(edge => {
-          return {
-            label: edge.node.name,
-            route: edge.node.full_slug
-          }
-        })
-      ]
-    },
     edges () {
       return this.$static.allStoryblokEntry.edges || []
+    },
+    mainPages () {
+      var pagesArray = []
+      for (var i = 0; i < this.edges.length; i++) {
+        console.log(i)
+        if (this.$static.allStoryblokEntry.edges[i].node.content.component == "page") {
+          pagesArray.push(
+            {
+              label: this.edges[i].node.name,
+              route: this.edges[i].node.full_slug
+            }
+          )
+        }
+      }
+      return pagesArray
     },
     // TODO: DEPRECATED
     Menu() {
@@ -93,6 +98,7 @@ query {
         id
         full_slug
         name
+        content
       }
     }
   }
