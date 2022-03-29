@@ -1,5 +1,6 @@
 <template>
   <header class="header-wrapper">
+    <!-- Desktop Header -->
     <div class="header-new">
       <div class="logo-wrapper">
         <g-link to="/home"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link>
@@ -12,26 +13,26 @@
         
       </div>
     </div>
+    <!-- Mobile Header -->
     <div class="header">
+      <div class="header-elements">
+        <g-link to="/"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link>
+      </div>
       <tasty-burger-button
-          v-if="!isStartScreen" 
-          :type="buttonType" 
-          :active="isActive" 
-          :size="size" 
-          :color="color" 
-          :active-color="activeColor"
-          @toggle="toggleMenu"/>
-    
+            v-if="!isStartScreen" 
+            :type="buttonType" 
+            :active="isActive" 
+            :size="size" 
+            :color="color" 
+            :active-color="activeColor"
+            @toggle="toggleMenu"/>
+    </div>
     <div v-if="!isStartScreen" class="header-menu " :class="{active: showMenu}">
       <ul>
-        <li><g-link to="/junge-menschen">{{Menu.student_label}}</g-link></li>
-        <li><a href="https://polarstern.thinkific.com/courses/starken-entdecken">Online-Kurs</a></li>
-        <li><a href="https://eduki.com/de/autor/1208601/polarstern-1/materialien">Lehrmaterial</a></li>
-        <li><g-link to="/workshops">{{Menu.workshop_label}}</g-link></li>
+        <li class="header-elements menu-element" v-for="(menu, key) in menuOptions" :key="key">
+          <g-link :to="menu.route">{{ menu.label }}</g-link>
+        </li>
       </ul>
-    </div>
-      <div class="header-elements"><g-link to="/"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link></div>
-      <div class="header-elements"><g-link to="/workshops" class="yellow-box">Workshop Buchen</g-link></div>
     </div>
   </header>
   
@@ -100,7 +101,10 @@ query {
 
 <style lang="scss">
   .header-wrapper {
-    height: 88px; 
+    height: 88px;
+    @media screen and (max-width: 767px){
+      height: initial;
+    } 
   }
   .main-wrapper.landing,
   .main-wrapper.post,
@@ -111,7 +115,7 @@ query {
     .header {
         background-color: white;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         position: fixed;
         width: 100%;
         z-index: 110;
@@ -126,10 +130,17 @@ query {
           }
         }
         button {
-          justify-self: start;
-          margin-left: 10%;
-          align-self: center;
+          padding-right: 24px;
+          justify-self: end;
           opacity: 1 !important;
+
+          @media screen and (max-width: 576px) {
+            padding-right: 8px;
+            .hamburger-box {
+              height: 24px !important;
+              transform: scale(1) !important;
+            }
+          }
         }
       }
   }
@@ -140,9 +151,7 @@ query {
     padding-left: 60px;
   }
   .header-elements {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding-left: 24px;
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
@@ -151,9 +160,17 @@ query {
       display: block;
       padding: 0 20px;
       align-self: center;
+      text-align: right;
     }
     a {
       color: black;
+      &:hover {
+        text-decoration: none;
+        color: var(--red);
+      }
+    }
+    @media screen and (max-width: 576px) {
+      padding-left: 8px;
     }
   }
   .menu-elements-wrapper {
@@ -182,20 +199,20 @@ query {
     height: auto;
     width: 292px;
     position: fixed;
-    left: 0%;
+    right: 0%;
     z-index: 100;
     top: 99px;
     transform: translateY(-600px);
     transition: .4s ease-in-out;
     padding-top: 10px;
     ul {
+      padding: 0 20px;
       list-style: none;
       li {
         margin: 1.2rem 0;
         text-align: left;
         a {
           font-family: 'Roboto', sans-serif;
-          font-weight: 400;
           font-size: 20px;
           color: #000000;
           text-decoration: none;
