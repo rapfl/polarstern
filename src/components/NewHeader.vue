@@ -38,6 +38,25 @@
   
 </template>
 
+<static-query>
+query {
+  metadata {
+    siteName
+  }
+
+  allStoryblokEntry {
+    edges {
+      node {
+        id
+        full_slug
+        name
+        content
+      }
+    }
+  }
+}
+</static-query>
+
 <script>
 import Menu from '~/data/settings/Menu.yml'
 export default {
@@ -58,7 +77,6 @@ export default {
     mainPages () {
       var pagesArray = []
       for (var i = 0; i < this.edges.length; i++) {
-        console.log(i)
         if (this.$static.allStoryblokEntry.edges[i].node.content.component == "page") {
           pagesArray.push(
             {
@@ -85,25 +103,6 @@ export default {
   }
 }
 </script>
-
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-
-  allStoryblokEntry {
-    edges {
-      node {
-        id
-        full_slug
-        name
-        content
-      }
-    }
-  }
-}
-</static-query>
 
 <style lang="scss">
   .header-wrapper {
