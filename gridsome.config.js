@@ -63,6 +63,7 @@ module.exports = {
         modulePath: 'src/admin/index.js'
       }
     },
+    // TODO: adapt klaro config: https://heyklaro.com/docs/integration/annotated-configuration
     {
       use: 'klaro-gridsome',
       options: {
