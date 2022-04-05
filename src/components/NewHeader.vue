@@ -39,6 +39,12 @@
 <script>
 import Menu from '~/data/settings/Menu.yml'
 export default {
+  mounted() {
+    document.addEventListener('consentUpdate', this.consentToggle)
+  },
+  beforeDestroy() {
+    document.removeEventListener('consentUpdate', this.consentToggle)
+  },
   data () {
     return {
       buttonType: 'elastic',
@@ -63,6 +69,19 @@ export default {
   methods: {
     toggleMenu: function() {
       this.showMenu = !this.showMenu
+    },
+    consentToggle(event) {
+      // only is app is google analytics
+      if (event.detail.app === 'googleAnalytics') {
+        if (event.detail.consent) {
+          // if user consent is true
+          this.$gtag.optIn()
+        } else {
+          // if user consent is false
+          this.$gtag.optOut()
+          
+        }
+      }
     }
   },
   props: {

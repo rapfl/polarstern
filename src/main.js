@@ -10,6 +10,7 @@ import {
   BootstrapVue,
   IconsPlugin
 } from 'bootstrap-vue'
+import VueGtag from "vue-gtag";
 
 // Import custom styles
 import '~/styles/styles.scss'
@@ -21,6 +22,12 @@ export default function (Vue, { router, head, isClient }) {
   Vue.use(checkView)
   Vue.use(BootstrapVue)
   Vue.use(IconsPlugin)
+  Vue.use(VueGtag, {
+    config: {
+      id: "G-00706SCH2E"
+    },
+    enabled: false
+  })
   
   // Google Fonts
   head.link.push(

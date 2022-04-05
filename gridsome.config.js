@@ -63,18 +63,12 @@ module.exports = {
         modulePath: 'src/admin/index.js'
       }
     },
-    {
-      use: 'gridsome-plugin-gtag',
-        options: {
-          config: {
-            id: process.env.GOOGLE_ANALYTICS_TAG_ID,
-          },
-        },
-    },
     // TODO: adapt klaro config: https://heyklaro.com/docs/integration/annotated-configuration
+    // TODO: link to Privacy page
     {
       use: 'klaro-gridsome',
       options: {
+        acceptAll: true,
         privacyPolicy: '/privacy-policy/',
         cookieName: 'consent',
         translations: {
@@ -92,7 +86,7 @@ module.exports = {
         },
         apps: [{
           name: 'googleAnalytics',
-          default: true,
+          default: false,
           title: 'Google Analytics',
           purposes: ['analytics'],
           cookies: [
