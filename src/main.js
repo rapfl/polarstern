@@ -6,7 +6,6 @@ import BootsrapVue from 'bootstrap-vue'
 import '~/styles/custom-bootstrap.scss'
 import AnimateCSS from 'animate.css'
 import * as TastyBurgerButton from 'vue-tasty-burgers'
-import 'vue-tasty-burgers/dist/vue-tasty-burgers.css';
 import checkView from 'vue-check-view'
 import {
   BootstrapVue,
