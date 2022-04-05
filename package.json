@@ -7,7 +7,6 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
-    "@gridsome/plugin-google-analytics": "^0.1.2",
     "@gridsome/source-airtable": "^0.2.0",
     "@gridsome/source-filesystem": "^0.6.0",
     "@gridsome/transformer-remark": "^0.6.2",
@@ -18,6 +17,7 @@
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.17.3",
     "gridsome": "^0.7.0",
+    "gridsome-plugin-gtag": "^0.1.10",
     "gridsome-plugin-netlify-cms": "^1.0.9",
     "klaro": "^0.6.13",
     "klaro-gridsome": "^1.0.3",

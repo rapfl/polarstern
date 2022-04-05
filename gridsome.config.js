@@ -64,10 +64,12 @@ module.exports = {
       }
     },
     {
-      use: '@gridsome/plugin-google-analytics',
-      options: {
-        id: "G-XQN1DME191"
-      }
+      use: 'gridsome-plugin-gtag',
+        options: {
+          config: {
+            id: process.env.GOOGLE_ANALYTICS_TAG_ID,
+          },
+        },
     },
     // TODO: adapt klaro config: https://heyklaro.com/docs/integration/annotated-configuration
     {
