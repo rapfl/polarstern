@@ -5,7 +5,6 @@
 import BootsrapVue from 'bootstrap-vue'
 import '~/styles/custom-bootstrap.scss'
 import AnimateCSS from 'animate.css'
-import * as TastyBurgerButton from 'vue-tasty-burgers'
 import checkView from 'vue-check-view'
 import {
   BootstrapVue,
@@ -19,7 +18,6 @@ export default function (Vue, { router, head, isClient }) {
   // Libraries
   Vue.use(BootsrapVue)
   Vue.use(AnimateCSS)
-  Vue.use(TastyBurgerButton)
   Vue.use(checkView)
   Vue.use(BootstrapVue)
   Vue.use(IconsPlugin)
