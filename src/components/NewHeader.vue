@@ -75,10 +75,10 @@ export default {
       if (event.detail.app === 'googleAnalytics') {
         if (event.detail.consent) {
           // if user consent is true
-          this.$gtag.optIn()
+          this.$ga.enable()
         } else {
           // if user consent is false
-          this.$gtag.optOut()
+          this.$ga.disable()
           
         }
       }
