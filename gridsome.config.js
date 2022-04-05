@@ -63,6 +63,12 @@ module.exports = {
         modulePath: 'src/admin/index.js'
       }
     },
+    {
+      use: '@gridsome/plugin-google-analytics',
+      options: {
+        id: "UA-178148564-1"
+      }
+    },
     // TODO: adapt klaro config: https://heyklaro.com/docs/integration/annotated-configuration
     {
       use: 'klaro-gridsome',
@@ -70,7 +76,7 @@ module.exports = {
         privacyPolicy: '/privacy-policy/',
         cookieName: 'consent',
         translations: {
-          de: {
+          en: {
             consentModal: {
               description: 'Here you can see and customize the information that we collect about you.',
             },
