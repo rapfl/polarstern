@@ -66,7 +66,7 @@ module.exports = {
     {
       use: '@gridsome/plugin-google-analytics',
       options: {
-        id: "UA-178148564-1"
+        id: "G-XQN1DME191"
       }
     },
     // TODO: adapt klaro config: https://heyklaro.com/docs/integration/annotated-configuration
