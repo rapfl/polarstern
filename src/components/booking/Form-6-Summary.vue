@@ -21,12 +21,12 @@
         Workshop: <span class="weight-bold">{{ booking.workshop }}</span> <br>
         Buchungsoption: <span class="weight-bold">{{ booking.bookingoption }}</span> <br>
         Wunschpreis pro Teilnehmer*in & Stunde: <span class="weight-bold">{{ booking.price }}</span> <br>
-        Herzkisten-Gutschein: <span class="weight-bold">{{ booking.herzkiste }}</span> <br> <br>
+        Herzkisten-Gutschein: <span class="weight-bold">{{ booking.herzkiste  ? 'Ja' : 'Nein' }}</span> <br> <br>
     </b-col>
     <b-col cols="12" class="my-2">
       <h3>Ihre Daten</h3>
       Name: <span class="weight-bold">{{ formData.name }} </span> <br>
-      Kontak: <span class="weight-bold">{{ formData.email }}, {{ formData.phonenumber }}</span> <br>
+      Kontakt: <span class="weight-bold">{{ formData.email }}, {{ formData.phonenumber }}</span> <br>
       Organisation: <span class="weight-bold">{{ formData.organisationType }} </span> <br>
       Name und Adresse: <span class="weight-bold">{{ formData.organisationNameAndAddress }} </span> <br>
       <div v-if="formData.organisationType === 'Schule'"> 

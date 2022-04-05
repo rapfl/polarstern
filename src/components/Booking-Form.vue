@@ -216,7 +216,7 @@ export default {
             "Buchungsoption": booking.bookingoption,
             "Wunschpreis": parseFloat(booking.price),
             "Klassenname": booking.class,
-            "Herzkiste": (booking.herzkiste === 'Ja') ? true : null,
+            "Herzkiste": booking.herzkiste ? true : false,
             "Termine": this.printDates(booking.appointments),
             "Status": "Ausstehend",
             "Name der Organisation": this.formData.organisationNameAndAddress,
