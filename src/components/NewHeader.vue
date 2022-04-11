@@ -75,11 +75,10 @@ export default {
       if (event.detail.app === 'googleAnalytics') {
         if (event.detail.consent) {
           // if user consent is true
-          this.$ga.enable()
+          window['ga-disable-G-00706SCH2E'] = false;
         } else {
           // if user consent is false
-          this.$ga.disable()
-          
+          window['ga-disable-G-00706SCH2E'] = true;
         }
       }
     }
