@@ -10,7 +10,6 @@ import {
   BootstrapVue,
   IconsPlugin
 } from 'bootstrap-vue'
-import VueAnalytics from 'vue-analytics'
 
 // Import custom styles
 import '~/styles/styles.scss'
@@ -22,11 +21,6 @@ export default function (Vue, { router, head, isClient }) {
   Vue.use(checkView)
   Vue.use(BootstrapVue)
   Vue.use(IconsPlugin)
-  Vue.use(VueAnalytics, {
-    id: "G-00706SCH2E",
-    disabled: true,
-    router
-  })
   
   // Google Fonts
   head.link.push(
@@ -39,4 +33,19 @@ export default function (Vue, { router, head, isClient }) {
       href: 'https://fonts.googleapis.com/css?family=Chau+Philomene+One'
     }
   )
+
+  // Google Analytics
+  head.script.push({
+    src: 'https://www.googletagmanager.com/gtag/js?id=G-00706SCH2E',
+    async: true
+  })
+  head.script.push({
+    innerHTML: 
+      `window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-00706SCH2E',{ 'debug_mode': true });`,
+    type: 'text/javascript',
+    charset: 'utf-8'
+  })
 }
