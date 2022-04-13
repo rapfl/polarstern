@@ -63,24 +63,24 @@ module.exports = {
         modulePath: 'src/admin/index.js'
       }
     },
-    // TODO: adapt klaro config: https://heyklaro.com/docs/integration/annotated-configuration
-    // TODO: link to Privacy page
     {
       use: 'klaro-gridsome',
       options: {
         acceptAll: true,
-        privacyPolicy: '/privacy-policy/',
+        privacyPolicy: '/datenschutz',
         cookieName: 'consent',
+        lang: 'de',
         translations: {
-          en: {
+          de: {
+            acceptSelected: "Nur ausgewählte zustimmen",
             consentModal: {
-              description: 'Here you can see and customize the information that we collect about you.',
+              description: 'Hier können Sie die Informationen, die wir über Sie sammeln, einsehen und anpassen.',
             },
             googleAnalytics: {
-              description: 'Website analytics powered by Google Analytics, allowing us to see how visitors use our website.'
+              description: 'Website-Analysen mit Google Analytics, die es uns ermöglichen zu sehen, wie Besucher unsere Website nutzen.'
             },
             purposes: {
-              analytics: 'Analytics'
+              analytics: 'Analysen'
             },
           },
         },

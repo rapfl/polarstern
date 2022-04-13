@@ -36,7 +36,7 @@ export default function (Vue, { router, head, isClient }) {
 
   // Google Analytics
   head.script.push({
-    src: 'https://www.googletagmanager.com/gtag/js?id=G-00706SCH2E',
+    src: 'https://www.googletagmanager.com/gtag/js?id=G-2YMZ803M6S',
     async: true
   })
   head.script.push({
@@ -44,7 +44,7 @@ export default function (Vue, { router, head, isClient }) {
       `window.dataLayer = window.dataLayer || [];
        function gtag(){dataLayer.push(arguments);}
        gtag('js', new Date());
-       gtag('config', 'G-00706SCH2E',{ 'debug_mode': true });`,
+       gtag('config', 'G-2YMZ803M6S');`,
     type: 'text/javascript',
     charset: 'utf-8'
   })
