@@ -18,7 +18,8 @@
       <div class="header-elements">
         <g-link to="/"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link>
       </div>
-      <tasty-burger-button
+      <ClientOnly>
+        <TastyBurgerButton
             v-if="!isStartScreen" 
             :type="buttonType" 
             :active="isActive" 
@@ -26,6 +27,7 @@
             :color="color" 
             :active-color="activeColor"
             @toggle="toggleMenu"/>
+      </ClientOnly>
     </div>
     <div v-if="!isStartScreen" class="header-menu " :class="{active: showMenu}">
       <ul>
@@ -60,6 +62,12 @@ query {
 <script>
 import Menu from '~/data/settings/Menu.yml'
 export default {
+  mounted() {
+    document.addEventListener('consentUpdate', this.consentToggle)
+  },
+  beforeDestroy() {
+    document.removeEventListener('consentUpdate', this.consentToggle)
+  },
   data () {
     return {
       buttonType: 'elastic',
@@ -69,6 +77,12 @@ export default {
       activeColor: '#000000',
       showMenu: false
     }
+  },
+  components: {
+    TastyBurgerButton: () =>
+        import ('vue-tasty-burgers')
+        .then(m => m.TastyBurgerButton)
+        .catch(),
   },
   computed: {
     edges () {
@@ -96,6 +110,18 @@ export default {
   methods: {
     toggleMenu: function() {
       this.showMenu = !this.showMenu
+    },
+    consentToggle(event) {
+      // only is app is google analytics
+      if (event.detail.app === 'googleAnalytics') {
+        if (event.detail.consent) {
+          // if user consent is true
+          window['ga-disable-G-00706SCH2E'] = false;
+        } else {
+          // if user consent is false
+          window['ga-disable-G-00706SCH2E'] = true;
+        }
+      }
     }
   },
   props: {

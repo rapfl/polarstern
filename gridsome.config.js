@@ -71,28 +71,30 @@ module.exports = {
         }
       }
     },
-    // TODO: adapt klaro config: https://heyklaro.com/docs/integration/annotated-configuration
     {
       use: 'klaro-gridsome',
       options: {
-        privacyPolicy: '/privacy-policy/',
+        acceptAll: true,
+        privacyPolicy: '/datenschutz',
         cookieName: 'consent',
+        lang: 'de',
         translations: {
           de: {
+            acceptSelected: "Nur ausgewählte zustimmen",
             consentModal: {
-              description: 'Here you can see and customize the information that we collect about you.',
+              description: 'Hier können Sie die Informationen, die wir über Sie sammeln, einsehen und anpassen.',
             },
             googleAnalytics: {
-              description: 'Website analytics powered by Google Analytics, allowing us to see how visitors use our website.'
+              description: 'Website-Analysen mit Google Analytics, die es uns ermöglichen zu sehen, wie Besucher unsere Website nutzen.'
             },
             purposes: {
-              analytics: 'Analytics'
+              analytics: 'Analysen'
             },
           },
         },
         apps: [{
           name: 'googleAnalytics',
-          default: true,
+          default: false,
           title: 'Google Analytics',
           purposes: ['analytics'],
           cookies: [

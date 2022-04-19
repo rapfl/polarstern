@@ -2,14 +2,16 @@
   <header class="header-wrapper">
     <div class="header">
       <g-link to="/"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link>
-      <tasty-burger-button
-          v-if="!isStartScreen" 
-          :type="buttonType" 
-          :active="isActive" 
-          :size="size" 
-          :color="color" 
-          :active-color="activeColor"
-          @toggle="toggleMenu"/>
+      <ClientOnly>
+        <TastyBurgerButton
+            v-if="!isStartScreen" 
+            :type="buttonType" 
+            :active="isActive" 
+            :size="size" 
+            :color="color" 
+            :active-color="activeColor"
+            @toggle="toggleMenu"/>
+      </ClientOnly>
     </div>
     <div v-if="!isStartScreen" class="header-menu " :class="{active: showMenu}">
       <ul>
@@ -36,6 +38,12 @@ export default {
       activeColor: '#ffffff',
       showMenu: false
     }
+  },
+  components: {
+    TastyBurgerButton: () =>
+        import ('vue-tasty-burgers')
+        .then(m => m.TastyBurgerButton)
+        .catch(),
   },
   computed: {
     Menu() {

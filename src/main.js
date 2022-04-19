@@ -5,7 +5,6 @@
 import BootsrapVue from 'bootstrap-vue'
 import '~/styles/custom-bootstrap.scss'
 import AnimateCSS from 'animate.css'
-import * as TastyBurgerButton from 'vue-tasty-burgers'
 import checkView from 'vue-check-view'
 import {
   BootstrapVue,
@@ -34,7 +33,6 @@ export default function (Vue, { router, head, isClient }) {
   // Libraries
   Vue.use(BootsrapVue)
   Vue.use(AnimateCSS)
-  Vue.use(TastyBurgerButton)
   Vue.use(checkView)
   Vue.use(BootstrapVue)
   Vue.use(IconsPlugin)
@@ -67,4 +65,18 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('CodeSnippet', CodeSnippet)
   Vue.component('Image', Image)
 
+  // Google Analytics
+  head.script.push({
+    src: 'https://www.googletagmanager.com/gtag/js?id=G-2YMZ803M6S',
+    async: true
+  })
+  head.script.push({
+    innerHTML: 
+      `window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-2YMZ803M6S');`,
+    type: 'text/javascript',
+    charset: 'utf-8'
+  })
 }
