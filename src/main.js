@@ -27,7 +27,7 @@ import Heading from '~/components/storyblok/Heading.vue'
 import Richtext from '~/components/storyblok/Richtext.vue'
 import TextEditor from '~/components/storyblok/TextEditor.vue'
 import CodeSnippet from '~/components/storyblok/CodeSnippet.vue'
-import Image from '~/components/storyblok/Image.vue'
+import ImageLink from '~/components/storyblok/ImageLink.vue'
 
 export default function (Vue, { router, head, isClient }) {
   // Libraries
@@ -63,7 +63,7 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('Richtext', Richtext)
   Vue.component('TextEditor', TextEditor)
   Vue.component('CodeSnippet', CodeSnippet)
-  Vue.component('Image', Image)
+  Vue.component('ImageLink', ImageLink)
 
   // Google Analytics
   head.script.push({
