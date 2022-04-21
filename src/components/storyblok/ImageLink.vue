@@ -1,9 +1,9 @@
 <template>
   <div v-editable="blok">
     <a v-if="blok.link_url.cached_url || blok.link_url.email" :href="isExternalLink">
-      <img :src="blok.image_url.filename" :alt="blok.image_url.alt">
+      <b-img :src="blok.image_url.filename" :alt="blok.image_url.alt" fluid/>
     </a>
-    <img v-else :src="blok.image_url.filename" :alt="blok.image_url.alt">
+    <b-img v-else :src="blok.image_url.filename" :alt="blok.image_url.alt" fluid/>
   </div>
 </template>
 
@@ -29,7 +29,3 @@ export default {
   }
 }
 </script>
-
-<style>
-
-</style>

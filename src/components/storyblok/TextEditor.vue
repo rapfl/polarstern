@@ -1,5 +1,8 @@
 <template>
-  <richtext v-editable="blok" :text="blok.richtext"></richtext>
+  <richtext 
+    v-editable="blok" 
+    :text="blok.richtext" 
+    :class="blok.alignment"/>
 </template>
 
 <script>
