@@ -28,6 +28,7 @@ import Richtext from '~/components/storyblok/Richtext.vue'
 import TextEditor from '~/components/storyblok/TextEditor.vue'
 import CodeSnippet from '~/components/storyblok/CodeSnippet.vue'
 import ImageLink from '~/components/storyblok/ImageLink.vue'
+import Button from '~/components/storyblok/Button.vue'
 
 export default function (Vue, { router, head, isClient }) {
   // Libraries
@@ -64,6 +65,7 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('TextEditor', TextEditor)
   Vue.component('CodeSnippet', CodeSnippet)
   Vue.component('ImageLink', ImageLink)
+  Vue.component('Button', Button)
 
   // Google Analytics
   head.script.push({

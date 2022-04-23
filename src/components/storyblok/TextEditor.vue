@@ -2,7 +2,8 @@
   <richtext 
     v-editable="blok" 
     :text="blok.richtext" 
-    :class="blok.alignment"/>
+    :class="blok.alignment"
+    class="w-100"/>
 </template>
 
 <script>

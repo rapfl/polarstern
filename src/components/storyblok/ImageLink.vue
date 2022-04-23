@@ -1,6 +1,6 @@
 <template>
   <div v-editable="blok">
-    <a v-if="blok.link_url.cached_url || blok.link_url.email" :href="isExternalLink">
+    <a v-if="blok.link_url.cached_url || blok.link_url.email" :href="getLink">
       <b-img :src="blok.image_url.filename" :alt="blok.image_url.alt" fluid/>
     </a>
     <b-img v-else :src="blok.image_url.filename" :alt="blok.image_url.alt" fluid/>
@@ -11,7 +11,7 @@
 export default {
   props: ['blok'],
   computed: {
-    isExternalLink() {
+    getLink() {
       switch (this.blok.link_url.linktype) {
         case "story":
           return this.blok.link_url.cached_url
