@@ -24,9 +24,11 @@
     "netlify-cms": "^2.9.7",
     "qs": "^6.9.4",
     "vue": "^2.6.14",
+    "vue-carousel": "^0.18.0",
     "vue-check-view": "^0.3.0",
     "vue-markdown": "^2.2.4",
     "vue-server-renderer": "2.6.14",
+    "vue-ssr-carousel": "^1.4.0",
     "vue-tasty-burgers": "^1.1.4"
   },
   "devDependencies": {

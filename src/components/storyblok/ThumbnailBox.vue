@@ -1,6 +1,5 @@
 <template>
-  <div v-editable="blok">
-    <a class="thumbnail-box border border-warning" :href="getLink">
+    <a v-editable="blok" class="thumbnail-box border border-warning" :href="getLink">
       <b-card
           :title="blok.thumbnail_box_title"
           title-tag="h2"
@@ -11,7 +10,6 @@
           class="rounded-0 border-0">
         </b-card>
     </a>
-  </div>
 </template>
 
 <script>
