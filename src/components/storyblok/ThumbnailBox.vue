@@ -46,11 +46,10 @@ export default {
     text-decoration: none;
   }
   .card {
-    width: 19rem;
-    height: 19rem;
+    width: 22vw;
+    height: 22vw;
     display: grid;
     justify-items: center;
-    transition: .2s;
     img {
       width: 100%;
       height: 100%;
@@ -67,20 +66,19 @@ export default {
       justify-content: center;
     }
   }
-  // TODO: Adjust media queries
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 991px) {
     .thumbnail-box {
       .card {
-        width: 14rem;
-        height: 14rem;
+        width: 38vw;
+        height: 38vw;
       }
     }
   }
-  @media screen and (min-width: 1200px) {
+  @media screen and (max-width: 575px) {
     .thumbnail-box {
       .card {
-        width: 26rem;
-        height: 26rem;
+        width: 75vw;
+        height: 75vw;
       }
     }
   }

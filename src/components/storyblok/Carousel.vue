@@ -2,14 +2,17 @@
   <div v-editable="blok" class="carousel-wrapper">
     <ssr-carousel 
       :slides-per-page="3"
-      :show-arrows="true"
+      paginate-by-slide
+      show-arrows
+      show-dots
+      feather
       :responsive='[
         {
           maxWidth: 1280,
           slidesPerPage: 3,
         },
         {
-          maxWidth: 1024,
+          maxWidth: 991,
           slidesPerPage: 2,
         },
         {
@@ -19,9 +22,9 @@
       ]'>
       <div v-for="box in blok.slides" :key="box._uid" class="slide">
         <ThumbnailBox :blok="box"/>
+        <!-- TODO: Make it work with buttons and other components -->
       </div>
     </ssr-carousel>
-    <!-- TODO: Introduce buttons and backgrounds -->
   </div>
 </template>
 
@@ -43,6 +46,10 @@ export default {
 <style lang="scss">
   .carousel-wrapper {
     width: 100%;
+    margin: 40px 0;
+
+    .ssr-carousel-slide {
+      text-align: center;
+    }
   }
-  // TODO: Make thumbnails more responsive
 </style>
