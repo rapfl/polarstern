@@ -1,11 +1,14 @@
 <template>
   <div v-editable="blok">
     <a v-if="blok.button_link.cached_url || blok.button_link.email" :href="getLink">
-      <b-button 
+      <b-button
         pill
         :size="blok.button_size" 
-        :variant="blok.button_color">
-        {{ blok.button_label }}
+        :variant="blok.button_color"
+        :class="blok.is_bg_button ? 'bg-btn-wrapper' : '' ">
+        <span :class="blok.is_bg_button ? 'background-button' : '' ">
+          {{ blok.button_label }}
+        </span>
       </b-button>
     </a>
   </div>

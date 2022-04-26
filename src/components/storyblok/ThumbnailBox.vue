@@ -1,15 +1,29 @@
 <template>
-    <a v-editable="blok" class="thumbnail-box border border-warning" :href="getLink">
+  <div v-editable="blok">
+    <a class="thumbnail-box border"
+       :class="blok.color_inverted ? 'border-primary' : 'border-warning'"
+       :href="getLink">
       <b-card
-          :title="blok.thumbnail_box_title"
-          title-tag="h2"
-          :img-src="blok.thumbnail_box_image.filename"
-          :img-alt="blok.thumbnail_box_image.alt"
-          align="center"
-          tag="article"
-          class="rounded-0 border-0">
-        </b-card>
+        :title="blok.thumbnail_box_title"
+        title-tag="h2"
+        :img-src="blok.thumbnail_box_image.filename"
+        :img-alt="blok.thumbnail_box_image.alt"
+        align="center"
+        tag="article"
+        class="rounded-0 border-0">
+      </b-card>
     </a>
+    <a v-if="blok.show_button" :href="getLink" class="d-block text-center">
+      <b-button
+        pill
+        size="lg" 
+        :class="blok.is_bg_button ? 'bg-btn-wrapper mt-3' : 'mt-5' ">
+        <span :class="blok.is_bg_button ? ('background-button ' + (blok.color_inverted ? 'bg-warning text-dark' : '')) : ''">
+          {{ blok.button_title }}
+        </span>
+      </b-button>
+    </a>
+  </div>
 </template>
 
 <script>

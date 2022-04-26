@@ -23,6 +23,8 @@ $yellow_light: #fdee87;
 $yellow_dark: #897a1a;
 $yellow_mono: #5f574f;
 
+$dark: #000000;
+
 // Include Bootstrap and BootstrapVue SCSS files
 @import '~bootstrap/scss/bootstrap.scss';
 @import '~bootstrap-vue/src/index.scss';
@@ -34,6 +36,7 @@ $very-short: .1s;
 a, a:hover {
   color: $black;
 }
+// Buttons
 .btn {
   color: $white;
   text-transform: uppercase;
@@ -69,8 +72,22 @@ a, a:hover {
   background-color: $yellow;
   border-color: $yellow;
 }
+.bg-btn-wrapper,
+.bg-btn-wrapper:hover {
+  border: none;
+  background: none;
+
+  .background-button {
+    background-color: black;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+  }
+}
+
 
 /** Classes **/
+
+// Card
 .card-body {
   display: flex;
   align-items: center;
@@ -78,7 +95,9 @@ a, a:hover {
   text-transform: uppercase;
   transition: $very-short;
 }
-
+.card-img {
+  border-radius: unset;
+}
 .blogpost-wrapper img {
   width: 400px
 }
