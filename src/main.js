@@ -17,7 +17,8 @@ import '~/styles/styles.scss'
 
 // Import Storyblok components
 import DefaultLayout from '~/layouts/Default.vue'
-import Page from '~/components/storyblok/Page.vue'
+import Page from '~/pages/storyblok/Page.vue'
+import FooterPage from '~/pages/storyblok/FooterPage.vue'
 import Teaser from '~/components/storyblok/Teaser.vue'
 import Feature from '~/components/storyblok/Feature.vue'
 import Grid from '~/components/storyblok/Grid.vue'
@@ -57,6 +58,7 @@ export default function (Vue, { router, head, isClient }) {
 
   // register Storyblok components
   Vue.component('Page', Page)
+  Vue.component('FooterPage', FooterPage)
   Vue.component('Teaser', Teaser)
   Vue.component('Feature', Feature)
   Vue.component('Grid', Grid)

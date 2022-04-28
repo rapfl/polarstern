@@ -2,26 +2,48 @@
   <footer>
     <b-container>
       <b-row>
-        <b-col cols="6" sm="3">
-          <g-link class="footer-menu-item" to="/impressum">Impressum</g-link>
-        </b-col>
-        <b-col cols="6" sm="3">
-          <g-link class="footer-menu-item" to="/datenschutz">Datenschutz</g-link>
-        </b-col>
-        <b-col cols="6" sm="3">
-          <g-link class="footer-menu-item" to="/contact">Schreibe eine E-Mail</g-link>
-        </b-col>
-        <b-col cols="6" sm="3">
-          <g-link class="footer-menu-item" to="/about">Über uns</g-link>
+        <b-col v-for="footerPage in footerPages" :key="footerPage.content._uid">
+          <a class="footer-menu-item" :href="footerPage.full_slug">
+            {{footerPage.name}}
+          </a>
         </b-col>
       </b-row>
     </b-container>
   </footer>  
 </template>
 
+<static-query>
+  query {
+    allStoryblokEntry {
+      edges {
+        node {
+          name
+          full_slug
+          content
+          position
+        }
+      }
+    }
+  }
+</static-query>
+
 <script>
-
-
+export default {
+  computed: {
+    edges () {
+      return this.$static.allStoryblokEntry.edges || []
+    },
+    footerPages () {
+      var footerPagesArr = []
+      for (var i = 0; i < this.edges.length; i++) {
+        if (this.edges[i].node.content.component == 'footerPage')
+          footerPagesArr.push(this.edges[i].node)
+      }
+      footerPagesArr.sort((a, b) => b.position - a.position)
+      return footerPagesArr
+    }
+  },
+}
 </script>
 
 <style lang="scss">
