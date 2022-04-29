@@ -1,9 +1,18 @@
 <template>
-  <div v-editable="blok">
-    <a v-if="blok.link_url.cached_url || blok.link_url.email" :href="getLink">
-      <b-img :src="blok.image_url.filename" :alt="blok.image_url.alt" fluid/>
+  <div v-editable="blok" :class="blok.justify">
+    <a v-if="blok.link_url.cached_url || blok.link_url.email" 
+       :href="getLink">
+      <b-img 
+        :src="blok.image_url.filename" 
+        :alt="blok.image_url.alt" 
+        :width="blok.width"
+        fluid/>
     </a>
-    <b-img v-else :src="blok.image_url.filename" :alt="blok.image_url.alt" fluid/>
+    <b-img v-else 
+      :src="blok.image_url.filename" 
+      :alt="blok.image_url.alt" 
+      :width="blok.width"
+      fluid/>
   </div>
 </template>
 

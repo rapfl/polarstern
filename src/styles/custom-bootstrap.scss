@@ -73,9 +73,14 @@ a, a:hover {
   border-color: $yellow;
 }
 .bg-btn-wrapper,
-.bg-btn-wrapper:hover {
+.bg-btn-wrapper:hover,
+.bg-btn-wrapper:active,
+.bg-btn-wrapper:focus {
   border: none;
+  border-color: inherit !important;
   background: none;
+  background-color: inherit !important;
+  box-shadow: none !important;
 
   .background-button {
     background-color: black;

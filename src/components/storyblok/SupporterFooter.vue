@@ -7,7 +7,7 @@
           <h4>{{footerLogos.headline_left}}</h4>
           <div class="d-flex justify-content-between align-items-center">
             <a v-for="logo in footerLogos.logos_left" :key="logo._uid" :href="logo.link_url.url">
-              <g-image :src="logo.image_url.filename" width="370" class="company-logo img-fluid"></g-image>
+              <b-img :src="logo.image_url.filename" :width="logo.width" class="company-logo img-fluid"></b-img>
             </a>
           </div>
         </b-col>
@@ -15,7 +15,7 @@
           <h4>{{footerLogos.headline_right}}</h4>
           <div class="d-flex justify-content-between align-items-center">
             <a v-for="logo in footerLogos.logos_right" :key="logo._uid" :href="logo.link_url.url">
-              <g-image :src="logo.image_url.filename" width="370" class="company-logo img-fluid"></g-image>
+              <b-img :src="logo.image_url.filename" :width="logo.width" class="company-logo img-fluid"></b-img>
             </a>
           </div>
         </b-col>

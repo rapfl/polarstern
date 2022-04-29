@@ -32,6 +32,7 @@ import ImageLink from '~/components/storyblok/ImageLink.vue'
 import Button from '~/components/storyblok/Button.vue'
 import ThumbnailBox from '~/components/storyblok/ThumbnailBox.vue'
 import Carousel from '~/components/storyblok/Carousel.vue'
+import Column from '~/components/storyblok/Column.vue'
 
 export default function (Vue, { router, head, isClient }) {
   // Libraries
@@ -72,6 +73,7 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('Button', Button)
   Vue.component('ThumbnailBox', ThumbnailBox)
   Vue.component('Carousel', Carousel)
+  Vue.component('Column', Column)
 
   // Google Analytics
   head.script.push({
