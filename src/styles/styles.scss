@@ -28,6 +28,9 @@ a.btn,
 h1 {
   margin-bottom: 2rem;
 }
+p {
+  margin: 0;
+}
 .cover-layer {
   h3 {
     font-size: 40px;
@@ -109,6 +112,13 @@ body {
   
 }
 
+// Pill Background
+.bg-pill {
+  padding: 0.7rem 2rem;
+}
+.pill-border {
+  border: 2px solid;
+}
 
 @media screen and (max-width: 575px) {
   .footer-padding {

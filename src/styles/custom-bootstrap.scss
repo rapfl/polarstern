@@ -32,6 +32,68 @@ $dark: #000000;
 /** Own Variables **/
 $very-short: .1s;
 
+/** Custom Color Classes **/
+
+// Background Colors
+.bg-primary-light {
+  background-color: $blue_light;
+}
+.bg-primary-dark {
+  background-color: $blue_dark;
+}
+.bg-primary-mono {
+  background-color: $blue_mono;
+}
+.bg-danger-light {
+  background-color: $red_light;
+}
+.bg-danger-dark {
+  background-color: $red_dark;
+}
+.bg-danger-mono {
+  background-color: $red_mono;
+}
+.bg-warning-light {
+  background-color: $yellow_light;
+}
+.bg-warning-dark {
+  background-color: $yellow_dark;
+}
+.bg-warning-mono {
+  background-color: $yellow_mono;
+}
+
+// Border Colors
+.border-primary-light {
+  border-color: $blue_light !important;
+}
+.border-primary-dark {
+  border-color: $blue_dark !important;
+}
+.border-primary-mono {
+  border-color: $blue_mono !important;
+}
+.border-danger-light {
+  border-color: $red_light !important;
+}
+.border-danger-dark {
+  border-color: $red_dark !important;
+}
+.border-danger-mono {
+  border-color: $red_mono !important;
+}
+.border-warning-light {
+  border-color: $yellow_light !important;
+}
+.border-warning-dark {
+  border-color: $yellow_dark !important;
+}
+.border-warning-mono {
+  border-color: $yellow_mono !important;
+}
+
+
+
 /** Elements **/
 a, a:hover {
   color: $black;
@@ -52,6 +114,7 @@ a, a:hover {
 .btn-primary {
   border-color: $blue;
 }
+// TODO: Change to danger
 .btn-secondary {
   border-color: $red;
   background-color: $red;

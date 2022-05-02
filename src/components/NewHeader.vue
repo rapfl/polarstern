@@ -134,7 +134,7 @@ export default {
   .header-wrapper {
     height: 88px;
     @media screen and (max-width: 767px){
-      height: initial;
+      height: 72px;
     } 
   }
   .main-wrapper.landing,

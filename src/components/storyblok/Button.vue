@@ -1,8 +1,9 @@
 <template>
   <div v-editable="blok">
-    <a v-if="blok.button_link.cached_url || blok.button_link.email" :href="getLink">
+    <a class="storyblok-btn-wrapper" v-if="blok.button_link.cached_url || blok.button_link.email" :href="getLink">
       <b-button
         pill
+        :block="blok.full_width"
         :size="blok.button_size" 
         :variant="blok.button_color"
         :class="blok.is_bg_button ? 'bg-btn-wrapper' : '' ">
@@ -36,3 +37,13 @@ export default {
   }
 }
 </script>
+
+<style lang="scss">
+.storyblok-btn {
+  &-wrapper {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+</style>
