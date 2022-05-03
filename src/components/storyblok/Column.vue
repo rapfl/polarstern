@@ -18,9 +18,7 @@
         :offset-lg="blok.grid_offset.large || blok.grid_offset.xsmall"
         :offset-xl="blok.grid_offset.xlarge || blok.grid_offset.xsmall"
         >
-        <!-- TODO: justify -->
-        <!-- TODO: order -->
-    <component :blok="blok.block[0]" :is="blok.block[0].component"/>
+    <component v-for="comp in blok.block" :key="comp._uid" :blok="comp" :is="comp.component"/>
   </b-col>
 </template>
 

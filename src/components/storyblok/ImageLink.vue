@@ -34,6 +34,13 @@ export default {
         default:
           return this.blok.link_url.cached_url
       }
+    },
+    styles() {
+      var inlineStyles = ''
+      // TODO: build inline styles string
+      // TODO: use numeric parameters in CMS
+      return inlineStyles
+      
     }
   }
 }

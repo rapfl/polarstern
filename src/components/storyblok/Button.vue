@@ -12,6 +12,16 @@
         </span>
       </b-button>
     </a>
+    <b-button v-else
+      pill
+      :block="blok.full_width"
+      :size="blok.button_size" 
+      :variant="blok.button_color"
+      :class="blok.is_bg_button ? 'bg-btn-wrapper' : '' ">
+      <span :class="blok.is_bg_button ? 'background-button' : '' ">
+        {{ blok.button_label }}
+      </span>
+    </b-button>
   </div>
 </template>
 

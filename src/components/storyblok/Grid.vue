@@ -1,6 +1,7 @@
 <template>
   <div 
-    class="grid" 
+    class="grid"
+    :class="blok.bg_enabled ? '' : 'bg-transparent'" 
     v-editable="blok" 
     :style="'background: ' + (blok.show_bg_image ? 'url(' + blok.background_image.filename + ')' : blok.background_color.color )">
       <component :key="blok._uid" v-for="blok in blok.columns" :blok="blok" :is="blok.component"></component>
