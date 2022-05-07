@@ -1,5 +1,5 @@
 <template>
-  <div v-editable="blok" :class="blok.justify">
+  <div v-editable="blok" :class="styles">
     <a v-if="blok.link_url.cached_url || blok.link_url.email" 
        :href="getLink">
       <b-img 
@@ -37,8 +37,22 @@ export default {
     },
     styles() {
       var inlineStyles = ''
-      // TODO: build inline styles string
-      // TODO: use numeric parameters in CMS
+      
+      // Margin
+      inlineStyles += ('mt-' + this.blok.margin.top + ' ')
+      inlineStyles += ('mr-' + this.blok.margin.right + ' ')
+      inlineStyles += ('mb-' + this.blok.margin.bottom + ' ')
+      inlineStyles += ('ml-' + this.blok.margin.left + ' ')
+      
+      // Padding
+      inlineStyles += ('pt-' + this.blok.padding.top + ' ')
+      inlineStyles += ('pr-' + this.blok.padding.right + ' ')
+      inlineStyles += ('pb-' + this.blok.padding.bottom + ' ')
+      inlineStyles += ('pl-' + this.blok.padding.left + ' ')
+      
+      // Justify
+      inlineStyles += this.blok.justify
+
       return inlineStyles
       
     }

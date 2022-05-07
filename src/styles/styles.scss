@@ -112,6 +112,13 @@ body {
   
 }
 
+// Text Background
+.text-bg {
+  background-color: black;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
 // Pill Background
 .bg-pill {
   padding: 0.7rem 2rem;

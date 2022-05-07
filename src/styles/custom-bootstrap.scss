@@ -35,6 +35,13 @@ $very-short: .1s;
 /** Custom Color Classes **/
 
 // Background Colors
+.bg-primary,
+.bg-danger {
+  color: white;
+}
+.bg-warning {
+  color: black;
+}
 .bg-primary-light {
   background-color: $blue_light;
 }
@@ -115,7 +122,7 @@ a, a:hover {
   border-color: $blue;
 }
 // TODO: Change to danger
-.btn-secondary {
+.btn-danger {
   border-color: $red;
   background-color: $red;
 }
@@ -127,7 +134,7 @@ a, a:hover {
   background-color: $blue_dark;
   border-color: $blue_dark;
 }
-.btn-secondary:hover {
+.btn-danger:hover {
   background-color: $red_dark;
   border-color: $red_dark;
 }
@@ -144,12 +151,6 @@ a, a:hover {
   background: none;
   background-color: inherit !important;
   box-shadow: none !important;
-
-  .background-button {
-    background-color: black;
-    -webkit-box-decoration-break: clone;
-    box-decoration-break: clone;
-  }
 }
 
 

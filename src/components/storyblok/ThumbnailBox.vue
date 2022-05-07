@@ -18,7 +18,7 @@
         pill
         size="lg" 
         :class="blok.is_bg_button ? 'bg-btn-wrapper mt-3' : 'mt-5' ">
-        <span :class="blok.is_bg_button ? ('background-button ' + (blok.color_inverted ? 'bg-warning text-dark' : '')) : ''">
+        <span :class="blok.is_bg_button ? ('text-bg ' + (blok.color_inverted ? 'bg-warning text-dark' : '')) : ''">
           {{ blok.button_title }}
         </span>
       </b-button>
