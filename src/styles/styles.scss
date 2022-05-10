@@ -84,6 +84,9 @@ p a:hover {
 body {
   background-color: #fff;
 }
+.grid {
+  max-width: inherit;
+}
 .main-wrapper.post {
   background: var(--white);
   position: relative;
