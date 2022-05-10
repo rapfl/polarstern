@@ -32,7 +32,7 @@ query Post ($path: String!) {
 </page-query>
 
 <script>
-import Header from '~/components/Header.vue'
+import Header from '~/components/NewHeader.vue'
 import SocialButtons from '~/components/Social-Buttons.vue'
 import SupporterFooter from '~/components/Supporter-Footer.vue'
 import Footer from '~/components/Footer.vue'
