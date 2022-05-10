@@ -17,8 +17,8 @@ import '~/styles/styles.scss'
 
 // Import Storyblok components
 import DefaultLayout from '~/layouts/Default.vue'
-import Page from '~/pages/storyblok/Page.vue'
-import FooterPage from '~/pages/storyblok/FooterPage.vue'
+import Page from '~/components/storyblok/Page.vue'
+import FooterPage from '~/components/storyblok/FooterPage.vue'
 import Teaser from '~/components/storyblok/Teaser.vue'
 import Feature from '~/components/storyblok/Feature.vue'
 import Grid from '~/components/storyblok/Grid.vue'

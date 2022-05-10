@@ -37,7 +37,7 @@ export default {
     },
     styles() {
       var inlineStyles = ''
-      
+      // TODO: Defensive if cases for undefined properties
       // Margin
       inlineStyles += ('mt-' + this.blok.margin.top + ' ')
       inlineStyles += ('mr-' + this.blok.margin.right + ' ')
