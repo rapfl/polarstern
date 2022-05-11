@@ -78,6 +78,14 @@ export default {
       width: 100%;
       height: 100%;
       justify-content: center;
+      .card-title {
+        align-self: flex-end;
+        margin: 0;
+        color: var(--yellow);
+        font-family: 'Chau Philomene One', sans-serif;
+        text-transform: uppercase;
+        font-size: 24px;
+      }
     }
   }
   @media screen and (max-width: 991px) {

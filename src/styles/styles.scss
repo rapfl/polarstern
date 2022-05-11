@@ -85,7 +85,7 @@ body {
   background-color: #fff;
 }
 .grid {
-  max-width: inherit;
+  max-width: inherit !important;
 }
 .main-wrapper.post {
   background: var(--white);

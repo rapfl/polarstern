@@ -15,7 +15,8 @@ export default {
       if (this.blok.alignment) classes += (this.blok.alignment + ' ')
       if (this.blok.has_pill_bg) classes += 'rounded-pill bg-pill '
       if (this.blok.bg_color) classes += (this.blok.bg_color + ' ')
-      if (this.blok.border_color) classes += ('pill-border ' + this.blok.border_color)
+      if (this.blok.border_color) classes += ('pill-border ' + this.blok.border_color + ' ')
+      if (this.blok.font_color) classes += this.blok.font_color
       return classes
     }
   }

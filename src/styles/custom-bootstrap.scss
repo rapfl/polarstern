@@ -20,7 +20,7 @@ $red_mono: #ece1d9;
 
 $yellow: #ffe100;
 $yellow_light: #fdee87;
-$yellow_dark: #897a1a;
+$yellow_dark: #D9A700;
 $yellow_mono: #5f574f;
 
 $dark: #000000;
@@ -97,6 +97,32 @@ $very-short: .1s;
 }
 .border-warning-mono {
   border-color: $yellow_mono !important;
+}
+
+// Font Colors
+.font-primary {
+  color: $blue !important;
+}
+.font-primary-dark {
+  color: $blue_dark !important;
+}
+.font-danger {
+  color: $red !important;
+}
+.font-danger-dark {
+  color: $red_dark !important;
+}
+.font-warning {
+  color: $yellow !important;
+}
+.font-warning-dark {
+  color: $yellow_dark !important;
+}
+.font-white {
+  color: #ffffff !important;
+}
+.font-dark {
+  color: $dark !important;
 }
 
 
