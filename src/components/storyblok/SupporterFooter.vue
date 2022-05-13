@@ -71,10 +71,6 @@ export default {
         font-weight: 200;
       }
 
-      a {
-        margin-right: 20px;
-      }
-
       @media screen and (min-width: 768px) {
         grid-template-rows: auto;
         grid-template-columns: auto auto;

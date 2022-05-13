@@ -10,7 +10,7 @@
       <g-image :src="getCurrentPost($page.posts.edges, Student.blogposts[index]).featured_image"></g-image>
     </div>
     <h3>{{getCurrentPost($page.posts.edges, Student.blogposts[index]).title}}</h3>
-    <p>{{getCurrentPost($page.posts.edges, Student.blogposts[index]).excerpt}}</p>
+    <p class="mb-3">{{getCurrentPost($page.posts.edges, Student.blogposts[index]).excerpt}}</p>
     <g-link :to="getCurrentPost($page.posts.edges, Student.blogposts[index]).path">
       <b-button pill variant="primary">
         {{getCurrentPost($page.posts.edges, Student.blogposts[index]).button_text}}

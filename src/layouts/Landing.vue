@@ -21,8 +21,8 @@
   import Start from '~/data/Start.yml'
   import Header from '~/components/NewHeader.vue'
   import SocialButtons from '~/components/Social-Buttons.vue'
-  import SupporterFooter from '~/components/Supporter-Footer.vue'
-  import Footer from '~/components/Footer.vue'
+  import SupporterFooter from '~/components/storyblok/SupporterFooter.vue'
+  import Footer from '~/components/storyblok/Footer.vue'
 
   export default {
     components: {

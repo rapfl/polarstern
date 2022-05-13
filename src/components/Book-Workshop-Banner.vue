@@ -2,14 +2,14 @@
   <div class="book-workshop-banner py-5">
     <b-container>
       <b-row align-v="center">
-        <b-col cols="12" md="7" class="text-center text-md-left mb-4 mb-md-0">
+        <b-col cols="12" md="7" class="text-center text-md-left mb-4 mb-md-0 chau-font text-uppercase">
           <h1>Buche hier Workshops für deine Klassen oder Jugendgruppen</h1>
         </b-col>
         <b-col cols="12" md="5" class="text-center">
           <b-button
             to="/booking"
             pill 
-            variant="secondary">
+            variant="danger">
             Workshop Buchen
           </b-button>
         </b-col>
