@@ -53,7 +53,7 @@
 
 <script>
   import Start from '~/data/Start.yml'
-  import Header from '~/components/NewHeader.vue'
+  import Header from '~/components/Header.vue'
 
   export default {
     components: {

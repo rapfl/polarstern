@@ -106,17 +106,38 @@ $very-short: .1s;
 .font-primary-dark {
   color: $blue_dark !important;
 }
+.font-primary-light {
+  color: $blue_light !important;
+}
+.font-primary-mono {
+  color: $blue_mono !important;
+}
 .font-danger {
   color: $red !important;
 }
 .font-danger-dark {
   color: $red_dark !important;
 }
+.font-danger-light {
+  color: $red_light !important;
+}
+.font-danger-mono {
+  color: $red_mono !important;
+}
 .font-warning {
   color: $yellow !important;
 }
 .font-warning-dark {
   color: $yellow_dark !important;
+}
+.font-warning-light {
+  color: $yellow_light !important;
+}
+.font-warning-mono {
+  color: $yellow_mono !important;
+}
+.font-warning-light {
+  color: $yellow_light !important;
 }
 .font-white {
   color: #ffffff !important;

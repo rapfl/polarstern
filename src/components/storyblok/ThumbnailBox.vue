@@ -1,7 +1,7 @@
 <template>
   <div v-editable="blok">
     <a class="thumbnail-box border"
-       :class="blok.color_inverted ? 'border-primary' : 'border-warning'"
+       :class="blok.border_color"
        :href="getLink">
       <b-card
         :title="blok.thumbnail_box_title"
@@ -10,15 +10,17 @@
         :img-alt="blok.thumbnail_box_image.alt"
         align="center"
         tag="article"
-        class="rounded-0 border-0">
+        class="rounded-0 border-0"
+        :class="blok.font_color">
       </b-card>
     </a>
     <a v-if="blok.show_button" :href="getLink" class="d-block text-center">
       <b-button
         pill
         size="lg" 
+        :variant="blok.button_color"
         :class="blok.is_bg_button ? 'bg-btn-wrapper mt-3' : 'mt-5' ">
-        <span :class="blok.is_bg_button ? ('text-bg ' + (blok.color_inverted ? 'bg-warning text-dark' : '')) : ''">
+        <span :class="blok.is_bg_button ? ('text-bg bg-' + blok.button_color) : ''">
           {{ blok.button_title }}
         </span>
       </b-button>
@@ -81,7 +83,6 @@ export default {
       .card-title {
         align-self: flex-end;
         margin: 0;
-        color: var(--yellow);
         font-family: 'Chau Philomene One', sans-serif;
         text-transform: uppercase;
         font-size: 24px;

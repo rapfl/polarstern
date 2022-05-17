@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Header from '~/components/NewHeader.vue'
+import Header from '~/components/Header.vue'
 import SupporterFooter from '~/components/storyblok/SupporterFooter.vue'
 import Footer from '~/components/storyblok/Footer.vue'
 

@@ -3,12 +3,12 @@
     <!-- Desktop Header -->
     <div class="header-new">
       <div class="logo-wrapper">
-        <g-link to="/home"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link>
+        <ImageLink :blok="headerData.logo[0]"/>
       </div>
       <div class="menu-elements-wrapper">
 
-          <div class="header-elements menu-element" v-for="(menu, key) in mainPages" :key="key">
-            <g-link :to="menu.route">{{ menu.label }}</g-link>
+          <div class="header-elements menu-element" v-for="(page, key) in headerData.pages" :key="key">
+            <g-link :to="getLink(page.link)">{{ page.title }}</g-link>
           </div>
         
       </div>
@@ -16,7 +16,7 @@
     <!-- Mobile Header -->
     <div class="header">
       <div class="header-elements">
-        <g-link to="/"><g-image src="~/assets/img/Polarstern_Logo.png" width="200"></g-image></g-link>
+        <ImageLink :blok="headerData.logo[0]"/>
       </div>
       <ClientOnly>
         <TastyBurgerButton
@@ -61,6 +61,7 @@ query {
 
 <script>
 import Menu from '~/data/settings/Menu.yml'
+import ImageLink from '~/components/storyblok/ImageLink.vue'
 export default {
   mounted() {
     document.addEventListener('consentUpdate', this.consentToggle)
@@ -83,10 +84,19 @@ export default {
         import ('vue-tasty-burgers')
         .then(m => m.TastyBurgerButton)
         .catch(),
+    ImageLink
   },
   computed: {
     edges () {
       return this.$static.allStoryblokEntry.edges || []
+    },
+    headerData() {
+      for (var i = 0; i < this.edges.length; i++) {
+        if (this.edges[i].node.full_slug.includes("global/header")) {
+          return this.edges[i].node.content
+        }
+      }
+      return null
     },
     mainPages () {
       var pagesArray = []
@@ -122,7 +132,22 @@ export default {
           window['ga-disable-G-00706SCH2E'] = true;
         }
       }
-    }
+    },
+    getLink(blok) {
+      switch (blok.linktype) {
+        case "story":
+          return blok.cached_url
+        case "url":
+          if (blok.url.includes("https://") || blok.url.includes("http://"))
+            return blok.url
+          else
+            return "http://" + blok.url
+        case "email":
+          return "mailto:" + blok.email
+        default:
+          return blok.cached_url
+      }
+    },
   },
   props: {
     isStartScreen: Boolean
