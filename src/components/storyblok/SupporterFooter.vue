@@ -58,7 +58,7 @@ export default {
     },
     footerLogos () {
       for (var i = 0; i < this.edges.length; i++) {
-        if (this.edges[i].node.full_slug.includes("global/footer-logos")) {
+        if (this.edges[i].node.full_slug.includes("global/footer")) {
           return this.edges[i].node.content
         }
       }

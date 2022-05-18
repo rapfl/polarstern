@@ -2,9 +2,9 @@
   <footer>
     <b-container>
       <b-row>
-        <b-col v-for="footerPage in footerPages" :key="footerPage.content._uid" cols="4">
-          <a class="footer-menu-item" :href="footerPage.full_slug">
-            {{footerPage.name}}
+        <b-col v-for="footerPage in footerPages" :key="footerPage._uid" cols="6" md="3" class="mb-2" >
+          <a class="footer-menu-item" :href="getLink(footerPage.link)">
+            {{footerPage.title}}
           </a>
         </b-col>
       </b-row>
@@ -20,7 +20,6 @@
           name
           full_slug
           content
-          position
         }
       }
     }
@@ -36,13 +35,29 @@ export default {
     footerPages () {
       var footerPagesArr = []
       for (var i = 0; i < this.edges.length; i++) {
-        if (this.edges[i].node.content.component == 'footerPage')
-          footerPagesArr.push(this.edges[i].node)
+        if (this.edges[i].node.full_slug == 'global/footer')
+          footerPagesArr = this.edges[i].node.content.footer_pages
       }
-      footerPagesArr.sort((a, b) => b.position - a.position)
       return footerPagesArr
-    }
+    },
   },
+  methods: {
+    getLink(blok) {
+      switch (blok.linktype) {
+        case "story":
+          return ('/' + blok.cached_url)
+        case "url":
+          if (blok.url.includes("https://") || blok.url.includes("http://"))
+            return blok.url
+          else
+            return "http://" + blok.url
+        case "email":
+          return "mailto:" + blok.email
+        default:
+          return blok.cached_url
+      }
+    },
+  }
 }
 </script>
 
