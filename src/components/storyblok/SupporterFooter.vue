@@ -7,7 +7,7 @@
           <h4>{{footerLogos.headline_left}}</h4>
           <ImageLink v-for="logo in footerLogos.logos_left" :key="logo._uid" :blok="logo" />
         </b-col>
-        <b-col lg="6" cols="12" class="company-logo-wrapper text-right">
+        <b-col lg="6" cols="12" class="company-logo-wrapper text-sm-left text-lg-right">
           <h4>{{footerLogos.headline_right}}</h4>
           <b-container style="margin-top: 16px">
             <b-row>
