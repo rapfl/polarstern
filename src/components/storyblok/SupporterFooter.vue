@@ -1,23 +1,29 @@
 <template v-if="footerLogos">
-  <div class="logo-section">
+  <div class="logo-section" v-editable>
     <!-- TODO: How to set global fields? -->
     <b-container>
       <b-row class="sos-logo">
         <b-col lg="6" cols="12" class="company-logo-wrapper">
           <h4>{{footerLogos.headline_left}}</h4>
-          <div class="d-flex justify-content-between align-items-center">
-            <a v-for="logo in footerLogos.logos_left" :key="logo._uid" :href="logo.link_url.url">
-              <b-img :src="logo.image_url.filename" :width="logo.width" class="company-logo img-fluid"></b-img>
-            </a>
-          </div>
+          <ImageLink v-for="logo in footerLogos.logos_left" :key="logo._uid" :blok="logo" />
         </b-col>
-        <b-col lg="6" cols="12" class="company-logo-wrapper">
+        <b-col lg="6" cols="12" class="company-logo-wrapper text-right">
           <h4>{{footerLogos.headline_right}}</h4>
-          <div class="d-flex justify-content-between align-items-center">
-            <a v-for="logo in footerLogos.logos_right" :key="logo._uid" :href="logo.link_url.url">
-              <b-img :src="logo.image_url.filename" :width="logo.width" class="company-logo img-fluid"></b-img>
-            </a>
-          </div>
+          <b-container style="margin-top: 16px">
+            <b-row>
+              <b-col xl="5" lg="5" md="5" sm="5" cols="5" class="text-center" align-self="center">
+                <ImageLink :blok="footerLogos.logos_right[0]" />
+              </b-col>
+              <b-col xl="3" lg="3" md="3" sm="3" cols="3" class="text-center" align-self="center">
+                <ImageLink :blok="footerLogos.logos_right[1]" />
+              </b-col>
+              <b-col xl="4" lg="4" md="4" sm="4" cols="4" class="text-center" align-self="center">
+                <ImageLink :blok="footerLogos.logos_right[2]" />
+              </b-col>
+
+              
+            </b-row>
+          </b-container>
         </b-col>
       </b-row>  
     </b-container>
@@ -38,7 +44,14 @@
 </static-query>
 
 <script>
+import Column from '~/components/storyblok/Column.vue'
+import ImageLink from '~/components/storyblok/ImageLink.vue'
+
 export default {
+  components: {
+    ImageLink,
+    Column
+  },
   computed: {
     edges () {
       return this.$static.allStoryblokEntry.edges || []
@@ -58,14 +71,13 @@ export default {
 <style lang="scss">
   .logo-section {
     background-color: var(--white); 
-    padding: 1rem;
+    // padding: 1rem;
     .company-logo-wrapper {
 
       margin-top: 1.5rem;
 
       h4 {
         font-family: 'Chau Philomene One', sans-serif;
-        font-size: 20px;
         margin: 0;
         margin-bottom: 20px;
         font-weight: 200;

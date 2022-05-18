@@ -44,15 +44,14 @@ export default {
 <style lang="scss">
   .logo-section {
     background-color: var(--white); 
-    padding: 1rem;
+    // padding: 1rem;
+    margin: 40px 0;
     .company-logo-wrapper {
 
       margin-top: 1.5rem;
 
       h4 {
         font-family: 'Chau Philomene One', sans-serif;
-        font-size: 20px;
-        margin: 0;
         font-weight: 200;
       }
 
