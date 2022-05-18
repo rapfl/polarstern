@@ -35,7 +35,7 @@ export default {
     getLink() {
       switch (this.blok.thumbnail_box_link.linktype) {
         case "story":
-          return this.blok.thumbnail_box_link.cached_url
+          return ('/' + this.blok.thumbnail_box_link.cached_url)
         case "url":
           if (this.blok.thumbnail_box_link.url.includes("https://") || this.blok.thumbnail_box_link.url.includes("http://"))
             return this.blok.thumbnail_box_link.url

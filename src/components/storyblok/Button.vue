@@ -36,7 +36,7 @@ export default {
     getLink() {
       switch (this.blok.button_link.linktype) {
         case "story":
-          return this.blok.button_link.cached_url
+          return '/' + this.blok.button_link.cached_url
         case "url":
           if (this.blok.button_link.url.includes("https://") || this.blok.button_link.url.includes("http://"))
             return this.blok.button_link.url
