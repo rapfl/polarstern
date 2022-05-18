@@ -2,7 +2,7 @@
   <footer>
     <b-container>
       <b-row>
-        <b-col v-for="footerPage in footerPages" :key="footerPage.content._uid">
+        <b-col v-for="footerPage in footerPages" :key="footerPage.content._uid" cols="4">
           <a class="footer-menu-item" :href="footerPage.full_slug">
             {{footerPage.name}}
           </a>
