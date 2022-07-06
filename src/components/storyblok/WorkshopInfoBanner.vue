@@ -143,7 +143,16 @@ export default {
     display: flex;
     overflow: hidden;
     width: 100%;
-    
+
+    /* Hide scrollbar */
+    .layer {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+      /* Chrome, Safari and Opera */
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
     .more-info-layer,
     .all-details-layer {
       position: relative;
