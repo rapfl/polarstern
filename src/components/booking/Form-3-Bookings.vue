@@ -14,6 +14,7 @@
     >
       <h3>Buchung {{ booking.index + 1}}</h3>
       Klasse: <span class="weight-bold">{{ booking.class }}</span> <br>
+      Anzahl der Teilnehmer: <span class="weight-bold">{{ booking.anzahl }}</span> <br>
       Terminvorschläge: 
       <span v-for="(date, index) in booking.appointments"
             :key="index" 

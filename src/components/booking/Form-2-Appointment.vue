@@ -19,6 +19,21 @@
       <div v-if="errorClass" class="error-message ml-4">{{ errorMessage.class }} </div>
     </b-form-group>
     </b-col>
+    <b-col cols="12" md="6">
+      <b-form-group 
+      label="Anzahl der Teilnehmer"
+      label-class="label-option" 
+      class="form-option "
+    ><b-form-input
+        type="number"
+        class="input-element"
+        :class="stateClass"
+        placeholder="0"
+        v-model="booking.anzahl">
+      </b-form-input>
+      <div v-if="errorClass" class="error-message ml-4">{{ errorMessage.class }} </div>
+    </b-form-group>
+    </b-col>
   </b-row>
     
     <!-- Calendar -->

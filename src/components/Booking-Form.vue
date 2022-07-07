@@ -111,7 +111,8 @@ export default {
         workshop: '',
         bookingoption: '',
         price: '',
-        herzkiste: ''
+        herzkiste: '',
+        anzahl: 0
       },
       
       currentStep: 1,
@@ -208,6 +209,7 @@ export default {
       })
     },
     // TODO: Herzkiste Debug
+    // TODO: Continue at step 2 Bug
     createBody() {
       let records = []
       this.formData.bookings.forEach(booking => {
@@ -216,6 +218,7 @@ export default {
             "Buchungsoption": booking.bookingoption,
             "Wunschpreis": parseFloat(booking.price),
             "Klassenname": booking.class,
+            "Anzahl": booking.anzahl,
             "Herzkiste": booking.herzkiste ? true : false,
             "Termine": this.printDates(booking.appointments),
             "Status": "Ausstehend",
@@ -287,7 +290,8 @@ export default {
         workshop: '',
         bookingoption: '',
         price: '',
-        herzkiste: ''
+        herzkiste: '',
+        anzahl: 0
       }
     },
     validateEmail(email) {
