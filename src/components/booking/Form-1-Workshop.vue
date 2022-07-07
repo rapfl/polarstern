@@ -10,32 +10,17 @@
     >
       <b-row class="p-0">
         <b-col cols="12" md="6" lg="3"
-          v-for="(workshop, ind) in workshops"
+          v-for="(workshop, ind) in workshopList"
           :key="ind"
           class="form-element workshop"
           :class="filterGray(ind)"
           @click="setWorkshop(ind)"
-        >   
-        <div class="workshop-box-2 bg-green border-yellow" :class="stateWorkshop" v-if="ind === 0">
-          <h2>STÄRKEN <br> ENTDECKEN</h2>  
-          <g-image src='~/assets/svg/StaerkenEntdecken.svg' />
-          <h3>1 Stunde</h3>
-        </div>
-        <div class="workshop-box-2 bg-green border-yellow" :class="stateWorkshop" v-if="ind === 1">
-          <h2>STÄRKEN <br> ENTDECKEN</h2>  
-          <g-image src='~/assets/svg/StaerkenEntdecken.svg' />
-          <h3>2 Stunden</h3>
-        </div>
-        <div class="workshop-box-2 bg-pink border-yellow" :class="stateWorkshop" v-if="ind === 2">
-          <h2>Zukunfts- perspektive</h2>  
-          <g-image class="pos-abs" src='~/assets/svg/Zukunftsperspektive.svg' />
-          <h3>2 Stunden</h3>
-        </div>
-        <div class="workshop-box-2 bg-yellow border-yellow" :class="stateWorkshop" v-if="ind === 3">
-          <h2>Achtsamkeit</h2>  
-          <g-image src='~/assets/svg/Achtsamkeit.svg' />
-          <h3>1 Stunde</h3>
-        </div>
+        >
+        <div class="workshop-box-2 border-yellow" :class="(stateWorkshop + ' ' + workshop.color)">
+          <h2>{{workshop.name}}</h2>
+          <g-image :src="workshop.icon" :alt="workshop.alt"/>
+          <h3>{{workshop.length}}</h3>
+        </div>   
         </b-col>
       </b-row>
       <div v-if="errorWorkshop" class="error-message mt-1"> {{errorMessage.workshop }}</div>
@@ -45,7 +30,7 @@
     <b-row class="p-0">
       <b-col cols="12" class="mt-3">
         <b-form-group 
-          v-if="booking.workshop == 'Stärken Entdecken (2h)'" 
+          v-if="hasHerzkiste(booking.workshop)" 
           label="Haben Sie einen Herzkiste-Gutschein?"
           label-class="label-option"
           class="form-option">
@@ -98,6 +83,21 @@
   </b-form-group>
 </template>
 
+<static-query>
+query {
+  allStoryblokEntry {
+    edges {
+      node {
+        id
+        full_slug
+        name
+        content
+      }
+    }
+  }
+}
+</static-query>
+
 <script>
 export default {
   props: {
@@ -116,15 +116,32 @@ export default {
       bookingOptions: [
         'In der Klasse', 'Draußen','Online'
       ],
-      workshops: [
-        "Stärken Entdecken (1h)",
-        "Stärken Entdecken (2h)",
-        "Zukunftsperspektive",
-        "Achtsamkeit"
-      ]
     }
   },
   computed: {
+    edges () {
+      return this.$static.allStoryblokEntry.edges || []
+    },
+    workshopList () {
+      var workshopListArray = []
+      for (var i = 0; i < this.edges.length; i++) {
+        if (this.$static.allStoryblokEntry.edges[i].node.full_slug.includes("workshop-types")) {
+          workshopListArray.push(
+            {
+              id: this.edges[i].node.id,
+              name: this.edges[i].node.content.name,
+              length: this.edges[i].node.content.length,
+              color: this.edges[i].node.content.color,
+              icon: this.edges[i].node.content.icon.filename,
+              alt: this.edges[i].node.content.icon.alt,
+              herzkiste: this.edges[i].node.content.herzkiste,
+              airtable_name: this.edges[i].node.content.airtable_name
+            }
+          )
+        }
+      }
+      return workshopListArray
+    },
     statePrice() {
       if (this.validate && this.booking.price === '') 
         return 'input-element-error'
@@ -159,17 +176,24 @@ export default {
   
   methods: {
     setWorkshop(index) {
-      this.booking.workshop = this.workshops[index]
+      this.booking.workshop = this.workshopList[index].airtable_name
     },
     filterGray(index) {
       if (this.booking.workshop === '') 
         return ''
-      else if (this.workshops[index] === this.booking.workshop)
+      else if (this.workshopList[index].airtable_name === this.booking.workshop)
         return 'border-col'
       else
         return 'filter-gray'
+    },
+    hasHerzkiste(workshopName) {
+      for (var i = 0; i < this.workshopList.length; i++) {
+        if (workshopName == this.workshopList[i].airtable_name) {
+          return this.workshopList[i].herzkiste
+        }
+      }
     }
-  }
+  },
 }
 </script>
 
@@ -208,7 +232,7 @@ export default {
   }
   .workshop {
     margin-top: 1rem;
-    height: 350;
+    height: 350px;
     min-width:243px;
     cursor: pointer;
     .workshop-box-2 {
