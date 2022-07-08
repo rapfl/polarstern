@@ -218,7 +218,7 @@ export default {
             "Buchungsoption": booking.bookingoption,
             "Wunschpreis": parseFloat(booking.price),
             "Klassenname": booking.class,
-            "Anzahl": booking.anzahl,
+            "Anzahl": parseInt(booking.anzahl),
             "Herzkiste": booking.herzkiste ? true : false,
             "Termine": this.printDates(booking.appointments),
             "Status": "Ausstehend",
@@ -291,7 +291,9 @@ export default {
         bookingoption: '',
         price: '',
         herzkiste: '',
-        anzahl: 0
+        anzahl: 0,
+        datesConfirmed: false,
+        appointments: []
       }
     },
     validateEmail(email) {
