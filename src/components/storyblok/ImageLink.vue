@@ -21,37 +21,43 @@ export default {
   props: ['blok'],
   computed: {
     getLink() {
-      switch (this.blok.link_url.linktype) {
-        case "story":
-          return ('/' + this.blok.link_url.cached_url)
-        case "url":
-          if (this.blok.link_url.url.includes("https://") || this.blok.link_url.url.includes("http://"))
-            return this.blok.link_url.url
-          else
-            return "http://" + this.blok.link_url.url
-        case "email":
-          return "mailto:" + this.blok.link_url.email
-        default:
-          return this.blok.link_url.cached_url
+      if (this.blok) {
+        switch (this.blok.link_url.linktype) {
+          case "story":
+            return ('/' + this.blok.link_url.cached_url)
+          case "url":
+            if (this.blok.link_url.url.includes("https://") || this.blok.link_url.url.includes("http://"))
+              return this.blok.link_url.url
+            else
+              return "http://" + this.blok.link_url.url
+          case "email":
+            return "mailto:" + this.blok.link_url.email
+          default:
+            return this.blok.link_url.cached_url
+        }
       }
     },
     styles() {
       var inlineStyles = ''
       // TODO: Defensive if cases for undefined properties
       // Margin
-      inlineStyles += ('mt-' + this.blok.margin.top + ' ')
-      inlineStyles += ('mr-' + this.blok.margin.right + ' ')
-      inlineStyles += ('mb-' + this.blok.margin.bottom + ' ')
-      inlineStyles += ('ml-' + this.blok.margin.left + ' ')
+      if (this.blok) {
+        inlineStyles += ('mt-' + this.blok.margin.top + ' ')
+        inlineStyles += ('mr-' + this.blok.margin.right + ' ')
+        inlineStyles += ('mb-' + this.blok.margin.bottom + ' ')
+        inlineStyles += ('ml-' + this.blok.margin.left + ' ')
+      }
       
       // Padding
-      inlineStyles += ('pt-' + this.blok.padding.top + ' ')
-      inlineStyles += ('pr-' + this.blok.padding.right + ' ')
-      inlineStyles += ('pb-' + this.blok.padding.bottom + ' ')
-      inlineStyles += ('pl-' + this.blok.padding.left + ' ')
+      if (this.blok) {
+        inlineStyles += ('pt-' + this.blok.padding.top + ' ')
+        inlineStyles += ('pr-' + this.blok.padding.right + ' ')
+        inlineStyles += ('pb-' + this.blok.padding.bottom + ' ')
+        inlineStyles += ('pl-' + this.blok.padding.left + ' ')
+      }
       
       // Justify
-      inlineStyles += this.blok.justify
+      if (this.blok) inlineStyles += this.blok.justify
 
       return inlineStyles
       

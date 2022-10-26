@@ -20,42 +20,42 @@ module.exports = {
     }
   },
   plugins: [
-    {
-      use: '@gridsome/source-filesystem',
-      options: {
-        path: 'posts/**/*.md',
-        typeName: 'Post',
-        remark: {
-          plugins: [
-            // ...local plugins
-          ]
-        }
-      }
-    },
-    {
-      use: '@gridsome/source-filesystem',
-      options: {
-        path: 'workshops/**/*.md',
-        typeName: 'Workshop',
-        remark: {
-          plugins: [
-            // ...local plugins
-          ]
-        }
-      }
-    },
-    {
-      use: '@gridsome/source-filesystem',
-      options: {
-        path: 'company-offers/**/*.md',
-        typeName: 'Company_offer',
-        remark: {
-          plugins: [
-            // ...local plugins
-          ]
-        }
-      }
-    },
+    // {
+    //   use: '@gridsome/source-filesystem',
+    //   options: {
+    //     path: 'posts/**/*.md',
+    //     typeName: 'Post',
+    //     remark: {
+    //       plugins: [
+    //         // ...local plugins
+    //       ]
+    //     }
+    //   }
+    // },
+    // {
+    //   use: '@gridsome/source-filesystem',
+    //   options: {
+    //     path: 'workshops/**/*.md',
+    //     typeName: 'Workshop',
+    //     remark: {
+    //       plugins: [
+    //         // ...local plugins
+    //       ]
+    //     }
+    //   }
+    // },
+    // {
+    //   use: '@gridsome/source-filesystem',
+    //   options: {
+    //     path: 'company-offers/**/*.md',
+    //     typeName: 'Company_offer',
+    //     remark: {
+    //       plugins: [
+    //         // ...local plugins
+    //       ]
+    //     }
+    //   }
+    // },
     {
       use: 'gridsome-plugin-netlify-cms',
       options: {

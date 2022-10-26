@@ -53,13 +53,16 @@ module.exports = function (api) {
           }
         })
       }
-      createPage({
-        path: `/${node.full_slug}`,
-        component: './src/templates/StoryblokEntry.vue',
-        context: {
-          id: node.id
-        }
-      })
+      if (!node.full_slug.includes("workshop-types/")
+        || !node.full_slug.includes("global/")) {
+        createPage({
+          path: `/${node.full_slug}`,
+          component: './src/templates/StoryblokEntry.vue',
+          context: {
+            id: node.id
+          }
+        })
+      }
     })
   })
 }
