@@ -4,6 +4,7 @@
     label-class="label-group" 
     class="form-group">
     <b-row class="pt-2">
+      <!-- Vor- & Nachname -->
       <b-col cols="12">
          <b-form-group 
           label="Vor- und Nachname" 
@@ -19,12 +20,14 @@
             <div v-if="errorName" class="error-message ml-4">{{ errorMessage.name }}</div>
          </b-form-group>
       </b-col>
+      <!-- Kontakt -->
       <b-col cols="12">
         <b-form-group 
           label="Kontakt"
           label-class="label-option" 
           class="form-option">
           <b-row class="p-0">
+            <!-- E-Mail -->
             <b-col cols="12" md="6">
               <b-form-input
                 type="email"
@@ -35,6 +38,7 @@
               </b-form-input>
               <div v-if="errorEmail" class="error-message ml-4">{{ errorMessage.email }}</div>
             </b-col>
+            <!-- Telefonnummer -->
             <b-col cols="12" md="6" class="sm-mt-1">
               <b-form-input
                 type="text"
@@ -48,12 +52,14 @@
           </b-row>
         </b-form-group>
       </b-col>
+      <!-- Art der Organisation -->
       <b-col cols="12">
         <b-form-group 
           label="Art der Organisation"
           label-class="label-option"  
           class=" form-option">
           <b-row class="mt-0 p-0">
+            <!-- Radio Button - Art der Organisation -->
             <b-col 
               cols="12" sm="6" md="3"
               v-for="(organisation, ind)  in organisationTypes"
@@ -68,6 +74,7 @@
               </b-form-radio>
             </b-col>
             <b-col cols="12" v-if="errorOrganisationType" class="error-message mt-0 ml-4 mb-3">{{ errorMessage.organisationType }}</b-col>
+            <!-- Name und Adresse der Organisation -->
             <b-col cols="12">
               <b-form-input
                 type="text"
@@ -78,6 +85,7 @@
               </b-form-input>
               <div v-if="errorOrganisationNameAndAddress" class="error-message ml-4">{{ errorMessage.organisationNameAndAddress }}</div>
             </b-col>
+            <!-- Dropdown Schultyp -->
             <b-col cols="12" sm="10" md="6" class="pt-3"
             v-if="formData.organisationType === 'Schule'">
               <b-form-select
@@ -87,6 +95,25 @@
                   :options="schoolTypes">
               </b-form-select>
               <div v-if="errorSchoolType" class="error-message ml-4">{{ errorMessage.schoolType }}</div>
+            </b-col>
+          </b-row>
+        </b-form-group>
+        <!-- DSGVO Einverständniserklärung -->
+        <b-form-group 
+          label="Einverständniserklärung"
+          label-class="label-option"  
+          class="form-option">
+          <b-row class="mt-0 p-0">
+            <b-col cols="12" class="ml-4">
+              <b-form-checkbox
+                id="terms-of-use"
+                class="form-element herzkiste"
+                v-model="formData.confirmTermsOfUse"
+                name="terms-of-use"
+                :value="true"
+                :unchecked-value="false">
+                I accept the terms and use
+              </b-form-checkbox>
             </b-col>
           </b-row>
         </b-form-group>

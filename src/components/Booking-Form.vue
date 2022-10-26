@@ -98,7 +98,8 @@ export default {
         organisationType: '',
         organisationNameAndAddress: '',
         schoolType: null,
-        message: ''
+        message: '',
+        confirmTermsOfUse: false
       },
 
       booking: {
@@ -154,7 +155,8 @@ export default {
             this.validatePhonenumber(this.formData.phonenumber) ||
             this.formData.organisationNameAndAddress === '' ||
             this.formData.organisationType === '' ||
-            this.formData.organisationType === 'Schule' && this.formData.schoolType === null)
+            this.formData.organisationType === 'Schule' && this.formData.schoolType === null ||
+            !this.formData.confirmTermsOfUse)
             return true
           else 
             return false
