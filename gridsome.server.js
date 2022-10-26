@@ -40,6 +40,7 @@ module.exports = function (api) {
         }
       }
     }`)
+    
     // for each content found create a page
     data.allStoryblokEntry.edges.forEach(({
       node
