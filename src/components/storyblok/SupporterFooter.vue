@@ -5,20 +5,28 @@
       <b-row class="sos-logo">
         <b-col lg="6" cols="12" class="company-logo-wrapper">
           <h4>{{footerLogos.headline_left}}</h4>
-          <ImageLink v-for="logo in footerLogos.logos_left" :key="logo._uid" :blok="logo" />
+          <ClientOnly>
+            <ImageLink v-for="logo in footerLogos.logos_left" :key="logo._uid" :blok="logo" />
+          </ClientOnly>
         </b-col>
         <b-col lg="6" cols="12" class="company-logo-wrapper text-sm-left text-lg-right">
           <h4>{{footerLogos.headline_right}}</h4>
           <b-container style="margin-top: 16px">
             <b-row>
               <b-col xl="5" lg="5" md="5" sm="5" cols="5" class="text-center" align-self="center">
-                <ImageLink :blok="footerLogos.logos_right[0]" />
+                <ClientOnly>
+                  <ImageLink :blok="footerLogos.logos_right[0]" />
+                </ClientOnly>
               </b-col>
               <b-col xl="3" lg="3" md="3" sm="3" cols="3" class="text-center" align-self="center">
-                <ImageLink :blok="footerLogos.logos_right[1]" />
+                <ClientOnly>
+                  <ImageLink :blok="footerLogos.logos_right[1]" />
+                </ClientOnly>
               </b-col>
               <b-col xl="4" lg="4" md="4" sm="4" cols="4" class="text-center" align-self="center">
-                <ImageLink :blok="footerLogos.logos_right[2]" />
+                <ClientOnly>
+                  <ImageLink :blok="footerLogos.logos_right[2]" />
+                </ClientOnly>
               </b-col>
 
               
