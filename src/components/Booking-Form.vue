@@ -327,6 +327,8 @@ export default {
 
 
 .booking-form-page {
+  // TODO: fix spacing to footer
+  // TODO: checkup on general mobile behavior
   overflow: hidden;
   .booking-form {
     width: 1281px;

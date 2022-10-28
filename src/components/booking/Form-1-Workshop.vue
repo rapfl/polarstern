@@ -9,18 +9,19 @@
       label-class="label-option" 
     >
       <b-row class="p-0">
-        <b-col cols="12" md="6" lg="3"
+        <b-col cols="12" md="6" lg="4"
           v-for="(workshop, ind) in workshopList"
           :key="ind"
-          class="form-element workshop"
+          class="form-element workshop mb-5"
           :class="filterGray(ind)"
           @click="setWorkshop(ind)"
         >
-        <div class="workshop-box-2 border-yellow" :class="(stateWorkshop + ' ' + workshop.color)">
-          <h2>{{workshop.name}}</h2>
-          <g-image :src="workshop.icon" :alt="workshop.alt"/>
-          <h3>{{workshop.length}}</h3>
-        </div>   
+          <div class="workshop-box-2 border-yellow" :class="(stateWorkshop + ' ' + workshop.color)">
+            <h2>{{workshop.name}}</h2>
+            <g-image :src="workshop.icon" :alt="workshop.alt"/>
+            <h3>{{workshop.length}}</h3>
+            <h4 v-if="workshop.price">{{workshop.price}}</h4>
+          </div>   
         </b-col>
       </b-row>
       <div v-if="errorWorkshop" class="error-message mt-1"> {{errorMessage.workshop }}</div>
@@ -135,7 +136,8 @@ export default {
               icon: this.edges[i].node.content.icon.filename,
               alt: this.edges[i].node.content.icon.alt,
               herzkiste: this.edges[i].node.content.herzkiste,
-              airtable_name: this.edges[i].node.content.airtable_name
+              airtable_name: this.edges[i].node.content.airtable_name,
+              price: this.edges[i].node.content.price
             }
           )
         }
@@ -235,9 +237,12 @@ export default {
     height: 350px;
     min-width:243px;
     cursor: pointer;
+    // TODO: Fix border at yellow workshop box
+    // TODO: Fix alignment and sizes in mobile
+    // TODO: define more global styles
     .workshop-box-2 {
       width:239px;
-      height: 350.88px;
+      height: 400px;
       border: 5px solid white;
       display: grid;
       text-align: center;

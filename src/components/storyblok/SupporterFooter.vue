@@ -77,6 +77,7 @@ export default {
 </script>
 
 <style lang="scss">
+  // TODO: Fix sizing of logos
   .logo-section {
     background-color: var(--white); 
     // padding: 1rem;
