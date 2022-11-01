@@ -1,6 +1,7 @@
 <template>
   <Layout :blue="true">
-    <b-container class="header-padding footer-padding">
+    <b-container class="py-5">
+      <!-- TODO: Make booking more customizable in CMS -->
       <BookingForm />
     </b-container>
     <ModalBox id="modal-success" :title="successTitle" :message="successMessage" :redirect="redirectUrl"/>

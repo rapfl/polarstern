@@ -80,7 +80,7 @@
       </b-button>
       <b-button
         pill 
-        variant="secondary" 
+        variant="danger" 
         class="mt-3"
         v-if="numDates > 1"
         @click="removeLastAppointmentWrapper">

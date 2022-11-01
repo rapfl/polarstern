@@ -1,37 +1,19 @@
 <template v-if="footerLogos">
-  <div class="logo-section" v-editable>
-    <!-- TODO: How to set global fields? -->
+  <div class="logo-section pt-5 pb-4" v-editable>
+    <!-- TODO: In future: as a preset component without global fields -->
     <b-container>
       <b-row class="sos-logo">
         <b-col lg="6" cols="12" class="company-logo-wrapper">
           <h4>{{footerLogos.headline_left}}</h4>
           <ClientOnly>
-            <ImageLink v-for="logo in footerLogos.logos_left" :key="logo._uid" :blok="logo" />
+            <ImageLink :blok="footerLogos.logos_left[0]" />
           </ClientOnly>
         </b-col>
-        <b-col lg="6" cols="12" class="company-logo-wrapper text-sm-left text-lg-right">
+        <b-col lg="6" cols="12" class="company-logo-wrapper text-sm-left text-lg-right mt-lg-0 mt-5">
           <h4>{{footerLogos.headline_right}}</h4>
-          <b-container style="margin-top: 16px">
-            <b-row>
-              <b-col xl="5" lg="5" md="5" sm="5" cols="5" class="text-center" align-self="center">
-                <ClientOnly>
-                  <ImageLink :blok="footerLogos.logos_right[0]" />
-                </ClientOnly>
-              </b-col>
-              <b-col xl="3" lg="3" md="3" sm="3" cols="3" class="text-center" align-self="center">
-                <ClientOnly>
-                  <ImageLink :blok="footerLogos.logos_right[1]" />
-                </ClientOnly>
-              </b-col>
-              <b-col xl="4" lg="4" md="4" sm="4" cols="4" class="text-center" align-self="center">
-                <ClientOnly>
-                  <ImageLink :blok="footerLogos.logos_right[2]" />
-                </ClientOnly>
-              </b-col>
-
-              
-            </b-row>
-          </b-container>
+          <ClientOnly>
+            <ImageLink :blok="footerLogos.logos_right[0]" class="text-sm-left text-lg-right"/>
+          </ClientOnly>
         </b-col>
       </b-row>  
     </b-container>
