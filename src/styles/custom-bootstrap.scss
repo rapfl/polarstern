@@ -267,6 +267,32 @@ a, a:hover {
       }
     }
   }
+  &.blue-dark {
+    .cover-layer {
+      background-color: $blue-dark;
+      h3 {
+        color: $yellow;
+      }
+    }
+    .more-info-layer {
+      background-color: $blue;
+      .arrow-right {
+        border-left-color: $blue_dark;
+        background-color: $blue;
+      }
+    }
+    .all-details-layer {
+      background-color: $blue_light;
+      color: $dark;
+      .arrow-right {
+        border-left-color: $blue;
+        background-color: $blue_light;
+      }
+      a {
+        color: $yellow;
+      }
+    }
+  }
   &.red {
     .cover-layer {
       background-color: $red;
