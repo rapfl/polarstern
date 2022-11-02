@@ -287,8 +287,6 @@ export default {
   .custom-control-label,
   .custom-control-label::after {
     cursor: pointer;
-    width: 100%;
-    height: 100%;
   }
 
   .herzkiste {
@@ -304,8 +302,6 @@ export default {
     }
     .custom-control-label::after {
       content: '';
-      width: 100%;
-      height: 100%;
       opacity: 0;
     }
     .custom-control-input:checked ~ .custom-control-label::before {

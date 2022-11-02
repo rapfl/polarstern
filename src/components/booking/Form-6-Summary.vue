@@ -33,6 +33,7 @@
       <div v-if="formData.organisationType === 'Schule'"> 
         Schultyp: <span class="weight-bold">{{ formData.schoolType }} </span><br>
       </div>
+      Newsletter: <span class="weight-bold">{{ formData.confirmNewsletter ? 'Ja' : 'Nein' }} </span><br>
     </b-col>
     <b-col cols="12" class="my-2">
       <h4>Persönliche Mitteilung</h4>

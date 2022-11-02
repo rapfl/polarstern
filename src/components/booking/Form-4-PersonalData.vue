@@ -106,13 +106,22 @@
           <b-row class="mt-0 p-0">
             <b-col cols="12" class="ml-4">
               <b-form-checkbox
+                id="newsletter-checkbox"
+                class="form-element herzkiste"
+                v-model="formData.confirmNewsletter"
+                name="newsletter-checkbox"
+                :value="true"
+                :unchecked-value="false">
+                <Richtext :text="workshopBookingSettings.newsletter_checkbox_text"/>
+              </b-form-checkbox>
+              <b-form-checkbox
                 id="terms-of-use"
                 class="form-element herzkiste"
                 v-model="formData.confirmTermsOfUse"
                 name="terms-of-use"
                 :value="true"
                 :unchecked-value="false">
-                I accept the terms and use
+                <Richtext :text="workshopBookingSettings.agb_checkbox_text"/>
               </b-form-checkbox>
             </b-col>
           </b-row>
@@ -122,11 +131,31 @@
   </b-form-group>
 </template>
 
+<static-query>
+query {
+  allStoryblokEntry {
+    edges {
+      node {
+        id
+        full_slug
+        name
+        content
+      }
+    }
+  }
+}
+</static-query>
+
 <script>
+import Richtext from '~/components/storyblok/Richtext.vue'
+
 export default {
   props: {
     value: null,
     validate: false
+  },
+  components: {
+    Richtext
   },
   data() {
     return {
@@ -151,6 +180,17 @@ export default {
     }
   },
   computed: {
+    edges () {
+      return this.$static.allStoryblokEntry.edges || []
+    },
+    workshopBookingSettings() {
+      for (var i = 0; i < this.edges.length; i++) {
+        if (this.edges[i].node.full_slug.includes("global/workshop-booking-settings")) {
+          return this.edges[i].node.content
+        }
+      }
+      return null
+    },
     errorName() {
       if (this.validate && this.formData.name === '')
         return true

@@ -99,7 +99,8 @@ export default {
         organisationNameAndAddress: '',
         schoolType: null,
         message: '',
-        confirmTermsOfUse: false
+        confirmTermsOfUse: false,
+        confirmNewsletter: false
       },
 
       booking: {
@@ -231,7 +232,8 @@ export default {
             "Telefonnummer": this.formData.phonenumber,
             "Art der Organisation": this.formData.organisationType,
             "Schultyp": (this.formData.organisationType === 'Organisation') ? 'Sonstige' : this.formData.schoolType,
-            "Nachricht": this.formData.message
+            "Nachricht": this.formData.message,
+            "Newsletter": this.formData.confirmNewsletter
         }}
         records.push(field)
       })
