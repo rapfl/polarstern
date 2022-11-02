@@ -16,11 +16,11 @@
           :class="filterGray(ind)"
           @click="setWorkshop(ind)"
         >
-          <div class="workshop-box-2 border-yellow" :class="(stateWorkshop + ' ' + workshop.color)">
+          <div class="workshop-box-2 border-checked" :class="(stateWorkshop + ' ' + workshop.color)">
             <h2>{{workshop.name}}</h2>
             <g-image :src="workshop.icon" :alt="workshop.alt"/>
             <h3>{{workshop.length}}</h3>
-            <h4 v-if="workshop.price">{{workshop.price}}</h4>
+            <h4 v-if="workshop.price" class="font-white">{{workshop.price}}</h4>
           </div>   
         </b-col>
       </b-row>
@@ -126,7 +126,8 @@ export default {
     workshopList () {
       var workshopListArray = []
       for (var i = 0; i < this.edges.length; i++) {
-        if (this.$static.allStoryblokEntry.edges[i].node.full_slug.includes("workshop-types")) {
+        if (this.$static.allStoryblokEntry.edges[i].node.full_slug.includes("workshop-types")
+          && this.$static.allStoryblokEntry.edges[i].node.content.show_workshop) {
           workshopListArray.push(
             {
               id: this.edges[i].node.id,
@@ -205,11 +206,6 @@ export default {
 .filter-gray{
   filter: grayscale(1);
 }
-.border-col {
-  .border-yellow {
-    border: 5px solid #FFE100 !important;
-}
-}
 
 .label-group {
   font-family: 'Chau Philomene One';
@@ -260,7 +256,6 @@ export default {
         font-family: 'Chau Philomene One';
         font-size: 30px;
         text-transform: uppercase;
-        color: #8B2346;
       }
       .pos-abs {
           position: absolute;
@@ -354,6 +349,14 @@ export default {
   .error-message {
     color:#e22e77;
     font-size: 16px;
+  }
+  .border-col {
+    .bg-yellow.border-checked {
+      border: 5px solid #e22e77;
+    }
+    .border-checked {
+      border: 5px solid #FFE100;
+    }
   }
 }
 </style>
