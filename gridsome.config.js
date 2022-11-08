@@ -9,60 +9,8 @@ module.exports = {
   titleTemplate: '%s - Polarstern',
   siteUrl: 'https://www.polarstern.me',
   icon: './src/assets/img/Polarstern_Logo.png',
-  transformers: {
-    remark: {
-      externalLinksTarget: '_blank',
-      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
-      anchorClassName: 'icon icon-link',
-      plugins: [
-        // ...global plugins
-      ]
-    }
-  },
   plugins: [
-    // {
-    //   use: '@gridsome/source-filesystem',
-    //   options: {
-    //     path: 'posts/**/*.md',
-    //     typeName: 'Post',
-    //     remark: {
-    //       plugins: [
-    //         // ...local plugins
-    //       ]
-    //     }
-    //   }
-    // },
-    // {
-    //   use: '@gridsome/source-filesystem',
-    //   options: {
-    //     path: 'workshops/**/*.md',
-    //     typeName: 'Workshop',
-    //     remark: {
-    //       plugins: [
-    //         // ...local plugins
-    //       ]
-    //     }
-    //   }
-    // },
-    // {
-    //   use: '@gridsome/source-filesystem',
-    //   options: {
-    //     path: 'company-offers/**/*.md',
-    //     typeName: 'Company_offer',
-    //     remark: {
-    //       plugins: [
-    //         // ...local plugins
-    //       ]
-    //     }
-    //   }
-    // },
-    {
-      use: 'gridsome-plugin-netlify-cms',
-      options: {
-        publicPath: '/admin',
-        modulePath: 'src/admin/index.js'
-      }
-    },
+    // Storyblok Source
     {
       use: 'gridsome-source-storyblok',
       options: {
@@ -71,6 +19,7 @@ module.exports = {
         }
       }
     },
+    // Klaro Consent Manager
     {
       use: 'klaro-gridsome',
       options: {
@@ -110,6 +59,7 @@ module.exports = {
       }
     }
   ],
+  // Vue SVG loader
   chainWebpack: config => {
     const svgRule = config.module.rule('svg')
     svgRule.uses.clear()

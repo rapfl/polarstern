@@ -54,8 +54,8 @@ module.exports = function (api) {
           }
         })
       }
-      if (!node.full_slug.includes("workshop-types")
-        || !node.full_slug.includes("global")) {
+      // TODO: alternatively implement with if (full_slug.content.component === 'page')
+      if (!(node.full_slug.includes('workshop-types') || node.full_slug.includes('global'))) {
         createPage({
           path: `/${node.full_slug}`,
           component: './src/templates/StoryblokEntry.vue',

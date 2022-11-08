@@ -60,7 +60,6 @@ query {
 </static-query>
 
 <script>
-import Menu from '~/data/settings/Menu.yml'
 import ImageLink from '~/components/storyblok/ImageLink.vue'
 export default {
   mounted() {
@@ -112,10 +111,6 @@ export default {
       }
       return pagesArray
     },
-    // TODO: DEPRECATED
-    Menu() {
-      return Menu
-    }
   },
   methods: {
     toggleMenu: function() {
