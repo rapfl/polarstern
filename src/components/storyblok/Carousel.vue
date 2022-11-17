@@ -1,7 +1,7 @@
 <template>
   <div v-editable="blok" class="carousel-wrapper">
     <ssr-carousel 
-      :slides-per-page="3"
+      :slides-per-page="blok.slides.length % 4 || 3"
       paginate-by-slide
       show-arrows
       show-dots
@@ -9,11 +9,11 @@
       :responsive='[
         {
           maxWidth: 1280,
-          slidesPerPage: 3,
+          slidesPerPage: blok.slides.length % 4 || 3,
         },
         {
           maxWidth: 991,
-          slidesPerPage: 2,
+          slidesPerPage: blok.slides.length % 3 || 2,
         },
         {
           maxWidth: 575,
