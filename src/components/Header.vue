@@ -31,8 +31,8 @@
     </div>
     <div v-if="!isStartScreen" class="header-menu " :class="{active: showMenu}">
       <ul>
-        <li class="header-elements menu-element" v-for="(menu, key) in mainPages" :key="key">
-          <g-link :to="menu.route">{{ menu.label }}</g-link>
+        <li class="header-elements menu-element" v-for="(page, key) in headerData.pages" :key="key">
+          <g-link :to="getLink(page.link)">{{ page.title }}</g-link>
         </li>
       </ul>
     </div>
@@ -96,21 +96,7 @@ export default {
         }
       }
       return null
-    },
-    mainPages () {
-      var pagesArray = []
-      for (var i = 0; i < this.edges.length; i++) {
-        if (this.$static.allStoryblokEntry.edges[i].node.content.component == "page") {
-          pagesArray.push(
-            {
-              label: this.edges[i].node.name,
-              route: this.edges[i].node.full_slug
-            }
-          )
-        }
-      }
-      return pagesArray
-    },
+    }
   },
   methods: {
     toggleMenu: function() {
