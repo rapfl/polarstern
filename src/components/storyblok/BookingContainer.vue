@@ -1,12 +1,12 @@
 <template>
-  <Layout :blue="true">
+  <div class="bg-primary">
     <b-container class="py-5">
       <!-- TODO: Make booking more customizable in CMS -->
       <BookingForm />
     </b-container>
     <ModalBox id="modal-success" :title="successTitle" :message="successMessage" :redirect="redirectUrl"/>
     <ModalBox id="modal-error" :title="errorTitle" :message="errorMessage" :redirect="redirectUrl"/>
-  </Layout>
+  </div>
 </template>
 
 <script>

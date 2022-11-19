@@ -41,6 +41,10 @@ $very-short: .1s;
 }
 .bg-warning {
   color: black;
+  background-color: $yellow;
+}
+.bg-primary {
+  background-color: $blue;
 }
 .bg-primary-light {
   background-color: $blue_light;
