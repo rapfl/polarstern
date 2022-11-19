@@ -1,6 +1,7 @@
 <template>
+  <!-- TODO: Disable redundant text-align somewhere (either here or Column.vue) -->
   <div v-editable="blok" 
-       :style="'text-align: ' + blok.justify" 
+       :style="'text-align: ' + blok.justify"
        class="heading-block"
        :class="blok.font">
     <h1 v-if="blok.hierarchy == 'h1'">

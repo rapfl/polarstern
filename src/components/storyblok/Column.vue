@@ -1,6 +1,6 @@
 <template>
   <b-col v-editable="blok"
-        :class="blok.justify"
+        :class="alignmentClasses"
         :align-self="blok.alignment"
         :cols="blok.grid_settings.xsmall || 12"
         :sm="blok.grid_settings.small || (blok.grid_settings.xsmall || 12)"
@@ -24,7 +24,18 @@
 
 <script>
 export default {
-  props: ['blok']
+  props: ['blok'],
+  computed: {
+    alignmentClasses() {
+      var classes = ''
+      classes = `text-${this.blok.grid_justify.xsmall} `
+      classes += `text-sm-${this.blok.grid_justify.small} `
+      classes += `text-md-${this.blok.grid_justify.medium} `
+      classes += `text-lg-${this.blok.grid_justify.large} `
+      classes += `text-xl-${this.blok.grid_justify.xlarge}`
+      return classes
+    }
+  }
 }
 </script>
 
