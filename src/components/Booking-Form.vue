@@ -326,10 +326,14 @@ export default {
 </script>
 
 <style lang="scss">
-
-
+// Safari hover over input fix
+input.custom-control,
+input.custom-control-input {
+  width: 38px;
+  height: 38px;
+  cursor: pointer;
+}
 .booking-form-page {
-  // TODO: fix spacing to footer
   // TODO: checkup on general mobile behavior
   overflow: hidden;
   .booking-form {

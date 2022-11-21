@@ -149,6 +149,21 @@ $very-short: .1s;
 
 
 /** Elements **/
+// Safari line height fix
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  line-height: 1.4;
+}
 a, a:hover {
   color: $black;
 }
@@ -156,7 +171,7 @@ a, a:hover {
 .btn {
   color: $white;
   text-transform: uppercase;
-  line-height: 1.2rem;
+  line-height: 2.6rem;   // Safari line height fix
   padding: 0.1rem 2rem;
   border: 9px solid;
 }

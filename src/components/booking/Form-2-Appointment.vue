@@ -63,7 +63,7 @@
       </b-form-datepicker>
 
       <b-form-input 
-        class="input-element" 
+        class="input-element time-picker" 
         type="time"
         :placeholder="pickTimeMessage"
         @input="addTime($event, index-1)">
@@ -286,6 +286,10 @@ export default {
       color: #000;
     }
   }
+}
+// Safari vertical alignment fix
+.time-picker {
+  display: flex;
 }
 .popover {
   min-width: 280px;
