@@ -96,6 +96,20 @@
               </b-form-select>
               <div v-if="errorSchoolType" class="error-message ml-4">{{ errorMessage.schoolType }}</div>
             </b-col>
+            <!-- Text field Schulkennzahl -->
+            <b-col cols="12" sm="10" md="6" class="pt-3" v-if="formData.organisationType === 'Schule'">
+              <b-form-input
+                  type="number"
+                  placeholder="Schulkennzahl"
+                  v-model="formData.schoolCode"
+                  class="form-element input-element"
+                  >
+              </b-form-input>
+              <b-form-text class="ml-4 font-white">
+                Deine Schulkennzahl findest du hier: 
+                <a href="https://www.schulen-online.at/sol/oeff_suche_schulen.jsf" target="_blank" class="font-danger">Schulen-Online</a>
+              </b-form-text>
+            </b-col>
           </b-row>
         </b-form-group>
         <!-- DSGVO Einverständniserklärung -->

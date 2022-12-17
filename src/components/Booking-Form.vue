@@ -98,6 +98,7 @@ export default {
         organisationType: '',
         organisationNameAndAddress: '',
         schoolType: null,
+        schoolCode: '',
         message: '',
         confirmTermsOfUse: false,
         confirmNewsletter: false
@@ -157,6 +158,7 @@ export default {
             this.formData.organisationNameAndAddress === '' ||
             this.formData.organisationType === '' ||
             this.formData.organisationType === 'Schule' && this.formData.schoolType === null ||
+            this.formData.schoolCode === '' ||
             !this.formData.confirmTermsOfUse)
             return true
           else 
@@ -211,8 +213,6 @@ export default {
         }
       })
     },
-    // TODO: Herzkiste Debug
-    // TODO: Continue at step 2 Bug
     createBody() {
       let records = []
       this.formData.bookings.forEach(booking => {
@@ -232,6 +232,7 @@ export default {
             "Telefonnummer": this.formData.phonenumber,
             "Art der Organisation": this.formData.organisationType,
             "Schultyp": (this.formData.organisationType === 'Organisation') ? 'Sonstige' : this.formData.schoolType,
+            "Schulkennzahl": this.formData.schoolCode,
             "Nachricht": this.formData.message,
             "Newsletter": this.formData.confirmNewsletter
         }}

@@ -99,8 +99,5 @@ export default {
     font-size: 30px;
     text-transform: uppercase;
   }
-  .weight-bold {
-    font-weight: bold;
-  }
 }
 </style>

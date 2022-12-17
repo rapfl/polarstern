@@ -32,6 +32,7 @@
       Name und Adresse: <span class="weight-bold">{{ formData.organisationNameAndAddress }} </span> <br>
       <div v-if="formData.organisationType === 'Schule'"> 
         Schultyp: <span class="weight-bold">{{ formData.schoolType }} </span><br>
+        Schulkennzahl: <span class="weight-bold">{{ formData.schoolCode }} </span><br>
       </div>
       Newsletter: <span class="weight-bold">{{ formData.confirmNewsletter ? 'Ja' : 'Nein' }} </span><br>
     </b-col>
