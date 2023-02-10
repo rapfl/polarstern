@@ -23,12 +23,6 @@ import Footer from '~/components/storyblok/Footer.vue'
 import Dots from '~/assets/svg/dots.svg'
 
 export default {
-  mounted() {
-    var optOutButton = document.querySelectorAll("a[href='#app-opt-out']");
-    optOutButton[0].onclick = function() {
-      window.klaro.show();
-    }
-  },
   components: {
     Header,
     SocialButtons,

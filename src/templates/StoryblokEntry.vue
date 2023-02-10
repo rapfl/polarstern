@@ -11,6 +11,12 @@
  
 <script>
 export default {
+  mounted() {
+    var optOutButton = document.querySelectorAll("a[href='#app-opt-out']");
+    optOutButton[0].onclick = function() {
+      window.klaro.show();
+    }
+  },
   name: 'StoryblokEntryTemplate',
   computed: {
     story () {

@@ -11,12 +11,6 @@ import Header from '~/components/Header.vue'
 import Footer from '~/components/storyblok/Footer.vue'
 
 export default {
-  mounted() {
-    var optOutButton = document.querySelectorAll("a[href='#app-opt-out']");
-    optOutButton[0].onclick = function() {
-      window.klaro.show();
-    }
-  },
   components: {
     Header,
     Footer
