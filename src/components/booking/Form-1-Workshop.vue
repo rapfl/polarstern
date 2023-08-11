@@ -147,16 +147,17 @@ export default {
       }
       return workshopListArray
     },
-    statePrice() {
-      if (this.validate && this.booking.price === '') 
-        return 'input-element-error'
-      return ''
-    },
-    errorPrice(){
-      if (this.validate && this.booking.price === '') 
-        return true
-      return false
-    },
+ // commented out Price validation (see above)
+ //   statePrice() {
+ //     if (this.validate && this.booking.price === '') 
+ //       return 'input-element-error'
+ //     return ''
+ //   },
+ //   errorPrice(){
+ //     if (this.validate && this.booking.price === '') 
+ //       return true
+ //     return false
+ //   },
     stateBookingoption() {
       if (this.validate && this.booking.bookingoption === '')
         return 'radio-element-error' 
