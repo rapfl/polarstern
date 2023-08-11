@@ -112,7 +112,7 @@ export default {
         datesConfirmed: false,
         workshop: '',
         bookingoption: '',
-        price: '',
+      //  price: '',
         herzkiste: '',
         anzahl: 0
       },
@@ -135,9 +135,8 @@ export default {
     disableNext() {
       if (this.currentStep === 1) {
         if (this.booking.workshop === '' ||
-            this.booking.bookingoption === '' ||
-            // this.booking.price === '')
-        )
+            this.booking.bookingoption === '')
+            //this.booking.price === '')
             return true
           else
             return false
