@@ -113,7 +113,7 @@ export default {
       errorMessage: {
         workshop: 'Bitte wählen Sie einen Workshop aus!',
         bookingoption: 'Bitte wählen Sie eine Buchungsoption aus!',
-        price: 'Bitte geben Sie einen Wunschpreis an!'
+     //   price: 'Bitte geben Sie einen Wunschpreis an!'
       },
       booking: this.value,
       bookingOptions: [
