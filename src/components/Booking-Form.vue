@@ -136,7 +136,8 @@ export default {
       if (this.currentStep === 1) {
         if (this.booking.workshop === '' ||
             this.booking.bookingoption === '' ||
-            this.booking.price === '') 
+            // this.booking.price === '')
+        )
             return true
           else
             return false
