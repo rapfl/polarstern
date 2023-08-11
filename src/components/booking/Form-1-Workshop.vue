@@ -62,7 +62,9 @@
           <div v-if="errorBookingoption" class="error-message">{{ errorMessage.bookingoption }}</div>
         </b-form-group>
       </b-col>
-      <b-col cols="12" md="6" class="mt-3">
+      <!-- TODO: delete WUNSCHPREIS from form -->
+      <!-- rapfl simply disabled Wunschpreis field so as to not destroy the running code -->
+     <!-- <b-col cols="12" md="6" class="mt-3">
         <b-form-group   
           label="Wunschpreis pro Teilnehmer*in und Stunde"
           label-class="label-option" 
@@ -78,8 +80,8 @@
             >
           </b-form-input>
           <div v-if="errorPrice" class="error-message ml-4">{{ errorMessage.price }} </div>
-        </b-form-group>
-      </b-col>
+        </b-form-group> 
+      </b-col> -->
     </b-row>
   </b-form-group>
 </template>
