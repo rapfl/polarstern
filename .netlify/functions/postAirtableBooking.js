@@ -9,7 +9,7 @@ exports.handler = async function(event, context) {
   // TODO: customize your URL and API keys set in the Netlify Dashboard
   // this is secret too, your frontend won't see this
   const { AIRTABLE_API_KEY, AIRTABLE_BOOKING_URL } = process.env;
-  const URL = `${AIRTABLE_BOOKING_URL}?api_key=${AIRTABLE_API_KEY}`;
+  const URL = `${AIRTABLE_BOOKING_URL}`;
 
   const config = {
     headers: {
