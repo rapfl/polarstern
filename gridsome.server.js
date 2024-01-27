@@ -9,7 +9,7 @@ const axios = require('axios')
 module.exports = function (api) {
   api.loadSource(async actions => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
-    const { data } = await axios.get(`${process.env.AIRTABLE_AVAILABILITY_URL}?api_key=${process.env.AIRTABLE_API_KEY}`)
+    const { data } = await axios.get(`${process.env.AIRTABLE_AVAILABILITY_URL}`, { headers: { "Authorization": `Bearer ${process.env.AIRTABLE_API_KEY}` } })
 
     const collection = actions.addCollection('Availability')
 
