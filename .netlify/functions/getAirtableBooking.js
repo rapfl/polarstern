@@ -6,12 +6,17 @@ exports.handler = async function(event, context) {
   const API_PARAMS = qs.stringify(event.queryStringParameters);
   console.log("API_PARAMS", API_PARAMS);
   const { AIRTABLE_API_KEY, AIRTABLE_BOOKING_URL } = process.env;
-  const URL = `${AIRTABLE_BOOKING_URL}?api_key=${AIRTABLE_API_KEY}`;
+  const URL = `${AIRTABLE_BOOKING_URL}`;
 
   console.log("Constructed URL is ...", URL);
 
   try {
-    const { data } = await axios.get(URL);
+    const { data } = await axios.get(URL, {
+      headers: {
+        Authorization: `Bearer ${AIRTABLE_API_KEY}`,
+        "Content-Type": "application/json",
+      },
+    });
     // refer to axios docs for other methods if you need them
     // for example if you want to POST data:
     //    axios.post('/user', { firstName: 'Fred' })
