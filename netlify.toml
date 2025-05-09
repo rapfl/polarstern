@@ -1,15 +1,19 @@
 [build]
-  publish = "dist"
-  command = """
-    node -v && npm -v &&
-    npm ci &&
-    echo --- sharp tree --- &&
-    npm ls sharp ||
-    echo sharp not found &&
-    echo --- gridsome tree --- &&
-    npm ls gridsome ||
-    echo gridsome not found &&
-    echo --- complete module list --- &&
-    ls node_modules
+  publish   = "dist"
+  command   = """
+    # 1. Use a clean install (devDependencies included)
+    npm ci --include=dev &&
+
+    # 2. Rebuild Sharp for this environment
+    npm rebuild sharp --verbose &&
+
+    # 3. Actually build your static site
+    gridsome build
   """
-  functions = ".netlify/functions/"
+
+[build.environment]
+  # Ensure npm knows to include devDependencies
+  NPM_FLAGS    = "--include=dev"
+
+  # Pin to your desired Node LTS (e.g. 18.x or 20.x)
+  NODE_VERSION = "18"
