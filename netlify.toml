@@ -1,2 +1,15 @@
 [build]
+  publish = "dist"
+  command = """
+    node -v && npm -v &&
+    npm ci &&
+    echo --- sharp tree --- &&
+    npm ls sharp ||
+    echo sharp not found &&
+    echo --- gridsome tree --- &&
+    npm ls gridsome ||
+    echo gridsome not found &&
+    echo --- complete module list --- &&
+    ls node_modules
+  """
   functions = ".netlify/functions/"
