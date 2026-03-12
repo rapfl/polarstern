@@ -16,4 +16,4 @@
   NPM_FLAGS    = "--include=dev"
 
   # Pin to your desired Node LTS (e.g. 18.x or 20.x)
-  NODE_VERSION = "18"
+  NODE_VERSION = "14"
