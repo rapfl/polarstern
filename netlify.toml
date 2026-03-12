@@ -1,7 +1,7 @@
 [build]
   publish = "dist"
-  command = "npm ci --include=dev && npm run build"
+  command = "npm ci --include=dev --omit=optional && npm run build"
 
 [build.environment]
-  NPM_FLAGS = "--include=dev"
+  NPM_FLAGS = "--include=dev --omit=optional"
   NODE_VERSION = "16"
