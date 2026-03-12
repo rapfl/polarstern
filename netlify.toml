@@ -1,10 +1,10 @@
 [build]
   publish   = "dist"
-  command   = "npm ci --include=dev --legacy-peer-deps && npm rebuild node-sass --force && npm run build"
+  command   = "npm install --include=dev --legacy-peer-deps && npm run build"
 
 [build.environment]
-  # Ensure npm knows to include devDependencies
-  NPM_FLAGS    = "--include=dev"
+  # Ensure npm includes devDependencies and tolerates legacy peer ranges in this Vue2/Gridsome stack
+  NPM_FLAGS    = "--include=dev --legacy-peer-deps"
 
-  # Use Node 16 to match node-sass@9 support
-  NODE_VERSION = "16"
+  # Use Node 18 for modern sharp prebuilt binaries (Python3-compatible toolchain)
+  NODE_VERSION = "18"
