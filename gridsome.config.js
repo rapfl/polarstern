@@ -1,3 +1,5 @@
+const storyblokAccessToken = process.env.STORYBLOK_API_KEY || process.env.STORYBLOK_ACCESS_TOKEN || process.env.STORYBLOK_TOKEN
+
 // This is where project configuration and plugin options are located. 
 // Learn more: https://gridsome.org/docs/config
 
@@ -15,7 +17,7 @@ module.exports = {
       use: 'gridsome-source-storyblok',
       options: {
         client: {
-          accessToken: process.env.STORYBLOK_API_KEY
+          accessToken: storyblokAccessToken
         }
       }
     },

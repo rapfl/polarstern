@@ -1,19 +1,7 @@
 [build]
-  publish   = "dist"
-  command   = """
-    # 1. Use a clean install (devDependencies included)
-    npm ci --include=dev &&
-
-    # 2. Rebuild Sharp for this environment
-    npm rebuild sharp --verbose &&
-
-    # 3. Actually build your static site
-    gridsome build
-  """
+  publish = "dist"
+  command = "npm ci --include=dev && npm run build"
 
 [build.environment]
-  # Ensure npm knows to include devDependencies
-  NPM_FLAGS    = "--include=dev"
-
-  # Pin to your desired Node LTS (e.g. 18.x or 20.x)
-  NODE_VERSION = "18"
+  NPM_FLAGS = "--include=dev"
+  NODE_VERSION = "16"
