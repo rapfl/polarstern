@@ -1,10 +1,10 @@
 [build]
   publish   = "dist"
-  command   = "npm ci --include=dev && npm run build"
+  command   = "npm ci --include=dev --legacy-peer-deps && npm rebuild node-sass --force && npm run build"
 
 [build.environment]
   # Ensure npm knows to include devDependencies
   NPM_FLAGS    = "--include=dev"
 
-  # Use Node 16 to match node-sass@9 support and avoid Node 14 binary issues
+  # Use Node 16 to match node-sass@9 support
   NODE_VERSION = "16"
