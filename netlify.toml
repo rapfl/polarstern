@@ -2,13 +2,9 @@
   publish = "public"
   command = ""
 
-# Alte URLs der früheren Seite führen auf die Abschiedsseite.
+# Alte Startseiten-URL; alle anderen unbekannten URLs zeigen public/404.html
+# (die Abschiedsseite, mit Status 404).
 [[redirects]]
   from = "/home"
-  to = "/"
-  status = 301
-
-[[redirects]]
-  from = "/*"
   to = "/"
   status = 301
