@@ -1,10 +1,10 @@
 [build]
-  publish   = "dist"
-  command   = "npm install --include=dev --legacy-peer-deps && npm run build"
+  publish = "public"
+  command = ""
 
-[build.environment]
-  # Ensure npm includes devDependencies and tolerates legacy peer ranges in this Vue2/Gridsome stack
-  NPM_FLAGS    = "--include=dev --legacy-peer-deps"
-
-  # Use Node 18 for modern sharp prebuilt binaries (Python3-compatible toolchain)
-  NODE_VERSION = "18"
+# Alte Startseiten-URL; alle anderen unbekannten URLs zeigen public/404.html
+# (die Abschiedsseite, mit Status 404).
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
